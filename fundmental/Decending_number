@@ -1,0 +1,10 @@
+def descending_order(num):
+    str_num = str(num)
+    lst = []
+    for i in str_num:
+        lst.append(i)
+    lst.sort(reverse=True)
+    T =''.join(lst)
+    return T
+num = 1275
+descending_order(num)
