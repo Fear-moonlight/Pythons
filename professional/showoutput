@@ -1,0 +1,679 @@
+!
+!!!!!!!PE-SHOWCOMMAND!!!!!!!
+!
+!
+show bgp vrf A_CP_HUAWEI summary
+show bgp vrf A_CP_HUAWEI neighbor 10.159.84.242 routes
+show bgp vrf A_CP_HUAWEI neighbor 10.159.84.242 advertised-routes
+show bgp vrf A_CP_HUAWEI neighbor 10.159.84.242 advertised-count
+!
+show bgp vrf A_CP_ERICSSON summary
+show bgp vrf A_CP_ERICSSON neighbor 10.156.237.181 routes
+show bgp vrf A_CP_ERICSSON neighbor 10.156.237.181 advertised-routes
+show bgp vrf A_CP_ERICSSON neighbor 10.156.237.181 advertised-count
+!
+show bgp vrf A_UP_ERICSSON summary
+show bgp vrf A_UP_ERICSSON neighbor 10.156.237.185 routes
+show bgp vrf A_UP_ERICSSON neighbor 10.156.237.185 advertised-routes
+show bgp vrf A_UP_ERICSSON neighbor 10.156.237.185 advertised-count
+!
+show bgp vrf A_UP_HUAWEI summary
+show bgp vrf A_UP_HUAWEI neighbor 10.156.236.254 routes
+show bgp vrf A_UP_HUAWEI neighbor 10.156.236.254 advertised-routes
+show bgp vrf A_UP_HUAWEI neighbor 10.156.236.254 advertised-count
+!
+show bgp vrf maxis_MC_ACP summary
+show bgp vrf maxis_MC_ACP neighbor 10.156.237.241 routes
+show bgp vrf maxis_MC_ACP neighbor 10.156.237.241 advertised-routes
+show bgp vrf maxis_MC_ACP neighbor 10.156.237.241 advertised-count
+!
+show bgp vrf maxis_MC_AUP summary
+show bgp vrf maxis_MC_AUP neighbor 10.156.237.245 routes
+show bgp vrf maxis_MC_AUP neighbor 10.156.237.245 advertised-routes
+show bgp vrf maxis_MC_AUP neighbor 10.156.237.245 advertised-count
+!
+show bgp vrf EAP_VRF summary
+show bgp vrf EAP_VRF neighbor 10.151.30.250 routes
+show bgp vrf EAP_VRF neighbor 10.151.30.250 advertised-routes
+show bgp vrf EAP_VRF neighbor 10.151.30.250 advertised-count
+!
+show bgp vrf CelcomWiFi_VRF summary
+show bgp vrf CelcomWiFi_VRF neighbor 10.151.31.26 routes
+show bgp vrf CelcomWiFi_VRF neighbor 10.151.31.26 advertised-routes
+show bgp vrf CelcomWiFi_VRF neighbor 10.151.31.26 advertised-count
+!
+show bgp vrf CP_wifi summary
+show bgp vrf CP_wifi neighbor 10.151.31.29 routes
+show bgp vrf CP_wifi neighbor 10.151.31.29 advertised-routes
+show bgp vrf CP_wifi neighbor 10.151.31.29 advertised-count
+!
+show bgp vrf umobile_interconnect summary
+show bgp vrf umobile_interconnect neighbor 10.151.31.105 routes
+show bgp vrf umobile_interconnect neighbor 10.151.31.105 advertised-routes
+show bgp vrf umobile_interconnect neighbor 10.151.31.105 advertised-count
+!
+show bgp vrf Huawei_IuoIP summary
+show bgp vrf Huawei_IuoIP neighbor 10.156.236.134 routes
+show bgp vrf Huawei_IuoIP neighbor 10.156.236.134 advertised-routes
+show bgp vrf Huawei_IuoIP neighbor 10.156.236.134 advertised-count
+!
+show bgp vrf H_OM summary
+show bgp vrf H_OM neighbor 10.156.237.62 routes
+show bgp vrf H_OM neighbor 10.156.237.62 advertised-routes
+show bgp vrf H_OM neighbor 10.156.237.62 advertised-count
+!
+show bgp vrf Gn summary
+show bgp vrf Gn neighbor 10.156.236.22 routes
+show bgp vrf Gn neighbor 10.156.236.22 advertised-routes
+show bgp vrf Gn neighbor 10.156.236.22 advertised-count
+!
+show bgp vrf LTE_S6a summary
+show bgp vrf LTE_S6a neighbor 10.151.30.165 routes
+show bgp vrf LTE_S6a neighbor 10.151.30.165 advertised-routes
+show bgp vrf LTE_S6a neighbor 10.151.30.165 advertised-count
+!
+show bgp vrf HSI_TM summary
+show bgp vrf HSI_TM neighbor 10.151.30.133 routes
+show bgp vrf HSI_TM neighbor 10.151.30.133 advertised-routes
+show bgp vrf HSI_TM neighbor 10.151.30.133 advertised-count
+!
+show bgp vrf AVATAR_HSI_CP summary
+show bgp vrf AVATAR_HSI_CP neighbor 10.151.30.173 routes
+show bgp vrf AVATAR_HSI_CP neighbor 10.151.30.173 advertised-routes
+show bgp vrf AVATAR_HSI_CP neighbor 10.151.30.173 advertised-count
+!
+show bgp vrf AVATAR_VOBB_CP summary
+show bgp vrf AVATAR_VOBB_CP neighbor 10.151.30.181 routes
+show bgp vrf AVATAR_VOBB_CP neighbor 10.151.30.181 advertised-routes
+show bgp vrf AVATAR_VOBB_CP neighbor 10.151.30.181 advertised-count
+!
+show bgp vrf VOBB_EXT summary
+show bgp vrf VOBB_EXT neighbor 10.151.30.189 routes
+show bgp vrf VOBB_EXT neighbor 10.151.30.189 advertised-routes
+show bgp vrf VOBB_EXT neighbor 10.151.30.189 advertised-count
+!
+show bgp vrf VOBB_CP_ENTP summary
+show bgp vrf VOBB_CP_ENTP neighbor 10.151.30.197 routes
+show bgp vrf VOBB_CP_ENTP neighbor 10.151.30.197 advertised-routes
+show bgp vrf VOBB_CP_ENTP neighbor 10.151.30.197 advertised-count
+!
+show bgp vrf GB_IP summary
+show bgp vrf GB_IP neighbor 10.156.236.14 routes
+show bgp vrf GB_IP neighbor 10.156.236.14 advertised-routes
+show bgp vrf GB_IP neighbor 10.156.236.14 advertised-count
+!
+show bgp vrf LTE_UP summary
+show bgp vrf LTE_UP neighbor 10.151.66.50 routes
+show bgp vrf LTE_UP neighbor 10.151.66.50 advertised-routes
+show bgp vrf LTE_UP neighbor 10.151.66.50 advertised-count
+!
+show bgp vrf LTE_UP summary
+show bgp vrf LTE_UP neighbor 10.151.66.58 routes
+show bgp vrf LTE_UP neighbor 10.151.66.58 advertised-routes
+show bgp vrf LTE_UP neighbor 10.151.66.58 advertised-count
+!
+show bgp vrf SIGTRAN summary
+show bgp vrf SIGTRAN neighbor 10.151.30.141 routes
+show bgp vrf SIGTRAN neighbor 10.151.30.141 advertised-routes
+show bgp vrf SIGTRAN neighbor 10.151.30.141 advertised-count
+!
+show bgp vrf CN summary
+show bgp vrf CN neighbor 10.151.30.149 routes
+show bgp vrf CN neighbor 10.151.30.149 advertised-routes
+show bgp vrf CN neighbor 10.151.30.149 advertised-count
+!
+show bgp vrf SBC_SIP_EXT summary
+show bgp vrf SBC_SIP_EXT neighbor 10.151.30.205 routes
+show bgp vrf SBC_SIP_EXT neighbor 10.151.30.205 advertised-routes
+show bgp vrf SBC_SIP_EXT neighbor 10.151.30.205 advertised-count
+!
+show bgp vrf BGF_MEDIA_EXT summary
+show bgp vrf BGF_MEDIA_EXT neighbor 10.151.30.213 routes
+show bgp vrf BGF_MEDIA_EXT neighbor 10.151.30.213 advertised-routes
+show bgp vrf BGF_MEDIA_EXT neighbor 10.151.30.213 advertised-count
+!
+show bgp vrf ALTEL_BGF_MEDIA summary
+show bgp vrf ALTEL_BGF_MEDIA neighbor 10.151.31.46 routes
+show bgp vrf ALTEL_BGF_MEDIA neighbor 10.151.31.46 advertised-routes
+show bgp vrf ALTEL_BGF_MEDIA neighbor 10.151.31.46 advertised-count
+!
+show bgp vrf P1_Media summary
+show bgp vrf P1_Media neighbor 10.151.31.50 routes
+show bgp vrf P1_Media neighbor 10.151.31.50 advertised-routes
+show bgp vrf P1_Media neighbor 10.151.31.50 advertised-count
+!
+show bgp vrf SD summary
+show bgp vrf SD neighbor 10.156.237.105 routes
+show bgp vrf SD neighbor 10.156.237.105 advertised-routes
+show bgp vrf SD neighbor 10.156.237.105 advertised-count
+!
+show bgp vrf Digi_BGF_Media summary
+show bgp vrf Digi_BGF_Media neighbor 10.151.30.73 routes
+show bgp vrf Digi_BGF_Media neighbor 10.151.30.73 advertised-routes
+show bgp vrf Digi_BGF_Media neighbor 10.151.30.73 advertised-count
+!
+show bgp vrf LTE_UP summary
+show bgp vrf LTE_UP neighbor 10.151.30.181 routes
+show bgp vrf LTE_UP neighbor 10.151.30.181 advertised-routes
+show bgp vrf LTE_UP neighbor 10.151.30.181 advertised-count
+!
+show bgp vrf Digi_OLNOS_SPS summary
+show bgp vrf Digi_OLNOS_SPS neighbor 10.151.66.30 routes
+show bgp vrf Digi_OLNOS_SPS neighbor 10.151.66.30 advertised-routes
+show bgp vrf Digi_OLNOS_SPS neighbor 10.151.66.30 advertised-count
+!
+show bgp vrf Webe_SBC_Media summary
+show bgp vrf Webe_SBC_Media neighbor 10.151.66.65 routes
+show bgp vrf Webe_SBC_Media neighbor 10.151.66.65 advertised-routes
+show bgp vrf Webe_SBC_Media neighbor 10.151.66.65 advertised-count
+!
+show bgp vrf TIME_SBC_SIP_Media summary
+show bgp vrf TIME_SBC_SIP_Media neighbor 10.151.66.97 routes
+show bgp vrf TIME_SBC_SIP_Media neighbor 10.151.66.97 advertised-routes
+show bgp vrf TIME_SBC_SIP_Media neighbor 10.151.66.97 advertised-count
+!
+show bgp vrf TM_SBC_SIP summary
+show bgp vrf TM_SBC_SIP neighbor 10.151.66.89 routes
+show bgp vrf TM_SBC_SIP neighbor 10.151.66.89 advertised-routes
+show bgp vrf TM_SBC_SIP neighbor 10.151.66.89 advertised-count
+!
+show bgp vrf TM_SBC_Media summary
+show bgp vrf TM_SBC_Media neighbor 10.151.66.93 routes
+show bgp vrf TM_SBC_Media neighbor 10.151.66.93 advertised-routes
+show bgp vrf TM_SBC_Media neighbor 10.151.66.93 advertised-count
+!
+show bgp vrf Maxis_OLNOS_SPS summary
+show bgp vrf Maxis_OLNOS_SPS neighbor 10.151.66.74 routes
+show bgp vrf Maxis_OLNOS_SPS neighbor 10.151.66.74 advertised-routes
+show bgp vrf Maxis_OLNOS_SPS neighbor 10.151.66.74 advertised-count
+!
+!!!!!!!CE-SHOWCOMMAND!!!!!!!
+!
+!
+show bgp vrf A_CP_HUAWEI summary
+show bgp vrf A_CP_HUAWEI neighbor 10.159.84.241 routes
+show bgp vrf A_CP_HUAWEI neighbor 10.159.84.241 advertised-routes
+show bgp vrf A_CP_HUAWEI neighbor 10.159.84.241 advertised-count
+!
+show bgp vrf A_CP_ERICSSON summary
+show bgp vrf A_CP_ERICSSON neighbor 10.156.237.182 routes
+show bgp vrf A_CP_ERICSSON neighbor 10.156.237.182 advertised-routes
+show bgp vrf A_CP_ERICSSON neighbor 10.156.237.182 advertised-count
+!
+show bgp vrf A_UP_ERICSSON summary
+show bgp vrf A_UP_ERICSSON neighbor 10.156.237.186 routes
+show bgp vrf A_UP_ERICSSON neighbor 10.156.237.186 advertised-routes
+show bgp vrf A_UP_ERICSSON neighbor 10.156.237.186 advertised-count
+!
+show bgp vrf A_UP_HUAWEI summary
+show bgp vrf A_UP_HUAWEI neighbor 10.156.236.253 routes
+show bgp vrf A_UP_HUAWEI neighbor 10.156.236.253 advertised-routes
+show bgp vrf A_UP_HUAWEI neighbor 10.156.236.253 advertised-count
+!
+show bgp vrf maxis_MC_ACP summary
+show bgp vrf maxis_MC_ACP neighbor 10.156.237.242 routes
+show bgp vrf maxis_MC_ACP neighbor 10.156.237.242 advertised-routes
+show bgp vrf maxis_MC_ACP neighbor 10.156.237.242 advertised-count
+!
+show bgp vrf maxis_MC_AUP summary
+show bgp vrf maxis_MC_AUP neighbor 10.156.237.246 routes
+show bgp vrf maxis_MC_AUP neighbor 10.156.237.246 advertised-routes
+show bgp vrf maxis_MC_AUP neighbor 10.156.237.246 advertised-count
+!
+show bgp vrf EAP_VRF summary
+show bgp vrf EAP_VRF neighbor 10.151.30.249 routes
+show bgp vrf EAP_VRF neighbor 10.151.30.249 advertised-routes
+show bgp vrf EAP_VRF neighbor 10.151.30.249 advertised-count
+!
+show bgp vrf CelcomWiFi_VRF summary
+show bgp vrf CelcomWiFi_VRF neighbor 10.151.31.25 routes
+show bgp vrf CelcomWiFi_VRF neighbor 10.151.31.25 advertised-routes
+show bgp vrf CelcomWiFi_VRF neighbor 10.151.31.25 advertised-count
+!
+show bgp vrf CP_WiFi summary
+show bgp vrf CP_WiFi neighbor 10.151.31.30 routes
+show bgp vrf CP_WiFi neighbor 10.151.31.30 advertised-routes
+show bgp vrf CP_WiFi neighbor 10.151.31.30 advertised-count
+!
+show bgp vrf umobile_interconnect summary
+show bgp vrf umobile_interconnect neighbor 10.151.31.106 routes
+show bgp vrf umobile_interconnect neighbor 10.151.31.106 advertised-routes
+show bgp vrf umobile_interconnect neighbor 10.151.31.106 advertised-count
+!
+show bgp vrf Huawei_IuoIP summary
+show bgp vrf Huawei_IuoIP neighbor 10.156.236.133 routes
+show bgp vrf Huawei_IuoIP neighbor 10.156.236.133 advertised-routes
+show bgp vrf Huawei_IuoIP neighbor 10.156.236.133 advertised-count
+!
+show bgp vrf H_OM summary
+show bgp vrf H_OM neighbor 10.156.237.61 routes
+show bgp vrf H_OM neighbor 10.156.237.61 advertised-routes
+show bgp vrf H_OM neighbor 10.156.237.61 advertised-count
+!
+show bgp vrf Gn summary
+show bgp vrf Gn neighbor 10.156.236.21 routes
+show bgp vrf Gn neighbor 10.156.236.21 advertised-routes
+show bgp vrf Gn neighbor 10.156.236.21 advertised-count
+!
+show bgp vrf LTE_S6a summary
+show bgp vrf LTE_S6a neighbor 10.151.30.166 routes
+show bgp vrf LTE_S6a neighbor 10.151.30.166 advertised-routes
+show bgp vrf LTE_S6a neighbor 10.151.30.166 advertised-count
+!
+show bgp vrf HSI_TM summary
+show bgp vrf HSI_TM neighbor 10.151.30.134 routes
+show bgp vrf HSI_TM neighbor 10.151.30.134 advertised-routes
+show bgp vrf HSI_TM neighbor 10.151.30.134 advertised-count
+!
+show bgp vrf AVATAR_HSI_CP summary
+show bgp vrf AVATAR_HSI_CP neighbor 10.151.30.174 routes
+show bgp vrf AVATAR_HSI_CP neighbor 10.151.30.174 advertised-routes
+show bgp vrf AVATAR_HSI_CP neighbor 10.151.30.174 advertised-count
+!
+show bgp vrf AVATAR_VOBB_CP summary
+show bgp vrf AVATAR_VOBB_CP neighbor 10.151.30.182 routes
+show bgp vrf AVATAR_VOBB_CP neighbor 10.151.30.182 advertised-routes
+show bgp vrf AVATAR_VOBB_CP neighbor 10.151.30.182 advertised-count
+!
+show bgp vrf VOBB_EXT summary
+show bgp vrf VOBB_EXT neighbor 10.151.30.190 routes
+show bgp vrf VOBB_EXT neighbor 10.151.30.190 advertised-routes
+show bgp vrf VOBB_EXT neighbor 10.151.30.190 advertised-count
+!
+show bgp vrf VOBB_CP_ENTP summary
+show bgp vrf VOBB_CP_ENTP neighbor 10.151.30.198 routes
+show bgp vrf VOBB_CP_ENTP neighbor 10.151.30.198 advertised-routes
+show bgp vrf VOBB_CP_ENTP neighbor 10.151.30.198 advertised-count
+!
+show bgp vrf GB_IP summary
+show bgp vrf GB_IP neighbor 10.156.236.13 routes
+show bgp vrf GB_IP neighbor 10.156.236.13 advertised-routes
+show bgp vrf GB_IP neighbor 10.156.236.13 advertised-count
+!
+show bgp vrf Maxis_4G_MOCN summary
+show bgp vrf Maxis_4G_MOCN neighbor 10.151.66.49 routes
+show bgp vrf Maxis_4G_MOCN neighbor 10.151.66.49 advertised-routes
+show bgp vrf Maxis_4G_MOCN neighbor 10.151.66.49 advertised-count
+!
+show bgp vrf Maxis_5G_MOCN summary
+show bgp vrf Maxis_5G_MOCN neighbor 10.151.66.57 routes
+show bgp vrf Maxis_5G_MOCN neighbor 10.151.66.57 advertised-routes
+show bgp vrf Maxis_5G_MOCN neighbor 10.151.66.57 advertised-count
+!
+show bgp vrf SIGTRAN summary
+show bgp vrf SIGTRAN neighbor 10.151.30.142 routes
+show bgp vrf SIGTRAN neighbor 10.151.30.142 advertised-routes
+show bgp vrf SIGTRAN neighbor 10.151.30.142 advertised-count
+!
+show bgp vrf CN summary
+show bgp vrf CN neighbor 10.151.30.150 routes
+show bgp vrf CN neighbor 10.151.30.150 advertised-routes
+show bgp vrf CN neighbor 10.151.30.150 advertised-count
+!
+show bgp vrf SBC_SIP_EXT summary
+show bgp vrf SBC_SIP_EXT neighbor 10.151.30.206 routes
+show bgp vrf SBC_SIP_EXT neighbor 10.151.30.206 advertised-routes
+show bgp vrf SBC_SIP_EXT neighbor 10.151.30.206 advertised-count
+!
+show bgp vrf BGF_MEDIA_EXT summary
+show bgp vrf BGF_MEDIA_EXT neighbor 10.151.30.214 routes
+show bgp vrf BGF_MEDIA_EXT neighbor 10.151.30.214 advertised-routes
+show bgp vrf BGF_MEDIA_EXT neighbor 10.151.30.214 advertised-count
+!
+show bgp vrf ALTEL_BGF_MEDIA summary
+show bgp vrf ALTEL_BGF_MEDIA neighbor 10.151.31.45 routes
+show bgp vrf ALTEL_BGF_MEDIA neighbor 10.151.31.45 advertised-routes
+show bgp vrf ALTEL_BGF_MEDIA neighbor 10.151.31.45 advertised-count
+!
+show bgp vrf P1_Media summary
+show bgp vrf P1_Media neighbor 10.151.31.49 routes
+show bgp vrf P1_Media neighbor 10.151.31.49 advertised-routes
+show bgp vrf P1_Media neighbor 10.151.31.49 advertised-count
+!
+show bgp vrf SD summary
+show bgp vrf SD neighbor 10.156.237.106 routes
+show bgp vrf SD neighbor 10.156.237.106 advertised-routes
+show bgp vrf SD neighbor 10.156.237.106 advertised-count
+!
+show bgp vrf Digi_OLNOS_Media summary
+show bgp vrf Digi_OLNOS_Media neighbor 10.151.30.74 routes
+show bgp vrf Digi_OLNOS_Media neighbor 10.151.30.74 advertised-routes
+show bgp vrf Digi_OLNOS_Media neighbor 10.151.30.74 advertised-count
+!
+show bgp vrf LTE_UP summary
+show bgp vrf LTE_UP neighbor 10.151.30.182 routes
+show bgp vrf LTE_UP neighbor 10.151.30.182 advertised-routes
+show bgp vrf LTE_UP neighbor 10.151.30.182 advertised-count
+!
+show bgp vrf Digi_OLNOS_SPS summary
+show bgp vrf Digi_OLNOS_SPS neighbor 10.151.66.29 routes
+show bgp vrf Digi_OLNOS_SPS neighbor 10.151.66.29 advertised-routes
+show bgp vrf Digi_OLNOS_SPS neighbor 10.151.66.29 advertised-count
+!
+show bgp vrf Webe_SBC_Media summary
+show bgp vrf Webe_SBC_Media neighbor 10.151.66.66 routes
+show bgp vrf Webe_SBC_Media neighbor 10.151.66.66 advertised-routes
+show bgp vrf Webe_SBC_Media neighbor 10.151.66.66 advertised-count
+!
+show bgp vrf TIME_SBC_SIP_Media summary
+show bgp vrf TIME_SBC_SIP_Media neighbor 10.151.66.98 routes
+show bgp vrf TIME_SBC_SIP_Media neighbor 10.151.66.98 advertised-routes
+show bgp vrf TIME_SBC_SIP_Media neighbor 10.151.66.98 advertised-count
+!
+show bgp vrf TM_SBC_SIP summary
+show bgp vrf TM_SBC_SIP neighbor 10.151.66.90 routes
+show bgp vrf TM_SBC_SIP neighbor 10.151.66.90 advertised-routes
+show bgp vrf TM_SBC_SIP neighbor 10.151.66.90 advertised-count
+!
+show bgp vrf TM_SBC_Media summary
+show bgp vrf TM_SBC_Media neighbor 10.151.66.94 routes
+show bgp vrf TM_SBC_Media neighbor 10.151.66.94 advertised-routes
+show bgp vrf TM_SBC_Media neighbor 10.151.66.94 advertised-count
+!
+show bgp vrf Maxis_OLNOS_SPS summary
+show bgp vrf Maxis_OLNOS_SPS neighbor 10.151.66.73 routes
+show bgp vrf Maxis_OLNOS_SPS neighbor 10.151.66.73 advertised-routes
+show bgp vrf Maxis_OLNOS_SPS neighbor 10.151.66.73 advertised-count
+!
+!!!!!!!PE-CONFIGURATION!!!!!!!!
+!
+router bgp 65535
+vrf A_CP_HUAWEI
+   neighbor  10.159.84.242
+     password clear C3lc@m_POI
+!
+vrf A_CP_ERICSSON
+   neighbor  10.156.237.181
+     password clear C3lc@m_POI
+!
+vrf A_UP_ERICSSON
+   neighbor  10.156.237.185
+     password clear C3lc@m_POI
+!
+vrf A_UP_HUAWEI
+   neighbor  10.156.236.254
+     password clear C3lc@m_POI
+!
+vrf maxis_MC_ACP
+   neighbor  10.156.237.241
+     password clear C3lc@m_POI
+!
+vrf maxis_MC_AUP
+   neighbor  10.156.237.245
+     password clear C3lc@m_POI
+!
+vrf EAP_VRF
+   neighbor  10.151.30.250
+     password clear C3lc@m_POI
+!
+vrf CelcomWiFi_VRF
+   neighbor  10.151.31.26
+     password clear C3lc@m_POI
+!
+vrf CP_wifi
+   neighbor  10.151.31.29
+     password clear C3lc@m_POI
+!
+vrf umobile_interconnect
+   neighbor  10.151.31.105
+     password clear C3lc@m_POI
+!
+vrf Huawei_IuoIP
+   neighbor  10.156.236.134
+     password clear C3lc@m_POI
+!
+vrf H_OM
+   neighbor  10.156.237.62
+     password clear C3lc@m_POI
+!
+vrf Gn
+   neighbor  10.156.236.22
+     password clear C3lc@m_POI
+!
+vrf LTE_S6a
+   neighbor  10.151.30.165
+     password clear C3lc@m_POI
+!
+vrf HSI_TM
+   neighbor  10.151.30.133
+     password clear C3lc@m_POI
+!
+vrf AVATAR_HSI_CP
+   neighbor  10.151.30.173
+     password clear C3lc@m_POI
+!
+vrf AVATAR_VOBB_CP
+   neighbor  10.151.30.181
+     password clear C3lc@m_POI
+!
+vrf VOBB_EXT
+   neighbor  10.151.30.189
+     password clear C3lc@m_POI
+!
+vrf VOBB_CP_ENTP
+   neighbor  10.151.30.197
+     password clear C3lc@m_POI
+!
+vrf GB_IP
+   neighbor  10.156.236.14
+     password clear C3lc@m_POI
+!
+vrf LTE_UP
+   neighbor  10.151.66.50
+     password clear C3lc@m_POI
+!
+vrf LTE_UP
+   neighbor  10.151.66.58
+     password clear C3lc@m_POI
+!
+vrf SIGTRAN
+   neighbor  10.151.30.141
+     password clear C3lc@m_POI
+!
+vrf CN
+   neighbor  10.151.30.149
+     password clear C3lc@m_POI
+!
+vrf SBC_SIP_EXT
+   neighbor  10.151.30.205
+     password clear C3lc@m_POI
+!
+vrf BGF_MEDIA_EXT
+   neighbor  10.151.30.213
+     password clear C3lc@m_POI
+!
+vrf ALTEL_BGF_MEDIA
+   neighbor  10.151.31.46
+     password clear C3lc@m_POI
+!
+vrf P1_Media
+   neighbor  10.151.31.50
+     password clear C3lc@m_POI
+!
+vrf SD
+   neighbor  10.156.237.105
+     password clear C3lc@m_POI
+!
+vrf Digi_BGF_Media
+   neighbor  10.151.30.73
+     password clear C3lc@m_POI
+!
+vrf LTE_UP
+   neighbor  10.151.30.181
+     password clear C3lc@m_POI
+!
+vrf Digi_OLNOS_SPS
+   neighbor  10.151.66.30
+     password clear C3lc@m_POI
+!
+vrf Webe_SBC_Media
+   neighbor  10.151.66.65
+     password clear C3lc@m_POI
+!
+vrf TIME_SBC_SIP_Media
+   neighbor  10.151.66.97
+     password clear C3lc@m_POI
+!
+vrf TM_SBC_SIP
+   neighbor  10.151.66.89
+     password clear C3lc@m_POI
+!
+vrf TM_SBC_Media
+   neighbor  10.151.66.93
+     password clear C3lc@m_POI
+!
+vrf Maxis_OLNOS_SPS
+   neighbor  10.151.66.74
+     password clear C3lc@m_POI
+!
+!!!!!!!CE-CONFIGURATION!!!!!!!!
+!
+router bgp 65111
+vrf A_CP_HUAWEI
+   neighbor  10.159.84.241
+     password clear C3lc@m_POI
+!
+vrf A_CP_ERICSSON
+   neighbor  10.156.237.182
+     password clear C3lc@m_POI
+!
+vrf A_UP_ERICSSON
+   neighbor  10.156.237.186
+     password clear C3lc@m_POI
+!
+vrf A_UP_HUAWEI
+   neighbor  10.156.236.253
+     password clear C3lc@m_POI
+!
+vrf maxis_MC_ACP
+   neighbor  10.156.237.242
+     password clear C3lc@m_POI
+!
+vrf maxis_MC_AUP
+   neighbor  10.156.237.246
+     password clear C3lc@m_POI
+!
+vrf EAP_VRF
+   neighbor  10.151.30.249
+     password clear C3lc@m_POI
+!
+vrf CelcomWiFi_VRF
+   neighbor  10.151.31.25
+     password clear C3lc@m_POI
+!
+vrf CP_WiFi
+   neighbor  10.151.31.30
+     password clear C3lc@m_POI
+!
+vrf umobile_interconnect
+   neighbor  10.151.31.106
+     password clear C3lc@m_POI
+!
+vrf Huawei_IuoIP
+   neighbor  10.156.236.133
+     password clear C3lc@m_POI
+!
+vrf H_OM
+   neighbor  10.156.237.61
+     password clear C3lc@m_POI
+!
+vrf Gn
+   neighbor  10.156.236.21
+     password clear C3lc@m_POI
+!
+vrf LTE_S6a
+   neighbor  10.151.30.166
+     password clear C3lc@m_POI
+!
+vrf HSI_TM
+   neighbor  10.151.30.134
+     password clear C3lc@m_POI
+!
+vrf AVATAR_HSI_CP
+   neighbor  10.151.30.174
+     password clear C3lc@m_POI
+!
+vrf AVATAR_VOBB_CP
+   neighbor  10.151.30.182
+     password clear C3lc@m_POI
+!
+vrf VOBB_EXT
+   neighbor  10.151.30.190
+     password clear C3lc@m_POI
+!
+vrf VOBB_CP_ENTP
+   neighbor  10.151.30.198
+     password clear C3lc@m_POI
+!
+vrf GB_IP
+   neighbor  10.156.236.13
+     password clear C3lc@m_POI
+!
+vrf Maxis_4G_MOCN
+   neighbor  10.151.66.49
+     password clear C3lc@m_POI
+!
+vrf Maxis_5G_MOCN
+   neighbor  10.151.66.57
+     password clear C3lc@m_POI
+!
+vrf SIGTRAN
+   neighbor  10.151.30.142
+     password clear C3lc@m_POI
+!
+vrf CN
+   neighbor  10.151.30.150
+     password clear C3lc@m_POI
+!
+vrf SBC_SIP_EXT
+   neighbor  10.151.30.206
+     password clear C3lc@m_POI
+!
+vrf BGF_MEDIA_EXT
+   neighbor  10.151.30.214
+     password clear C3lc@m_POI
+!
+vrf ALTEL_BGF_MEDIA
+   neighbor  10.151.31.45
+     password clear C3lc@m_POI
+!
+vrf P1_Media
+   neighbor  10.151.31.49
+     password clear C3lc@m_POI
+!
+vrf SD
+   neighbor  10.156.237.106
+     password clear C3lc@m_POI
+!
+vrf Digi_OLNOS_Media
+   neighbor  10.151.30.74
+     password clear C3lc@m_POI
+!
+vrf LTE_UP
+   neighbor  10.151.30.182
+     password clear C3lc@m_POI
+!
+vrf Digi_OLNOS_SPS
+   neighbor  10.151.66.29
+     password clear C3lc@m_POI
+!
+vrf Webe_SBC_Media
+   neighbor  10.151.66.66
+     password clear C3lc@m_POI
+!
+vrf TIME_SBC_SIP_Media
+   neighbor  10.151.66.98
+     password clear C3lc@m_POI
+!
+vrf TM_SBC_SIP
+   neighbor  10.151.66.90
+     password clear C3lc@m_POI
+!
+vrf TM_SBC_Media
+   neighbor  10.151.66.94
+     password clear C3lc@m_POI
+!
+vrf Maxis_OLNOS_SPS
+   neighbor  10.151.66.73
+     password clear C3lc@m_POI
+!

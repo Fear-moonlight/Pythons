@@ -1,0 +1,173 @@
+!
+!!!!!!!PE-SHOWCOMMAND!!!!!!!
+!
+!
+show bgp vrf EIR_SIGTRAN summary
+show bgp vrf EIR_SIGTRAN neighbor 10.124.202.25 routes
+show bgp vrf EIR_SIGTRAN neighbor 10.124.202.25 advertised-routes
+show bgp vrf EIR_SIGTRAN neighbor 10.124.202.25 advertised-count
+!
+show bgp vrf EUREKA_SIGTRAN summary
+show bgp vrf EUREKA_SIGTRAN neighbor 10.124.253.93 routes
+show bgp vrf EUREKA_SIGTRAN neighbor 10.124.253.93 advertised-routes
+show bgp vrf EUREKA_SIGTRAN neighbor 10.124.253.93 advertised-count
+!
+show bgp vrf EUREKA_SIP summary
+show bgp vrf EUREKA_SIP neighbor 10.124.253.101 routes
+show bgp vrf EUREKA_SIP neighbor 10.124.253.101 advertised-routes
+show bgp vrf EUREKA_SIP neighbor 10.124.253.101 advertised-count
+!
+show bgp vrf EUREKA_OM summary
+show bgp vrf EUREKA_OM neighbor 10.124.253.109 routes
+show bgp vrf EUREKA_OM neighbor 10.124.253.109 advertised-routes
+show bgp vrf EUREKA_OM neighbor 10.124.253.109 advertised-count
+!
+show bgp vrf SIGTRAN summary
+show bgp vrf SIGTRAN neighbor 10.221.210.74 routes
+show bgp vrf SIGTRAN neighbor 10.221.210.74 advertised-routes
+show bgp vrf SIGTRAN neighbor 10.221.210.74 advertised-count
+!
+show bgp vrf probe summary
+show bgp vrf probe neighbor 10.124.231.194 routes
+show bgp vrf probe neighbor 10.124.231.194 advertised-routes
+show bgp vrf probe neighbor 10.124.231.194 advertised-count
+!
+show bgp vrf probe_om summary
+show bgp vrf probe_om neighbor 10.124.231.198 routes
+show bgp vrf probe_om neighbor 10.124.231.198 advertised-routes
+show bgp vrf probe_om neighbor 10.124.231.198 advertised-count
+!
+show bgp vrf UMobile_OAM_MOCN summary
+show bgp vrf UMobile_OAM_MOCN neighbor 10.124.202.9 routes
+show bgp vrf UMobile_OAM_MOCN neighbor 10.124.202.9 advertised-routes
+show bgp vrf UMobile_OAM_MOCN neighbor 10.124.202.9 advertised-count
+!
+show bgp vrf NOC summary
+show bgp vrf NOC neighbor 10.124.202.45 routes
+show bgp vrf NOC neighbor 10.124.202.45 advertised-routes
+show bgp vrf NOC neighbor 10.124.202.45 advertised-count
+!
+show bgp vrf XOX_MVNO summary
+show bgp vrf XOX_MVNO neighbor 10.124.231.165 routes
+show bgp vrf XOX_MVNO neighbor 10.124.231.165 advertised-routes
+show bgp vrf XOX_MVNO neighbor 10.124.231.165 advertised-count
+!
+!!!!!!!CE-SHOWCOMMAND!!!!!!!
+!
+!
+show bgp vrf all EIR_SIGTRAN summary
+show bgp vrf all EIR_SIGTRAN neighbor 10.124.202.26 routes
+show bgp vrf all EIR_SIGTRAN neighbor 10.124.202.26 advertised-routes
+!
+show bgp vrf all EUREKA_SIGTRAN summary
+show bgp vrf all EUREKA_SIGTRAN neighbor 10.124.253.94 routes
+show bgp vrf all EUREKA_SIGTRAN neighbor 10.124.253.94 advertised-routes
+!
+show bgp vrf all EUREKA_SIP summary
+show bgp vrf all EUREKA_SIP neighbor 10.124.253.102 routes
+show bgp vrf all EUREKA_SIP neighbor 10.124.253.102 advertised-routes
+!
+show bgp vrf all EUREKA_OM summary
+show bgp vrf all EUREKA_OM neighbor 10.124.253.110 routes
+show bgp vrf all EUREKA_OM neighbor 10.124.253.110 advertised-routes
+!
+show bgp vrf all SIGTRAN summary
+show bgp vrf all SIGTRAN neighbor 10.221.210.73 routes
+show bgp vrf all SIGTRAN neighbor 10.221.210.73 advertised-routes
+!
+show bgp vrf all probe summary
+show bgp vrf all probe neighbor 10.124.231.193 routes
+show bgp vrf all probe neighbor 10.124.231.193 advertised-routes
+!
+show bgp vrf all probe_om summary
+show bgp vrf all probe_om neighbor 10.124.231.197 routes
+show bgp vrf all probe_om neighbor 10.124.231.197 advertised-routes
+!
+show bgp vrf all UMobile_OAM_MOCN summary
+show bgp vrf all UMobile_OAM_MOCN neighbor 10.124.202.10 routes
+show bgp vrf all UMobile_OAM_MOCN neighbor 10.124.202.10 advertised-routes
+!
+show bgp vrf all NOC summary
+show bgp vrf all NOC neighbor 10.124.202.46 routes
+show bgp vrf all NOC neighbor 10.124.202.46 advertised-routes
+!
+show bgp vrf all XOX_MVNO summary
+show bgp vrf all XOX_MVNO neighbor 10.124.231.166 routes
+show bgp vrf all XOX_MVNO neighbor 10.124.231.166 advertised-routes
+!
+!!!!!!!PE-CONFIGURATION!!!!!!!!
+!
+router bgp 65535
+vrf EIR_SIGTRAN
+   neighbor  10.124.202.25
+     password clear C3lc@m_CSW
+!
+vrf EUREKA_SIGTRAN
+   neighbor  10.124.253.93
+     password clear C3lc@m_CSW
+!
+vrf EUREKA_SIP
+   neighbor  10.124.253.101
+     password clear C3lc@m_CSW
+!
+vrf EUREKA_OM
+   neighbor  10.124.253.109
+     password clear C3lc@m_CSW
+!
+vrf SIGTRAN
+   neighbor  10.221.210.74
+     password clear C3lc@m_CSW
+!
+vrf probe
+   neighbor  10.124.231.194
+     password clear C3lc@m_CSW
+!
+vrf probe_om
+   neighbor  10.124.231.198
+     password clear C3lc@m_CSW
+!
+vrf UMobile_OAM_MOCN
+   neighbor  10.124.202.9
+     password clear C3lc@m_CSW
+!
+vrf NOC
+   neighbor  10.124.202.45
+     password clear C3lc@m_CSW
+!
+vrf XOX_MVNO
+   neighbor  10.124.231.165
+     password clear C3lc@m_CSW
+!
+!!!!!!!CE-CONFIGURATION!!!!!!!!
+!
+router bgp 65111
+address-family ipv4 vrf  EIR_SIGTRAN
+   neighbor  10.124.202.26 password 0 C3lc@m_CSW
+!
+address-family ipv4 vrf  EUREKA_SIGTRAN
+   neighbor  10.124.253.94 password 0 C3lc@m_CSW
+!
+address-family ipv4 vrf  EUREKA_SIP
+   neighbor  10.124.253.102 password 0 C3lc@m_CSW
+!
+address-family ipv4 vrf  EUREKA_OM
+   neighbor  10.124.253.110 password 0 C3lc@m_CSW
+!
+address-family ipv4 vrf  SIGTRAN
+   neighbor  10.221.210.73 password 0 C3lc@m_CSW
+!
+address-family ipv4 vrf  probe
+   neighbor  10.124.231.193 password 0 C3lc@m_CSW
+!
+address-family ipv4 vrf  probe_om
+   neighbor  10.124.231.197 password 0 C3lc@m_CSW
+!
+address-family ipv4 vrf  UMobile_OAM_MOCN
+   neighbor  10.124.202.10 password 0 C3lc@m_CSW
+!
+address-family ipv4 vrf  NOC
+   neighbor  10.124.202.46 password 0 C3lc@m_CSW
+!
+address-family ipv4 vrf  XOX_MVNO
+   neighbor  10.124.231.166 password 0 C3lc@m_CSW
+!
