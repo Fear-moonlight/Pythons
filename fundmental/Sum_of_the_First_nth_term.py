@@ -8,9 +8,18 @@
 
 #     You will only be given Natural Numbers as arguments.
 
-import ipaddress 
+n = 3
+list_s = []
+for i in range(0,n):
+    list_s.append(1/(3*i+1))
+T_sum = "{:.2f}".format(sum(list_s))
 
-host1 = ipaddress.IPv4Interface('10.156.237.66/31')
-for i in host1.network:
-    if i != host1.ip:
-        print(i)
+def series_sum(n):
+    list_s = []
+    for i in range(0,n):
+        list_s.append(1/(3*i+1))
+    return "{:.2f}".format(sum(list_s))
+
+# Codewar
+def series_sum(n):
+    return '{:.2f}'.format(sum(1.0/(3 * i + 1) for i in range(n)))

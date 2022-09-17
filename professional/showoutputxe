@@ -55,45 +55,45 @@ show bgp vrf XOX_MVNO neighbor 10.124.231.165 advertised-count
 !!!!!!!CE-SHOWCOMMAND!!!!!!!
 !
 !
-show bgp vrf all EIR_SIGTRAN summary
-show bgp vrf all EIR_SIGTRAN neighbor 10.124.202.26 routes
-show bgp vrf all EIR_SIGTRAN neighbor 10.124.202.26 advertised-routes
+show bgp vrf EIR_SIGTRAN all summary
+show bgp vrf EIR_SIGTRAN all neighbor 10.124.202.26 routes
+show bgp vrf EIR_SIGTRAN all neighbor 10.124.202.26 advertised-routes
 !
-show bgp vrf all EUREKA_SIGTRAN summary
-show bgp vrf all EUREKA_SIGTRAN neighbor 10.124.253.94 routes
-show bgp vrf all EUREKA_SIGTRAN neighbor 10.124.253.94 advertised-routes
+show bgp vrf EUREKA_SIGTRAN all summary
+show bgp vrf EUREKA_SIGTRAN all neighbor 10.124.253.94 routes
+show bgp vrf EUREKA_SIGTRAN all neighbor 10.124.253.94 advertised-routes
 !
-show bgp vrf all EUREKA_SIP summary
-show bgp vrf all EUREKA_SIP neighbor 10.124.253.102 routes
-show bgp vrf all EUREKA_SIP neighbor 10.124.253.102 advertised-routes
+show bgp vrf EUREKA_SIP all summary
+show bgp vrf EUREKA_SIP all neighbor 10.124.253.102 routes
+show bgp vrf EUREKA_SIP all neighbor 10.124.253.102 advertised-routes
 !
-show bgp vrf all EUREKA_OM summary
-show bgp vrf all EUREKA_OM neighbor 10.124.253.110 routes
-show bgp vrf all EUREKA_OM neighbor 10.124.253.110 advertised-routes
+show bgp vrf EUREKA_OM all summary
+show bgp vrf EUREKA_OM all neighbor 10.124.253.110 routes
+show bgp vrf EUREKA_OM all neighbor 10.124.253.110 advertised-routes
 !
-show bgp vrf all SIGTRAN summary
-show bgp vrf all SIGTRAN neighbor 10.221.210.73 routes
-show bgp vrf all SIGTRAN neighbor 10.221.210.73 advertised-routes
+show bgp vrf SIGTRAN all summary
+show bgp vrf SIGTRAN all neighbor 10.221.210.73 routes
+show bgp vrf SIGTRAN allneighbor 10.221.210.73 advertised-routes
 !
-show bgp vrf all probe summary
-show bgp vrf all probe neighbor 10.124.231.193 routes
-show bgp vrf all probe neighbor 10.124.231.193 advertised-routes
+show bgp vrf probe all summary
+show bgp vrf probe all neighbor 10.124.231.193 routes
+show bgp vrf probe all neighbor 10.124.231.193 advertised-routes
 !
-show bgp vrf all probe_om summary
-show bgp vrf all probe_om neighbor 10.124.231.197 routes
-show bgp vrf all probe_om neighbor 10.124.231.197 advertised-routes
+show bgp vrf probe_om all summary
+show bgp vrf probe_om all neighbor 10.124.231.197 routes
+show bgp vrf probe_om all neighbor 10.124.231.197 advertised-routes
 !
-show bgp vrf all UMobile_OAM_MOCN summary
-show bgp vrf all UMobile_OAM_MOCN neighbor 10.124.202.10 routes
-show bgp vrf all UMobile_OAM_MOCN neighbor 10.124.202.10 advertised-routes
+show bgp vrf UMobile_OAM_MOCN all summary
+show bgp vrf UMobile_OAM_MOCN all neighbor 10.124.202.10 routes
+show bgp vrf UMobile_OAM_MOCN all neighbor 10.124.202.10 advertised-routes
 !
-show bgp vrf all NOC summary
-show bgp vrf all NOC neighbor 10.124.202.46 routes
-show bgp vrf all NOC neighbor 10.124.202.46 advertised-routes
+show bgp vrf NOC all summary
+show bgp vrf NOC all neighbor 10.124.202.46 routes
+show bgp vrf NOC all neighbor 10.124.202.46 advertised-routes
 !
-show bgp vrf all XOX_MVNO summary
-show bgp vrf all XOX_MVNO neighbor 10.124.231.166 routes
-show bgp vrf all XOX_MVNO neighbor 10.124.231.166 advertised-routes
+show bgp vrf XOX_MVNO all summary
+show bgp vrf XOX_MVNO all neighbor 10.124.231.166 routes
+show bgp vrf XOX_MVNO all neighbor 10.124.231.166 advertised-routes
 !
 !!!!!!!PE-CONFIGURATION!!!!!!!!
 !

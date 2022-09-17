@@ -22,9 +22,9 @@ def showcommand_ce(efile,output):
     print("!")
     for i in data.index:
         print("!")
-        print("show bgp vrf all " + data['B(vrf)'][i] + " summary")
-        print("show bgp vrf all " + data['B(vrf)'][i] + " neighbor " + data['A(IP)'][i] + " routes")
-        print("show bgp vrf all " + data['B(vrf)'][i] + " neighbor " + data['A(IP)'][i] + " advertised-routes")
+        print("show bgp vrf " + data['B(vrf)'][i] + " all summary")
+        print("show bgp vrf " + data['B(vrf)'][i] + " all neighbor " + data['A(IP)'][i] + " routes")
+        print("show bgp vrf " + data['B(vrf)'][i] + " allneighbor " + data['A(IP)'][i] + " advertised-routes")
         
 def bgp_pe(efile,output):
     excel_data = pd.read_excel(efile)
