@@ -1,6 +1,6 @@
 import re 
 def validate_pin(pin):
-    s   
+    str_pin = str(pin)   
     print(str_pin)
     if re.search(r"^([0-9]{4}|[0-9]{6})$",str_pin) == None:
         print("False")

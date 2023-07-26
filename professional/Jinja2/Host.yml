@@ -1,0 +1,9 @@
+# Define list of hosts
+---
+host_list:
+  - name: RR1
+    vrf_cmd: "show running config | section vrf"
+    platform: iosxr
+  - name: PE1
+    vrf_cmd: "show running config vrf"
+    platform: iosxr

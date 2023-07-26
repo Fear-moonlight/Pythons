@@ -1,0 +1,39 @@
+!
+!!!!!!!WPJ_CORE!!!!!!!
+!
+!
+interface Ethernet9/9
+ description To KPG-N9K-ESW05 Eth1/47
+ medium p2p
+ channel-group 13 mode active
+ shutdown
+!
+interface Ethernet3/12 
+ description To KPG-N9K-ESW06 Eth1/48
+ medium p2p
+ channel-group 13 mode active
+ shutdown
+!
+interface Ethernet10/4 
+ description To KPG-N9K-ESW07 Eth1/49
+ medium p2p
+ channel-group 13 mode active
+ shutdown
+!
+interface Ethernet9/9
+ description To KPG-N9K-ESW08 Eth1/50
+ medium p2p
+ channel-group 13 mode active
+ shutdown
+!
+interface Ethernet3/12 
+ description To KPG-N9K-ESW09 Eth1/51
+ medium p2p
+ channel-group 13 mode active
+ shutdown
+!
+interface Ethernet10/4 
+ description To KPG-N9K-ESW10 Eth1/52
+ medium p2p
+ channel-group 13 mode active
+ shutdown

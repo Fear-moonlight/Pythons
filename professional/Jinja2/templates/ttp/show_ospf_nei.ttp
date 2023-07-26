@@ -1,0 +1,3 @@
+ Neighbor {{ router_id }}, interface address {{ int_add }}
+    In the area {{ area_id }} via interface {{ int_name }}
+    Neighbor priority is {{ ospf_pri }}, State is {{ ospf_state }}, {{ state_changes }} state changes

@@ -1,0 +1,2 @@
+{{ interface }} is {{ link_status }}, line protocol is {{ protocol_status }}
+  Internet address is {{IP_address}}

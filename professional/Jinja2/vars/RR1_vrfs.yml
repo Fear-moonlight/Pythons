@@ -1,0 +1,23 @@
+---
+vrfs:
+  - name: "POLICE"
+    description: "POLICE DEPT"
+    rd: "65000:1"
+    route_import:
+      - "65000:1"
+    route_export:
+      - "65000:1"
+  - name: "CHEMICAL"
+    description: "CHEMICAL DEPT"
+    rd: "65000:2"
+    route_import:
+      - "65000:2"
+    route_export:
+      - "65000:2"
+  - name: "CHEM_MGMT"
+    description: "CHEMICAL MANAGEMENT"
+    rd: "65000:3"
+    route_import:
+      - "65000:3"
+    route_export:
+      - "65000:3"
