@@ -1,0 +1,7 @@
+---
+ansible_ssh_pass: cisco
+ansible_user: cisco
+ansible_network_os: iosxr
+ansible_connection: network_cli
+
+interfaces: ["GigabitEthernet0/0/0/0", "GigabitEthernet0/0/0/1", "GigabitEthernet0/0/0/2", "GigabitEthernet0/0/0/3"]

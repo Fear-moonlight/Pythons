@@ -1,0 +1,78 @@
+---
+
+- name: Inital-configuration
+  hosts: all
+  connection: network_cli
+  gather_facts: no
+  tasks:
+    # - name: configure interface lo0
+    #   cisco.iosxr.iosxr_config:
+    #     lines:
+    #     - description this is {{ inventory_hostname }}
+    #     - ipv4 address 192.168.0.{{ Loopback_id }}/32
+    #     parents: interface lo0
+    # - name: configure CDP interface
+    #   cisco.iosxr.iosxr_config:
+    #     lines:
+    #     - no shut
+    #     - cdp
+    #     parents: interface {{ item }}
+    #   loop: ["GigabitEthernet0/0/0/0", "GigabitEthernet0/0/0/1", "GigabitEthernet0/0/0/2", "GigabitEthernet0/0/0/3"]
+    # - name: configure CDP global
+    #   cisco.iosxr.iosxr_config:
+    #     lines:
+    #     - cdp
+    # - name: remove the interface-description
+    #   cisco.iosxr.iosxr_config:
+    #     lines:
+    #       - no description
+    #     parents: interface {{ item }}
+    #   loop: ["GigabitEthernet0/0/0/0", "GigabitEthernet0/0/0/1", "GigabitEthernet0/0/0/2","GigabitEthernet0/0/0/3"]
+    # - name: "Run command and parse with ttp"
+    #   ansible.utils.cli_parse:
+    #     command: show cdp neighbors detail
+    #     parser:
+    #       name: ansible.utils.ttp
+    #     set_fact: facts
+    # - name: Print cdp detail to file
+    #   ansible.builtin.copy:
+    #     content: "{{ ansible_facts }}"
+    #     dest: "~/Documents/Personal Projects/Python/ansible/output/cdp_output/{{ inventory_hostname }}.txt"
+    # - name: Execute the python3 script
+    #   command: python3 "/Users/aliesmaeilicharkhab/Documents/Personal Projects/Python/ansible/scripts/var_creator.py"
+    #   register: script_output
+    # - name: inlcude_vars
+    #   include_vars:
+    #     dir: /Users/aliesmaeilicharkhab/Documents/Personal Projects/Python/ansible/host_vars  
+    # - name: configure the description
+    #   cisco.iosxr.iosxr_config:
+    #     lines:
+    #       - description To {{ item.value.1 }} interface {{ item.value.0 }}
+    #     parents: interface {{ item.key }}
+    #     replace: line
+    #   loop: "{{ my_dictionary | dict2items }}"
+    # - name: remove Ipv4 and ipv6 configuration
+    #   cisco.iosxr.iosxr_config:
+    #     lines:
+    #     - no ipv4 address
+    #     - no ipv6 address
+    #     parents: interface {{ item }}
+    #   loop: ["GigabitEthernet0/0/0/0", "GigabitEthernet0/0/0/1", "GigabitEthernet0/0/0/2", "GigabitEthernet0/0/0/3"]
+    # - name: configure ip address
+    #   cisco.iosxr.iosxr_config:
+    #     lines:
+    #     - ipv4 address 10.{{ (Loopback_id  | int) if (Loopback_id  | int) < (item.value.2 | int) else (item.value.2 | int) }}.{{ (Loopback_id  | int) if (Loopback_id  | int) > (item.value.2 | int) else (item.value.2 | int) }}.{{ Loopback_id }}/24
+    #     - ipv6 address 2001:10:{{ (Loopback_id  | int) if (Loopback_id  | int) < (item.value.2 | int) else (item.value.2 | int) }}:{{ (Loopback_id  | int) if (Loopback_id  | int) > (item.value.2 | int) else (item.value.2 | int) }}::{{ Loopback_id }}/64
+    #     parents: interface {{ item.key }}
+    #   loop: "{{ my_dictionary | dict2items }}"
+    - name: Configuring ospf router
+      cisco.iosxr.iosxr_config:
+        lines:
+        - router ospf 100 
+        - router ospf 100 router-id 192.168.0.{{ Loopback_id }}
+        - router ospf 100 mpls ldp auto-config
+        - router ospf 100 area 0
+        - router ospf 100 area 0 interface Loopback0 
+        - router ospf 100 area 0 interface Loopback0 passive enable
+        - router ospf 100 area 0 interface {{ item.key }} network point-to-point
+      loop: "{{ my_dictionary | dict2items }}"

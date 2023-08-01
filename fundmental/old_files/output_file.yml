@@ -1,0 +1,10 @@
+facts:
+- - - hint: GigabitEthernet0/0/0/0
+      pint: GigabitEthernet0/0/0/0
+      pname: PE1
+    - hint: GigabitEthernet0/0/0/0
+      pint: GigabitEthernet0/0/0/2
+      pname: PE3
+    - hint: GigabitEthernet0/0/0/0
+      pint: GigabitEthernet0/0/0/1
+      pname: PE2

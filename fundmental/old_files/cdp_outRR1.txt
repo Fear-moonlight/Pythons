@@ -1,0 +1,1 @@
+{"facts": [[[{"pint": "GigabitEthernet0/0/0/0", "hint": "GigabitEthernet0/0/0/0", "pname": "PE1"}, {"pint": "GigabitEthernet0/0/0/0", "hint": "GigabitEthernet0/0/0/2", "pname": "PE3"}, {"pint": "GigabitEthernet0/0/0/0", "hint": "GigabitEthernet0/0/0/1", "pname": "PE2"}]]]}

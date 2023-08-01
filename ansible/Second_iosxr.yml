@@ -1,0 +1,20 @@
+---
+
+- name: Gathering facts
+  hosts: RR1
+  connection: network_cli
+  gather_facts: no
+  tasks:
+    - name: configure interface settings
+      cisco.iosxr.iosxr_facts:
+        gather_subset: interfaces
+      register: iosxr_facts
+    # - name: View facts
+    #   debug:
+    #     var: ansible_net_interfaces['GigabitEthernet0/0/0/0']
+    # - name: View facts1
+    #   debug:
+    #     var: ansible_net_interfaces['GigabitEthernet0/0/0/1']
+    - name: View facts
+      debug:
+        var: iosxr_facts

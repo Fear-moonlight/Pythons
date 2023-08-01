@@ -1,0 +1,19 @@
+
+[RR]
+RR1 Loopback_id=1
+
+[PE]
+PE1 Loopback_id=2
+PE2 Loopback_id=3
+PE3 Loopback_id=4
+PE4 Loopback_id=5
+
+# [interfaces]
+# Lo0
+# Gi0/0/0/0
+# Gi0/0/0/1
+# Gi0/0/0/2
+# Gi0/0/0/3
+# Gi0/0/0/4
+
+

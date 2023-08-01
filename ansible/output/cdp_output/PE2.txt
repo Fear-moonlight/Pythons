@@ -1,0 +1,26 @@
+{
+    "facts": [
+        [
+            [
+                {
+                    "pint": "GigabitEthernet0/0/0/1",
+                    "hint": "GigabitEthernet0/0/0/0",
+                    "pname": "RR1",
+                    "ploopback_id": "1"
+                },
+                {
+                    "pint": "GigabitEthernet0/0/0/3",
+                    "hint": "GigabitEthernet0/0/0/3",
+                    "pname": "PE3",
+                    "ploopback_id": "4"
+                },
+                {
+                    "pint": "GigabitEthernet0/0/0/2",
+                    "hint": "GigabitEthernet0/0/0/2",
+                    "pname": "PE1",
+                    "ploopback_id": "2"
+                }
+            ]
+        ]
+    ]
+}

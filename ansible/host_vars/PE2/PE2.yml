@@ -1,0 +1,13 @@
+my_dictionary:
+  GigabitEthernet0/0/0/0:
+  - GigabitEthernet0/0/0/1
+  - RR1
+  - '1'
+  GigabitEthernet0/0/0/2:
+  - GigabitEthernet0/0/0/2
+  - PE1
+  - '2'
+  GigabitEthernet0/0/0/3:
+  - GigabitEthernet0/0/0/3
+  - PE3
+  - '4'

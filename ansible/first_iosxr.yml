@@ -1,0 +1,63 @@
+---
+- name: MAKE CONFIG CHANGES USING HOST_VARS AND GROUP_VARS
+  hosts: all
+  connection: network_cli
+  gather_facts: no
+  tasks:
+    # - name: configure interface settings
+    #   cisco.iosxr.iosxr_config:
+    #     lines:
+    #     - description test-again
+    #     parents: interface GigabitEthernet0/0/0/0
+    # - name: run show version on remote devices
+    #   cisco.iosxr.iosxr_command:
+    #     commands: show version
+        # register: command_output
+    # - name: Print output to file
+    #   ansible.builtin.copy:
+    #     content: "{{command_output.stdout}}"
+    #     dest: ~/Documents/Personal Projects/Python/ansible/output.txt
+    # - name: run show version and check to see if output contains iosxr
+    #   cisco.iosxr.iosxr_command:
+    #     commands: show version
+    #     wait_for: result[0] contains IOS-XR
+    # - name: multiple prompt, multiple answer (mandatory check for all prompts)
+    #   cisco.iosxr.iosxr_command:
+    #     commands:
+    #         - command: key config-key password-encryption
+    #           prompt:
+    #             - "Enter old key :"
+    #             - "Enter new key :"
+    #             - "Enter confirm key :"
+    #           answer:
+    #             - "test1234"
+    #             - "test12345"
+    #             - "test12345"
+    #           check_all: true
+    # - name: Create a list of variables
+    #   set_fact:
+    #     interfaces: {interface: ["lo0"]}
+    - name: run multiple commands and evaluate the output
+      cisco.iosxr.iosxr_command:
+        commands:
+        - show run int {{ item }}
+      loop: ['lo0', 'gi0/0/0/0']
+    #   loop: "{{ groups['interfaces'] }}"
+      # loop: 
+      #   - lo0
+    #   register: command_output
+    # - name: Print output to file
+    #   ansible.builtin.copy:
+    #     content: "{{command_output.stdout_lines}}"
+    #     dest: ~/Documents/Personal Projects/Python/ansible/output.txt
+    # - name: 'Output to json'
+    #   local_action:
+    #     module: lineinfile
+    #     dest: output.json
+    #     line: '{{ command_output.stdout_lines }}'
+    #     create: yes
+    # - name: Register loop output as a variable
+    #   ansible.builtin.debug:
+    #     msg: installing {{ item }}
+    #   loop: ['lo0', 'lo2' ]
+    # #   register: echo 

@@ -1,0 +1,8 @@
+---
+
+- name: configure interface description
+  cisco.iosxr.iosxr_config:
+    lines:
+      - description To {{ item.value.1 }} interface {{ item.value.0 }}
+    parents: interface {{ item.key }}
+  loop: "{{ my_dictionary | dict2items }}"

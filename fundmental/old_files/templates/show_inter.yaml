@@ -1,0 +1,17 @@
+---
+- example: 'Device ID: PE1'
+  getval: 'Device ID: (?P<pname>\S+)'
+  result:
+    "{{ pname }}":
+      name: "{{ pname }}"
+  shared: true
+- example: 'Interface: GigabitEthernet0/0/0/0'
+  getval: 'Interface: (?P<pint>\S+)'
+  result:
+    "{{ pname }}":
+      pint: "{{ pint }}"
+# - example: 'Port ID (outgoing port): GigabitEthernet0/0/0/0'
+#   getval: 'rt\):\s(?P<hint>\S+)'
+#   result:
+#     "{{ pname }}":
+#       hint: "{{ hint }}"
