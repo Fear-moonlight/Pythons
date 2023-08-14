@@ -61,3 +61,9 @@
     #     msg: installing {{ item }}
     #   loop: ['lo0', 'lo2' ]
     # #   register: echo 
+- name: Compare and Choose the Smaller Value
+  vars:
+    value1: 10
+    value2: 15
+  debug:
+    msg: "The smaller value is {{ value1 if value1 < value2 else value2 }}"

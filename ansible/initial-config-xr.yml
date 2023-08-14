@@ -1,16 +1,17 @@
 ---
 
 - name: Inital-configuration
-  hosts: all
+  hosts: RR1
   connection: network_cli
   gather_facts: no
   tasks:
-    # - name: configure interface lo0
-    #   cisco.iosxr.iosxr_config:
-    #     lines:
-    #     - description this is {{ inventory_hostname }}
-    #     - ipv4 address 192.168.0.{{ Loopback_id }}/32
-    #     parents: interface lo0
+    - name: configure interface lo0
+      cisco.iosxr.iosxr_config:
+        lines:
+        - description this is {{ inventory_hostname }}
+        - ipv4 address 192.168.0.{{ Loopback_id }}/32
+        - ipv6 address 2001:db08:192:168:0::{{ Loopback_id }}/64
+        parents: interface lo0
     # - name: configure CDP interface
     #   cisco.iosxr.iosxr_config:
     #     lines:
@@ -65,14 +66,53 @@
     #     - ipv6 address 2001:10:{{ (Loopback_id  | int) if (Loopback_id  | int) < (item.value.2 | int) else (item.value.2 | int) }}:{{ (Loopback_id  | int) if (Loopback_id  | int) > (item.value.2 | int) else (item.value.2 | int) }}::{{ Loopback_id }}/64
     #     parents: interface {{ item.key }}
     #   loop: "{{ my_dictionary | dict2items }}"
-    - name: Configuring ospf router
-      cisco.iosxr.iosxr_config:
-        lines:
-        - router ospf 100 
-        - router ospf 100 router-id 192.168.0.{{ Loopback_id }}
-        - router ospf 100 mpls ldp auto-config
-        - router ospf 100 area 0
-        - router ospf 100 area 0 interface Loopback0 
-        - router ospf 100 area 0 interface Loopback0 passive enable
-        - router ospf 100 area 0 interface {{ item.key }} network point-to-point
-      loop: "{{ my_dictionary | dict2items }}"
+    # - name: Configuring ospf router
+    #   cisco.iosxr.iosxr_config:
+    #     lines:
+    #     - router ospf 100 
+    #     - router ospf 100 router-id 192.168.0.{{ Loopback_id }}
+    #     - router ospf 100 mpls ldp auto-config
+    #     - router ospf 100 area 0
+    #     - router ospf 100 area 0 interface Loopback0 
+    #     - router ospf 100 area 0 interface Loopback0 passive enable
+    #     - router ospf 100 area 0 interface {{ item.key }} network point-to-point
+    #   loop: "{{ my_dictionary | dict2items }}"
+    # - name: Configuring router bgp RR
+    #   cisco.iosxr.iosxr_config:
+    #     lines:
+    #     - router bgp 100
+    #     - router bgp 100 bgp router-id 192.168.0.{{ Loopback_id }}
+    #     - router bgp 100 address ipv4 unicast
+    #     - router bgp 100 address vpnv4 unicast
+    #     - router bgp 100 neighbor-group RR 
+    #     - router bgp 100 neighbor-group RR remote-as 100
+    #     - router bgp 100 neighbor-group RR update-source lo0
+    #     - router bgp 100 neighbor-group RR address-family ipv4 unicast
+    #     - router bgp 100 neighbor-group RR address-family vpnv4 unicast
+    #     - router bgp 100 neighbor 192.168.0.1
+    #     - router bgp 100 neighbor 192.168.0.1 use neighbor-group RR
+    #   loop: "{{ my_dictionary | dict2items }}"
+    #   when: "'PE' in group_names"
+    # - name: Configuring router bgp PE
+    #   cisco.iosxr.iosxr_config:
+    #     lines:
+    #     - router bgp 100
+    #     - router bgp 100 bgp router-id 192.168.0.{{ Loopback_id }}
+    #     - router bgp 100 address ipv4 unicast
+    #     - router bgp 100 address vpnv4 unicast
+    #     - router bgp 100 neighbor-group RRC 
+    #     - router bgp 100 neighbor-group RRC remote-as 100
+    #     - router bgp 100 neighbor-group RRC update-source lo0
+    #     - router bgp 100 neighbor-group RRC address-family ipv4 unicast
+    #     - router bgp 100 neighbor-group RRC address-family ipv4 unicast route-reflector-client
+    #     - router bgp 100 neighbor-group RRC address-family vpnv4 unicast
+    #     - router bgp 100 neighbor-group RRC address-family vpnv4 unicast route-reflector-client
+    #     - router bgp 100 neighbor 192.168.0.{{ item.value.2 }}
+    #     - router bgp 100 neighbor 192.168.0.{{ item.value.2 }} use neighbor-group RRC
+    #   loop: "{{ my_dictionary | dict2items }}"
+    #   when:  ('RR' in group_names and item.value.2 != '1')
+    # - name: Configuring segment Routing 
+    #   cisco.iosxr.iosxr_config:
+    #     lines:
+    #     - segment-routing srv6
+    #     - segment-routing srv6 locators locator myLoc1 prefix 2001:db8:0:{{ Loopback_id }}::/64``
