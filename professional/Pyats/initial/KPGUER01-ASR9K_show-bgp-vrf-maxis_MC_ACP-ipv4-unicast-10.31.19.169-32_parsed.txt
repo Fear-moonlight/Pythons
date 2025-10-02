@@ -1,0 +1,81 @@
+{
+  "_exclude": [],
+  "vrf": {
+    "maxis_MC_ACP": {
+      "address_family": {
+        "ipv4_unicast": {
+          "last_modified": "Jun  1 04:08:19.516 for 5d06h",
+          "paths": {
+            "best_path": 1,
+            "path": {
+              "1": {
+                "advertised_peer_ce": "10.151.81.221",
+                "as_path": {
+                  "Local": {
+                    "bgp_peer_neighbor_ip": {
+                      "10.159.255.189": {
+                        "bgp_peer_neighbor_ip": "10.159.255.189",
+                        "cluster_list": "10.159.255.51, 10.159.255.43, 10.159.255.189",
+                        "extended_community": "RT:65104:63722 RT:65535:60900 RT:65535:60902 RT:65535:60904 RT:65535:66361",
+                        "group_best": "group-best",
+                        "import_candidate": "import-candidate",
+                        "imported": "imported",
+                        "local_path_id": 1,
+                        "localpref": 100,
+                        "metric": 31,
+                        "origin_codes": "?",
+                        "origin_metric": 0,
+                        "origin_neighbors_ip": "10.159.255.51",
+                        "origin_router_id": "10.244.244.154",
+                        "originator": "10.244.244.154",
+                        "received_label": "373679",
+                        "received_path_id": 0,
+                        "source_afi": "VPNv4 Unicast",
+                        "source_rd": "10.244.244.154:5",
+                        "source_vrf": "default",
+                        "status_codes": "*>i",
+                        "version": 1024072307
+                      }
+                    }
+                  }
+                }
+              },
+              "2": {
+                "as_path": {
+                  "Local": {
+                    "bgp_peer_neighbor_ip": {
+                      "10.159.255.189": {
+                        "bgp_peer_neighbor_ip": "10.159.255.189",
+                        "cluster_list": "10.159.255.51, 10.159.255.43, 10.159.255.189",
+                        "extended_community": "RT:65104:63722 RT:65535:60900 RT:65535:60902 RT:65535:60904 RT:65535:66361",
+                        "imported": "imported",
+                        "local_path_id": 0,
+                        "localpref": 100,
+                        "metric": 31,
+                        "origin_codes": "?",
+                        "origin_metric": 0,
+                        "origin_neighbors_ip": "10.159.255.51",
+                        "origin_router_id": "10.244.244.155",
+                        "originator": "10.244.244.155",
+                        "received_label": "196078",
+                        "received_path_id": 0,
+                        "source_afi": "VPNv4 Unicast",
+                        "source_rd": "10.244.244.155:5",
+                        "source_vrf": "default",
+                        "status_codes": "*i",
+                        "version": 0
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "total_available_paths": 2
+          },
+          "prefix": "10.31.19.169/32",
+          "rd": "10.159.255.5:106"
+        }
+      }
+    }
+  }
+}

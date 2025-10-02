@@ -1,0 +1,29 @@
++++ KRTUER01-ASR9K with via 'cli': executing command 'show vrf E_Iu_CP detail' +++
+show vrf E_Iu_CP detail
+Fri Jun  7 14:19:24.738 MYT
+
+VRF E_Iu_CP; RD 10.159.255.98:24; VPN ID not set
+VRF mode: Regular
+Description not set
+Interfaces:
+  TenGigE0/4/0/24.301
+Address family IPV4 Unicast
+  Import VPN route-target communities:
+    RT:65535:60280
+    RT:65535:60282
+    RT:65535:60284
+    RT:65535:60286
+    RT:65535:63161
+  Export VPN route-target communities:
+    RT:65535:60280
+    RT:65535:60281
+    RT:65535:60283
+    RT:65535:60285
+  No import route policy
+  No export route policy
+Address family IPV6 Unicast
+  No import VPN route-target communities
+  No export VPN route-target communities
+  No import route policy
+  No export route policy
+RP/0/RSP0/CPU0:KRTUER01-ASR9K#

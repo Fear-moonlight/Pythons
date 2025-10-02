@@ -1,10 +1,8 @@
 ---
-ansible_pass: cisco
+ansible_ssh_pass: cisco
 ansible_user: cisco
 ansible_network_os: iosxr
 ansible_connection: network_cli
-# ansible_network_cli_ssh_type: paramiko
-ansible_ssh_common_args: '-oHostKeyAlgorithms=+ssh-dss KexAlgorithms=diffie-hellman-group1-sha1'
-# host_key_checking: false
+
 
 interfaces: ["GigabitEthernet0/0/0/0", "GigabitEthernet0/0/0/1", "GigabitEthernet0/0/0/2", "GigabitEthernet0/0/0/3"]

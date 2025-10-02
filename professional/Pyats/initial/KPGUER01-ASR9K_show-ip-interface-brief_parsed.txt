@@ -1,0 +1,2921 @@
+{
+  "_exclude": [],
+  "interface": {
+    "BVI100": {
+      "interface_status": "Up",
+      "ip_address": "10.159.235.1",
+      "protocol_status": "Up",
+      "vrf_name": "dcfw_prod"
+    },
+    "BVI200": {
+      "interface_status": "Up",
+      "ip_address": "10.159.235.5",
+      "protocol_status": "Up",
+      "vrf_name": "vcore"
+    },
+    "BVI300": {
+      "interface_status": "Up",
+      "ip_address": "10.159.235.9",
+      "protocol_status": "Up",
+      "vrf_name": "vmware"
+    },
+    "Bundle-Ether1": {
+      "interface_status": "Down",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether1.1049": {
+      "interface_status": "Down",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether1.18": {
+      "interface_status": "Down",
+      "ip_address": "10.200.100.2",
+      "protocol_status": "Down",
+      "vrf_name": "ENT_WIFI_5GShowcase"
+    },
+    "Bundle-Ether1.3000": {
+      "interface_status": "Down",
+      "ip_address": "10.159.201.2",
+      "protocol_status": "Down",
+      "vrf_name": "VPN_OM"
+    },
+    "Bundle-Ether1.3001": {
+      "interface_status": "Shutdown",
+      "ip_address": "10.200.68.238",
+      "protocol_status": "Down",
+      "vrf_name": "SD"
+    },
+    "Bundle-Ether10": {
+      "interface_status": "Shutdown",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether10.1402": {
+      "interface_status": "Shutdown",
+      "ip_address": "10.221.32.1",
+      "protocol_status": "Down",
+      "vrf_name": "SIGTRAN"
+    },
+    "Bundle-Ether10.1404": {
+      "interface_status": "Shutdown",
+      "ip_address": "10.221.35.66",
+      "protocol_status": "Down",
+      "vrf_name": "IP_OM"
+    },
+    "Bundle-Ether10.1405": {
+      "interface_status": "Shutdown",
+      "ip_address": "10.221.35.2",
+      "protocol_status": "Down",
+      "vrf_name": "MSS_OM"
+    },
+    "Bundle-Ether10.1406": {
+      "interface_status": "Shutdown",
+      "ip_address": "10.221.32.65",
+      "protocol_status": "Down",
+      "vrf_name": "SIGTRAN"
+    },
+    "Bundle-Ether10.1408": {
+      "interface_status": "Shutdown",
+      "ip_address": "10.221.34.1",
+      "protocol_status": "Down",
+      "vrf_name": "CN"
+    },
+    "Bundle-Ether10.1410": {
+      "interface_status": "Shutdown",
+      "ip_address": "10.221.33.3",
+      "protocol_status": "Down",
+      "vrf_name": "SIGTRAN"
+    },
+    "Bundle-Ether10.1420": {
+      "interface_status": "Shutdown",
+      "ip_address": "10.222.129.1",
+      "protocol_status": "Down",
+      "vrf_name": "SIGTRAN"
+    },
+    "Bundle-Ether10.1421": {
+      "interface_status": "Shutdown",
+      "ip_address": "10.221.32.221",
+      "protocol_status": "Down",
+      "vrf_name": "SIGTRAN"
+    },
+    "Bundle-Ether10.1424": {
+      "interface_status": "Shutdown",
+      "ip_address": "10.230.129.1",
+      "protocol_status": "Down",
+      "vrf_name": "SIGTRAN"
+    },
+    "Bundle-Ether10.1440": {
+      "interface_status": "Shutdown",
+      "ip_address": "10.221.204.11",
+      "protocol_status": "Down",
+      "vrf_name": "SIGTRAN"
+    },
+    "Bundle-Ether10.1451": {
+      "interface_status": "Shutdown",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether10.1502": {
+      "interface_status": "Shutdown",
+      "ip_address": "10.221.33.125",
+      "protocol_status": "Down",
+      "vrf_name": "SIGTRAN"
+    },
+    "Bundle-Ether10.901": {
+      "interface_status": "Shutdown",
+      "ip_address": "10.221.33.177",
+      "protocol_status": "Down",
+      "vrf_name": "ISC_UP"
+    },
+    "Bundle-Ether102": {
+      "interface_status": "Up",
+      "ip_address": "10.244.44.98",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether102.1": {
+      "interface_status": "Up",
+      "ip_address": "10.244.44.12",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether102.2": {
+      "interface_status": "Up",
+      "ip_address": "10.159.251.45",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether130": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether130.100": {
+      "interface_status": "Up",
+      "ip_address": "10.151.81.98",
+      "protocol_status": "Up",
+      "vrf_name": "UNIP_OM"
+    },
+    "Bundle-Ether130.1010": {
+      "interface_status": "Up",
+      "ip_address": "10.159.204.145",
+      "protocol_status": "Up",
+      "vrf_name": "ENT_Government"
+    },
+    "Bundle-Ether130.110": {
+      "interface_status": "Shutdown",
+      "ip_address": "10.151.81.46",
+      "protocol_status": "Down",
+      "vrf_name": "A_CP_Digi"
+    },
+    "Bundle-Ether130.1101": {
+      "interface_status": "Up",
+      "ip_address": "10.151.81.6",
+      "protocol_status": "Up",
+      "vrf_name": "Digi_IuCS_CP"
+    },
+    "Bundle-Ether130.1102": {
+      "interface_status": "Up",
+      "ip_address": "10.151.81.206",
+      "protocol_status": "Up",
+      "vrf_name": "maxis_IuCS_CP"
+    },
+    "Bundle-Ether130.1103": {
+      "interface_status": "Up",
+      "ip_address": "10.151.81.214",
+      "protocol_status": "Up",
+      "vrf_name": "maxis_IuCS"
+    },
+    "Bundle-Ether130.1104": {
+      "interface_status": "Up",
+      "ip_address": "10.151.81.222",
+      "protocol_status": "Up",
+      "vrf_name": "maxis_A_CP"
+    },
+    "Bundle-Ether130.1105": {
+      "interface_status": "Up",
+      "ip_address": "10.151.81.230",
+      "protocol_status": "Up",
+      "vrf_name": "maxis_A"
+    },
+    "Bundle-Ether130.1106": {
+      "interface_status": "Up",
+      "ip_address": "10.151.81.238",
+      "protocol_status": "Up",
+      "vrf_name": "maxis_IuPS_CP"
+    },
+    "Bundle-Ether130.1107": {
+      "interface_status": "Up",
+      "ip_address": "10.151.81.246",
+      "protocol_status": "Up",
+      "vrf_name": "maxis_IuPS"
+    },
+    "Bundle-Ether130.1108": {
+      "interface_status": "Up",
+      "ip_address": "10.151.81.2",
+      "protocol_status": "Up",
+      "vrf_name": "maxis_Gb"
+    },
+    "Bundle-Ether130.1109": {
+      "interface_status": "Up",
+      "ip_address": "10.151.66.106",
+      "protocol_status": "Up",
+      "vrf_name": "maxis_S1C_MOCN"
+    },
+    "Bundle-Ether130.1110": {
+      "interface_status": "Up",
+      "ip_address": "10.151.66.110",
+      "protocol_status": "Up",
+      "vrf_name": "maxis_S1U_MOCN"
+    },
+    "Bundle-Ether130.1111": {
+      "interface_status": "Up",
+      "ip_address": "10.151.66.114",
+      "protocol_status": "Up",
+      "vrf_name": "maxis_OAM_MOCN"
+    },
+    "Bundle-Ether130.1112": {
+      "interface_status": "Up",
+      "ip_address": "10.151.81.222",
+      "protocol_status": "Up",
+      "vrf_name": "maxis_MC_ACP"
+    },
+    "Bundle-Ether130.1113": {
+      "interface_status": "Up",
+      "ip_address": "10.151.81.230",
+      "protocol_status": "Up",
+      "vrf_name": "maxis_MC_AUP"
+    },
+    "Bundle-Ether130.1114": {
+      "interface_status": "Up",
+      "ip_address": "10.151.81.2",
+      "protocol_status": "Up",
+      "vrf_name": "maxis_MC_Gb"
+    },
+    "Bundle-Ether130.120": {
+      "interface_status": "Shutdown",
+      "ip_address": "10.151.81.34",
+      "protocol_status": "Down",
+      "vrf_name": "A_Digi"
+    },
+    "Bundle-Ether130.1250": {
+      "interface_status": "Up",
+      "ip_address": "10.159.235.33",
+      "protocol_status": "Up",
+      "vrf_name": "UMobile_IuCS_CP"
+    },
+    "Bundle-Ether130.1251": {
+      "interface_status": "Up",
+      "ip_address": "10.159.235.37",
+      "protocol_status": "Up",
+      "vrf_name": "UMobile_IuCS_UP"
+    },
+    "Bundle-Ether130.1252": {
+      "interface_status": "Up",
+      "ip_address": "10.159.235.41",
+      "protocol_status": "Up",
+      "vrf_name": "UMobile_IuPS_CP"
+    },
+    "Bundle-Ether130.1253": {
+      "interface_status": "Up",
+      "ip_address": "10.159.235.45",
+      "protocol_status": "Up",
+      "vrf_name": "UMobile_IuPS_UP"
+    },
+    "Bundle-Ether130.1254": {
+      "interface_status": "Up",
+      "ip_address": "10.159.235.57",
+      "protocol_status": "Up",
+      "vrf_name": "UMobile_OAM_MOCN"
+    },
+    "Bundle-Ether130.1255": {
+      "interface_status": "Up",
+      "ip_address": "10.159.235.49",
+      "protocol_status": "Up",
+      "vrf_name": "UMobile_S1C_MOCN"
+    },
+    "Bundle-Ether130.1256": {
+      "interface_status": "Up",
+      "ip_address": "10.159.235.53",
+      "protocol_status": "Up",
+      "vrf_name": "UMobile_S1U_MOCN"
+    },
+    "Bundle-Ether130.1270": {
+      "interface_status": "Up",
+      "ip_address": "10.215.249.238",
+      "protocol_status": "Up",
+      "vrf_name": "VOBB_TMY"
+    },
+    "Bundle-Ether130.1271": {
+      "interface_status": "Up",
+      "ip_address": "10.215.249.234",
+      "protocol_status": "Up",
+      "vrf_name": "HSI_TMY"
+    },
+    "Bundle-Ether130.1275": {
+      "interface_status": "Up",
+      "ip_address": "10.159.235.61",
+      "protocol_status": "Up",
+      "vrf_name": "Umobile_Gb_MOCN"
+    },
+    "Bundle-Ether130.130": {
+      "interface_status": "Up",
+      "ip_address": "10.151.81.62",
+      "protocol_status": "Up",
+      "vrf_name": "Digi_IuCS_UP"
+    },
+    "Bundle-Ether130.1301": {
+      "interface_status": "Up",
+      "ip_address": "10.151.66.42",
+      "protocol_status": "Up",
+      "vrf_name": "Digi_OLNOS_SIP"
+    },
+    "Bundle-Ether130.1302": {
+      "interface_status": "Up",
+      "ip_address": "10.151.66.50",
+      "protocol_status": "Up",
+      "vrf_name": "Digi_BGF_Media"
+    },
+    "Bundle-Ether130.1303": {
+      "interface_status": "Up",
+      "ip_address": "10.151.66.21",
+      "protocol_status": "Up",
+      "vrf_name": "Digi_OLNOS_SPS"
+    },
+    "Bundle-Ether130.140": {
+      "interface_status": "Up",
+      "ip_address": "10.151.81.66",
+      "protocol_status": "Up",
+      "vrf_name": "Digi_IuPS_CP"
+    },
+    "Bundle-Ether130.150": {
+      "interface_status": "Up",
+      "ip_address": "10.151.81.70",
+      "protocol_status": "Up",
+      "vrf_name": "Digi_IuPS_UP"
+    },
+    "Bundle-Ether130.1501": {
+      "interface_status": "Up",
+      "ip_address": "10.151.66.42",
+      "protocol_status": "Up",
+      "vrf_name": "Umobile_GnGp_DR"
+    },
+    "Bundle-Ether130.1541": {
+      "interface_status": "Up",
+      "ip_address": "10.151.82.17",
+      "protocol_status": "Up",
+      "vrf_name": "Maxis_OLNOS_SPS"
+    },
+    "Bundle-Ether130.160": {
+      "interface_status": "Shutdown",
+      "ip_address": "10.151.81.42",
+      "protocol_status": "Down",
+      "vrf_name": "GB_Digi"
+    },
+    "Bundle-Ether130.170": {
+      "interface_status": "Up",
+      "ip_address": "10.151.81.50",
+      "protocol_status": "Up",
+      "vrf_name": "P1_IuPS_CP"
+    },
+    "Bundle-Ether130.1701": {
+      "interface_status": "Up",
+      "ip_address": "10.151.81.173",
+      "protocol_status": "Up",
+      "vrf_name": "Redtone_OLNOS_SIP"
+    },
+    "Bundle-Ether130.1702": {
+      "interface_status": "Up",
+      "ip_address": "10.151.81.181",
+      "protocol_status": "Up",
+      "vrf_name": "Redtone_OLNOS_Media"
+    },
+    "Bundle-Ether130.180": {
+      "interface_status": "Up",
+      "ip_address": "10.151.81.54",
+      "protocol_status": "Up",
+      "vrf_name": "P1_IuPS_UP"
+    },
+    "Bundle-Ether130.190": {
+      "interface_status": "Up",
+      "ip_address": "10.151.81.58",
+      "protocol_status": "Up",
+      "vrf_name": "P1_Sigtran"
+    },
+    "Bundle-Ether130.1901": {
+      "interface_status": "Up",
+      "ip_address": "10.151.66.146",
+      "protocol_status": "Up",
+      "vrf_name": "Webe_SBC_SIP"
+    },
+    "Bundle-Ether130.1902": {
+      "interface_status": "Up",
+      "ip_address": "10.151.66.138",
+      "protocol_status": "Up",
+      "vrf_name": "Webe_SBC_Media"
+    },
+    "Bundle-Ether130.200": {
+      "interface_status": "Up",
+      "ip_address": "10.151.81.38",
+      "protocol_status": "Up",
+      "vrf_name": "P1_Sip"
+    },
+    "Bundle-Ether130.201": {
+      "interface_status": "Up",
+      "ip_address": "10.200.135.61",
+      "protocol_status": "Up",
+      "vrf_name": "ENT_TNB_MFFA"
+    },
+    "Bundle-Ether130.210": {
+      "interface_status": "Shutdown",
+      "ip_address": "10.151.81.74",
+      "protocol_status": "Down",
+      "vrf_name": "Webe_LTE_MOCN"
+    },
+    "Bundle-Ether130.2101": {
+      "interface_status": "Up",
+      "ip_address": "10.151.66.153",
+      "protocol_status": "Up",
+      "vrf_name": "Redtone_Gb"
+    },
+    "Bundle-Ether130.2102": {
+      "interface_status": "Up",
+      "ip_address": "10.151.66.201",
+      "protocol_status": "Up",
+      "vrf_name": "Redtone_A_UP"
+    },
+    "Bundle-Ether130.2103": {
+      "interface_status": "Up",
+      "ip_address": "10.151.66.205",
+      "protocol_status": "Up",
+      "vrf_name": "Redtone_A_CP"
+    },
+    "Bundle-Ether130.2104": {
+      "interface_status": "Up",
+      "ip_address": "10.151.66.165",
+      "protocol_status": "Up",
+      "vrf_name": "Redtone_IuPS_UP"
+    },
+    "Bundle-Ether130.2105": {
+      "interface_status": "Up",
+      "ip_address": "10.151.66.169",
+      "protocol_status": "Up",
+      "vrf_name": "Redtone_IuPS_CP"
+    },
+    "Bundle-Ether130.2106": {
+      "interface_status": "Up",
+      "ip_address": "10.151.66.157",
+      "protocol_status": "Up",
+      "vrf_name": "Redtone_IuCS_UP"
+    },
+    "Bundle-Ether130.2107": {
+      "interface_status": "Up",
+      "ip_address": "10.151.66.161",
+      "protocol_status": "Up",
+      "vrf_name": "Redtone_IuCS_CP"
+    },
+    "Bundle-Ether130.2108": {
+      "interface_status": "Up",
+      "ip_address": "10.151.82.225",
+      "protocol_status": "Up",
+      "vrf_name": "Redtone_MC_S1"
+    },
+    "Bundle-Ether130.220": {
+      "interface_status": "Up",
+      "ip_address": "10.151.81.82",
+      "protocol_status": "Up",
+      "vrf_name": "OM_FMC"
+    },
+    "Bundle-Ether130.230": {
+      "interface_status": "Up",
+      "ip_address": "10.151.81.78",
+      "protocol_status": "Up",
+      "vrf_name": "SD"
+    },
+    "Bundle-Ether130.2301": {
+      "interface_status": "Up",
+      "ip_address": "10.151.66.210",
+      "protocol_status": "Up",
+      "vrf_name": "TM_SBC_SIP"
+    },
+    "Bundle-Ether130.2302": {
+      "interface_status": "Up",
+      "ip_address": "10.151.66.214",
+      "protocol_status": "Up",
+      "vrf_name": "TM_SBC_Media"
+    },
+    "Bundle-Ether130.2303": {
+      "interface_status": "Up",
+      "ip_address": "10.151.82.102",
+      "protocol_status": "Up",
+      "vrf_name": "TM_SPS"
+    },
+    "Bundle-Ether130.2310": {
+      "interface_status": "Up",
+      "ip_address": "10.151.82.74",
+      "protocol_status": "Up",
+      "vrf_name": "YTL_SBC_SIP"
+    },
+    "Bundle-Ether130.2311": {
+      "interface_status": "Up",
+      "ip_address": "10.151.82.82",
+      "protocol_status": "Up",
+      "vrf_name": "YTL_SBC_Media"
+    },
+    "Bundle-Ether130.2312": {
+      "interface_status": "Up",
+      "ip_address": "10.151.82.90",
+      "protocol_status": "Up",
+      "vrf_name": "YTL_SPS"
+    },
+    "Bundle-Ether130.240": {
+      "interface_status": "Up",
+      "ip_address": "10.151.81.90",
+      "protocol_status": "Up",
+      "vrf_name": "POI_tunetalk_bidd"
+    },
+    "Bundle-Ether130.250": {
+      "interface_status": "Up",
+      "ip_address": "10.151.81.94",
+      "protocol_status": "Up",
+      "vrf_name": "POI_umobile_interconnect"
+    },
+    "Bundle-Ether130.2501": {
+      "interface_status": "Up",
+      "ip_address": "10.151.66.129",
+      "protocol_status": "Up",
+      "vrf_name": "ENT_MTRADE_AUDIOCODE"
+    },
+    "Bundle-Ether130.2505": {
+      "interface_status": "Up",
+      "ip_address": "10.151.66.82",
+      "protocol_status": "Up",
+      "vrf_name": "TIME_SBC_SIP_Media"
+    },
+    "Bundle-Ether130.255": {
+      "interface_status": "Up",
+      "ip_address": "10.151.81.86",
+      "protocol_status": "Up",
+      "vrf_name": "POI_P1_Media"
+    },
+    "Bundle-Ether130.2601": {
+      "interface_status": "Up",
+      "ip_address": "10.151.82.186",
+      "protocol_status": "Up",
+      "vrf_name": "Digi_MC_ACP"
+    },
+    "Bundle-Ether130.2603": {
+      "interface_status": "Up",
+      "ip_address": "10.151.82.194",
+      "protocol_status": "Up",
+      "vrf_name": "Digi_MC_AUP"
+    },
+    "Bundle-Ether130.2605": {
+      "interface_status": "Up",
+      "ip_address": "10.151.82.202",
+      "protocol_status": "Up",
+      "vrf_name": "Digi_MC_Gb"
+    },
+    "Bundle-Ether130.2607": {
+      "interface_status": "Shutdown",
+      "ip_address": "10.151.82.210",
+      "protocol_status": "Down",
+      "vrf_name": "Digi_MC_S1"
+    },
+    "Bundle-Ether150": {
+      "interface_status": "Up",
+      "ip_address": "10.240.165.200",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether155": {
+      "interface_status": "Up",
+      "ip_address": "10.159.251.38",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether2": {
+      "interface_status": "Shutdown",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether2.60": {
+      "interface_status": "Shutdown",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether2.61": {
+      "interface_status": "Shutdown",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether2.62": {
+      "interface_status": "Shutdown",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether2.63": {
+      "interface_status": "Shutdown",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether2.64": {
+      "interface_status": "Shutdown",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether2.65": {
+      "interface_status": "Shutdown",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether2.66": {
+      "interface_status": "Shutdown",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether200": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether200.200": {
+      "interface_status": "Up",
+      "ip_address": "20.192.0.49",
+      "protocol_status": "Up",
+      "vrf_name": "CD_ABIS"
+    },
+    "Bundle-Ether200.201": {
+      "interface_status": "Up",
+      "ip_address": "20.192.0.51",
+      "protocol_status": "Up",
+      "vrf_name": "CD_X2"
+    },
+    "Bundle-Ether200.202": {
+      "interface_status": "Up",
+      "ip_address": "20.192.0.53",
+      "protocol_status": "Up",
+      "vrf_name": "CD_S1C"
+    },
+    "Bundle-Ether200.203": {
+      "interface_status": "Up",
+      "ip_address": "20.192.0.55",
+      "protocol_status": "Up",
+      "vrf_name": "CD_S1U"
+    },
+    "Bundle-Ether200.204": {
+      "interface_status": "Up",
+      "ip_address": "20.192.0.57",
+      "protocol_status": "Up",
+      "vrf_name": "CD_OM"
+    },
+    "Bundle-Ether200.205": {
+      "interface_status": "Up",
+      "ip_address": "20.192.0.59",
+      "protocol_status": "Up",
+      "vrf_name": "CD_A_CP"
+    },
+    "Bundle-Ether200.206": {
+      "interface_status": "Up",
+      "ip_address": "20.192.0.61",
+      "protocol_status": "Up",
+      "vrf_name": "CD_A_UP"
+    },
+    "Bundle-Ether200.207": {
+      "interface_status": "Up",
+      "ip_address": "20.192.0.63",
+      "protocol_status": "Up",
+      "vrf_name": "CD_GB"
+    },
+    "Bundle-Ether200.210": {
+      "interface_status": "Up",
+      "ip_address": "20.193.0.129",
+      "protocol_status": "Up",
+      "vrf_name": "CD_SFW_om"
+    },
+    "Bundle-Ether200.211": {
+      "interface_status": "Up",
+      "ip_address": "20.193.0.131",
+      "protocol_status": "Up",
+      "vrf_name": "CD_SFW_prod"
+    },
+    "Bundle-Ether200.212": {
+      "interface_status": "Up",
+      "ip_address": "20.193.0.133",
+      "protocol_status": "Up",
+      "vrf_name": "CD_OSS"
+    },
+    "Bundle-Ether200.214": {
+      "interface_status": "Up",
+      "ip_address": "20.193.0.137",
+      "protocol_status": "Up",
+      "vrf_name": "CD_GTP"
+    },
+    "Bundle-Ether200.215": {
+      "interface_status": "Up",
+      "ip_address": "20.193.0.139",
+      "protocol_status": "Up",
+      "vrf_name": "CD_GI_IMS"
+    },
+    "Bundle-Ether200.216": {
+      "interface_status": "Up",
+      "ip_address": "20.193.0.141",
+      "protocol_status": "Up",
+      "vrf_name": "CD_GI_MMS"
+    },
+    "Bundle-Ether200.217": {
+      "interface_status": "Up",
+      "ip_address": "20.193.0.143",
+      "protocol_status": "Up",
+      "vrf_name": "CD_SIG"
+    },
+    "Bundle-Ether200.218": {
+      "interface_status": "Up",
+      "ip_address": "20.193.0.145",
+      "protocol_status": "Up",
+      "vrf_name": "CD_TR069"
+    },
+    "Bundle-Ether200.219": {
+      "interface_status": "Up",
+      "ip_address": "20.193.0.147",
+      "protocol_status": "Up",
+      "vrf_name": "CD_PCF_SMS"
+    },
+    "Bundle-Ether200.220": {
+      "interface_status": "Up",
+      "ip_address": "20.193.0.149",
+      "protocol_status": "Up",
+      "vrf_name": "CD_BOSS"
+    },
+    "Bundle-Ether200.521": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether200.523": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether21": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether21.210": {
+      "interface_status": "Up",
+      "ip_address": "10.151.81.74",
+      "protocol_status": "Up",
+      "vrf_name": "Webe_LTE_MOCN"
+    },
+    "Bundle-Ether23": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether23.100": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether23.200": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether23.300": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether25": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether25.100": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether25.200": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether25.300": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether3": {
+      "interface_status": "Shutdown",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether3.100": {
+      "interface_status": "Shutdown",
+      "ip_address": "10.159.247.181",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether3.102": {
+      "interface_status": "Shutdown",
+      "ip_address": "10.151.81.17",
+      "protocol_status": "Down",
+      "vrf_name": "CN"
+    },
+    "Bundle-Ether3.103": {
+      "interface_status": "Shutdown",
+      "ip_address": "10.151.81.25",
+      "protocol_status": "Down",
+      "vrf_name": "Gb"
+    },
+    "Bundle-Ether3.130": {
+      "interface_status": "Shutdown",
+      "ip_address": "10.156.236.1",
+      "protocol_status": "Down",
+      "vrf_name": "Gn"
+    },
+    "Bundle-Ether3.131": {
+      "interface_status": "Shutdown",
+      "ip_address": "10.159.245.129",
+      "protocol_status": "Down",
+      "vrf_name": "H_IuoIP"
+    },
+    "Bundle-Ether3.1400": {
+      "interface_status": "Shutdown",
+      "ip_address": "10.156.236.5",
+      "protocol_status": "Down",
+      "vrf_name": "SIGTRAN"
+    },
+    "Bundle-Ether3.1440": {
+      "interface_status": "Shutdown",
+      "ip_address": "10.151.62.106",
+      "protocol_status": "Down",
+      "vrf_name": "SBC_SIP_EXT"
+    },
+    "Bundle-Ether3.1441": {
+      "interface_status": "Shutdown",
+      "ip_address": "10.151.62.114",
+      "protocol_status": "Down",
+      "vrf_name": "BGF_MEDIA_EXT"
+    },
+    "Bundle-Ether3.1442": {
+      "interface_status": "Shutdown",
+      "ip_address": "10.151.62.165",
+      "protocol_status": "Down",
+      "vrf_name": "ALTEL_BGF_MEDIA"
+    },
+    "Bundle-Ether3.1444": {
+      "interface_status": "Shutdown",
+      "ip_address": "10.124.231.177",
+      "protocol_status": "Down",
+      "vrf_name": "SD"
+    },
+    "Bundle-Ether3.1445": {
+      "interface_status": "Shutdown",
+      "ip_address": "10.156.237.114",
+      "protocol_status": "Down",
+      "vrf_name": "P1_Media"
+    },
+    "Bundle-Ether3.1446": {
+      "interface_status": "Shutdown",
+      "ip_address": "10.151.66.2",
+      "protocol_status": "Down",
+      "vrf_name": "Digi_BGF_Media"
+    },
+    "Bundle-Ether3.1447": {
+      "interface_status": "Shutdown",
+      "ip_address": "10.151.66.14",
+      "protocol_status": "Down",
+      "vrf_name": "LTE"
+    },
+    "Bundle-Ether3.1448": {
+      "interface_status": "Shutdown",
+      "ip_address": "10.122.253.154",
+      "protocol_status": "Down",
+      "vrf_name": "LTE_S6a"
+    },
+    "Bundle-Ether3.401": {
+      "interface_status": "Shutdown",
+      "ip_address": "10.151.62.174",
+      "protocol_status": "Down",
+      "vrf_name": "umobile_interconnect"
+    },
+    "Bundle-Ether3.402": {
+      "interface_status": "Shutdown",
+      "ip_address": "10.151.62.218",
+      "protocol_status": "Down",
+      "vrf_name": "tunetalk_bidd"
+    },
+    "Bundle-Ether3.500": {
+      "interface_status": "Shutdown",
+      "ip_address": "10.151.62.181",
+      "protocol_status": "Down",
+      "vrf_name": "OM_FMC"
+    },
+    "Bundle-Ether3.601": {
+      "interface_status": "Shutdown",
+      "ip_address": "10.151.62.138",
+      "protocol_status": "Down",
+      "vrf_name": "LTE_S6a"
+    },
+    "Bundle-Ether303": {
+      "interface_status": "Down",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether303.3": {
+      "interface_status": "Down",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether4": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether4.1201": {
+      "interface_status": "Up",
+      "ip_address": "10.124.6.221",
+      "protocol_status": "Up",
+      "vrf_name": "UNIP_OM"
+    },
+    "Bundle-Ether4.1203": {
+      "interface_status": "Up",
+      "ip_address": "10.124.6.1",
+      "protocol_status": "Up",
+      "vrf_name": "SD"
+    },
+    "Bundle-Ether4.1205": {
+      "interface_status": "Up",
+      "ip_address": "10.221.210.1",
+      "protocol_status": "Up",
+      "vrf_name": "SIGTRAN"
+    },
+    "Bundle-Ether4.1207": {
+      "interface_status": "Up",
+      "ip_address": "10.221.210.13",
+      "protocol_status": "Up",
+      "vrf_name": "MSS_OM"
+    },
+    "Bundle-Ether4.1209": {
+      "interface_status": "Up",
+      "ip_address": "10.221.210.25",
+      "protocol_status": "Up",
+      "vrf_name": "CN"
+    },
+    "Bundle-Ether4.1211": {
+      "interface_status": "Up",
+      "ip_address": "10.221.210.37",
+      "protocol_status": "Up",
+      "vrf_name": "ISC_UP"
+    },
+    "Bundle-Ether4.1213": {
+      "interface_status": "Up",
+      "ip_address": "10.124.6.13",
+      "protocol_status": "Up",
+      "vrf_name": "EIR_SIGTRAN"
+    },
+    "Bundle-Ether4.1215": {
+      "interface_status": "Up",
+      "ip_address": "10.124.6.25",
+      "protocol_status": "Up",
+      "vrf_name": "EUREKA_SIGTRAN"
+    },
+    "Bundle-Ether4.1217": {
+      "interface_status": "Up",
+      "ip_address": "10.124.6.37",
+      "protocol_status": "Up",
+      "vrf_name": "EUREKA_SIP"
+    },
+    "Bundle-Ether4.1219": {
+      "interface_status": "Up",
+      "ip_address": "10.124.6.49",
+      "protocol_status": "Up",
+      "vrf_name": "EUREKA_OM"
+    },
+    "Bundle-Ether4.1221": {
+      "interface_status": "Up",
+      "ip_address": "10.124.6.61",
+      "protocol_status": "Up",
+      "vrf_name": "WTTx_LTM"
+    },
+    "Bundle-Ether4.1223": {
+      "interface_status": "Up",
+      "ip_address": "10.124.6.73",
+      "protocol_status": "Up",
+      "vrf_name": "NGM"
+    },
+    "Bundle-Ether4.1225": {
+      "interface_status": "Up",
+      "ip_address": "10.124.6.85",
+      "protocol_status": "Up",
+      "vrf_name": "MPS_SIGTRAN"
+    },
+    "Bundle-Ether4.1227": {
+      "interface_status": "Up",
+      "ip_address": "10.124.6.97",
+      "protocol_status": "Up",
+      "vrf_name": "MPS_EXT"
+    },
+    "Bundle-Ether4.1229": {
+      "interface_status": "Up",
+      "ip_address": "10.124.6.109",
+      "protocol_status": "Up",
+      "vrf_name": "NOC"
+    },
+    "Bundle-Ether4.1231": {
+      "interface_status": "Up",
+      "ip_address": "10.124.6.121",
+      "protocol_status": "Up",
+      "vrf_name": "XOX_MVNO"
+    },
+    "Bundle-Ether4.1233": {
+      "interface_status": "Up",
+      "ip_address": "10.124.6.133",
+      "protocol_status": "Up",
+      "vrf_name": "MPS_OM"
+    },
+    "Bundle-Ether4.1235": {
+      "interface_status": "Up",
+      "ip_address": "10.124.6.145",
+      "protocol_status": "Up",
+      "vrf_name": "RED_ONE_MVNO"
+    },
+    "Bundle-Ether4.1237": {
+      "interface_status": "Up",
+      "ip_address": "10.221.210.49",
+      "protocol_status": "Up",
+      "vrf_name": "probe"
+    },
+    "Bundle-Ether4.1239": {
+      "interface_status": "Up",
+      "ip_address": "10.221.210.61",
+      "protocol_status": "Up",
+      "vrf_name": "probe_om"
+    },
+    "Bundle-Ether4.2000": {
+      "interface_status": "Up",
+      "ip_address": "10.159.235.82",
+      "protocol_status": "Up",
+      "vrf_name": "CD_SFW_om"
+    },
+    "Bundle-Ether4.2100": {
+      "interface_status": "Up",
+      "ip_address": "10.159.235.94",
+      "protocol_status": "Up",
+      "vrf_name": "CD_SFW_prod"
+    },
+    "Bundle-Ether4.2200": {
+      "interface_status": "Up",
+      "ip_address": "10.159.235.86",
+      "protocol_status": "Up",
+      "vrf_name": "CD_SFW_sigtran"
+    },
+    "Bundle-Ether4.2300": {
+      "interface_status": "Up",
+      "ip_address": "10.159.235.90",
+      "protocol_status": "Up",
+      "vrf_name": "CD_SFW_diameter"
+    },
+    "Bundle-Ether41": {
+      "interface_status": "Up",
+      "ip_address": "10.240.163.0",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether42": {
+      "interface_status": "Up",
+      "ip_address": "10.240.163.8",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether43": {
+      "interface_status": "Up",
+      "ip_address": "10.240.163.16",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether44": {
+      "interface_status": "Up",
+      "ip_address": "10.240.163.24",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether45": {
+      "interface_status": "Up",
+      "ip_address": "10.240.163.32",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether46": {
+      "interface_status": "Up",
+      "ip_address": "10.240.163.40",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether47": {
+      "interface_status": "Up",
+      "ip_address": "10.244.44.15",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether48": {
+      "interface_status": "Up",
+      "ip_address": "10.240.163.48",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether49": {
+      "interface_status": "Up",
+      "ip_address": "10.240.163.56",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether5": {
+      "interface_status": "Down",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether5.130": {
+      "interface_status": "Down",
+      "ip_address": "10.241.250.34",
+      "protocol_status": "Down",
+      "vrf_name": "EAP_VRF"
+    },
+    "Bundle-Ether5.131": {
+      "interface_status": "Down",
+      "ip_address": "10.241.250.38",
+      "protocol_status": "Down",
+      "vrf_name": "P_EAP_VRF"
+    },
+    "Bundle-Ether5.132": {
+      "interface_status": "Down",
+      "ip_address": "10.241.250.42",
+      "protocol_status": "Down",
+      "vrf_name": "Premier_VRF"
+    },
+    "Bundle-Ether5.133": {
+      "interface_status": "Down",
+      "ip_address": "10.241.250.46",
+      "protocol_status": "Down",
+      "vrf_name": "CelcomWiFi_VRF"
+    },
+    "Bundle-Ether5.134": {
+      "interface_status": "Down",
+      "ip_address": "10.241.250.50",
+      "protocol_status": "Down",
+      "vrf_name": "BC_EAP_VRF"
+    },
+    "Bundle-Ether5.135": {
+      "interface_status": "Down",
+      "ip_address": "10.241.250.54",
+      "protocol_status": "Down",
+      "vrf_name": "P_BC_VRF"
+    },
+    "Bundle-Ether5.136": {
+      "interface_status": "Down",
+      "ip_address": "10.241.250.58",
+      "protocol_status": "Down",
+      "vrf_name": "OLNO_M_VRF"
+    },
+    "Bundle-Ether5.137": {
+      "interface_status": "Down",
+      "ip_address": "10.241.250.62",
+      "protocol_status": "Down",
+      "vrf_name": "OLNO_M_EAP_VRF"
+    },
+    "Bundle-Ether5.138": {
+      "interface_status": "Down",
+      "ip_address": "10.241.250.202",
+      "protocol_status": "Down",
+      "vrf_name": "GENERIC_SSID_VRF"
+    },
+    "Bundle-Ether5.185": {
+      "interface_status": "Down",
+      "ip_address": "10.200.52.198",
+      "protocol_status": "Down",
+      "vrf_name": "ENT_GLB_FORWAY"
+    },
+    "Bundle-Ether5.200": {
+      "interface_status": "Down",
+      "ip_address": "10.152.30.1",
+      "protocol_status": "Down",
+      "vrf_name": "IuH_Intranet"
+    },
+    "Bundle-Ether5.209": {
+      "interface_status": "Down",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether5.300": {
+      "interface_status": "Down",
+      "ip_address": "10.242.2.82",
+      "protocol_status": "Down",
+      "vrf_name": "SAT_OM"
+    },
+    "Bundle-Ether5.339": {
+      "interface_status": "Shutdown",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "ENT_CPE_OM"
+    },
+    "Bundle-Ether5.342": {
+      "interface_status": "Down",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether5.348": {
+      "interface_status": "Down",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether5.400": {
+      "interface_status": "Down",
+      "ip_address": "10.159.208.246",
+      "protocol_status": "Down",
+      "vrf_name": "ENT_Internet_HUB"
+    },
+    "Bundle-Ether5.402": {
+      "interface_status": "Down",
+      "ip_address": "10.159.213.6",
+      "protocol_status": "Down",
+      "vrf_name": "ENT_CPE_OM"
+    },
+    "Bundle-Ether5.403": {
+      "interface_status": "Down",
+      "ip_address": "10.159.213.2",
+      "protocol_status": "Down",
+      "vrf_name": "ENT_SIME_DARBY"
+    },
+    "Bundle-Ether5.405": {
+      "interface_status": "Down",
+      "ip_address": "10.159.213.10",
+      "protocol_status": "Down",
+      "vrf_name": "ENT_EDOTCOJ"
+    },
+    "Bundle-Ether5.411": {
+      "interface_status": "Down",
+      "ip_address": "10.159.213.18",
+      "protocol_status": "Down",
+      "vrf_name": "ENT_AUMKAR"
+    },
+    "Bundle-Ether5.413": {
+      "interface_status": "Down",
+      "ip_address": "10.159.208.102",
+      "protocol_status": "Down",
+      "vrf_name": "ENT_Government"
+    },
+    "Bundle-Ether5.414": {
+      "interface_status": "Down",
+      "ip_address": "10.159.213.22",
+      "protocol_status": "Down",
+      "vrf_name": "ENT_VOBB"
+    },
+    "Bundle-Ether5.415": {
+      "interface_status": "Down",
+      "ip_address": "10.200.145.29",
+      "protocol_status": "Down",
+      "vrf_name": "ENT_MTRADE_AUDIOCODE"
+    },
+    "Bundle-Ether5.417": {
+      "interface_status": "Down",
+      "ip_address": "10.159.213.26",
+      "protocol_status": "Down",
+      "vrf_name": "ENT_LLM_LLB"
+    },
+    "Bundle-Ether5.419": {
+      "interface_status": "Down",
+      "ip_address": "10.200.136.189",
+      "protocol_status": "Down",
+      "vrf_name": "ENT_LLM_MEX"
+    },
+    "Bundle-Ether5.49": {
+      "interface_status": "Down",
+      "ip_address": "10.200.66.89",
+      "protocol_status": "Down",
+      "vrf_name": "ENT_CPE_OM"
+    },
+    "Bundle-Ether5.500": {
+      "interface_status": "Down",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether5.51": {
+      "interface_status": "Down",
+      "ip_address": "10.241.14.1",
+      "protocol_status": "Down",
+      "vrf_name": "CP_wifi"
+    },
+    "Bundle-Ether5.53": {
+      "interface_status": "Down",
+      "ip_address": "10.241.14.9",
+      "protocol_status": "Down",
+      "vrf_name": "UP_wifi"
+    },
+    "Bundle-Ether5.61": {
+      "interface_status": "Down",
+      "ip_address": "10.244.146.194",
+      "protocol_status": "Down",
+      "vrf_name": "CME_NMS"
+    },
+    "Bundle-Ether5.71": {
+      "interface_status": "Shutdown",
+      "ip_address": "10.157.16.2",
+      "protocol_status": "Down",
+      "vrf_name": "LTE_CP"
+    },
+    "Bundle-Ether5.73": {
+      "interface_status": "Shutdown",
+      "ip_address": "10.157.16.6",
+      "protocol_status": "Down",
+      "vrf_name": "LTE"
+    },
+    "Bundle-Ether5.75": {
+      "interface_status": "Down",
+      "ip_address": "10.157.16.10",
+      "protocol_status": "Down",
+      "vrf_name": "N_OM"
+    },
+    "Bundle-Ether5.77": {
+      "interface_status": "Down",
+      "ip_address": "10.157.16.14",
+      "protocol_status": "Down",
+      "vrf_name": "H_OM"
+    },
+    "Bundle-Ether5.79": {
+      "interface_status": "Down",
+      "ip_address": "10.157.16.18",
+      "protocol_status": "Down",
+      "vrf_name": "E_OM"
+    },
+    "Bundle-Ether5.85": {
+      "interface_status": "Down",
+      "ip_address": "10.157.16.30",
+      "protocol_status": "Down",
+      "vrf_name": "N_OM"
+    },
+    "Bundle-Ether5.87": {
+      "interface_status": "Down",
+      "ip_address": "10.157.16.34",
+      "protocol_status": "Down",
+      "vrf_name": "H_OM"
+    },
+    "Bundle-Ether5.89": {
+      "interface_status": "Down",
+      "ip_address": "10.157.16.38",
+      "protocol_status": "Down",
+      "vrf_name": "E_OM"
+    },
+    "Bundle-Ether5.98": {
+      "interface_status": "Down",
+      "ip_address": "10.127.11.5",
+      "protocol_status": "Down",
+      "vrf_name": "TX_NMS"
+    },
+    "Bundle-Ether5.998": {
+      "interface_status": "Down",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether50": {
+      "interface_status": "Up",
+      "ip_address": "10.240.163.64",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether51": {
+      "interface_status": "Up",
+      "ip_address": "10.240.163.72",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether52": {
+      "interface_status": "Up",
+      "ip_address": "10.240.163.80",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether53": {
+      "interface_status": "Up",
+      "ip_address": "10.240.163.88",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether54": {
+      "interface_status": "Up",
+      "ip_address": "10.240.163.96",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether55": {
+      "interface_status": "Up",
+      "ip_address": "10.240.163.104",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether56": {
+      "interface_status": "Up",
+      "ip_address": "10.240.163.112",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether57": {
+      "interface_status": "Up",
+      "ip_address": "10.240.163.124",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether58": {
+      "interface_status": "Up",
+      "ip_address": "10.240.163.134",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether59": {
+      "interface_status": "Up",
+      "ip_address": "10.240.163.142",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether6": {
+      "interface_status": "Shutdown",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether6.71": {
+      "interface_status": "Shutdown",
+      "ip_address": "10.157.16.2",
+      "protocol_status": "Down",
+      "vrf_name": "LTE_CP"
+    },
+    "Bundle-Ether6.73": {
+      "interface_status": "Shutdown",
+      "ip_address": "10.157.16.6",
+      "protocol_status": "Down",
+      "vrf_name": "LTE"
+    },
+    "Bundle-Ether6.75": {
+      "interface_status": "Shutdown",
+      "ip_address": "10.157.16.10",
+      "protocol_status": "Down",
+      "vrf_name": "N_OM"
+    },
+    "Bundle-Ether6.77": {
+      "interface_status": "Shutdown",
+      "ip_address": "10.157.16.14",
+      "protocol_status": "Down",
+      "vrf_name": "H_OM"
+    },
+    "Bundle-Ether6.79": {
+      "interface_status": "Shutdown",
+      "ip_address": "10.157.16.18",
+      "protocol_status": "Down",
+      "vrf_name": "E_OM"
+    },
+    "Bundle-Ether6.85": {
+      "interface_status": "Shutdown",
+      "ip_address": "10.157.16.30",
+      "protocol_status": "Down",
+      "vrf_name": "N_OM"
+    },
+    "Bundle-Ether6.87": {
+      "interface_status": "Shutdown",
+      "ip_address": "10.157.16.34",
+      "protocol_status": "Down",
+      "vrf_name": "H_OM"
+    },
+    "Bundle-Ether6.89": {
+      "interface_status": "Shutdown",
+      "ip_address": "10.157.16.38",
+      "protocol_status": "Down",
+      "vrf_name": "E_OM"
+    },
+    "Bundle-Ether60": {
+      "interface_status": "Up",
+      "ip_address": "10.240.163.148",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether61": {
+      "interface_status": "Up",
+      "ip_address": "10.240.163.156",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether62": {
+      "interface_status": "Up",
+      "ip_address": "10.240.163.172",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether63": {
+      "interface_status": "Up",
+      "ip_address": "10.240.163.184",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether64": {
+      "interface_status": "Up",
+      "ip_address": "10.240.163.192",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether65": {
+      "interface_status": "Down",
+      "ip_address": "10.240.163.200",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether66": {
+      "interface_status": "Up",
+      "ip_address": "10.240.163.208",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether67": {
+      "interface_status": "Up",
+      "ip_address": "10.240.163.216",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether68": {
+      "interface_status": "Up",
+      "ip_address": "10.240.163.224",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether69": {
+      "interface_status": "Up",
+      "ip_address": "10.240.163.232",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether7": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether7.1460": {
+      "interface_status": "Up",
+      "ip_address": "10.221.204.129",
+      "protocol_status": "Up",
+      "vrf_name": "CN"
+    },
+    "Bundle-Ether7.1461": {
+      "interface_status": "Up",
+      "ip_address": "10.221.204.133",
+      "protocol_status": "Up",
+      "vrf_name": "SIGTRAN"
+    },
+    "Bundle-Ether7.1462": {
+      "interface_status": "Up",
+      "ip_address": "10.221.204.137",
+      "protocol_status": "Up",
+      "vrf_name": "SBC_SIP_EXT"
+    },
+    "Bundle-Ether7.1463": {
+      "interface_status": "Up",
+      "ip_address": "10.221.204.141",
+      "protocol_status": "Up",
+      "vrf_name": "MSS_OM"
+    },
+    "Bundle-Ether7.1464": {
+      "interface_status": "Up",
+      "ip_address": "10.221.204.145",
+      "protocol_status": "Up",
+      "vrf_name": "ALTEL_BGF_MEDIA"
+    },
+    "Bundle-Ether7.1465": {
+      "interface_status": "Up",
+      "ip_address": "10.221.204.149",
+      "protocol_status": "Up",
+      "vrf_name": "P1_Media"
+    },
+    "Bundle-Ether7.1466": {
+      "interface_status": "Up",
+      "ip_address": "10.221.204.209",
+      "protocol_status": "Up",
+      "vrf_name": "YTL_SBC_Media"
+    },
+    "Bundle-Ether7.1467": {
+      "interface_status": "Up",
+      "ip_address": "10.221.204.89",
+      "protocol_status": "Up",
+      "vrf_name": "Digi_BGF_Media"
+    },
+    "Bundle-Ether7.1468": {
+      "interface_status": "Up",
+      "ip_address": "10.221.129.101",
+      "protocol_status": "Up",
+      "vrf_name": "Redtone_OLNOS_Media"
+    },
+    "Bundle-Ether7.1469": {
+      "interface_status": "Up",
+      "ip_address": "10.221.204.153",
+      "protocol_status": "Up",
+      "vrf_name": "umobile_interconnect"
+    },
+    "Bundle-Ether7.1470": {
+      "interface_status": "Up",
+      "ip_address": "10.221.204.157",
+      "protocol_status": "Up",
+      "vrf_name": "MSS_OM"
+    },
+    "Bundle-Ether7.1471": {
+      "interface_status": "Up",
+      "ip_address": "10.221.204.193",
+      "protocol_status": "Up",
+      "vrf_name": "TIME_SBC_SIP_Media"
+    },
+    "Bundle-Ether7.1472": {
+      "interface_status": "Up",
+      "ip_address": "10.221.204.201",
+      "protocol_status": "Up",
+      "vrf_name": "TM_SBC_Media"
+    },
+    "Bundle-Ether7.1473": {
+      "interface_status": "Up",
+      "ip_address": "10.221.204.217",
+      "protocol_status": "Up",
+      "vrf_name": "Webe_SBC_Media"
+    },
+    "Bundle-Ether70": {
+      "interface_status": "Up",
+      "ip_address": "10.240.163.240",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether71": {
+      "interface_status": "Up",
+      "ip_address": "10.240.163.248",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether72": {
+      "interface_status": "Up",
+      "ip_address": "10.240.164.0",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether73": {
+      "interface_status": "Up",
+      "ip_address": "10.240.164.8",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether74": {
+      "interface_status": "Up",
+      "ip_address": "10.240.164.16",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether75": {
+      "interface_status": "Up",
+      "ip_address": "10.240.164.32",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether76": {
+      "interface_status": "Up",
+      "ip_address": "10.240.164.40",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether77": {
+      "interface_status": "Up",
+      "ip_address": "10.240.164.48",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether78": {
+      "interface_status": "Up",
+      "ip_address": "10.240.164.56",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether79": {
+      "interface_status": "Up",
+      "ip_address": "10.240.164.64",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether8": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether8.302": {
+      "interface_status": "Up",
+      "ip_address": "10.151.59.9",
+      "protocol_status": "Up",
+      "vrf_name": "HSI_TM"
+    },
+    "Bundle-Ether8.303": {
+      "interface_status": "Up",
+      "ip_address": "10.151.59.17",
+      "protocol_status": "Up",
+      "vrf_name": "HSI_Jalenas"
+    },
+    "Bundle-Ether8.304": {
+      "interface_status": "Up",
+      "ip_address": "10.151.59.25",
+      "protocol_status": "Up",
+      "vrf_name": "HSI_TSERBA"
+    },
+    "Bundle-Ether8.305": {
+      "interface_status": "Up",
+      "ip_address": "10.151.59.33",
+      "protocol_status": "Up",
+      "vrf_name": "HSI_FIBERHOME"
+    },
+    "Bundle-Ether8.309": {
+      "interface_status": "Up",
+      "ip_address": "10.151.59.65",
+      "protocol_status": "Up",
+      "vrf_name": "SVCS_FW"
+    },
+    "Bundle-Ether8.328": {
+      "interface_status": "Shutdown",
+      "ip_address": "10.151.59.241",
+      "protocol_status": "Down",
+      "vrf_name": "WTTx_LTM"
+    },
+    "Bundle-Ether8.329": {
+      "interface_status": "Up",
+      "ip_address": "10.215.240.105",
+      "protocol_status": "Up",
+      "vrf_name": "HSI_FMC_CP"
+    },
+    "Bundle-Ether8.350": {
+      "interface_status": "Up",
+      "ip_address": "10.159.235.249",
+      "protocol_status": "Up",
+      "vrf_name": "CD_GI_MMS"
+    },
+    "Bundle-Ether8.380": {
+      "interface_status": "Up",
+      "ip_address": "10.215.240.210",
+      "protocol_status": "Up",
+      "vrf_name": "OM_FMC"
+    },
+    "Bundle-Ether8.381": {
+      "interface_status": "Up",
+      "ip_address": "10.151.56.50",
+      "protocol_status": "Up",
+      "vrf_name": "SD"
+    },
+    "Bundle-Ether8.382": {
+      "interface_status": "Up",
+      "ip_address": "10.151.56.66",
+      "protocol_status": "Up",
+      "vrf_name": "SD"
+    },
+    "Bundle-Ether8.390": {
+      "interface_status": "Up",
+      "ip_address": "10.151.56.2",
+      "protocol_status": "Up",
+      "vrf_name": "SD"
+    },
+    "Bundle-Ether8.500": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether80": {
+      "interface_status": "Up",
+      "ip_address": "10.240.164.74",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether81": {
+      "interface_status": "Up",
+      "ip_address": "10.240.164.80",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether82": {
+      "interface_status": "Up",
+      "ip_address": "10.240.164.88",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether83": {
+      "interface_status": "Up",
+      "ip_address": "10.240.164.104",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether84": {
+      "interface_status": "Up",
+      "ip_address": "10.240.164.112",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether85": {
+      "interface_status": "Up",
+      "ip_address": "10.240.217.108",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether90": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether90.56": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether90.57": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether90.58": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Bundle-Ether90.62": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "GigabitEthernet0/0/0/20": {
+      "interface_status": "Up",
+      "ip_address": "10.158.33.1",
+      "protocol_status": "Up",
+      "vrf_name": "PTP"
+    },
+    "GigabitEthernet0/0/0/21": {
+      "interface_status": "Up",
+      "ip_address": "10.158.33.25",
+      "protocol_status": "Up",
+      "vrf_name": "PTP"
+    },
+    "GigabitEthernet0/0/0/22": {
+      "interface_status": "Up",
+      "ip_address": "10.158.33.109",
+      "protocol_status": "Up",
+      "vrf_name": "PTP"
+    },
+    "GigabitEthernet0/0/0/23": {
+      "interface_status": "Shutdown",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "GigabitEthernet0/0/0/44": {
+      "interface_status": "Shutdown",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "GigabitEthernet0/0/0/45": {
+      "interface_status": "Shutdown",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "GigabitEthernet0/0/0/46": {
+      "interface_status": "Shutdown",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "GigabitEthernet0/0/0/47": {
+      "interface_status": "Shutdown",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "GigabitEthernet0/2/0/10": {
+      "interface_status": "Up",
+      "ip_address": "10.152.29.29",
+      "protocol_status": "Up",
+      "vrf_name": "A_OM"
+    },
+    "GigabitEthernet0/2/0/11": {
+      "interface_status": "Down",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "GigabitEthernet0/2/0/11.2001": {
+      "interface_status": "Down",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "GigabitEthernet0/2/0/11.59": {
+      "interface_status": "Down",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "GigabitEthernet0/2/0/12": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "GigabitEthernet0/2/0/12.500": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "GigabitEthernet0/2/0/12.501": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "GigabitEthernet0/2/0/13": {
+      "interface_status": "Shutdown",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "GigabitEthernet0/2/0/14": {
+      "interface_status": "Shutdown",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "GigabitEthernet0/2/0/15": {
+      "interface_status": "Shutdown",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "GigabitEthernet0/2/0/16": {
+      "interface_status": "Down",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "GigabitEthernet0/2/0/17": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "GigabitEthernet0/2/0/18": {
+      "interface_status": "Up",
+      "ip_address": "10.222.151.2",
+      "protocol_status": "Up",
+      "vrf_name": "LTE"
+    },
+    "GigabitEthernet0/2/0/19": {
+      "interface_status": "Up",
+      "ip_address": "10.255.252.26",
+      "protocol_status": "Up",
+      "vrf_name": "IT"
+    },
+    "GigabitEthernet0/2/0/20": {
+      "interface_status": "Down",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "GigabitEthernet0/2/0/21": {
+      "interface_status": "Shutdown",
+      "ip_address": "10.123.27.26",
+      "protocol_status": "Down",
+      "vrf_name": "ISC_UP"
+    },
+    "GigabitEthernet0/2/0/22": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "GigabitEthernet0/2/0/22.454": {
+      "interface_status": "Up",
+      "ip_address": "10.123.27.97",
+      "protocol_status": "Up",
+      "vrf_name": "ISC_UP"
+    },
+    "GigabitEthernet0/2/0/22.455": {
+      "interface_status": "Up",
+      "ip_address": "10.123.27.101",
+      "protocol_status": "Up",
+      "vrf_name": "MSS_OM"
+    },
+    "GigabitEthernet0/2/0/23": {
+      "interface_status": "Down",
+      "ip_address": "10.124.194.2",
+      "protocol_status": "Down",
+      "vrf_name": "probe"
+    },
+    "GigabitEthernet0/2/0/28": {
+      "interface_status": "Down",
+      "ip_address": "10.124.194.66",
+      "protocol_status": "Down",
+      "vrf_name": "probe_om"
+    },
+    "GigabitEthernet0/2/0/29": {
+      "interface_status": "Down",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "GigabitEthernet0/2/0/30": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "GigabitEthernet0/2/0/30.458": {
+      "interface_status": "Up",
+      "ip_address": "10.123.27.106",
+      "protocol_status": "Up",
+      "vrf_name": "ISC_UP"
+    },
+    "GigabitEthernet0/2/0/30.459": {
+      "interface_status": "Up",
+      "ip_address": "10.123.27.146",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "GigabitEthernet0/2/0/30.600": {
+      "interface_status": "Up",
+      "ip_address": "10.221.129.10",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "GigabitEthernet0/2/0/31": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "GigabitEthernet0/2/0/31.450": {
+      "interface_status": "Up",
+      "ip_address": "10.123.27.33",
+      "protocol_status": "Up",
+      "vrf_name": "ISC_UP"
+    },
+    "GigabitEthernet0/2/0/31.452": {
+      "interface_status": "Up",
+      "ip_address": "10.123.27.65",
+      "protocol_status": "Up",
+      "vrf_name": "ISC_UP"
+    },
+    "GigabitEthernet0/2/0/31.456": {
+      "interface_status": "Up",
+      "ip_address": "10.123.27.161",
+      "protocol_status": "Up",
+      "vrf_name": "MSS_OM"
+    },
+    "GigabitEthernet0/2/0/31.460": {
+      "interface_status": "Up",
+      "ip_address": "10.123.27.13",
+      "protocol_status": "Up",
+      "vrf_name": "ISC_UP"
+    },
+    "GigabitEthernet0/2/0/31.462": {
+      "interface_status": "Up",
+      "ip_address": "10.221.129.66",
+      "protocol_status": "Up",
+      "vrf_name": "MSS_OM"
+    },
+    "GigabitEthernet0/2/0/4": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "GigabitEthernet0/2/0/4.1101": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "GigabitEthernet0/2/0/5": {
+      "interface_status": "Shutdown",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "GigabitEthernet0/2/0/6": {
+      "interface_status": "Down",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "GigabitEthernet0/2/0/7": {
+      "interface_status": "Up",
+      "ip_address": "10.152.29.5",
+      "protocol_status": "Up",
+      "vrf_name": "IuH_Intranet"
+    },
+    "GigabitEthernet0/2/0/8": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "GigabitEthernet0/2/0/8.128": {
+      "interface_status": "Up",
+      "ip_address": "10.152.28.1",
+      "protocol_status": "Up",
+      "vrf_name": "Femto_IuCS_CP"
+    },
+    "GigabitEthernet0/2/0/8.129": {
+      "interface_status": "Up",
+      "ip_address": "10.152.28.9",
+      "protocol_status": "Up",
+      "vrf_name": "Femto_IuCS_UP"
+    },
+    "GigabitEthernet0/2/0/9": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "GigabitEthernet0/2/0/9.130": {
+      "interface_status": "Up",
+      "ip_address": "10.152.28.17",
+      "protocol_status": "Up",
+      "vrf_name": "H_IuoIP"
+    },
+    "GigabitEthernet0/2/0/9.131": {
+      "interface_status": "Up",
+      "ip_address": "10.152.28.25",
+      "protocol_status": "Up",
+      "vrf_name": "Gn"
+    },
+    "GigabitEthernet0/5/0/20": {
+      "interface_status": "Up",
+      "ip_address": "10.158.33.29",
+      "protocol_status": "Up",
+      "vrf_name": "PTP"
+    },
+    "GigabitEthernet0/5/0/21": {
+      "interface_status": "Up",
+      "ip_address": "10.158.33.117",
+      "protocol_status": "Up",
+      "vrf_name": "PTP"
+    },
+    "GigabitEthernet0/5/0/22": {
+      "interface_status": "Down",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "GigabitEthernet0/5/0/23": {
+      "interface_status": "Down",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "GigabitEthernet0/5/0/23.200": {
+      "interface_status": "Shutdown",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "HundredGigE0/1/0/0": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "HundredGigE0/1/0/1": {
+      "interface_status": "Shutdown",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "HundredGigE0/1/1/0": {
+      "interface_status": "Shutdown",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "HundredGigE0/1/1/1": {
+      "interface_status": "Shutdown",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "HundredGigE0/3/0/0": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "HundredGigE0/3/0/1": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "HundredGigE0/6/0/0": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "HundredGigE0/6/0/1": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "HundredGigE0/6/0/2": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "HundredGigE0/6/0/3": {
+      "interface_status": "Shutdown",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "HundredGigE0/6/0/4": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "HundredGigE0/6/0/5": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "HundredGigE0/6/0/6": {
+      "interface_status": "Shutdown",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "HundredGigE0/6/0/7": {
+      "interface_status": "Shutdown",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "HundredGigE0/7/0/0": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "HundredGigE0/7/0/1": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "HundredGigE0/7/1/0": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "HundredGigE0/7/1/1": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Loopback0": {
+      "interface_status": "Up",
+      "ip_address": "10.159.255.5",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Loopback1": {
+      "interface_status": "Up",
+      "ip_address": "10.159.86.3",
+      "protocol_status": "Up",
+      "vrf_name": "UNIP_OM"
+    },
+    "Loopback129": {
+      "interface_status": "Up",
+      "ip_address": "10.159.255.9",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "Loopback2": {
+      "interface_status": "Up",
+      "ip_address": "10.159.255.112",
+      "protocol_status": "Up",
+      "vrf_name": "LTE"
+    },
+    "Loopback242": {
+      "interface_status": "Up",
+      "ip_address": "10.124.201.241",
+      "protocol_status": "Up",
+      "vrf_name": "SD"
+    },
+    "Loopback252": {
+      "interface_status": "Up",
+      "ip_address": "10.255.252.205",
+      "protocol_status": "Up",
+      "vrf_name": "IT"
+    },
+    "MgmtEth0/RSP0/CPU0/0": {
+      "interface_status": "Shutdown",
+      "ip_address": "192.168.1.2",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "MgmtEth0/RSP1/CPU0/0": {
+      "interface_status": "Shutdown",
+      "ip_address": "192.168.1.3",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "TenGigE0/0/0/0": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/0/0/0.640": {
+      "interface_status": "Up",
+      "ip_address": "10.124.16.2",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/0/0/0.642": {
+      "interface_status": "Up",
+      "ip_address": "10.124.16.6",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/0/0/1": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/0/0/10": {
+      "interface_status": "Shutdown",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "TenGigE0/0/0/11": {
+      "interface_status": "Shutdown",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "TenGigE0/0/0/12": {
+      "interface_status": "Shutdown",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "TenGigE0/0/0/13": {
+      "interface_status": "Shutdown",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "TenGigE0/0/0/14": {
+      "interface_status": "Shutdown",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "TenGigE0/0/0/15": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/0/0/16": {
+      "interface_status": "Down",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "TenGigE0/0/0/17": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/0/0/18": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/0/0/19": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/0/0/2": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/0/0/24": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/0/0/25": {
+      "interface_status": "Shutdown",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "TenGigE0/0/0/26": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/0/0/27": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/0/0/28": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/0/0/29": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/0/0/3": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/0/0/30": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/0/0/31": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/0/0/32": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/0/0/33": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/0/0/34": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/0/0/35": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/0/0/36": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/0/0/37": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/0/0/38": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/0/0/39": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/0/0/4": {
+      "interface_status": "Down",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "TenGigE0/0/0/40": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/0/0/41": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/0/0/42": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/0/0/43": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/0/0/5": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/0/0/6": {
+      "interface_status": "Shutdown",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "TenGigE0/0/0/7": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/0/0/7.1136": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/0/0/7.1137": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/0/0/7.1138": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/0/0/8": {
+      "interface_status": "Shutdown",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "TenGigE0/0/0/9": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/2/0/0": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/2/0/1": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/2/0/2": {
+      "interface_status": "Shutdown",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "TenGigE0/2/0/24": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/2/0/25": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/2/0/26": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/2/0/27": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/2/0/3": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/2/0/32": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/2/0/33": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/2/0/34": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/2/0/35": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/2/0/36": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/2/0/37": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/2/0/38": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/2/0/39": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/2/0/40": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/2/0/41": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/2/0/42": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/2/0/43": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/2/0/44": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/2/0/45": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/2/0/46": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/2/0/47": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/5/0/0": {
+      "interface_status": "Shutdown",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "TenGigE0/5/0/1": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/5/0/10": {
+      "interface_status": "Shutdown",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "TenGigE0/5/0/11": {
+      "interface_status": "Shutdown",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "TenGigE0/5/0/12": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/5/0/13": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/5/0/14": {
+      "interface_status": "Shutdown",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "TenGigE0/5/0/15": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/5/0/16": {
+      "interface_status": "Shutdown",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "TenGigE0/5/0/17": {
+      "interface_status": "Shutdown",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "TenGigE0/5/0/18": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/5/0/19": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/5/0/2": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/5/0/3": {
+      "interface_status": "Up",
+      "ip_address": "unassigned",
+      "protocol_status": "Up",
+      "vrf_name": "default"
+    },
+    "TenGigE0/5/0/4": {
+      "interface_status": "Shutdown",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "TenGigE0/5/0/5": {
+      "interface_status": "Shutdown",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "TenGigE0/5/0/6": {
+      "interface_status": "Shutdown",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "TenGigE0/5/0/7": {
+      "interface_status": "Shutdown",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "TenGigE0/5/0/8": {
+      "interface_status": "Shutdown",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    },
+    "TenGigE0/5/0/9": {
+      "interface_status": "Shutdown",
+      "ip_address": "unassigned",
+      "protocol_status": "Down",
+      "vrf_name": "default"
+    }
+  }
+}

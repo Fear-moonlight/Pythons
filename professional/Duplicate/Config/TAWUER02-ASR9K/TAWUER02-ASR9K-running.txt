@@ -1,0 +1,6007 @@
+Fri Sep  6 07:32:05.150 MYT
+Building configuration...
+!! IOS XR Configuration 7.9.21
+!! Last configuration change at Thu Aug 29 04:27:12 2024 by V18507X
+!
+hostname TAWUER02-ASR9K
+clock timezone MYT Asia/Kuala_Lumpur
+banner exec X
+*********************************************************************
+*                                                                   *
+*  This is a system belonging to Celcom Axiata Bhd. All Celcom      *
+*  systems are provided for the processing of Celcom`s information  *
+*  and Celcom customer personal data. All content on this system is *
+*  confidential in nature and is protected as required by the       *
+*  Personal Data Protection Act 2010, other Malaysian Laws and      *
+*  regulations as well as Celcom`s confidentiality provisions and   *
+*  terms of use. The activities to this system may be monitored,    *
+*  recorded, or captured in order to comply with Celcom`s internal  *
+*  policies and the relevant Malaysian Laws and Regulations. Any    *
+*  unauthorised use of the system or the information therein shall  *
+*  be subject to disciplinary action and may lead to criminal       *
+*  prosecution. Unauthorized or improper use of this system may     *
+*  result in administrative action, disciplinary action and/or      *
+*  civil charges/criminal penalties, with jail terms of up to 3     *
+*  years and fines of up to RM 500,000 By continuing to use this    *
+*  system you indicate your awareness of and consent to these terms *
+*  and conditions of use.                                           *
+*                                                                   *
+*********************************************************************
+X
+banner login X
+*********************************************************************
+*                                                                   *
+*  This is a system belonging to Celcom Axiata Bhd. All Celcom      *
+*  systems are provided for the processing of Celcom`s information  *
+*  and Celcom customer personal data. All content on this system is *
+*  confidential in nature and is protected as required by the       *
+*  Personal Data Protection Act 2010, other Malaysian Laws and      *
+*  regulations as well as Celcom`s confidentiality provisions and   *
+*  terms of use. The activities to this system may be monitored,    *
+*  recorded, or captured in order to comply with Celcom`s internal  *
+*  policies and the relevant Malaysian Laws and Regulations. Any    *
+*  unauthorised use of the system or the information therein shall  *
+*  be subject to disciplinary action and may lead to criminal       *
+*  prosecution. Unauthorized or improper use of this system may     *
+*  result in administrative action, disciplinary action and/or      *
+*  civil charges/criminal penalties, with jail terms of up to 3     *
+*  years and fines of up to RM 500,000 By continuing to use this    *
+*  system you indicate your awareness of and consent to these terms *
+*  and conditions of use.                                           *
+*                                                                   *
+*********************************************************************
+X
+logging ipv4 dscp cs2
+logging trap informational
+logging events level informational
+logging archive
+ device harddisk
+ severity notifications
+ archive-size 100
+!
+logging console informational
+logging buffered 10000000
+logging buffered debugging
+logging buffered discriminator
+ nomatch1 10.124.7.|10.124.19.
+!
+logging 10.1.65.147 vrf default severity info port default
+logging 10.124.7.66 vrf default severity info port default
+logging 10.124.7.71 vrf default severity info port default
+logging 10.124.7.71 vrf default discriminator
+ nomatch1 10.124.7.|10.124.19.
+!
+logging 10.1.110.216 vrf default severity info port default
+logging 10.124.19.66 vrf default severity info port default
+logging 10.124.19.71 vrf default severity info port default
+logging 10.124.19.71 vrf default discriminator
+ nomatch1 10.124.7.|10.124.19.
+!
+logging 10.159.56.88 vrf default severity info port default
+logging 10.159.57.88 vrf default severity info port default
+logging 10.122.45.106 vrf default severity info port default
+logging 10.122.45.114 vrf default severity info port default
+logging 10.122.45.122 vrf default severity info port default
+logging suppress rule ADVLIC
+ alarm LICENSE ASR9K_LICENSE ADV_IP_NEEDED
+ alarm LICENSE ASR9K_LICENSE INFRA_VRF_NEEDED
+!
+logging suppress apply rule ADVLIC
+ source location 0/3/CPU0
+!
+logging source-interface Loopback0
+logging suppress duplicates
+service timestamps log datetime localtime msec show-timezone year
+service timestamps debug datetime localtime msec show-timezone
+logging events link-status software-interfaces
+domain name celcom.com.my
+domain lookup disable
+tacacs source-interface Loopback0 vrf default
+tacacs-server host 10.124.1.35 port 49
+!
+tacacs-server host 10.124.2.35 port 49
+!
+tacacs-server ipv4 dscp cs2
+tacacs-server key 7 xxxxxxxx 
+username xxxxxxxx
+ group root-lr
+ secret 5 xxxxxxxx
+!
+aaa accounting exec ISE_TACACS start-stop group Cisco_ISE_Servers
+aaa accounting commands ISE_TACACS start-stop group Cisco_ISE_Servers
+aaa group server tacacs+ Cisco_ISE_Servers
+ server-private 10.124.1.35 port 49
+  key 7 xxxxxxxx
+ !
+ server-private 10.124.2.35 port 49
+  key 7 xxxxxxxx
+ !
+!
+aaa authorization exec CONSOLE none
+aaa authorization exec ISE_TACACS group Cisco_ISE_Servers local
+aaa authorization commands CONSOLE none
+aaa authorization commands ISE_TACACS group Cisco_ISE_Servers none
+aaa authentication login CONSOLE local
+aaa authentication login ISE_TACACS group Cisco_ISE_Servers local
+aaa accounting update newinfo
+cdp
+nsr process-failures switchover
+vrf CN
+ address-family ipv4 unicast
+  import route-target
+   65535:11050
+   65535:60042
+   65535:60202
+   65535:60381
+   65535:60602
+   65535:60964
+   65535:61063
+   65535:62201
+   65535:63121
+   65535:64862
+  !
+  export route-policy VRF_NB_EXPORT_RT
+  export route-target
+   65535:11050
+  !
+ !
+!
+vrf Gb
+ address-family ipv4 unicast
+  import route-target
+   65535:508
+  !
+  export route-target
+   65535:508
+  !
+ !
+!
+vrf Gn
+ address-family ipv4 unicast
+  import route-target
+   65535:60121
+  !
+  export route-target
+   65535:60122
+  !
+ !
+!
+vrf IT
+ address-family ipv4 unicast
+  import route-target
+   65535:21200
+   65535:21202
+  !
+  export route-target
+   65535:21200
+  !
+ !
+!
+vrf SD
+ address-family ipv4 unicast
+  import route-target
+   65535:300
+  !
+  export route-target
+   65535:300
+  !
+ !
+!
+vrf LTE
+ address-family ipv4 unicast
+  import route-target
+   65092:25000
+   65092:25010
+   65132:25000
+   65132:25010
+   65138:21000
+   65139:1901
+   65139:21000
+   65143:25100
+   65143:25110
+   65143:65441
+   65143:66041
+   65146:65441
+   65146:66041
+   65535:21100
+   65535:21101
+   65535:23001
+   65535:23100
+   65535:23101
+   65535:60520
+   65535:65442
+   65535:65582
+   65535:65602
+   65535:66041
+  !
+  export route-policy LTE_UP-Export-RT
+  export route-target
+   65139:1901
+   65535:21001
+   65535:23100
+   65535:60520
+  !
+ !
+!
+vrf PTP
+ address-family ipv4 unicast
+  import route-target
+   65139:890
+   65139:1901
+   65139:2058
+   65139:25040
+   65535:21001
+   65535:64280
+  !
+  export route-target
+   65139:890
+   65139:1901
+   65139:2058
+   65139:21000
+   65139:25040
+   65535:64280
+  !
+ !
+!
+vrf E_OM
+ address-family ipv4 unicast
+  import route-policy E_RAN_OM_IN
+  import route-target
+   65535:3200
+   65535:4600
+  !
+  export route-target
+   65535:4600
+  !
+ !
+!
+vrf CD_OM
+ address-family ipv4 unicast
+  import route-target
+   65092:25050
+   65132:25050
+   65143:25050
+   65535:25050
+   65535:25051
+  !
+  export route-policy CD_OM-Export-RT
+  export route-target
+   65535:25051
+  !
+ !
+!
+vrf CD_X2
+ address-family ipv4 unicast
+  import route-target
+   65139:25120
+   65143:25120
+  !
+  export route-policy CD_X2-Export-RT
+  export route-target
+   65139:25120
+  !
+ !
+!
+vrf IP_OM
+ address-family ipv4 unicast
+  import route-target
+   65535:3540
+   65535:4035
+   65535:11650
+  !
+  export route-target
+   65535:3540
+   65535:4035
+   65535:11650
+  !
+ !
+!
+vrf CD_PTP
+ address-family ipv4 unicast
+  import route-target
+   65139:25040
+  !
+  export route-policy CD_PTP-Export-RT
+  export route-target
+   65139:25040
+  !
+ !
+!
+vrf CD_S1C
+ address-family ipv4 unicast
+  import route-policy CD_S1C-Import-RT
+  import route-target
+   65092:25010
+   65132:25010
+   65143:25110
+   65535:25010
+   65535:25110
+   65535:25111
+  !
+  export route-policy CD_S1C-Export-RT
+  export route-target
+   65535:25111
+  !
+ !
+!
+vrf CD_S1U
+ address-family ipv4 unicast
+  import route-policy CD_S1U-Import-RT
+  import route-target
+   65092:25000
+   65132:25000
+   65143:25100
+   65535:25010
+   65535:25100
+   65535:25101
+  !
+  export route-policy CD_S1U-Export-RT
+  export route-target
+   65535:25101
+  !
+ !
+!
+vrf E_2G3G
+ address-family ipv4 unicast
+  import route-policy TAW_E_MOAT_IN
+  import route-target
+   65138:904
+   65138:21000
+   65139:890
+   65139:21000
+   65535:20000
+   65535:20001
+   65535:22000
+   65535:64280
+  !
+  export route-policy TAW_E_MOAT-Export-RT
+  export route-target
+   65139:890
+   65535:21001
+   65535:22000
+   65535:64280
+  !
+ !
+!
+vrf E_A_CP
+ address-family ipv4 unicast
+  import route-target
+   65535:60940
+   65535:60943
+   65535:60946
+  !
+  export route-target
+   65535:60940
+   65535:60944
+   65535:60945
+  !
+ !
+!
+vrf E_A_UP
+ address-family ipv4 unicast
+  import route-target
+   65535:60960
+   65535:60963
+  !
+  export route-target
+   65535:60960
+   65535:60964
+  !
+ !
+!
+vrf LTE_CP
+ address-family ipv4 unicast
+  import route-target
+   65535:60500
+  !
+  export route-target
+   65535:60500
+  !
+ !
+!
+vrf MSS_OM
+ address-family ipv4 unicast
+  import route-target
+   65535:3540
+   65535:4035
+   65535:11450
+  !
+  export route-target
+   65535:3540
+   65535:4035
+   65535:11450
+  !
+ !
+!
+vrf PTN_OM
+ address-family ipv4 unicast
+  import route-target
+   65535:300
+   65535:350
+   65535:20300
+   65535:20301
+  !
+  export route-policy PTN_OM-Export-RT
+  export route-target
+   65535:300
+   65535:350
+  !
+ !
+!
+vrf TX_NMS
+ address-family ipv4 unicast
+  import route-target
+   65139:3585
+   65535:20500
+   65535:20501
+   65535:64481
+  !
+  export route-policy TAW_TXNMS_HUAWEI_SM-Export-RT
+  export route-target
+   65139:3585
+   65535:20501
+  !
+ !
+!
+vrf CD_ABIS
+ address-family ipv4 unicast
+  import route-target
+   65092:25030
+   65132:25030
+   65143:25030
+   65535:25030
+  !
+  export route-policy CD_ABIS-Export-RT
+  export route-target
+   65535:25030
+  !
+ !
+!
+vrf CME_NMS
+ address-family ipv4 unicast
+  import route-target
+   65535:20400
+   65535:20401
+  !
+  export route-policy CME_NMS-Export-RT
+ !
+!
+vrf CP_wifi
+ address-family ipv4 unicast
+  import route-target
+   65535:60400
+   65535:60405
+  !
+  export route-target
+   65535:60400
+   65535:60406
+  !
+ !
+!
+vrf EAP_VRF
+ address-family ipv4 unicast
+  import route-target
+   65535:61120
+  !
+  export route-target
+   65535:61120
+  !
+ !
+!
+vrf E_Iu_CP
+ address-family ipv4 unicast
+  import route-target
+   65535:60280
+   65535:60282
+   65535:60284
+   65535:60286
+  !
+  export route-target
+   65535:60280
+   65535:60281
+   65535:60283
+   65535:60285
+  !
+ !
+!
+vrf E_Iu_UP
+ address-family ipv4 unicast
+  import route-target
+   65535:60380
+   65535:60382
+  !
+  export route-target
+   65535:60380
+   65535:60381
+  !
+ !
+!
+vrf SIGTRAN
+ address-family ipv4 unicast
+  import route-target
+   65535:11250
+  !
+  export route-target
+   65535:11250
+  !
+ !
+!
+vrf UNIP_OM
+ address-family ipv4 unicast
+  import route-target
+   65535:3540
+   65535:4035
+   65535:11650
+   65535:20300
+  !
+  export route-target
+   65535:3540
+   65535:4035
+   65535:11650
+   65535:20301
+  !
+ !
+!
+vrf UP_wifi
+ address-family ipv4 unicast
+  import route-target
+   65535:60420
+  !
+  export route-target
+   65535:60420
+  !
+ !
+!
+vrf ENT_PI1M
+ address-family ipv4 unicast
+  import route-target
+   65139:995
+  !
+  export route-target
+   65139:995
+  !
+ !
+!
+vrf P_EAP_VRF
+ address-family ipv4 unicast
+  import route-target
+   65535:61140
+  !
+  export route-target
+   65535:61140
+  !
+ !
+!
+vrf OLNO_M_VRF
+ address-family ipv4 unicast
+  import route-target
+   65535:61320
+  !
+  export route-target
+   65535:61320
+  !
+ !
+!
+vrf Premier_VRF
+ address-family ipv4 unicast
+  import route-target
+   65535:61160
+  !
+  export route-target
+   65535:61160
+  !
+ !
+!
+vrf CelcomWiFi_VRF
+ address-family ipv4 unicast
+  import route-target
+   65535:61180
+  !
+  export route-target
+   65535:61180
+  !
+ !
+!
+vrf OLNO_M_EAP_VRF
+ address-family ipv4 unicast
+  import route-target
+   65535:61340
+  !
+  export route-target
+   65535:61340
+  !
+ !
+!
+vrf GENERIC_SSID_VRF
+ address-family ipv4 unicast
+  import route-target
+   65535:61360
+  !
+  export route-target
+   65535:61360
+  !
+ !
+!
+tcp selective-ack
+tcp path-mtu-discovery
+line template vty
+ accounting exec ISE_TACACS
+ accounting commands ISE_TACACS
+ authorization exec ISE_TACACS
+ authorization commands ISE_TACACS
+ login authentication ISE_TACACS
+ exec-timeout 10 0
+ access-class ingress VTY-ACL
+ transport input ssh
+ transport output ssh
+!
+line console
+ accounting exec ISE_TACACS
+ accounting commands ISE_TACACS
+ login authentication ISE_TACACS
+ exec-timeout 10 0
+ transport output none
+!
+line default
+ exec-timeout 10 0
+ session-limit 10
+ session-timeout 100
+!
+vty-pool default 0 9 line-template vty
+http client secure-verify-peer disable
+snmp-server interface Loopback0
+!
+snmp-server ifmib ifalias long
+snmp-server ifindex persist
+snmp-server ifmib stats cache
+snmp-server trap link ietf
+snmp-server host 10.124.7.66 traps version 3 priv xxxxxxxx 
+snmp-server host 10.124.7.71 traps version 3 priv xxxxxxxx 
+snmp-server host 10.124.19.66 traps version 3 priv xxxxxxxx 
+snmp-server host 10.124.19.71 traps version 3 priv xxxxxxxx 
+snmp-server ipv4 dscp cs2
+snmp-server user xxxxxxxx V3Group v3 auth md5 encrypted xxxxxxxx priv des56 encrypted xxxxxxxx  IPv4 ACL-SNMP SystemOwner
+snmp-server user xxxxxxxx V3Group v3 auth md5 encrypted xxxxxxxx priv aes 128 encrypted xxxxxxxx  IPv4 ACL-SNMP SystemOwner
+snmp-server user xxxxxxxx V3Group v3 auth md5 encrypted xxxxxxxx priv aes 128 encrypted xxxxxxxx  IPv4 ACL-SNMP SystemOwner
+snmp-server user xxxxxxxx V3Group v3 auth sha encrypted xxxxxxxx priv aes 128 encrypted xxxxxxxx  IPv4 ACL-SNMP SystemOwner
+snmp-server view V3Read iso included
+snmp-server view V3Write iso included
+snmp-server community xxxxxxxx RW IPv4 ACL-SNMP
+snmp-server community xxxxxxxx RO SystemOwner IPv4 ACL-SNMP
+snmp-server community xxxxxxxx RW IPv4 ACL-SNMP
+snmp-server community xxxxxxxx RW IPv4 ACL-SNMP
+snmp-server group V3Group v3 priv notify v1default read V3Read write V3Write
+snmp-server queue-length 1000
+snmp-server traps bfd
+snmp-server traps snmp
+snmp-server traps snmp linkup
+snmp-server traps snmp linkdown
+snmp-server traps snmp coldstart
+snmp-server traps snmp warmstart
+snmp-server traps snmp authentication
+snmp-server traps flash removal
+snmp-server traps flash insertion
+snmp-server traps config
+snmp-server traps entity
+snmp-server traps syslog
+snmp-server traps entity-state operstatus
+snmp-server traps entity-state switchover
+snmp-server contact "1800119090"
+snmp-server location S00226
+snmp-server trap-source Loopback0
+fpd auto-upgrade enable
+ipv4 conflict-policy static
+ipv6 conflict-policy static
+ftp client source-interface Loopback0
+ntp
+ ipv4 dscp cs2
+ server 10.159.255.83
+ server 10.159.255.84
+ master 8
+ access-group vrf UNIP_OM ipv4 serve-only NTP_vrf_UNIP_OM_SERVE_ONLY
+ access-group ipv4 peer NTP_PEER
+ access-group ipv4 serve NTP-CLIENT
+ source vrf UNIP_OM Bundle-Ether4.1200
+ source Loopback0
+ update-calendar
+!
+bfd
+ multipath include location 0/0/CPU0
+ multipath include location 0/1/CPU0
+ multipath include location 0/2/CPU0
+ multipath include location 0/3/CPU0
+ multipath include location 0/4/CPU0
+ multipath include location 0/5/CPU0
+ multipath include location 0/6/CPU0
+ multipath include location 0/7/CPU0
+ echo disable
+ bundle coexistence bob-blb logical
+!
+ipv4 unnumbered mpls traffic-eng Loopback0
+watchdog threshold disk minor 88 severe 92 critical 95
+call-home
+ service active
+ contact smart-licensing
+ source-interface Loopback0
+ profile CiscoTAC-1
+  active
+  destination address http https://10.124.19.67:443/Transportgateway/services/DeviceRequestHandler
+  reporting smart-call-home-data disable
+  reporting smart-licensing-data
+  destination transport-method email disable
+  destination transport-method http
+ !
+!
+control-plane
+ management-plane
+  inband
+   interface all
+    allow SSH
+    allow SNMP
+   !
+  !
+ !
+!
+ipv4 access-list ACL-77
+ 10 permit ipv4 10.159.255.0 0.0.0.255 any
+ 20 permit ipv4 10.159.254.0 0.0.0.255 any
+ 21 permit ipv4 10.151.233.0 0.0.0.255 any
+ 22 permit ipv4 10.151.234.0 0.0.0.255 any
+ 23 permit ipv4 10.151.235.0 0.0.0.255 any
+ 24 permit ipv4 10.240.248.0 0.0.0.255 any
+ 25 permit ipv4 10.240.249.0 0.0.0.255 any
+ 26 permit ipv4 10.240.251.0 0.0.0.255 any
+ 30 deny ipv4 any any
+!
+ipv4 access-list VTY-ACL
+ 10 remark VTY ACCESS CONTROL
+ 20 permit ipv4 host 10.124.19.66 any
+ 30 permit ipv4 host 10.124.7.66 any
+ 40 permit ipv4 host 10.1.100.196 any
+ 50 permit ipv4 host 10.1.100.195 any
+ 60 permit ipv4 host 10.1.100.194 any
+ 70 permit ipv4 host 10.159.56.77 any
+ 80 permit ipv4 host 10.159.56.88 any
+ 90 permit ipv4 host 10.5.134.51 any
+ 100 permit ipv4 host 10.124.7.69 any
+ 110 permit ipv4 host 10.124.19.69 any
+ 111 permit ipv4 any host 10.124.7.66
+ 120 permit ipv4 host 10.5.134.51 any
+ 130 permit ipv4 host 10.124.19.73 any
+ 140 permit ipv4 host 10.223.245.190 any
+ 150 permit ipv4 host 10.1.59.93 any
+ 160 permit ipv4 host 10.1.59.94 any
+ 170 permit ipv4 host 10.124.19.84 any
+ 180 permit ipv4 host 10.124.7.84 any
+ 190 permit ipv4 10.124.19.144/28 any
+ 200 permit ipv4 10.124.7.144/28 any
+ 210 permit ipv4 host 10.159.57.88 any
+ 220 permit ipv4 host 10.1.61.67 any
+ 230 permit ipv4 host 10.1.61.68 any
+ 240 permit ipv4 host 10.1.61.77 any
+ 250 permit ipv4 host 10.1.61.74 any
+ 260 permit ipv4 host 10.1.61.75 any
+ 270 permit ipv4 host 10.1.61.79 any
+ 990 permit ipv4 host 10.124.7.71 any
+ 991 permit ipv4 host 10.124.19.71 any
+ 1000 deny ipv4 any any log-input
+!
+ipv4 access-list ACL-SNMP
+ 10 permit ipv4 host 10.1.100.194 any
+ 20 permit ipv4 host 10.1.100.195 any
+ 30 permit ipv4 host 10.1.100.196 any
+ 40 permit ipv4 host 10.1.100.197 any
+ 50 permit ipv4 host 10.1.100.198 any
+ 60 permit ipv4 host 10.1.100.199 any
+ 70 permit ipv4 host 10.1.100.200 any
+ 80 permit ipv4 host 10.1.100.224 any
+ 90 permit ipv4 host 10.124.19.66 any
+ 91 permit ipv4 any host 10.124.19.66
+ 100 permit ipv4 host 10.124.19.73 any
+ 110 permit ipv4 host 10.124.7.66 any
+ 111 permit ipv4 any host 10.124.7.66
+ 120 permit ipv4 host 10.159.56.77 any
+ 130 permit ipv4 host 10.159.56.88 any
+ 140 permit ipv4 host 10.223.245.179 any
+ 170 permit ipv4 host 10.124.19.84 any
+ 180 permit ipv4 host 10.124.7.84 any
+ 190 permit ipv4 10.124.19.144/28 any
+ 200 permit ipv4 10.124.7.144/28 any
+ 210 permit ipv4 host 10.159.57.88 any
+ 220 permit ipv4 host 10.1.100.216 any
+ 990 permit ipv4 host 10.124.7.71 any
+ 991 permit ipv4 host 10.124.19.71 any
+ 1000 deny ipv4 any any log-input
+!
+ipv4 access-list BFD_ECHO
+ 10 permit udp any eq 3785 any eq 3785
+!
+ipv4 access-list NTP_PEER
+ 10 permit ipv4 host 10.159.255.83 any
+ 20 permit ipv4 host 10.159.255.84 any
+!
+ipv4 access-list LOOPBACKS
+ 10 permit ipv4 10.159.255.0 0.0.0.255 any
+ 20 permit ipv4 10.159.254.0 0.0.0.255 any
+ 30 permit ipv4 10.244.252.0 0.0.0.255 any
+!
+ipv4 access-list om_server
+ 10 remark IP Server OM Ericsson
+ 11 permit ipv4 10.122.3.0/25 any
+ 12 permit ipv4 10.122.5.0/25 any
+ 20 permit ipv4 10.122.5.0/25 any
+ 30 remark IP Server OM Huawei
+ 31 permit ipv4 10.1.117.0/24 any
+ 40 permit ipv4 10.224.242.96/28 any
+ 50 remark IP Server OM ZTE
+ 51 permit ipv4 10.124.20.0/29 any
+ 52 permit ipv4 10.127.0.64/27 any
+ 53 permit ipv4 10.152.29.0/24 any
+ 54 permit ipv4 10.224.242.96/28 any
+ 60 permit ipv4 10.124.20.0/29 any
+ 70 permit ipv4 10.127.0.64/27 any
+!
+ipv4 access-list NTP-CLIENT
+ 10 permit ipv4 10.159.255.0/24 any
+ 20 permit ipv4 10.159.254.0/24 any
+ 30 permit ipv4 10.244.252.0/24 any
+ 40 permit ipv4 10.244.54.0 0.0.0.255 any
+ 50 permit ipv4 10.244.55.0 0.0.0.255 any
+ 60 permit ipv4 10.244.11.0 0.0.0.255 any
+!
+ipv4 access-list QOS-ANY-ACL
+ 10 permit ipv4 any any
+!
+ipv4 access-list NTP_vrf_UNIP_OM_SERVE_ONLY
+ 10 permit ipv4 host 10.151.86.212 any
+!
+ipv4 prefix-list LOOPBACK
+ 10 permit 10.159.255.0/24 ge 32
+ 20 permit 10.159.254.0/24 ge 32
+ 30 permit 10.240.248.0/24 ge 32
+ 40 permit 10.240.249.0/24 ge 32
+ 50 permit 10.240.251.0/24 ge 32
+ 60 permit 10.244.252.0/24 ge 32
+ 70 permit 10.244.54.0/24 ge 32
+ 80 permit 10.244.11.0/24 ge 32
+ 90 permit 10.244.250.0/24 ge 32
+ 100 permit 10.151.234.0/24 ge 32
+!
+class-map match-any NB
+ match mpls experimental topmost 2 
+ match dscp ef 
+ end-class-map
+! 
+class-map match-any NC
+ match mpls experimental topmost 6 7 
+ match dscp cs6 cs7 
+ end-class-map
+! 
+class-map match-any BE1
+ match mpls experimental topmost 1 
+ match dscp cs1 
+ end-class-map
+! 
+class-map match-any INGRESS
+ match access-group ipv4 QOS-ANY-ACL 
+ end-class-map
+! 
+class-map match-any SIGTRAN
+ match mpls experimental topmost 4 
+ match dscp af11 
+ end-class-map
+! 
+class-map match-any exp1_in
+ match mpls experimental topmost 1 
+ match dscp af11 af12 af13 
+ end-class-map
+! 
+class-map match-any exp2_in
+ match mpls experimental topmost 2 
+ match dscp af21 af22 af23 
+ end-class-map
+! 
+class-map match-any exp3_in
+ match mpls experimental topmost 3 
+ match dscp af31 af32 af33 
+ end-class-map
+! 
+class-map match-any exp4_in
+ match mpls experimental topmost 4 
+ match dscp af41 af42 af43 
+ end-class-map
+! 
+class-map match-any exp5_in
+ match mpls experimental topmost 5 
+ match dscp ef 
+ end-class-map
+! 
+class-map match-any dscp1_in
+ match dscp cs1 af11 af12 af13 
+ end-class-map
+! 
+class-map match-any dscp2_in
+ match dscp cs2 af21 af22 af23 
+ end-class-map
+! 
+class-map match-any dscp3_in
+ match dscp cs3 af31 af32 af33 
+ end-class-map
+! 
+class-map match-any dscp4_in
+ match dscp cs4 af41 af42 af43 
+ match access-group ipv4 om_server 
+ end-class-map
+! 
+class-map match-any dscp5_in
+ match dscp ef 
+ end-class-map
+! 
+class-map match-any dscp6_in
+ match dscp cs6 
+ end-class-map
+! 
+class-map match-any dscp7_in
+ match dscp cs7 
+ end-class-map
+! 
+class-map match-any exp0_out
+ match qos-group 0 
+ end-class-map
+! 
+class-map match-any exp1_out
+ match qos-group 1 
+ end-class-map
+! 
+class-map match-any exp2_out
+ match qos-group 2 
+ end-class-map
+! 
+class-map match-any exp3_out
+ match qos-group 3 
+ end-class-map
+! 
+class-map match-any exp4_out
+ match qos-group 4 
+ end-class-map
+! 
+class-map match-any exp5_out
+ match qos-group 5 
+ end-class-map
+! 
+class-map match-any exp67_in
+ match mpls experimental topmost 6 7 
+ match dscp cs6 cs7 
+ end-class-map
+! 
+class-map match-any dscp1_out
+ match qos-group 1 
+ end-class-map
+! 
+class-map match-any dscp2_out
+ match qos-group 2 
+ end-class-map
+! 
+class-map match-any dscp3_out
+ match qos-group 3 
+ end-class-map
+! 
+class-map match-any dscp4_out
+ match qos-group 4 
+ end-class-map
+! 
+class-map match-any dscp5_out
+ match qos-group 5 
+ end-class-map
+! 
+class-map match-any exp67_out
+ match qos-group 6 
+ match access-group ipv4 BFD_ECHO 
+ end-class-map
+! 
+class-map match-any FLAT_IP_EF
+ match dscp 46 
+ end-class-map
+! 
+class-map match-any dscp67_out
+ match qos-group 6 7 
+ end-class-map
+! 
+class-map match-any FLAT_IP_AF1
+ match dscp 10 
+ end-class-map
+! 
+class-map match-any FLAT_IP_AF2
+ match dscp 18 
+ end-class-map
+! 
+class-map match-any FLAT_IP_AF3
+ match dscp 26 
+ end-class-map
+! 
+class-map match-any FLAT_IP_AF4
+ match dscp 34 
+ end-class-map
+! 
+class-map match-any FLAT_IP_BE1
+ match dscp 0 
+ end-class-map
+! 
+policy-map NB
+ class INGRESS
+  set mpls experimental imposition 5
+  set qos-group 5
+  priority level 1 
+ ! 
+ class class-default
+ ! 
+ end-policy-map
+! 
+policy-map OM
+ class INGRESS
+  set mpls experimental imposition 4
+ ! 
+ class class-default
+ ! 
+ end-policy-map
+! 
+policy-map BE1
+ class INGRESS
+  set mpls experimental imposition 1
+ ! 
+ class class-default
+ ! 
+ end-policy-map
+! 
+policy-map SIGTRAN
+ class INGRESS
+  set mpls experimental imposition 6
+  set qos-group 6
+  priority level 1 
+ ! 
+ class class-default
+ ! 
+ end-policy-map
+! 
+policy-map SERVICE_NB
+ class class-default
+  set mpls experimental imposition 5
+  set qos-group 5
+  priority level 1 
+ ! 
+ end-policy-map
+! 
+policy-map SERVICE_OM
+ class class-default
+  set mpls experimental imposition 4
+  set qos-group 4
+ ! 
+ end-policy-map
+! 
+policy-map CORE_EGRESS
+ class exp67_out
+  priority level 1 
+  police rate percent 10 
+  ! 
+ ! 
+ class exp5_out
+  priority level 2 
+  police rate percent 40 
+  ! 
+ ! 
+ class exp4_out
+  bandwidth remaining percent 30 
+  queue-limit 200 ms 
+ ! 
+ class exp3_out
+  bandwidth remaining percent 30 
+  queue-limit 200 ms 
+ ! 
+ class exp2_out
+  bandwidth remaining percent 30 
+  queue-limit 200 ms 
+ ! 
+ class exp1_out
+  bandwidth remaining percent 5 
+  queue-limit 200 ms 
+ ! 
+ class class-default
+  bandwidth remaining percent 5 
+  queue-limit 200 ms 
+ ! 
+ end-policy-map
+! 
+policy-map CORE_INGRESS
+ class exp67_in
+  set qos-group 6
+  priority level 1 
+ ! 
+ class exp5_in
+  set qos-group 5
+  priority level 1 
+ ! 
+ class exp4_in
+  set qos-group 4
+ ! 
+ class exp3_in
+  set qos-group 3
+ ! 
+ class exp2_in
+  set qos-group 2
+ ! 
+ class exp1_in
+  set qos-group 1
+ ! 
+ class class-default
+  set qos-group 0
+ ! 
+ end-policy-map
+! 
+policy-map SERVICE_EGRESS
+ class dscp67_out
+  police rate percent 10 
+  ! 
+  priority level 1 
+ ! 
+ class dscp5_out
+  police rate percent 40 
+  ! 
+  priority level 2 
+ ! 
+ class dscp4_out
+  bandwidth remaining percent 30 
+  queue-limit 200 ms 
+ ! 
+ class dscp3_out
+  bandwidth remaining percent 30 
+  queue-limit 200 ms 
+ ! 
+ class dscp2_out
+  bandwidth remaining percent 30 
+  queue-limit 200 ms 
+ ! 
+ class dscp1_out
+  bandwidth remaining percent 5 
+  queue-limit 200 ms 
+ ! 
+ class class-default
+  bandwidth remaining percent 5 
+  queue-limit 200 ms 
+ ! 
+ end-policy-map
+! 
+policy-map SERVICE_DEFAULT
+ class class-default
+  set mpls experimental imposition 0
+  set qos-group 0
+ ! 
+ end-policy-map
+! 
+policy-map SERVICE_INGRESS
+ class dscp7_in
+  set qos-group 6
+  set mpls experimental imposition 7
+  priority level 1 
+ ! 
+ class dscp6_in
+  set qos-group 6
+  set mpls experimental imposition 6
+  priority level 1 
+ ! 
+ class dscp5_in
+  set qos-group 5
+  set mpls experimental imposition 5
+  priority level 1 
+ ! 
+ class dscp4_in
+  set qos-group 4
+  set mpls experimental imposition 4
+ ! 
+ class dscp3_in
+  set qos-group 3
+  set mpls experimental imposition 3
+ ! 
+ class dscp2_in
+  set qos-group 2
+  set mpls experimental imposition 2
+ ! 
+ class dscp1_in
+  set qos-group 0
+  set mpls experimental imposition 0
+ ! 
+ class class-default
+  set qos-group 0
+  set mpls experimental imposition 0
+ ! 
+ end-policy-map
+! 
+policy-map SERVICE_SIGTRAN
+ class class-default
+  set mpls experimental imposition 6
+  set qos-group 6
+  priority level 1 
+ ! 
+ end-policy-map
+! 
+policy-map WAN_EGRESS_CORE
+ class NC
+  bandwidth percent 5 
+ ! 
+ class SIGTRAN
+  bandwidth percent 10 
+ ! 
+ class NB
+  police rate percent 65 
+   conform-action transmit
+   exceed-action drop
+  ! 
+  priority level 1 
+ ! 
+ class BE1
+  bandwidth percent 20 
+ ! 
+ class class-default
+ ! 
+ end-policy-map
+! 
+policy-map 2MBPS_NMS_INGRESS
+ class class-default
+  set mpls experimental imposition 4
+  set qos-group 4
+  police rate 2000000 bps 
+   conform-action transmit
+  ! 
+ ! 
+ end-policy-map
+! 
+policy-map SERVICE_EGRESS_GE
+ class dscp67_out
+  priority level 1 
+  police rate percent 10 
+  ! 
+ ! 
+ class dscp5_out
+  priority level 2 
+  police rate percent 40 
+  ! 
+ ! 
+ class dscp4_out
+  bandwidth remaining percent 30 
+  queue-limit 1000 ms 
+ ! 
+ class dscp3_out
+  bandwidth remaining percent 30 
+  queue-limit 1000 ms 
+ ! 
+ class dscp2_out
+  bandwidth remaining percent 30 
+  queue-limit 1000 ms 
+ ! 
+ class dscp1_out
+  bandwidth remaining percent 5 
+  queue-limit 1000 ms 
+ ! 
+ class class-default
+  bandwidth remaining percent 5 
+  queue-limit 1000 ms 
+ ! 
+ end-policy-map
+! 
+policy-map WAN_INAPR02_Child
+ class NC
+  bandwidth percent 5 
+ ! 
+ class SIGTRAN
+  bandwidth percent 10 
+ ! 
+ class NB
+  police rate percent 65 
+   conform-action transmit
+   exceed-action drop
+  ! 
+  priority level 1 
+ ! 
+ class BE1
+  bandwidth percent 20 
+ ! 
+ class class-default
+ ! 
+ end-policy-map
+! 
+policy-map PARENT_FLAT_IP_EGRESS
+ class FLAT_IP_EF
+  priority level 1 
+  police rate percent 50 
+  ! 
+ ! 
+ class FLAT_IP_AF4
+  bandwidth percent 25 
+ ! 
+ class FLAT_IP_AF3
+  bandwidth percent 25 
+ ! 
+ class FLAT_IP_AF2
+  bandwidth percent 17 
+ ! 
+ class FLAT_IP_AF1
+  bandwidth percent 17 
+ ! 
+ class class-default
+  bandwidth percent 16 
+ ! 
+ end-policy-map
+! 
+policy-map WAN_EGRESS_CORE_CHILD
+ class NC
+  bandwidth percent 5 
+ ! 
+ class SIGTRAN
+  police rate percent 15 
+   conform-action transmit
+   exceed-action drop
+  ! 
+  priority level 1 
+ ! 
+ class NB
+  police rate percent 30 
+   conform-action transmit
+   exceed-action drop
+  ! 
+  priority level 2 
+ ! 
+ class BE1
+  bandwidth percent 30 
+ ! 
+ class class-default
+  set mpls experimental topmost 0
+  bandwidth percent 20 
+ ! 
+ end-policy-map
+! 
+policy-map WAN_EGRESS_CORE_SBH30
+ class class-default
+  service-policy WAN_EGRESS_CORE_CHILD
+  shape average percent 30 
+ ! 
+ end-policy-map
+! 
+policy-map PARENT_FLAT_IP_INGRESS
+ class FLAT_IP_EF
+  set mpls experimental imposition 2
+ ! 
+ class FLAT_IP_AF4
+  set mpls experimental imposition 4
+ ! 
+ class FLAT_IP_AF3
+  set mpls experimental imposition 4
+ ! 
+ class FLAT_IP_AF2
+  set mpls experimental imposition 1
+ ! 
+ class FLAT_IP_AF1
+  set mpls experimental imposition 0
+ ! 
+ class FLAT_IP_BE1
+  set mpls experimental imposition 0
+ ! 
+ class class-default
+ ! 
+ end-policy-map
+! 
+flow exporter-map FNF_EXPORT_MAP
+ version v9
+ !
+ transport udp 2055
+ source Loopback0
+ destination 10.1.100.194
+!
+flow monitor-map FNF_MONITOR_MAP
+ record ipv4
+ exporter FNF_EXPORT_MAP
+!
+sampler-map FNF_SAMPLER_MAP
+ random 1 out-of 1000
+!
+hw-module bfd-hw-offload enable location 0/1/CPU0
+hw-module bfd-hw-offload enable location 0/2/CPU0
+hw-module location 0/3/CPU0 port-mode 48x1
+hw-module bfd-hw-offload enable location 0/3/CPU0
+hw-module location 0/6/CPU0 port-mode 20x10,4x1,20x10,4x1
+hw-module bfd-hw-offload enable location 0/6/CPU0
+ltrace mode dynamic scale-factor 8 location 0/RSP0/CPU0
+ltrace mode dynamic scale-factor 8 location 0/RSP1/CPU0
+hw-module bfd-hw-offload enable location preconfigure 0/0/CPU0
+hw-module bfd-hw-offload enable location preconfigure 0/4/CPU0
+hw-module bfd-hw-offload enable location preconfigure 0/5/CPU0
+hw-module bfd-hw-offload enable location preconfigure 0/7/CPU0
+interface Bundle-Ether4
+ description ***20G_BE4_vPC_Downlink_to_TAWCSWA01-N3K_TAWCSWA02-N3K_Po12***
+ mtu 9014
+ service-policy output SERVICE_EGRESS
+ bundle minimum-active links 1
+ load-interval 30
+ dampening 1 750 2000 2
+!
+interface Bundle-Ether4.89
+ description SM INBAND - CONNECTION TO ROUTER
+ service-policy input 2MBPS_NMS_INGRESS
+ vrf TX_NMS
+ ipv4 address 10.126.254.194 255.255.255.252
+ encapsulation dot1q 89
+!
+interface Bundle-Ether4.103
+ description *** SD_VRF_to_TAWCSWA01-N3K Po12.103 ***
+ service-policy input SERVICE_OM
+ vrf SD
+ ipv4 address 10.122.131.4 255.255.255.128
+ load-interval 30
+ encapsulation dot1q 103
+!
+interface Bundle-Ether4.104
+ description *** SD_VRF_to_TAWCSWA01-N3K Po12.104 ***
+ service-policy input SERVICE_OM
+ vrf SD
+ ipv4 address 10.123.132.3 255.255.255.240
+ load-interval 30
+ encapsulation dot1q 104
+!
+interface Bundle-Ether4.112
+ description *** SD_VRF_to_TAWCSWA01-N3K Po12.112 ***
+ service-policy input SERVICE_OM
+ vrf SD
+ ipv4 address 10.124.117.131 255.255.255.192
+ load-interval 30
+ encapsulation dot1q 112
+!
+interface Bundle-Ether4.350
+ description *** SD_VRF_to_TAWCSWA01-N3K Po12.350 ***
+ service-policy input SERVICE_OM
+ vrf SD
+ ipv4 address 10.124.132.19 255.255.255.240
+ load-interval 30
+ encapsulation dot1q 350
+!
+interface Bundle-Ether4.502 l2transport
+ description ***L2 to WPJPE01 for TxNMS***
+ encapsulation dot1q 502
+ mtu 1518
+ service-policy input SERVICE_OM
+!
+interface Bundle-Ether4.1200
+ description ***UNIP_OM_to_TAWCSWA01-N3K_Po12.1200***
+ service-policy input SERVICE_OM
+ vrf UNIP_OM
+ ipv4 address 10.151.86.211 255.255.255.248
+ encapsulation dot1q 1200
+!
+interface Bundle-Ether4.1661
+ description ***BSB16 GSH/GARP2 TAWCSWA01-N3K Po12.1661***
+ service-policy input SERVICE_OM
+ vrf SD
+ ipv4 address 10.156.1.67 255.255.255.240
+ load-interval 30
+ encapsulation dot1q 1661
+!
+interface Bundle-Ether30
+ description ***connect to SDKUER01-ASR9K BE30 ***
+ bfd mode ietf
+ bfd address-family ipv4 multiplier 3
+ bfd address-family ipv4 destination 10.159.250.202
+ bfd address-family ipv4 fast-detect
+ bfd address-family ipv4 minimum-interval 50
+ mtu 9216
+ service-policy input CORE_INGRESS
+ service-policy output CORE_EGRESS
+ ipv4 address 10.159.250.201 255.255.255.252
+ load-interval 30
+ dampening 1 750 2000 2
+!
+interface Bundle-Ether100
+ description *** To TAWUER01-ASR9K BE100 (30Gbps) 10.244.44.136***
+ bfd mode ietf
+ bfd address-family ipv4 multiplier 3
+ bfd address-family ipv4 destination 10.244.44.136
+ bfd address-family ipv4 fast-detect
+ bfd address-family ipv4 minimum-interval 200
+ mtu 9212
+ service-policy input CORE_INGRESS
+ service-policy output CORE_EGRESS
+ ipv4 address 10.244.44.137 255.255.255.254
+ load-interval 30
+ dampening 1 750 2000 2
+!
+interface Bundle-Ether100.1
+ description ***To TAWPE01-ASR9K BE100.1 (10Gbps) 10.159.249.45***
+ ipv4 address 10.159.249.46 255.255.255.252
+ load-interval 30
+ dampening
+ encapsulation dot1q 1
+!
+interface Bundle-Ether100.2
+ description ***To TAWUER01-ASR9K BE100 (20Gbps) 10.159.250.13***
+ ipv4 address 10.159.250.14 255.255.255.252
+ load-interval 30
+ dampening 1 750 2000 2
+ encapsulation dot1q 2
+!
+interface Bundle-Ether100.40
+ description ***To TAWUER01-ASR9K for Non-Zero Area_2.0.20.1***
+ bandwidth 1
+ ipv4 address 10.240.41.141 255.255.255.254
+ load-interval 30
+ dampening 1 750 2000 2
+ encapsulation dot1q 40
+!
+interface Bundle-Ether100.41
+ description ***To TAWUER01-ASR9K for Non-Zero Area_2.0.21.1***
+ bandwidth 1
+ ipv4 address 10.240.41.143 255.255.255.254
+ load-interval 30
+ dampening 1 750 2000 2
+ encapsulation dot1q 41
+!
+interface Bundle-Ether100.42
+ description ***To TAWUER01-ASR9K for Non-Zero Area_2.0.24.1***
+ bandwidth 1
+ ipv4 address 10.240.41.181 255.255.255.254
+ load-interval 30
+ dampening 1 750 2000 2
+ encapsulation dot1q 42
+!
+interface Bundle-Ether100.43
+ description ***To TAWUER01-ASR9K for Non-Zero Area_2.0.21.2***
+ bandwidth 1
+ ipv4 address 10.240.41.183 255.255.255.254
+ load-interval 30
+ dampening 1 750 2000 2
+ encapsulation dot1q 43
+!
+interface Bundle-Ether100.101 l2transport
+ description ***L2 To TAWUER01-ASR9K for E_BSB16_GB***
+ encapsulation dot1q 101
+ rewrite ingress tag pop 1 symmetric
+!
+interface Bundle-Ether100.123 l2transport
+ description ***L2 To TAWUER01-ASR9K for E_BSB16_A_UP***
+ encapsulation dot1q 123
+ rewrite ingress tag pop 1 symmetric
+!
+interface Bundle-Ether100.251 l2transport
+ description ***L2 To TAWUER01-ASR9K for E_TWRN13_OM***
+ encapsulation dot1q 251
+ rewrite ingress tag pop 1 symmetric
+ shutdown
+!
+interface Bundle-Ether100.255 l2transport
+ description ***L2 To TAWUER01-ASR9K for E_BSB16_OM***
+ encapsulation dot1q 255
+ rewrite ingress tag pop 1 symmetric
+!
+interface Bundle-Ether104
+ description ***To INAPR01-CRSX BE104 [20G] via CTSB (PACKET) 10.159.249.238***
+ bfd mode ietf
+ bfd address-family ipv4 multiplier 3
+ bfd address-family ipv4 destination 10.159.249.238
+ bfd address-family ipv4 fast-detect
+ bfd address-family ipv4 minimum-interval 50
+ mtu 9216
+ service-policy input CORE_INGRESS
+ service-policy output CORE_EGRESS
+ ipv4 address 10.159.249.237 255.255.255.252
+ load-interval 30
+ dampening 1 750 2000 2
+!
+interface Bundle-Ether124
+ description ***To INAPR01-CRSX BE124-3rd Link CTS(3G)-via FiberComm (FCN)***
+ bfd address-family ipv4 multiplier 3
+ bfd address-family ipv4 destination 10.159.249.246
+ bfd address-family ipv4 fast-detect
+ bfd address-family ipv4 minimum-interval 50
+ mtu 9014
+ service-policy output WAN_EGRESS_CORE_SBH30
+ ipv4 address 10.159.249.245 255.255.255.252
+ shutdown
+ load-interval 30
+ dampening
+!
+interface Bundle-Ether601
+ description ***Flat IP - CTS CELCOM TWU AC Port 1st 10GE(Standby)***
+ mtu 1614
+ service-policy input CORE_INGRESS
+ service-policy output CORE_EGRESS
+ load-interval 30
+ dampening
+!
+interface Bundle-Ether601.1001
+ description PTN Kalabakan
+ ipv4 address 10.240.94.77 255.255.255.252
+ encapsulation dot1q 1001
+!
+interface Bundle-Ether601.1003
+ description PTN Ladang Imam
+ ipv4 address 10.240.94.69 255.255.255.252
+ encapsulation dot1q 1003
+!
+interface Bundle-Ether601.1059
+ description ***FSB00303_S00226_TAWUER01_S00226_TAWUER02_S00230_20293-FELDA_UMAS-ACC1***
+ mtu 1618
+ ipv4 address 10.240.227.130 255.255.255.248
+ load-interval 30
+ encapsulation dot1q 1059
+!
+interface Bundle-Ether601.1071
+ description ***FSB00206_S00226_TAWUER01_S00226_TAWUER02_S00583_KALABAKAN_TGH***
+ mtu 1618
+ ipv4 address 10.244.42.122 255.255.255.248
+ load-interval 30
+ encapsulation dot1q 1071
+!
+interface Bundle-Ether601.1077
+ description ***FSB00305_S00226_TAWUER01_S00226_TAWUER02_S00232_20295-FUJIMART-ACC1***
+ ipv4 address 10.240.227.146 255.255.255.248
+ load-interval 30
+ encapsulation dot1q 1077
+!
+interface Bundle-Ether601.1079
+ description ***FSB00307_S00226_TAWUER01_S00226_TAWUER02_S00532_20297-BOMBALAI-ACC1***
+ mtu 1618
+ ipv4 address 10.240.227.162 255.255.255.248
+ load-interval 30
+ encapsulation dot1q 1079
+!
+interface Bundle-Ether601.2003
+ description * FSB00019_S00226_TAWAU_S00387_LADANG PEGAGAU *
+ ipv4 address 10.244.68.138 255.255.255.248
+ encapsulation dot1q 2003
+!
+interface Bundle-Ether601.2208
+ description ***FSB00226_S00226_TAWUER01_S00226_TAWUER02_S01439_KM50_KLBN_NBWN_10G***
+ ipv4 address 10.240.228.186 255.255.255.248
+ load-interval 30
+ encapsulation dot1q 2208
+!
+interface Bundle-Ether601.2211
+ description FSB00372_S00226_TAWUER01_S00226_TAWUER02_S00250_20142-TG_KAPOR-ACC1
+ ipv4 address 10.240.189.170 255.255.255.248
+ load-interval 30
+ encapsulation dot1q 2211
+!
+interface Bundle-Ether601.2228
+ description ***FSB00421_S00226_TAWUER01_S00226_TAWUER02_S00248_20403-DUMPAS-ACC1***
+ ipv4 address 10.240.198.50 255.255.255.248
+ load-interval 30
+ encapsulation dot1q 2228
+!
+interface Bundle-Ether601.2277
+ description FSB00526_S00226_TAWUER01_S00226_TAWUER02_S00223_20140-MOUNT_ANDRASSY-ACC1
+ ipv4 address 10.240.29.122 255.255.255.248
+ encapsulation dot1q 2277
+!
+interface Bundle-Ether601.2278
+ description FSB00528_S00226_TAWUER01_S00226_TAWUER02_S00333_20044-SAPANG-ACC1
+ ipv4 address 10.240.29.138 255.255.255.248
+ encapsulation dot1q 2278
+!
+interface Bundle-Ether602
+ description ***CELCOM TWU AC Port 2nd 10GE(Active)***
+ mtu 1614
+ service-policy input CORE_INGRESS
+ service-policy output CORE_EGRESS
+ load-interval 30
+ dampening
+!
+interface Bundle-Ether602.1041
+ description ***FSB00297_S00226_TAWUER01_S00226_TAWUER02_S00258_20287-TITINGAN-ACC1***
+ ipv4 address 10.240.227.82 255.255.255.248
+ load-interval 30
+ encapsulation dot1q 1041
+!
+interface Bundle-Ether602.1043
+ description ***FSB00298_S00226_TAWUER01_S00226_TAWUER02_S00433_20288-TG_BATU_LAUT-ACC1***
+ ipv4 address 10.240.227.90 255.255.255.248
+ load-interval 30
+ encapsulation dot1q 1043
+!
+interface Bundle-Ether602.1047
+ description ***FSB00299_S00226_TAWUER01_S00226_TAWUER02_S00560_20289-TG_BT_KERAMAT-ACC1***
+ ipv4 address 10.240.227.98 255.255.255.248
+ load-interval 30
+ encapsulation dot1q 1047
+!
+interface Bundle-Ether602.1051
+ description ***FSB00301_S00226_TAWUER01_S00226_TAWUER02_S00221_20291-TAI_TAI-ACC1***
+ ipv4 address 10.240.227.114 255.255.255.248
+ load-interval 30
+ encapsulation dot1q 1051
+!
+interface Bundle-Ether602.1061
+ description ***FSB00304_S00226_TAWUER01_S00226_TAWUER02_S00257_20294-SABINDO-ACC1***
+ ipv4 address 10.240.227.138 255.255.255.248
+ load-interval 30
+ encapsulation dot1q 1061
+!
+interface Bundle-Ether602.1097
+ description FSB00054_S00226_TAWUER01_S00226_TAWUER02_S00225_WISMA_DAT
+ ipv4 address 10.244.67.194 255.255.255.248
+ load-interval 30
+ encapsulation dot1q 1097
+!
+interface Bundle-Ether602.1138
+ description PTN_SMK_TAWAU
+ ipv4 address 10.244.65.89 255.255.255.252
+ encapsulation dot1q 1138
+!
+interface Bundle-Ether602.2213
+ description ***FSB00415_S00226_TAWUER01_S00226_TAWUER02_S00228_20397-KUHARA-ACC1***
+ mtu 1618
+ ipv4 address 10.240.198.2 255.255.255.248
+ load-interval 30
+ encapsulation dot1q 2213
+!
+interface Bundle-Ether602.2217
+ description ***FSB00416_S00226_TAWUER01_S00226_TAWUER02_S00229_20398-PASIR_PUTIH-ACC1***
+ ipv4 address 10.240.198.10 255.255.255.248
+ load-interval 30
+ encapsulation dot1q 2217
+!
+interface Bundle-Ether602.2231
+ description ***FSB00422_S00226_TAWUER01_S00226_TAWUER02_S00251_20404-HKC_BUILDING-ACC1***
+ mtu 1618
+ ipv4 address 10.240.198.58 255.255.255.248
+ load-interval 30
+ encapsulation dot1q 2231
+!
+interface Bundle-Ether602.2237
+ description ***FSB00424_S00226_TAWUER01_S00226_TAWUER02_S00256_20406-TAMAN_RIA-ACC1***
+ ipv4 address 10.240.198.74 255.255.255.248
+ load-interval 30
+ encapsulation dot1q 2237
+!
+interface Bundle-Ether602.2238
+ description ***FSB00425_S00226_TAWUER01_S00226_TAWUER02_S00262_20407-KUHARA_JAYA_SL-ACC1***
+ mtu 1618
+ ipv4 address 10.240.198.82 255.255.255.248
+ load-interval 30
+ encapsulation dot1q 2238
+!
+interface Bundle-Ether602.2241
+ description ***FSB00435_S00226_TAWUER01_S00226_TAWUER02_S00406_20417-COWIE_BAY-ACC1***
+ ipv4 address 10.240.198.162 255.255.255.248
+ load-interval 30
+ encapsulation dot1q 2241
+!
+interface Bundle-Ether602.2251
+ description ***FSB00463_S00226_TAWUER01_S00226_TAWUER02_S00721_20446-EASTERN_PLAZAID-ACC1***
+ mtu 1618
+ ipv4 address 10.240.229.130 255.255.255.248
+ load-interval 30
+ encapsulation dot1q 2251
+!
+interface Bundle-Ether602.2253
+ description ***FSB00465_S00226_TAWUER01_S00226_TAWUER02_S00727_20448-MASJID_RAYA-ACC1***
+ ipv4 address 10.240.229.146 255.255.255.248
+ load-interval 30
+ encapsulation dot1q 2253
+!
+interface Bundle-Ether602.2257
+ description ***FSB00481_S00226_TAWUER01_S00226_TAWUER02_S00966_20463-PSS_JLN_KUHARA-ACC1***
+ ipv4 address 10.240.28.18 255.255.255.248
+ load-interval 30
+ encapsulation dot1q 2257
+!
+interface Bundle-Ether602.2268
+ description ***FSB00502_S00226_TAWUER01_S00226_TAWUER02_S01218_20484-SMK_TAWAU-ACC1***
+ ipv4 address 10.240.28.186 255.255.255.248
+ load-interval 30
+ encapsulation dot1q 2268
+!
+interface Bundle-Ether602.2271
+ description ***FSB00504_S00226_TAWUER01_S00226_TAWUER02_S01330_20486-KG_KONGSI6-ACC1***
+ ipv4 address 10.240.28.202 255.255.255.248
+ load-interval 30
+ encapsulation dot1q 2271
+!
+interface Bundle-Ether603
+ description *** CELCOM TWU AC Port 3rd 10GE(Active)***
+ mtu 1614
+ service-policy input CORE_INGRESS
+ service-policy output CORE_EGRESS
+ load-interval 30
+ dampening
+!
+interface Bundle-Ether603.1004
+ description ***FSB00038_S00226_TAWAU_S00246_JLNMAKTAB***
+ ipv4 address 10.244.69.18 255.255.255.248
+ encapsulation dot1q 1004
+!
+interface Bundle-Ether603.1006
+ description FSB00049_S00226_TAWUER01_S00226_TAWUER02_S00523_MOSTYN_(BUKIT_CHENDERAWASIH)
+ ipv4 address 10.244.67.154 255.255.255.248
+ load-interval 30
+ encapsulation dot1q 1006
+!
+interface Bundle-Ether603.1021
+ description ***FSB00196_S00226_TAWUER01_S00226_TAWUER02_S00520_KABONGAN***
+ mtu 1618
+ ipv4 address 10.244.42.42 255.255.255.248
+ load-interval 30
+ encapsulation dot1q 1021
+!
+interface Bundle-Ether603.1031
+ description ***FSB00275_S00226_TAWUER01_S00226_TAWUER02_S00247_20265-SHAN_SHUI-ACC1***
+ mtu 1618
+ ipv4 address 10.240.226.162 255.255.255.248
+ load-interval 30
+ encapsulation dot1q 1031
+!
+interface Bundle-Ether603.1068
+ description ***FSB00151_S00226_TAWUER01_S00226_TAWUER02_S00250_TG_KAPOR (ToRemove)***
+ mtu 9018
+ ipv4 address 10.244.49.194 255.255.255.248
+ shutdown
+ load-interval 30
+ encapsulation dot1q 1068
+!
+interface Bundle-Ether603.1078
+ description ***FSB00306_S00226_TAWUER01_S00226_TAWUER02_S00501_20296-BKT_KAMIRI-ACC1***
+ ipv4 address 10.240.227.154 255.255.255.248
+ load-interval 30
+ encapsulation dot1q 1078
+!
+interface Bundle-Ether603.1081
+ description ***FSB00131_S00226_TAWUER01_S00226_TAWUER02_S00054_BT_PAYUNG***
+ ipv4 address 10.244.49.34 255.255.255.248
+ load-interval 30
+ encapsulation dot1q 1081
+!
+interface Bundle-Ether603.1083
+ description ***FSB00209_S00226_TAWUER01_S00226_TAWUER02_S00631_BT_15_APAS***
+ mtu 1618
+ ipv4 address 10.244.42.146 255.255.255.248
+ load-interval 30
+ encapsulation dot1q 1083
+!
+interface Bundle-Ether603.1093
+ description **FSB00149_S00226_TAWUER01_S00226_TAWUER02_S00223_MOUNT_ANDRASSY - shutdown moved to BE601.2277***
+ mtu 1618
+ ipv4 address 10.244.49.178 255.255.255.248
+ load-interval 30
+ encapsulation dot1q 1093
+!
+interface Bundle-Ether603.2007
+ description ***FSB00086_S00226_TAWUER01_S00226_TAWUER02_S00234_SEMPORNA***
+ ipv4 address 10.244.69.186 255.255.255.248
+ load-interval 30
+ encapsulation dot1q 2007
+!
+interface Bundle-Ether603.2218
+ description ***FSB00417_S00226_TAWUER01_S00226_TAWUER02_S00231_20399-TAWAU_BO-ACC1***
+ ipv4 address 10.240.198.18 255.255.255.248
+ load-interval 30
+ encapsulation dot1q 2218
+!
+interface Bundle-Ether603.2223
+ description ***FSB00419_S00226_TAWUER01_S00226_TAWUER02_S00237_20401-TAWAU_AIRPORT-ACC1***
+ ipv4 address 10.240.198.34 255.255.255.248
+ load-interval 30
+ encapsulation dot1q 2223
+!
+interface Bundle-Ether603.2227
+ description ***FSB00420_S00226_TAWUER01_S00226_TAWUER02_S00242_20402-KAU_SING-ACC1***
+ ipv4 address 10.240.198.42 255.255.255.248
+ load-interval 30
+ encapsulation dot1q 2227
+!
+interface Bundle-Ether604
+ description ***CELCOM TWU AC Port 4th 10GE(Active)***
+ mtu 1614
+ service-policy input CORE_INGRESS
+ service-policy output CORE_EGRESS
+ load-interval 30
+ dampening
+!
+interface Bundle-Ether604.1001
+ description ***FSB00150_S00226_TAWUER01_S00226_TAWUER02_S00227_KALABAKAN***
+ mtu 1618
+ ipv4 address 10.244.49.186 255.255.255.248
+ load-interval 30
+ encapsulation dot1q 1001
+!
+interface Bundle-Ether604.1003
+ description ***FSB00192_S00226_TAWUER01_S00226_TAWUER02_S00491_LADANG_IMAM***
+ mtu 1618
+ ipv4 address 10.244.42.10 255.255.255.248
+ load-interval 30
+ encapsulation dot1q 1003
+!
+interface Bundle-Ether604.1013
+ description ***FSB00204_S00226_TAWUER01_S00226_TAWUER02_S00557_BRANTIAN***
+ mtu 1618
+ ipv4 address 10.244.42.106 255.255.255.248
+ load-interval 30
+ encapsulation dot1q 1013
+!
+interface Bundle-Ether604.1023
+ description ***FSB00043_S00226_TAWUER01_S00226_TAWUER02_S00382_MELATI***
+ ipv4 address 10.244.67.106 255.255.255.248
+ load-interval 30
+ encapsulation dot1q 1023
+!
+interface Bundle-Ether604.1101
+ description ***FSB00225_S00226_TAWUER01_S00226_TAWUER02_S01438_KM45_KLBN_NBWN***
+ ipv4 address 10.244.34.18 255.255.255.248
+ load-interval 30
+ encapsulation dot1q 1101
+!
+interface Bundle-Ether604.1103
+ description ***FSB00223_S00001_INAUER01_S00001_INAUER02_S01430_KM80_KLBN_NBWN***
+ mtu 1618
+ ipv4 address 10.244.34.2 255.255.255.248
+ load-interval 30
+ encapsulation dot1q 1103
+!
+interface Bundle-Ether604.1139
+ description ***FSB00224_S00001_INAUER01_S00001_INAUER02_S01432_KM60_KLBN_NBWN***
+ mtu 9018
+ ipv4 address 10.244.34.10 255.255.255.248
+ load-interval 30
+ encapsulation dot1q 1139
+!
+interface Bundle-Ether604.1163
+ description FSB00064_S00226_TAWPE01_S00226_TAWPE02_S01460_TIBOW_RESEARCH_CENTER
+ ipv4 mtu 1614
+ ipv4 address 10.244.68.18 255.255.255.248
+ encapsulation dot1q 1163
+!
+interface Bundle-Ether604.2048
+ description ***FSB00044_S00226_TAWUER01_S00226_TAWUER02_S00327_BKT_FORBES_NEW2G*** ipv4 address 10.244.34.58 255.255.255.248
+ ipv4 address 10.244.34.58 255.255.255.248
+ load-interval 30
+ encapsulation dot1q 2048
+!
+interface Bundle-Ether604.2273
+ description ***FSB00508_S00226_TAWUER01_S00226_TAWUER02_S01614_20362-TMN_SEMARAK2-ACC1***
+ mtu 1618
+ ipv4 address 10.240.28.234 255.255.255.248
+ load-interval 30
+ encapsulation dot1q 2273
+!
+interface Bundle-Ether605
+ description ***Connect To CTSB NEID_0011 Slot04_Port12 (STBY)***
+ mtu 9014
+ service-policy input CORE_INGRESS
+ service-policy output CORE_EGRESS
+ load-interval 30
+ dampening
+!
+interface Bundle-Ether605.2281
+ description ***FSB00549_S00226_TAWUER01_S00226_TAWUER02_S01160_20522-KGBANGAUBANGAU-ACC1***
+ ipv4 address 10.244.16.50 255.255.255.248
+ load-interval 30
+ encapsulation dot1q 2281
+!
+interface Bundle-Ether605.2283
+ description ***FSB00550_S00226_TAWUER01_S00226_TAWUER02_S00238_20523-KELUMPANG-ACC1*** 
+ ipv4 address 10.244.16.58 255.255.255.248
+ load-interval 30
+ encapsulation dot1q 2283
+!
+interface Bundle-Ether605.2287
+ description ***FSB00551_S00226_TAWUER01_S00226_TAWUER02_S00649_20524-KG_TAS-ACC1***
+ ipv4 address 10.244.16.66 255.255.255.248
+ load-interval 30
+ encapsulation dot1q 2287
+!
+interface Bundle-Ether605.2288
+ description ***FSB00556_S00226_TAWUER01_S00226_TAWUER02_S00617_20529-LADANG_SABDI-ACC1***
+ ipv4 address 10.244.16.106 255.255.255.248
+ load-interval 30
+ encapsulation dot1q 2288
+!
+interface Bundle-Ether606
+ description ***Connected to CTSB NEID_0011_Slot-04_Port-11 (ACTIVE)***
+ mtu 9014
+ service-policy input CORE_INGRESS
+ service-policy output CORE_EGRESS
+ load-interval 30
+ dampening
+!
+interface Bundle-Ether606.2298
+ description FSB00584_S00226_TAWUER01_S00226_TAWUER02_S01106_20307-SK_TITINGAN-ACC1
+ ipv4 address 10.240.98.74 255.255.255.248
+ encapsulation dot1q 2298
+!
+interface Bundle-Ether701
+ description ***FLAT_IP_RAN:TM_GALACTIC(Standby)***
+ mtu 9014
+ service-policy input CORE_INGRESS
+ service-policy output CORE_EGRESS
+ load-interval 30
+!
+interface Bundle-Ether701.1000
+ description ***FSB00423_S00226_TAWUER01_S00226_TAWUER02_S00253_20405-TM_TAWAU_CARRIER-ACC1***
+ ipv4 address 10.240.198.66 255.255.255.248
+ load-interval 30
+ encapsulation dot1q 1000
+!
+interface Bundle-Ether701.1001
+ description ***FSB00319_S00226_TAWUER01_S00226_TAWUER02_S00254_20309-TM_SIN_ONN-ACC1***
+ ipv4 address 10.240.228.2 255.255.255.248
+ load-interval 30
+ encapsulation dot1q 1001
+!
+interface Bundle-Ether701.1002
+ description ***FSB00448_S00226_TAWUER01_S00226_TAWUER02_S00629_20431-TM_APAS-ACC1***
+ ipv4 address 10.240.229.10 255.255.255.248
+ load-interval 30
+ encapsulation dot1q 1002
+!
+interface Loopback0
+ description ***Loopback used for MPLS Peering***
+ ipv4 address 10.159.255.90 255.255.255.255
+!
+interface Loopback1
+ description ***Loopback used for OSPF Process 1***
+ ipv4 address 10.151.234.4 255.255.255.255
+!
+interface Loopback2
+ description TWAMP TEST (Creanord Probe @EPC <-> UER)
+ vrf LTE
+ ipv4 address 10.159.255.136 255.255.255.255
+!
+interface Loopback20201
+ description LOOPBACK_AREA_2.0.20.1
+ ipv4 address 10.240.30.78 255.255.255.255
+ load-interval 30
+!
+interface Loopback20211
+ description LOOPBACK_AREA_2.0.21.1
+ ipv4 address 10.240.30.80 255.255.255.255
+ load-interval 30
+!
+interface Loopback20212
+ description LOOPBACK_AREA_2.0.21.2
+ ipv4 address 10.240.30.120 255.255.255.255
+ load-interval 30
+!
+interface Loopback20241
+ description LOOPBACK_AREA_2.0.24.1
+ ipv4 address 10.240.30.118 255.255.255.255
+ load-interval 30
+!
+interface MgmtEth0/RSP0/CPU0/0
+ shutdown
+!
+interface MgmtEth0/RSP1/CPU0/0
+ shutdown
+!
+interface GigabitEthernet0/1/1/0
+ description ***SB03046 S01945 KEM PANGAKAP TIKU TAWAU - S00226 TAWAU MTX***
+ service-policy output SERVICE_EGRESS_GE
+ negotiation auto
+ load-interval 30
+ dampening 1 750 2000 2
+!
+interface GigabitEthernet0/1/1/0.1470
+ description ***ZTE_2GABIS_S01945_KEM PANGAKAP TIKU TAWAU***
+ vrf CD_ABIS
+ ipv4 mtu 1530
+ ipv4 address 20.196.209.13 255.255.255.252
+ encapsulation dot1q 1470
+!
+interface GigabitEthernet0/1/1/0.1471
+ description ***ZTE_4GS1C_S01945_KEM PANGAKAP TIKU TAWAU***
+ vrf CD_S1C
+ ipv4 mtu 1530
+ ipv4 address 19.88.39.13 255.255.255.252
+ encapsulation dot1q 1471
+!
+interface GigabitEthernet0/1/1/0.1472
+ description ***ZTE_4GS1U_S01945_KEM PANGAKAP TIKU TAWAU***
+ vrf CD_S1U
+ ipv4 mtu 1530
+ ipv4 address 19.88.38.13 255.255.255.252
+ encapsulation dot1q 1472
+!
+interface GigabitEthernet0/1/1/0.1473
+ description ***ZTE_OAM_S01945_KEM PANGAKAP TIKU TAWAU***
+ vrf CD_OM
+ ipv4 mtu 1530
+ ipv4 address 20.204.209.13 255.255.255.252
+ encapsulation dot1q 1473
+!
+interface GigabitEthernet0/1/1/0.1474
+ description ***ZTE_4GX2_S01945_KEM PANGAKAP TIKU TAWAU***
+ vrf CD_X2
+ ipv4 mtu 1530
+ ipv4 address 20.198.209.13 255.255.255.252
+ encapsulation dot1q 1474
+!
+interface GigabitEthernet0/1/1/0.1475
+ description ***ZTE_PTP_S01945_KEM PANGAKAP TIKU TAWAU***
+ vrf CD_PTP
+ ipv4 mtu 1530
+ ipv4 address 20.206.209.13 255.255.255.252
+ encapsulation dot1q 1475
+!
+interface GigabitEthernet0/1/1/0.1476
+ description ***KEM PANGAKAP TIKU TAWAU-S00226 TAWAU MTX TXNMS***
+ service-policy input 2MBPS_NMS_INGRESS
+ vrf TX_NMS
+ ipv4 address 10.127.21.157 255.255.255.252
+ encapsulation dot1q 1476
+!
+interface GigabitEthernet0/1/1/1
+ shutdown
+!
+interface GigabitEthernet0/1/1/2
+ shutdown
+!
+interface GigabitEthernet0/1/1/3
+ shutdown
+!
+interface GigabitEthernet0/1/1/4
+ shutdown
+!
+interface GigabitEthernet0/1/1/5
+ shutdown
+!
+interface GigabitEthernet0/1/1/6
+ shutdown
+!
+interface GigabitEthernet0/1/1/7
+ shutdown
+!
+interface GigabitEthernet0/1/1/8
+ shutdown
+!
+interface GigabitEthernet0/1/1/9
+ shutdown
+!
+interface GigabitEthernet0/1/1/10
+ description ***To E_BSB16_A_CP GARP_SL1***
+ service-policy input SIGTRAN
+ vrf E_A_CP
+ ipv4 address 10.156.6.22 255.255.255.248
+ negotiation auto
+ shutdown
+ load-interval 30
+ dampening 1 750 2000 2
+!
+interface GigabitEthernet0/1/1/11
+ shutdown
+!
+interface GigabitEthernet0/1/1/12
+ shutdown
+!
+interface GigabitEthernet0/1/1/13
+ shutdown
+!
+interface GigabitEthernet0/1/1/14
+ shutdown
+!
+interface GigabitEthernet0/1/1/15
+ shutdown
+!
+interface GigabitEthernet0/1/1/16
+ shutdown
+!
+interface GigabitEthernet0/1/1/17
+ shutdown
+!
+interface GigabitEthernet0/1/1/18
+ shutdown
+!
+interface GigabitEthernet0/1/1/19
+ shutdown
+!
+interface GigabitEthernet0/3/0/0
+ shutdown
+!
+interface GigabitEthernet0/3/0/1
+ description CO-LOCATE Connection To MTXTWU_NODEB
+ mtu 1514
+ service-policy output SERVICE_EGRESS_GE
+ negotiation auto
+ load-interval 30
+ dampening 1 750 2000 2
+!
+interface GigabitEthernet0/3/0/1.610
+ description ZTE_2GABIS_S110B_S00226OD_MTXTAWAU 
+ service-policy input SERVICE_INGRESS
+ vrf CD_ABIS
+ ipv4 address 20.196.198.129 255.255.255.252
+ encapsulation dot1q 610
+!
+interface GigabitEthernet0/3/0/1.611
+ description ZTE_4GS1C_S110B_S00226OD_MTXTAWAU 
+ service-policy input SERVICE_INGRESS
+ vrf CD_S1C
+ ipv4 address 20.200.198.129 255.255.255.252
+ encapsulation dot1q 611
+!
+interface GigabitEthernet0/3/0/1.612
+ description ZTE_4GS1U_S110B_S00226OD_MTXTAWAU 
+ service-policy input SERVICE_INGRESS
+ vrf CD_S1U
+ ipv4 address 20.202.198.129 255.255.255.252
+ encapsulation dot1q 612
+!
+interface GigabitEthernet0/3/0/1.613
+ description ZTE_AOM_S110B_S00226OD_MTXTAWAU 
+ service-policy input SERVICE_INGRESS
+ vrf CD_OM
+ ipv4 address 20.204.198.129 255.255.255.252
+ encapsulation dot1q 613
+!
+interface GigabitEthernet0/3/0/1.614
+ description ZTE_4GX2_S110B_S00226OD_MTXTAWAU 
+ service-policy input SERVICE_INGRESS
+ vrf CD_X2
+ ipv4 address 20.198.198.129 255.255.255.252
+ encapsulation dot1q 614
+!
+interface GigabitEthernet0/3/0/1.615
+ description ZTE_PTP_S110B_S00226OD_MTXTAWAU 
+ service-policy input SERVICE_INGRESS
+ vrf CD_PTP
+ ipv4 address 20.206.198.129 255.255.255.252
+ encapsulation dot1q 615
+!
+interface GigabitEthernet0/3/0/2
+ description PTP (existing from Tawau A 6/1/0
+ mtu 1514
+ service-policy input SERVICE_INGRESS
+ service-policy output SERVICE_EGRESS_GE
+ vrf PTP
+ ipv4 address 10.158.33.185 255.255.255.248
+ negotiation auto
+ load-interval 30
+ dampening 1 750 2000 2
+!
+interface GigabitEthernet0/3/0/3
+ mtu 1514
+ service-policy output SERVICE_EGRESS_GE
+ negotiation auto
+ load-interval 30
+ dampening 1 750 2000 2
+!
+interface GigabitEthernet0/3/0/3.1316
+ description NMS_SB02918_S01216_TSH JLN_APAS-TAWAU_MTX
+ service-policy input 2MBPS_NMS_INGRESS
+ vrf TX_NMS
+ ipv4 address 10.127.123.9 255.255.255.252
+ encapsulation dot1q 1316
+!
+interface GigabitEthernet0/3/0/3.1600
+ description BAZONG
+ service-policy input SERVICE_INGRESS
+ vrf E_2G3G
+ ipv4 address 10.156.104.26 255.255.255.252
+ encapsulation dot1q 1600
+!
+interface GigabitEthernet0/3/0/3.1604
+ description LTE BAZHONG
+ service-policy input SERVICE_INGRESS
+ vrf LTE
+ ipv4 address 10.157.189.106 255.255.255.248
+ encapsulation dot1q 1604
+!
+interface GigabitEthernet0/3/0/3.1606
+ description INBAND TAWAU MTX-BAZHONG
+ service-policy input 2MBPS_NMS_INGRESS
+ vrf TX_NMS
+ ipv4 address 10.125.127.49 255.255.255.248
+ encapsulation dot1q 1606
+!
+interface GigabitEthernet0/3/0/4
+ description *** TAWAU_BSC BSB16 - MAIN ***
+ service-policy input SERVICE_INGRESS
+ service-policy output SERVICE_EGRESS_GE
+ negotiation auto
+!
+interface GigabitEthernet0/3/0/4.16 l2transport
+ encapsulation dot1q 16
+ rewrite ingress tag pop 1 symmetric
+!
+interface GigabitEthernet0/3/0/5
+ description TO-TAWPE01-ASR9K_HSRP
+!
+interface GigabitEthernet0/3/0/5.16 l2transport
+ encapsulation dot1q 16
+ rewrite ingress tag pop 1 symmetric
+!
+interface GigabitEthernet0/3/0/6
+ description ***connected to Huawei NE40E gi0/0/5 ***
+ cdp
+ mtu 1614
+ shutdown
+ load-interval 30
+ dampening
+!
+interface GigabitEthernet0/3/0/6.2005 l2transport
+ description *Ne40e:L2VPN ETAWPE022<>EINACR02 via UNIP TAWPE01 gi0/4/1/3**
+ encapsulation dot1q 2005
+ rewrite ingress tag pop 1 symmetric
+ mtu 1568
+!
+interface GigabitEthernet0/3/0/7
+ shutdown
+!
+interface GigabitEthernet0/3/0/8
+ mtu 1514
+ service-policy output SERVICE_EGRESS_GE
+ negotiation auto
+ load-interval 30
+ dampening 1 750 2000 2
+!
+interface GigabitEthernet0/3/0/8.1360
+ description 3G PERDANAPARK
+ service-policy input SERVICE_INGRESS
+ vrf E_2G3G
+ ipv4 address 10.222.221.30 255.255.255.252
+ encapsulation dot1q 1360
+!
+interface GigabitEthernet0/3/0/8.1364
+ description LTE PERDANAPARK
+ service-policy input SERVICE_INGRESS
+ vrf LTE
+ ipv4 address 10.157.189.194 255.255.255.248
+ encapsulation dot1q 1364
+!
+interface GigabitEthernet0/3/0/8.1366
+ description PERDANAPARK_SM_INBAND_NMS
+ service-policy input 2MBPS_NMS_INGRESS
+ vrf TX_NMS
+ ipv4 address 10.127.181.177 255.255.255.248
+ encapsulation dot1q 1366
+!
+interface GigabitEthernet0/3/0/8.2440
+ description 3G_GIANT_TAWAU
+ service-policy input SERVICE_INGRESS
+ vrf E_2G3G
+ ipv4 address 10.222.221.86 255.255.255.252
+ encapsulation dot1q 2440
+!
+interface GigabitEthernet0/3/0/8.2444
+ description LTE_GIANT_TAWAU
+ service-policy input SERVICE_INGRESS
+ vrf LTE
+ ipv4 address 10.224.197.114 255.255.255.248
+ encapsulation dot1q 2444
+!
+interface GigabitEthernet0/3/0/8.2449
+ description TXNMS_GIANT_TAWAU
+ service-policy input 2MBPS_NMS_INGRESS
+ vrf TX_NMS
+ ipv4 address 10.127.170.57 255.255.255.252
+ encapsulation dot1q 2449
+!
+interface GigabitEthernet0/3/0/9
+ description ***** CONNECTED TO KGSGPUKUL via MICROWAVE *****
+ mtu 1514
+ service-policy output SERVICE_EGRESS_GE
+ negotiation auto
+ load-interval 30
+ dampening 1 750 2000 2
+!
+interface GigabitEthernet0/3/0/9.2343
+ description MORAN KGSGPUKUL
+ service-policy input SERVICE_INGRESS
+ vrf E_2G3G
+ ipv4 address 10.156.41.66 255.255.255.252
+ encapsulation dot1q 2343
+!
+interface GigabitEthernet0/3/0/9.2344
+ description LTE_KGSGPUKUL
+ service-policy input SERVICE_INGRESS
+ vrf LTE
+ ipv4 address 10.224.57.2 255.255.255.248
+ encapsulation dot1q 2344
+!
+interface GigabitEthernet0/3/0/9.2349
+ description HUA Inband - KG SG PUKUL
+ service-policy input 2MBPS_NMS_INGRESS
+ vrf TX_NMS
+ ipv4 address 10.127.255.21 255.255.255.252
+ encapsulation dot1q 2349
+!
+interface GigabitEthernet0/3/0/10
+ mtu 1514
+ service-policy output SERVICE_EGRESS_GE
+ negotiation auto
+ shutdown
+ load-interval 30
+ dampening 1 750 2000 2
+!
+interface GigabitEthernet0/3/0/10.990
+ description KGKONGSI10_S01098
+ service-policy input SERVICE_INGRESS
+ vrf E_2G3G
+ ipv4 address 10.156.105.2 255.255.255.252
+ encapsulation dot1q 990
+!
+interface GigabitEthernet0/3/0/10.994
+ description LTE_KGKONGSI10_S01098
+ service-policy input SERVICE_INGRESS
+ vrf LTE
+ ipv4 address 10.224.198.234 255.255.255.248
+ encapsulation dot1q 994
+!
+interface GigabitEthernet0/3/0/10.996
+ description KGKONGSI_10_SM_INBAND_NMS
+ service-policy input 2MBPS_NMS_INGRESS
+ vrf TX_NMS
+ ipv4 address 10.127.181.169 255.255.255.248
+ encapsulation dot1q 996
+!
+interface GigabitEthernet0/3/0/11
+ service-policy output SERVICE_EGRESS_GE
+ shutdown
+!
+interface GigabitEthernet0/3/0/11.1380
+ description MRSM_TAWAU
+ service-policy input SERVICE_INGRESS
+ vrf E_2G3G
+ ipv4 address 10.222.221.34 255.255.255.252
+ encapsulation dot1q 1380
+!
+interface GigabitEthernet0/3/0/11.1384
+ description LTE MRSM_TAWAU
+ service-policy input SERVICE_INGRESS
+ vrf LTE
+ ipv4 address 10.222.181.42 255.255.255.248
+ encapsulation dot1q 1384
+!
+interface GigabitEthernet0/3/0/11.1386
+ description TXNMS_MRSM_TAWAU
+ service-policy input 2MBPS_NMS_INGRESS
+ vrf TX_NMS
+ ipv4 address 10.127.14.49 255.255.255.248
+ encapsulation dot1q 1386
+!
+interface GigabitEthernet0/3/0/12
+ shutdown
+!
+interface GigabitEthernet0/3/0/13
+ shutdown
+!
+interface GigabitEthernet0/3/0/14
+ shutdown
+!
+interface GigabitEthernet0/3/0/15
+ shutdown
+!
+interface GigabitEthernet0/3/0/16
+ shutdown
+!
+interface GigabitEthernet0/3/0/17
+ shutdown
+!
+interface GigabitEthernet0/3/0/18
+ shutdown
+!
+interface GigabitEthernet0/3/0/19
+ shutdown
+!
+interface GigabitEthernet0/3/0/20
+ shutdown
+!
+interface GigabitEthernet0/3/0/21
+ shutdown
+!
+interface GigabitEthernet0/3/0/22
+ shutdown
+!
+interface GigabitEthernet0/3/0/23
+ shutdown
+!
+interface GigabitEthernet0/3/0/24
+ shutdown
+!
+interface GigabitEthernet0/3/0/25
+ shutdown
+!
+interface GigabitEthernet0/3/0/26
+ shutdown
+!
+interface GigabitEthernet0/3/0/27
+ shutdown
+!
+interface GigabitEthernet0/3/0/28
+ shutdown
+!
+interface GigabitEthernet0/3/0/29
+ shutdown
+!
+interface GigabitEthernet0/3/0/30
+ shutdown
+!
+interface GigabitEthernet0/3/0/31
+ shutdown
+!
+interface GigabitEthernet0/3/0/32
+ shutdown
+!
+interface GigabitEthernet0/3/0/33
+ shutdown
+!
+interface GigabitEthernet0/3/0/34
+ shutdown
+!
+interface GigabitEthernet0/3/0/35
+ shutdown
+!
+interface GigabitEthernet0/3/0/36
+ shutdown
+ load-interval 30
+!
+interface GigabitEthernet0/3/0/37
+ description ***To E_BSB16 GB / A_UP***
+ service-policy output SERVICE_EGRESS_GE
+ negotiation auto
+ load-interval 30
+!
+interface GigabitEthernet0/3/0/37.101 l2transport
+ description ***L2 To E_BSB16_GB***
+ encapsulation dot1q 101
+ rewrite ingress tag pop 1 symmetric
+ service-policy input SERVICE_INGRESS
+!
+interface GigabitEthernet0/3/0/37.123 l2transport
+ description ***L2 To E_BSB16_A_UP***
+ encapsulation dot1q 123
+ rewrite ingress tag pop 1 symmetric
+ service-policy input SERVICE_NB
+!
+interface GigabitEthernet0/3/0/38
+ description ***To E_BSB16_A_CP GARP_SL1 via TAWCSWA02-N3K E1/20**
+ service-policy input SERVICE_SIGTRAN
+ service-policy output SERVICE_EGRESS_GE
+ vrf E_A_CP
+ ipv4 address 10.156.6.22 255.255.255.248
+ negotiation auto
+ load-interval 30
+!
+interface GigabitEthernet0/3/0/39
+ description ***L2 To E_TWRN13_OM2 BVI251***
+ shutdown
+ load-interval 30
+ l2transport
+  service-policy input SERVICE_OM
+  service-policy output SERVICE_EGRESS_GE
+ !
+!
+interface GigabitEthernet0/3/0/40
+ description ***L2 to E_BSB16_OM2 BVI255***
+ negotiation auto
+ load-interval 30
+ l2transport
+  service-policy input SERVICE_OM
+  service-policy output SERVICE_EGRESS_GE
+ !
+!
+interface GigabitEthernet0/3/0/41
+ shutdown
+!
+interface GigabitEthernet0/3/0/42
+ shutdown
+!
+interface GigabitEthernet0/3/0/43
+ shutdown
+!
+interface GigabitEthernet0/3/0/44
+ shutdown
+!
+interface GigabitEthernet0/3/0/45
+ shutdown
+!
+interface GigabitEthernet0/3/0/46
+ shutdown
+!
+interface GigabitEthernet0/3/0/47
+ shutdown
+!
+interface GigabitEthernet0/6/0/20
+ shutdown
+!
+interface GigabitEthernet0/6/0/21
+ shutdown
+!
+interface GigabitEthernet0/6/0/22
+ shutdown
+!
+interface GigabitEthernet0/6/0/23
+ shutdown
+!
+interface GigabitEthernet0/6/0/44
+ shutdown
+!
+interface GigabitEthernet0/6/0/45
+ shutdown
+!
+interface GigabitEthernet0/6/0/46
+ shutdown
+!
+interface GigabitEthernet0/6/0/47
+ description RESERVED FOR E2E TEST [WIP]
+ mtu 9100
+!
+interface GigabitEthernet0/6/0/47.200 l2transport
+ encapsulation dot1q 200
+ rewrite ingress tag pop 1 symmetric
+!
+interface TenGigE0/1/0/0
+ shutdown
+!
+interface TenGigE0/1/0/1
+ description *** Connected to CTSB NEID_2252_Slot15 Port02 (BE601) ***
+ bundle id 601 mode passive
+ load-interval 30
+ dampening
+!
+interface TenGigE0/1/0/2
+ description *** Connected to CTSB NEID_2252_Slot17 Port01 (BE602) ***
+ bundle id 602 mode passive
+ load-interval 30
+ dampening
+!
+interface TenGigE0/1/0/3
+ description *** Connected to CTSB NEID_2231_Slot12 Port02 (BE603) ***
+ bundle id 603 mode passive
+ load-interval 30
+ dampening
+!
+interface TenGigE0/1/0/4
+ description *** Connected to CTSB NEID_2231_Slot11 Port02 (BE604) ***
+ bundle id 604 mode passive
+ load-interval 30
+ dampening
+!
+interface TenGigE0/1/0/5
+ description *** Connected to TM_GALACTIC UHCELCM-TWU01 Te2/1/0 ***
+ bundle id 701 mode passive
+ shutdown
+ load-interval 30
+ dampening
+!
+interface TenGigE0/1/0/6
+ description ***To TAWUER01-ASR9K Te0/1/0/6 BE100 (10Gbps)***
+ bundle id 100 mode active
+ cdp
+ carrier-delay up 5000 down 0
+ load-interval 30
+ dampening 1 750 2000 2
+!
+interface TenGigE0/1/0/7
+ shutdown
+!
+interface TenGigE0/2/0/0
+ description ***Connected to CTSB NEID_0011_Slot-04_Port-11 (BE606)***
+ bundle id 606 mode passive
+ carrier-delay up 5000 down 0
+ load-interval 30
+ dampening
+!
+interface TenGigE0/2/0/1
+ description ***Connected To CTSB NEID_0011 Slot_04_Port12 (BE605)***
+ bundle id 605 mode passive
+ carrier-delay up 5000 down 0
+ shutdown
+ load-interval 30
+ dampening
+!
+interface TenGigE0/2/0/2
+ shutdown
+!
+interface TenGigE0/2/0/3
+ shutdown
+!
+interface TenGigE0/2/0/4
+ shutdown
+!
+interface TenGigE0/2/0/5
+ shutdown
+!
+interface TenGigE0/2/0/6
+ shutdown
+!
+interface TenGigE0/2/0/7
+ shutdown
+!
+interface TenGigE0/2/0/8
+ shutdown
+!
+interface TenGigE0/2/0/9
+ shutdown
+!
+interface TenGigE0/2/0/10
+ shutdown
+!
+interface TenGigE0/2/0/11
+ shutdown
+!
+interface TenGigE0/2/0/12
+ shutdown
+!
+interface TenGigE0/2/0/13
+ shutdown
+!
+interface TenGigE0/2/0/14
+ shutdown
+!
+interface TenGigE0/2/0/15
+ shutdown
+!
+interface TenGigE0/2/0/16
+ shutdown
+!
+interface TenGigE0/2/0/17
+ shutdown
+!
+interface TenGigE0/2/0/18
+ shutdown
+!
+interface TenGigE0/2/0/19
+ shutdown
+!
+interface TenGigE0/2/0/20
+ shutdown
+!
+interface TenGigE0/2/0/21
+ shutdown
+!
+interface TenGigE0/2/0/22
+ shutdown
+!
+interface TenGigE0/2/0/23
+ shutdown
+!
+interface TenGigE0/6/0/0
+ description **Connected TO INAPR01-CRSX (TE0/2/0/10) via CTS_NEID0018_SLOT#10_PORT#03**
+ bundle id 104 mode active
+ cdp
+ carrier-delay up 5000 down 0
+ load-interval 30
+ dampening 1 750 2000 2
+!
+interface TenGigE0/6/0/1
+ description *** Link to SDKUER01 - Protection CTS 10GE #No 3 ***
+ bundle id 30 mode active
+ cdp
+ carrier-delay up 5000 down 0
+ load-interval 30
+ dampening 1 750 2000 2
+!
+interface TenGigE0/6/0/2
+ description ***To TAWUER01-ASR9K Te0/6/0/2 BE100 (10Gps)***
+ bundle id 100 mode active
+ cdp
+ carrier-delay up 5000 down 0
+ load-interval 30
+ dampening 1 750 2000 2
+!
+interface TenGigE0/6/0/3
+ description ****** Physical Connection To TWRN13 (BACKUP) *****
+ mtu 1514
+ service-policy input SERVICE_INGRESS
+ service-policy output SERVICE_EGRESS
+ carrier-delay up 5000 down 0
+ shutdown
+ load-interval 30
+ dampening 1 750 2000 2
+!
+interface TenGigE0/6/0/3.21
+ description *** TWRN13 - BACKUP ***
+ vrf E_2G3G
+ ipv4 address 10.156.23.61 255.255.255.224
+ encapsulation dot1q 21
+!
+interface TenGigE0/6/0/4
+ shutdown
+!
+interface TenGigE0/6/0/5
+ shutdown
+!
+interface TenGigE0/6/0/6
+ description ***To TAWUER01-ASR9K Te0/6/0/6 BE100 (10Gbps)***
+ bundle id 100 mode active
+ cdp
+ load-interval 30
+ dampening 1 750 2000 2
+!
+interface TenGigE0/6/0/7
+ shutdown
+!
+interface TenGigE0/6/0/8
+ shutdown
+!
+interface TenGigE0/6/0/9
+ shutdown
+!
+interface TenGigE0/6/0/10
+ description ***10G_Be4_member_to_TAWCSWA01-N3K_Eth1/41***
+ bundle id 4 mode active
+ load-interval 30
+ dampening 1 750 2000 2
+!
+interface TenGigE0/6/0/11
+ shutdown
+!
+interface TenGigE0/6/0/12
+ shutdown
+!
+interface TenGigE0/6/0/13
+ shutdown
+!
+interface TenGigE0/6/0/14
+ shutdown
+!
+interface TenGigE0/6/0/15
+ shutdown
+!
+interface TenGigE0/6/0/16
+ shutdown
+!
+interface TenGigE0/6/0/17
+ shutdown
+!
+interface TenGigE0/6/0/18
+ shutdown
+!
+interface TenGigE0/6/0/19
+ shutdown
+!
+interface TenGigE0/6/0/24
+ description ***To E_TWRN13_IU subrack-MS_x/x***
+ service-policy output SERVICE_EGRESS
+ carrier-delay up 5000 down 0
+ shutdown
+ load-interval 30
+ dampening 1 750 2000 2
+!
+interface TenGigE0/6/0/24.55
+ description ***L3 To E_TWRN13_IUPS_UP***
+ service-policy input SERVICE_DEFAULT
+ vrf Gn
+ ipv4 address 10.156.27.124 255.255.255.192
+ encapsulation dot1q 55
+!
+interface TenGigE0/6/0/24.201
+ description ***L3 To E_TWRN13_IUCS_IUR_UP***
+ service-policy input SERVICE_NB
+ vrf E_Iu_UP
+ ipv4 address 10.156.27.60 255.255.255.224
+ encapsulation dot1q 201
+!
+interface TenGigE0/6/0/24.302
+ description ***L3 To E_TWRN13_IU_CP***
+ service-policy input SERVICE_SIGTRAN
+ vrf E_Iu_CP
+ ipv4 address 10.156.27.30 255.255.255.248
+ encapsulation dot1q 302
+!
+interface TenGigE0/6/0/25
+ description ***10G_Be4_member_to_TAWCSWA02-N3K_Eth1/41***
+ bundle id 4 mode active
+ load-interval 30
+ dampening 1 750 2000 2
+!
+interface TenGigE0/6/0/26
+ shutdown
+!
+interface TenGigE0/6/0/27
+ shutdown
+!
+interface TenGigE0/6/0/28
+ shutdown
+!
+interface TenGigE0/6/0/29
+ shutdown
+!
+interface TenGigE0/6/0/30
+ shutdown
+!
+interface TenGigE0/6/0/31
+ shutdown
+!
+interface TenGigE0/6/0/32
+ shutdown
+!
+interface TenGigE0/6/0/33
+ shutdown
+!
+interface TenGigE0/6/0/34
+ shutdown
+!
+interface TenGigE0/6/0/35
+ shutdown
+!
+interface TenGigE0/6/0/36
+ shutdown
+!
+interface TenGigE0/6/0/37
+ shutdown
+!
+interface TenGigE0/6/0/38
+ shutdown
+!
+interface TenGigE0/6/0/39
+ shutdown
+!
+interface TenGigE0/6/0/40
+ shutdown
+!
+interface TenGigE0/6/0/41
+ shutdown
+!
+interface TenGigE0/6/0/42
+ shutdown
+!
+interface TenGigE0/6/0/43
+ description **Connected To INAPR01-CRSX (TE0/0/0/7)  via CTS_NEID0018_SLOT#02_PORT#01**
+ bundle id 104 mode active
+ cdp
+ carrier-delay up 5000 down 0
+ load-interval 30
+ dampening 1 750 2000 2
+!
+interface BVI16
+ vrf E_2G3G
+ ipv4 address 10.156.6.37 255.255.255.248
+ load-interval 30
+!
+interface BVI101
+ description ***L3 To E_BSB16_GB***
+ vrf Gb
+ ipv4 address 10.156.6.5 255.255.255.248
+!
+interface BVI123
+ description ***L3 To E_BSB16_A_UP***
+ vrf E_A_UP
+ ipv4 address 10.156.6.29 255.255.255.248
+!
+interface BVI251
+ description ***L3 To E_TWRN13_OM***
+ vrf E_OM
+ ipv4 address 10.156.27.13 255.255.255.240
+ shutdown
+!
+interface BVI255
+ description ***L3 To E_BSB16_OM***
+ vrf E_OM
+ ipv4 address 10.156.1.29 255.255.255.248
+!
+interface preconfigure MgmtEth0/RSP0/CPU0/1
+ shutdown
+!
+interface preconfigure MgmtEth0/RSP1/CPU0/1
+ shutdown
+!
+interface preconfigure TenGigE0/1/1/0
+ shutdown
+!
+interface preconfigure PTP0/RSP0/CPU0/0
+ shutdown
+!
+!
+extcommunity-set rt CD_OM_DEF_RT
+  10139:25050
+end-set
+!
+extcommunity-set rt CD_X2_DEF_RT
+  10139:25120
+end-set
+!
+extcommunity-set rt CD_PTP_DEF_RT
+  10139:25040
+end-set
+!
+extcommunity-set rt CD_S1C_DEF_RT
+  10139:25110
+end-set
+!
+extcommunity-set rt CD_S1U_DEF_RT
+  10139:25100
+end-set
+!
+extcommunity-set rt CD_ABIS_DEF_RT
+  10139:25030
+end-set
+!
+extcommunity-set rt CME_NMS_DEF_RT
+  10139:20400
+end-set
+!
+extcommunity-set rt NOC_E_MOAT_RT1
+  65140:785,
+  65139:890,
+  65138:902,
+  65142:785,
+  65512:787,
+  65535:64280,
+  65535:64300,
+  65535:22000
+end-set
+!
+extcommunity-set rt SDK_E_MOAT_RT02
+  65138:904
+end-set
+!
+extcommunity-set rt E_RAN_OM-Import_RT
+  65535:4600
+end-set
+!
+prefix-set DEFAULT
+  0.0.0.0/0
+end-set
+!
+prefix-set MBH-lo0
+  10.240.248.0/24 ge 32,
+  10.240.249.0/24 ge 32,
+  10.240.251.0/24 ge 32,
+  10.244.252.0/24 ge 32
+end-set
+!
+prefix-set Pfx_SR_PCE
+  10.124.16.1/32,
+  10.124.17.1/32,
+  10.124.16.240/28 ge 32,
+  10.124.17.240/28 ge 32
+end-set
+!
+prefix-set NB-Export-RT
+  10.228.194.0/24
+end-set
+!
+prefix-set SDK_RAN_PFX02
+  10.156.126.12/32,
+  10.156.126.14/32,
+  10.156.126.142/32,
+  10.156.126.143/32,
+  10.156.126.144/32,
+  10.156.126.145/32,
+  10.156.126.146/32,
+  10.156.126.147/32,
+  10.156.126.148/32,
+  10.156.126.149/32,
+  10.156.126.150/32,
+  10.156.126.151/32,
+  10.156.126.154/32,
+  10.156.126.156/32,
+  10.156.126.157/32,
+  10.156.126.158/32,
+  10.156.126.159/32,
+  10.156.126.16/30,
+  10.156.126.160/32,
+  10.156.126.161/32,
+  10.156.126.162/32,
+  10.156.126.163/32,
+  10.156.126.17/32,
+  10.156.126.175/32,
+  10.156.126.178/32,
+  10.156.126.179/32,
+  10.156.126.181/32,
+  10.156.126.182/32,
+  10.156.126.183/32,
+  10.156.126.184/32,
+  10.156.126.19/32,
+  10.156.126.194/32,
+  10.156.126.195/32,
+  10.156.126.199/32,
+  10.156.126.245/32,
+  10.156.126.246/32,
+  10.156.126.255/32,
+  10.156.126.28/32,
+  10.156.126.30/32,
+  10.156.126.31/32,
+  10.156.126.33/32,
+  10.156.126.36/32,
+  10.156.126.37/32,
+  10.156.126.39/32,
+  10.156.126.40/32,
+  10.156.126.48/32,
+  10.156.126.49/32,
+  10.156.126.51/32,
+  10.156.126.57/32,
+  10.156.126.65/32,
+  10.156.126.67/32,
+  10.156.126.68/32,
+  10.156.126.69/32,
+  10.156.126.70/32,
+  10.156.126.71/32,
+  10.156.126.73/32,
+  10.156.126.74/32,
+  10.156.126.75/32,
+  10.156.126.76/32,
+  10.156.126.77/32,
+  10.156.126.79/32,
+  10.156.126.83/32,
+  10.156.125.12/32,
+  10.156.125.14/32,
+  10.156.125.142/32,
+  10.156.125.143/32,
+  10.156.125.143/32,
+  10.156.125.144/32,
+  10.156.125.145/32,
+  10.156.125.146/32,
+  10.156.125.146/32,
+  10.156.125.147/32,
+  10.156.125.148/32,
+  10.156.125.150/32,
+  10.156.125.151/32,
+  10.156.125.154/32,
+  10.156.125.156/32,
+  10.156.125.157/32,
+  10.156.125.158/32,
+  10.156.125.159/32,
+  10.156.125.16/32,
+  10.156.125.160/32,
+  10.156.125.161/32,
+  10.156.125.162/32,
+  10.156.125.163/32,
+  10.156.125.17/32,
+  10.156.125.175/32,
+  10.156.125.178/32,
+  10.156.125.179/32,
+  10.156.125.181/32,
+  10.156.125.182/32,
+  10.156.125.183/32,
+  10.156.125.184/32,
+  10.156.125.19/32,
+  10.156.125.194/32,
+  10.156.125.195/32,
+  10.156.125.199/32,
+  10.156.125.245/32,
+  10.156.125.246/32,
+  10.156.125.255/32,
+  10.156.125.28/32,
+  10.156.125.30/32,
+  10.156.125.31/32,
+  10.156.125.33/32,
+  10.156.125.36/32,
+  10.156.125.37/32,
+  10.156.125.39/32,
+  10.156.125.40/32,
+  10.156.125.48/32,
+  10.156.125.49/32,
+  10.156.125.51/32,
+  10.156.125.57/32,
+  10.156.125.65/32,
+  10.156.125.67/32,
+  10.156.125.68/32,
+  10.156.125.69/32,
+  10.156.125.70/32,
+  10.156.125.71/32,
+  10.156.125.71/32,
+  10.156.125.73/32,
+  10.156.125.74/32,
+  10.156.125.75/32,
+  10.156.125.76/32,
+  10.156.125.77/32,
+  10.156.125.79/32,
+  10.156.125.83/32,
+  10.156.114.0/30,
+  10.156.114.220/30,
+  10.156.112.192/30,
+  10.222.241.80/30,
+  10.156.59.136/30,
+  10.222.241.84/30,
+  10.222.241.128/30,
+  10.156.59.128/30,
+  10.222.241.136/30,
+  10.222.241.164/30,
+  10.222.241.132/30,
+  10.155.71.76/30,
+  10.155.71.80/30,
+  10.155.71.84/30,
+  10.155.71.88/30,
+  10.155.71.92/30,
+  10.155.71.104/30,
+  10.155.71.108/30,
+  10.155.71.112/30,
+  10.155.71.116/30,
+  10.155.71.120/30,
+  10.155.71.96/30,
+  10.155.67.76/30,
+  10.155.67.80/30,
+  10.155.67.96/30,
+  10.155.67.116/30,
+  10.155.67.120/30,
+  10.155.67.156/30,
+  10.155.67.124/30,
+  10.155.67.168/30,
+  10.155.67.188/30,
+  10.155.67.212/30,
+  10.155.67.228/30,
+  10.155.67.236/30,
+  10.155.67.248/30,
+  10.155.67.252/30,
+  10.156.126.45/32,
+  10.224.232.0/30,
+  10.224.232.8/30,
+  10.224.232.28/30,
+  10.224.232.36/30,
+  10.224.232.40/30,
+  10.224.232.64/30,
+  10.224.232.68/30,
+  10.224.232.84/30,
+  10.224.232.140/30,
+  10.224.232.148/30,
+  10.224.232.160/30,
+  10.224.232.164/30,
+  10.224.232.172/30,
+  10.224.232.180/30,
+  10.224.232.184/30,
+  10.224.232.196/30,
+  10.231.69.28/30,
+  10.231.69.32/30,
+  10.231.69.36/30,
+  10.231.69.40/30,
+  10.231.69.44/30,
+  10.231.69.48/30,
+  10.231.69.52/30,
+  10.231.69.56/30,
+  10.231.69.60/30,
+  10.231.69.64/30,
+  10.231.69.72/30,
+  10.231.69.80/30,
+  10.231.69.84/30,
+  10.231.69.228/30,
+  10.231.69.232/30,
+  10.231.69.236/30
+end-set
+!
+prefix-set IPRAN-LOOPBACKS
+  10.159.255.0/24 ge 32,
+  10.159.254.0/24 ge 32,
+  10.151.234.0/24 ge 32,
+  10.240.248.0/24 ge 32,
+  10.240.249.0/24 ge 32,
+  10.240.251.0/24 ge 32,
+  10.244.252.0/24 ge 32,
+  10.244.54.0/24 ge 32,
+  10.244.55.0/24 ge 32,
+  10.244.11.0/24 ge 32
+end-set
+!
+prefix-set NOC_E_MOAT_PFX1
+  10.1.111.128/26
+end-set
+!
+prefix-set PFX_E_RAN_OM_IN
+  10.1.111.128/25
+end-set
+!
+prefix-set ERICSSON_MUB_MUR
+  10.155.67.0/24,
+  10.156.100.0/23,
+  10.156.104.0/24,
+  10.156.105.0/24,
+  10.156.109.0/24,
+  10.157.76.128/25,
+  10.157.90.0/24,
+  10.157.91.0/24,
+  10.157.191.0/24,
+  10.222.202.0/24,
+  10.222.232.0/24,
+  10.224.201.0/24,
+  10.231.37.28/30,
+  10.231.80.0/24,
+  10.231.100.0/24
+end-set
+!
+prefix-set ospf-high-prefixes
+  10.159.255.0/24 ge 32,
+  10.159.254.0/24 ge 32,
+  10.240.248.0/24 ge 32,
+  10.240.249.0/24 ge 32,
+  10.240.251.0/24 ge 32,
+  10.244.252.0/24 ge 32,
+  10.244.54.0/24 ge 32,
+  10.124.16.0/24 ge 32,
+  10.124.17.0/24 ge 32,
+  10.244.11.0/24 ge 32,
+  10.244.250.0/24 ge 32
+end-set
+!
+prefix-set Pfx_OSPF_1_LOOPBACK
+  10.244.252.0/24 ge 32,
+  10.244.54.0/24 ge 32,
+  10.244.16.0/24 ge 32
+end-set
+!
+prefix-set Borneo_ZTE_MC_S1_Pfx
+  19.88.38.0/24 le 32,
+  19.88.39.0/24 le 32
+end-set
+!
+prefix-set ospf-high-prefixes-core
+  10.159.255.0/24 ge 32,
+  10.159.254.0/24 ge 32,
+  10.124.16.0/24 ge 32,
+  10.124.17.0/24 ge 32
+end-set
+!
+prefix-set xC_KV_Core_MC_S1C_Pfx01
+  10.223.74.2/32,
+  10.223.74.3/32,
+  10.223.84.2/32,
+  10.223.84.3/32
+end-set
+!
+prefix-set xC_KV_Core_MC_S1U_Pfx01
+  10.223.99.16/29 le 32,
+  10.223.109.16/29 le 32
+end-set
+!
+prefix-set S1-Export-RT_MOCN_permit
+  19.88.31.0/24 le 32,
+  19.88.32.0/24 le 32,
+  19.88.33.0/24 le 32,
+  19.88.34.0/24 le 32,
+  19.88.35.0/24 le 32,
+  19.88.36.0/24 le 32,
+  19.88.37.0/24 le 32,
+  19.88.38.0/24 le 32,
+  19.88.39.0/24 le 32
+end-set
+!
+community-set BGPLU_COMM_UNIP_MBH
+  #UNIP
+  100:100,
+  #PTN SABAH
+  100:300
+end-set
+!
+route-policy DENY_ALL
+  drop
+end-policy
+!
+route-policy pass-all
+  pass
+end-policy
+!
+route-policy E_RAN_OM_IN
+  if ((extcommunity rt matches-any E_RAN_OM-Import_RT) and (destination in PFX_E_RAN_OM_IN)) then
+    drop
+  else
+    pass
+  endif
+end-policy
+!
+route-policy IT-Export-RT
+  if destination in (0.0.0.0/0) then
+    set extcommunity rt (10139:100)
+  endif
+end-policy
+!
+route-policy TAW_E_MOAT_IN
+  if ((extcommunity rt matches-any SDK_E_MOAT_RT02) and (destination in SDK_RAN_PFX02)) then
+    pass
+  elseif ((extcommunity rt matches-any NOC_E_MOAT_RT1) and (destination in NOC_E_MOAT_PFX1)) then
+    drop
+  elseif (extcommunity rt matches-any SDK_E_MOAT_RT02) then
+    drop
+  else
+    pass
+  endif
+end-policy
+!
+route-policy BGPLU_COMM_UNIP
+  set community (100:100)
+end-policy
+!
+route-policy BGP_FROM_OSPF_1
+  if destination in Pfx_OSPF_1_LOOPBACK then
+    set aigp-metric igp-cost
+    set community (65535:202)
+  endif
+end-policy
+!
+route-policy CD_OM-Export-RT
+  if destination in DEFAULT then
+    set extcommunity rt CD_OM_DEF_RT
+  endif
+end-policy
+!
+route-policy CD_X2-Export-RT
+  if destination in DEFAULT then
+    set extcommunity rt CD_X2_DEF_RT
+  endif
+end-policy
+!
+route-policy CD_PTP-Export-RT
+  if destination in DEFAULT then
+    set extcommunity rt CD_PTP_DEF_RT
+  endif
+end-policy
+!
+route-policy CD_S1C-Export-RT
+  if destination in DEFAULT then
+    set extcommunity rt CD_S1C_DEF_RT
+  elseif (destination in Borneo_ZTE_MC_S1_Pfx) then
+    set extcommunity rt (65535:23101) additive
+  endif
+end-policy
+!
+route-policy CD_S1C-Import-RT
+  if (destination in xC_KV_Core_MC_S1C_Pfx01) and (extcommunity rt matches-any (65535:25010)) then
+    pass
+  elseif (extcommunity rt matches-any (65535:25010)) then
+    drop
+  else
+    pass
+  endif
+end-policy
+!
+route-policy CD_S1U-Export-RT
+  if destination in DEFAULT then
+    set extcommunity rt CD_S1U_DEF_RT
+  elseif (destination in Borneo_ZTE_MC_S1_Pfx) then
+    set extcommunity rt (65535:23101) additive
+  endif
+end-policy
+!
+route-policy CD_S1U-Import-RT
+  if (destination in xC_KV_Core_MC_S1U_Pfx01) and (extcommunity rt matches-any (65535:25010)) then
+    pass
+  elseif (extcommunity rt matches-any (65535:25010)) then
+    drop
+  else
+    pass
+  endif
+end-policy
+!
+route-policy LTE_UP-Export-RT
+  if destination in (0.0.0.0/0) then
+    set extcommunity rt (10535:60520, 10139:1901, 10139:23100)
+  elseif (destination in S1-Export-RT_MOCN_permit) then
+    set extcommunity rt (65535:66042, 65535:65641) additive
+  endif
+end-policy
+!
+route-policy PTN_OM-Export-RT
+  if destination in (0.0.0.0/0) then
+    set extcommunity rt (10139:300, 10139:20300)
+  endif
+end-policy
+!
+route-policy VRF_NB_EXPORT_RT
+  if (destination in NB-Export-RT) then
+    set extcommunity rt (65535:60041, 65535:60382, 65535:60601, 65535:60963, 65535:60201, 65535:62202, 65535:63122) additive
+    set extcommunity rt (65535:60021, 65535:64861) additive
+  endif
+end-policy
+!
+route-policy redist_loopback0
+  if destination in (10.159.255.90/32) then
+    pass
+  else
+    drop
+  endif
+end-policy
+!
+route-policy BGPLU_COMM_TO_MBH
+  if community matches-any BGPLU_COMM_UNIP_MBH then
+    pass
+  endif
+end-policy
+!
+route-policy CD_ABIS-Export-RT
+  if destination in DEFAULT then
+    set extcommunity rt CD_ABIS_DEF_RT
+  endif
+end-policy
+!
+route-policy CME_NMS-Export-RT
+  if destination in DEFAULT then
+    set extcommunity rt CME_NMS_DEF_RT
+  endif
+end-policy
+!
+route-policy PREFER-ACC-ROUTES
+  set weight 10000
+end-policy
+!
+route-policy ospf-spf-priority
+  if (destination in ospf-high-prefixes) then
+    set spf-priority high
+  endif
+end-policy
+!
+route-policy BGPLU_COMMM_FROM_MBH
+  if destination in MBH-lo0 then
+    set community (100:300)
+  endif
+end-policy
+!
+route-policy INA_E_MOAT-Export-RT
+  if destination in (0.0.0.0/0) then
+    set extcommunity rt (10140:785, 10139:785)
+  endif
+end-policy
+!
+route-policy OSPF_1_FROM_OSPF_100
+  if destination in Pfx_SR_PCE then
+    set tag 101241617
+    set metric-type type-1
+  else
+    drop
+  endif
+end-policy
+!
+route-policy RP_BGP_IPv4_PIC_EDGE
+  set path-selection backup 1 install multipath-protect advertise
+end-policy
+!
+route-policy SDK_E_MOAT-Export-RT
+  if destination in (0.0.0.0/0) then
+    set extcommunity rt (10139:902)
+  endif
+end-policy
+!
+route-policy TAW_E_MOAT-Export-RT
+  if destination in (0.0.0.0/0) then
+    set extcommunity rt (10139:890, 10535:64280, 10139:64280, 10139:22000)
+  elseif (destination in ERICSSON_MUB_MUR) then
+    set extcommunity rt (65535:4600)
+  endif
+end-policy
+!
+route-policy RP_BGP_VPNv4_PIC_EDGE
+  set path-selection backup 1 install
+end-policy
+!
+route-policy KCH_ENT_PI1M-Export-RT
+  if destination in (0.0.0.0/0) then
+    set extcommunity rt (10512:995)
+  endif
+end-policy
+!
+route-policy ospf-spf-priority-core
+  if (destination in ospf-high-prefixes-core) then
+    set spf-priority high
+  endif
+end-policy
+!
+route-policy ENT_VPN_INTERNET-Export-RT
+  if destination in (0.0.0.0/0) then
+    set extcommunity rt (10139:64060)
+  endif
+end-policy
+!
+route-policy IPRAN-LOOPBACKS-INTO-BGP-LU
+  if destination in IPRAN-LOOPBACKS then
+    set aigp-metric igp-cost
+  endif
+end-policy
+!
+route-policy TAW_TXNMS_HUAWEI_SM-Export-RT
+  if destination in (0.0.0.0/0) then
+    set extcommunity rt (10139:3585, 10139:20500)
+  endif
+end-policy
+!
+! Static Route Creation for Local Site eNodeB
+router static
+ vrf Gb
+  address-family ipv4 unicast
+   10.156.6.64/26 BVI101 10.156.6.3 description BSB16-GB
+  !
+ !
+ vrf LTE
+  address-family ipv4 unicast
+   0.0.0.0/0 Null0
+   10.157.190.104/29 10.157.189.105
+   10.157.190.192/29 10.157.189.193
+   10.222.182.40/29 10.222.181.41 description S1_X2_SoIP_MRSMTAWAU_RL20215
+   10.224.55.24/29 10.224.57.1 description S1_X2_SoIP_T3KGSGPUKUL
+   10.224.199.112/29 10.224.197.113 description S1_X2_SoIP__GIANTTAWAU_RT30174
+   10.224.200.232/29 10.224.198.233 description S1_X2_KGKONGSI10
+   19.88.31.45/32 10.224.57.1 description MOCN_S1_X2_SoIP_T3KGSGPUKUL
+  !
+ !
+ vrf E_OM
+  address-family ipv4 unicast
+   10.156.2.48/28 BVI255 10.156.1.27 description E_RAN_OM_BSB16
+  !
+ !
+ vrf CD_OM
+  address-family ipv4 unicast
+   0.0.0.0/0 Null0 description Default_Route_for_IPRAN
+  !
+ !
+ vrf CD_X2
+  address-family ipv4 unicast
+   0.0.0.0/0 Null0 description Default_Route_for_IPRAN
+  !
+ !
+ vrf CD_PTP
+  address-family ipv4 unicast
+   0.0.0.0/0 Null0 description Default_Route_for_IPRAN
+  !
+ !
+ vrf CD_S1C
+  address-family ipv4 unicast
+   0.0.0.0/0 Null0 description Default_Route_for_IPRAN
+  !
+ !
+ vrf CD_S1U
+  address-family ipv4 unicast
+   0.0.0.0/0 Null0 description Default_Route_for_IPRAN
+  !
+ !
+ vrf E_2G3G
+  address-family ipv4 unicast
+   0.0.0.0/0 Null0
+   10.155.67.0/24 Null0
+   10.155.67.204/30 10.222.221.33 description Abis_BB_MRSMTAWAU_S01508
+   10.156.6.128/26 10.156.6.35
+   10.156.33.108/30 10.156.41.65
+   10.156.37.108/30 10.156.41.65
+   10.156.46.84/32 10.156.41.65
+   10.156.96.24/30 10.156.104.25
+   10.156.97.0/30 10.156.105.1
+   10.156.100.0/23 Null0
+   10.156.100.24/30 10.156.104.25
+   10.156.101.0/30 10.156.105.1
+   10.156.104.0/24 Null0
+   10.156.105.0/24 Null0
+   10.156.108.7/32 10.156.104.25
+   10.156.108.65/32 10.156.105.1
+   10.156.108.136/32 10.222.221.29
+   10.156.109.0/24 Null0
+   10.156.109.7/32 10.156.104.25
+   10.156.109.65/32 10.156.105.1
+   10.156.109.136/32 10.222.221.29
+   10.156.110.7/32 10.156.104.25
+   10.156.110.65/32 10.156.105.1
+   10.156.110.136/32 10.222.221.29
+   10.157.76.128/25 Null0
+   10.157.90.0/24 Null0
+   10.157.91.0/24 Null0
+   10.157.191.0/24 Null0
+   10.157.191.52/30 10.156.104.25
+   10.157.191.96/30 10.222.221.29
+   10.157.191.148/30 10.222.221.33 description Mul_MRSMTAWAU_RL20215
+   10.222.201.12/30 10.222.221.85 description Iub_GIANTTAWAU_RB30174
+   10.222.202.0/24 Null0
+   10.222.202.12/30 10.222.221.85 description Mub_GIANTTAWAU_RB30174
+   10.222.232.0/24 Null0
+   10.222.232.120/30 10.222.221.29
+   10.222.232.160/30 10.222.221.33 description Mub_RW20215_MRSM_TAWAU
+   10.222.243.120/30 10.222.221.29
+   10.222.243.160/30 10.222.221.33 description Iub_RW20215_MRSM_TAWAU
+   10.224.46.140/30 10.156.41.65
+   10.224.201.0/24 Null0
+   10.224.201.56/30 10.222.221.85 description Mul_GIANTTAWAU_RT30174
+   10.224.201.244/30 10.156.105.1 description MUL_LTE_KGKONGSI10
+   10.224.238.20/30 10.156.41.65 description ABIS_BB_T3KGSGPUKUL
+   10.231.23.128/26 10.221.15.214
+   10.231.69.20/30 10.156.105.1 description ABIS_BB_KGKONGSI10
+   10.231.80.0/24 Null0 description MUL_EnodeB_Colocated_TWRN13
+   10.231.100.0/24 Null0 description Abis_BB_IP_To_ENM01_For_OM
+  !
+ !
+ vrf E_A_UP
+  address-family ipv4 unicast
+   10.156.6.192/26 BVI123 10.156.6.27 description BSB16-A_UP
+  !
+ !
+ vrf PTN_OM
+  address-family ipv4 unicast
+   0.0.0.0/0 Null0 description Default_Route_for_IPRAN
+  !
+ !
+ vrf TX_NMS
+  address-family ipv4 unicast
+   0.0.0.0/0 Null0
+  !
+ !
+ vrf CD_ABIS
+  address-family ipv4 unicast
+   0.0.0.0/0 Null0 description Default_Route_for_IPRAN
+  !
+ !
+ vrf CME_NMS
+  address-family ipv4 unicast
+   0.0.0.0/0 Null0 description Default_Route_for_IPRAN
+  !
+ !
+ vrf UP_wifi
+  address-family ipv4 unicast
+   0.0.0.0/0 10.241.0.150
+  !
+ !
+ vrf INA_E_MOAT
+  address-family ipv4 unicast
+   0.0.0.0/0 Null0
+  !
+ !
+ vrf KCH_ENT_PI1M
+  address-family ipv4 unicast
+   0.0.0.0/0 Null0
+  !
+ !
+!
+router ospf 1
+ nsr
+ distribute link-state instance-id 202
+ log adjacency changes detail
+ router-id 10.159.255.90
+ segment-routing mpls
+ bfd minimum-interval 100
+ bfd multiplier 3
+ segment-routing forwarding mpls
+ mpls ldp sync
+ mpls ldp auto-config
+ fast-reroute per-prefix
+ fast-reroute per-prefix ti-lfa enable
+ prefix-suppression
+ nsf cisco
+ auto-cost reference-bandwidth 1000000
+ distance ospf external 210
+ max-metric router-lsa on-startup wait-for-bgp include-stub summary-lsa
+ spf prefix-priority route-policy ospf-spf-priority
+ redistribute connected route-policy redist_loopback0
+ redistribute ospf 100 route-policy OSPF_1_FROM_OSPF_100
+ area 0
+  mpls traffic-eng
+  interface Bundle-Ether100.1
+   bfd fast-detect disable
+   cost 20
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether601.1001
+   bfd fast-detect
+   cost 2000
+   network point-to-point
+  !
+  interface Bundle-Ether601.1003
+   bfd fast-detect
+   cost 2000
+   network point-to-point
+  !
+  interface Bundle-Ether602.1138
+   bfd fast-detect
+   cost 2000
+   network point-to-point
+  !
+  interface Loopback0
+   network point-to-point
+   passive enable
+   prefix-sid absolute 17992
+  !
+  interface Loopback1
+   network point-to-point
+   passive enable
+  !
+ !
+ area 2.0.17.1
+  interface Bundle-Ether604.1103
+   bfd minimum-interval 100
+   bfd fast-detect
+   bfd multiplier 3
+   cost 2000
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether604.1139
+   bfd minimum-interval 100
+   bfd fast-detect
+   bfd multiplier 3
+   cost 2000
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+ !
+ area 2.0.20.1
+  cost 2000
+  network point-to-point
+  interface Bundle-Ether100.40
+   cost 40
+   network point-to-point
+  !
+  interface Bundle-Ether601.2003
+   bfd fast-detect
+   cost 2000
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether603.1078
+   bfd minimum-interval 100
+   bfd fast-detect
+   bfd multiplier 3
+   cost 2000
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether603.2007
+   bfd fast-detect
+   cost 500
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Loopback20201
+   passive enable
+   prefix-sid absolute 28913
+   prefix-sid strict-spf absolute 30186
+  !
+ !
+ area 2.0.21.1
+  interface Bundle-Ether100.41
+   cost 40
+   network point-to-point
+  !
+  interface Bundle-Ether601.1059
+   bfd minimum-interval 100
+   bfd fast-detect
+   bfd multiplier 3
+   cost 2000
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether601.1071
+   bfd minimum-interval 100
+   bfd fast-detect
+   bfd multiplier 3
+   cost 2000
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether601.1077
+   bfd minimum-interval 100
+   bfd fast-detect
+   bfd multiplier 3
+   cost 2000
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether601.1079
+   bfd minimum-interval 100
+   bfd fast-detect
+   bfd multiplier 3
+   cost 2000
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether601.2211
+   bfd minimum-interval 100
+   bfd fast-detect
+   bfd multiplier 3
+   cost 2000
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether601.2277
+   bfd minimum-interval 100
+   bfd fast-detect
+   bfd multiplier 3
+   cost 2000
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether602.1041
+   bfd minimum-interval 100
+   bfd fast-detect
+   bfd multiplier 3
+   cost 2000
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether602.1043
+   bfd minimum-interval 100
+   bfd fast-detect
+   bfd multiplier 3
+   cost 2000
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether602.1047
+   bfd minimum-interval 100
+   bfd fast-detect
+   bfd multiplier 3
+   cost 2000
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether602.1051
+   bfd minimum-interval 100
+   bfd fast-detect
+   bfd multiplier 3
+   cost 2000
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether602.1061
+   bfd minimum-interval 100
+   bfd fast-detect
+   bfd multiplier 3
+   cost 2000
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether602.1097
+   bfd fast-detect
+   cost 2000
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether603.1004
+   bfd fast-detect
+   cost 2000
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+   mtu-ignore enable
+  !
+  interface Bundle-Ether603.1021
+   bfd minimum-interval 100
+   bfd fast-detect
+   bfd multiplier 3
+   cost 2000
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether603.1031
+   bfd minimum-interval 100
+   bfd fast-detect
+   bfd multiplier 3
+   cost 2000
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether603.1068
+   bfd minimum-interval 100
+   bfd fast-detect
+   bfd multiplier 3
+   cost 2000
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether603.1081
+   bfd minimum-interval 100
+   bfd fast-detect
+   bfd multiplier 3
+   cost 2000
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether603.1083
+   bfd minimum-interval 100
+   bfd fast-detect
+   bfd multiplier 3
+   cost 2000
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether604.1001
+   bfd minimum-interval 100
+   bfd fast-detect
+   bfd multiplier 3
+   cost 2000
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether604.1003
+   bfd minimum-interval 100
+   bfd fast-detect
+   bfd multiplier 3
+   cost 2000
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether604.1013
+   bfd minimum-interval 100
+   bfd fast-detect
+   bfd multiplier 3
+   cost 2000
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether604.1023
+   bfd fast-detect
+   cost 2000
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether604.1163
+   bfd fast-detect
+   cost 2000
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether604.2048
+   bfd fast-detect
+   cost 2000
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether606.2298
+   bfd minimum-interval 100
+   bfd fast-detect
+   bfd multiplier 3
+   cost 2000
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether701.1001
+   bfd minimum-interval 100
+   bfd fast-detect
+   bfd multiplier 3
+   cost 2000
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Loopback20211
+   passive enable
+   prefix-sid absolute 28915
+   prefix-sid strict-spf absolute 30184
+  !
+ !
+ area 2.0.21.2
+  interface Bundle-Ether100.43
+   cost 40
+   network point-to-point
+  !
+  interface Bundle-Ether601.2208
+   bfd minimum-interval 100
+   bfd fast-detect
+   bfd multiplier 3
+   cost 2000
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether601.2228
+   bfd minimum-interval 100
+   bfd fast-detect
+   bfd multiplier 3
+   cost 2000
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether602.2213
+   bfd minimum-interval 100
+   bfd fast-detect
+   bfd multiplier 3
+   cost 2000
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether602.2217
+   bfd minimum-interval 100
+   bfd fast-detect
+   bfd multiplier 3
+   cost 2000
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether602.2231
+   bfd minimum-interval 100
+   bfd fast-detect
+   bfd multiplier 3
+   cost 2000
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether602.2237
+   bfd minimum-interval 100
+   bfd fast-detect
+   bfd multiplier 3
+   cost 2000
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether602.2238
+   bfd minimum-interval 100
+   bfd fast-detect
+   bfd multiplier 3
+   cost 2000
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether602.2251
+   bfd minimum-interval 100
+   bfd fast-detect
+   bfd multiplier 3
+   cost 2000
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether602.2253
+   bfd minimum-interval 100
+   bfd fast-detect
+   bfd multiplier 3
+   cost 2000
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether602.2257
+   bfd minimum-interval 100
+   bfd fast-detect
+   bfd multiplier 3
+   cost 2000
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether603.2218
+   bfd minimum-interval 100
+   bfd fast-detect
+   bfd multiplier 3
+   cost 2000
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether603.2223
+   bfd minimum-interval 100
+   bfd fast-detect
+   bfd multiplier 3
+   cost 2000
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether603.2227
+   bfd minimum-interval 100
+   bfd fast-detect
+   bfd multiplier 3
+   cost 2000
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether604.1101
+   bfd minimum-interval 100
+   bfd fast-detect
+   bfd multiplier 3
+   cost 2000
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether604.1141
+   bfd minimum-interval 100
+   bfd fast-detect
+   bfd multiplier 3
+   cost 2000
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether701.1000
+   bfd minimum-interval 100
+   bfd fast-detect
+   bfd multiplier 3
+   cost 2000
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether701.1002
+   bfd minimum-interval 100
+   bfd fast-detect
+   bfd multiplier 3
+   cost 2000
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Loopback20212
+   passive enable
+   prefix-sid absolute 28955
+   prefix-sid strict-spf absolute 30144
+  !
+ !
+ area 2.0.21.3
+  interface Bundle-Ether602.2241
+   bfd minimum-interval 100
+   bfd fast-detect
+   bfd multiplier 3
+   cost 2000
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether602.2268
+   bfd minimum-interval 100
+   bfd fast-detect
+   bfd multiplier 3
+   cost 2000
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether602.2271
+   bfd minimum-interval 100
+   bfd fast-detect
+   bfd multiplier 3
+   cost 2000
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether604.2273
+   bfd minimum-interval 100
+   bfd fast-detect
+   bfd multiplier 3
+   cost 2000
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether605.2281
+   bfd minimum-interval 100
+   bfd fast-detect
+   bfd multiplier 3
+   cost 2000
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether605.2283
+   bfd minimum-interval 100
+   bfd fast-detect
+   bfd multiplier 3
+   cost 2000
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether605.2287
+   bfd minimum-interval 100
+   bfd fast-detect
+   bfd multiplier 3
+   cost 2000
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether605.2288
+   bfd minimum-interval 100
+   bfd fast-detect
+   bfd multiplier 3
+   cost 2000
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+ !
+ area 2.0.24.1
+  bfd fast-detect
+  cost 2000
+  message-digest-key 1 md5 encrypted xxxxxxxx
+  network point-to-point
+  interface Bundle-Ether100.42
+   bfd fast-detect disable
+   cost 40
+   network point-to-point
+  !
+  interface Bundle-Ether601.2278
+   bfd minimum-interval 100
+   bfd fast-detect
+   bfd multiplier 3
+   cost 2000
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether603.1006
+   cost 2000
+   authentication message-digest
+  !
+  interface Loopback20241
+   passive enable
+   prefix-sid absolute 28953
+   prefix-sid strict-spf absolute 30146
+  !
+ !
+ mpls traffic-eng router-id Loopback0
+!
+router ospf 100
+ nsr
+ distribute link-state instance-id 100
+ log adjacency changes detail
+ router-id 10.159.255.90
+ segment-routing mpls
+ bfd minimum-interval 50
+ bfd multiplier 3
+ segment-routing forwarding mpls
+ mpls ldp sync
+ mpls ldp auto-config
+ fast-reroute per-prefix
+ fast-reroute per-prefix ti-lfa enable
+ nsf cisco
+ segment-routing sr-prefer
+ auto-cost reference-bandwidth 1000000
+ max-metric router-lsa on-startup wait-for-bgp include-stub summary-lsa
+ spf prefix-priority route-policy ospf-spf-priority-core
+ area 0
+  authentication message-digest
+  mpls traffic-eng
+  interface Bundle-Ether30
+   bfd fast-detect
+   cost 100
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+   hello-interval 3
+  !
+  interface Bundle-Ether100.2
+   bfd fast-detect disable
+   cost 10
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether104
+   bfd fast-detect
+   cost 10
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether124
+   bfd fast-detect
+   cost 100
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Loopback0
+   network point-to-point
+   passive enable
+   prefix-sid absolute 17992
+   prefix-sid strict-spf absolute 17892
+  !
+  interface GigabitEthernet0/0/1/7.40
+   cost 2000
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+   hello-interval 3
+  !
+  interface GigabitEthernet0/0/1/19
+   bfd fast-detect
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+   hello-interval 3
+  !
+ !
+ mpls traffic-eng router-id Loopback0
+!
+snmp-server traps bgp
+router bgp 65535
+ nsr
+ bgp router-id 10.159.255.90
+ bgp graceful-restart restart-time 120
+ bgp graceful-restart graceful-reset
+ bgp graceful-restart stalepath-time 360
+ bgp graceful-restart
+ bgp log neighbor changes detail
+ ibgp policy out enforce-modifications
+ address-family ipv4 unicast
+  additional-paths receive
+  additional-paths send
+  maximum-paths ibgp 2
+  additional-paths selection route-policy RP_BGP_IPv4_PIC_EDGE
+  nexthop resolution prefix-length minimum 32
+  nexthop trigger-delay critical 0
+  nexthop trigger-delay non-critical 0
+  redistribute ospf 1 route-policy BGP_FROM_OSPF_1
+ !
+ address-family vpnv4 unicast
+  additional-paths selection route-policy RP_BGP_VPNv4_PIC_EDGE
+  nexthop resolution prefix-length minimum 32
+  nexthop trigger-delay critical 0
+ !
+ address-family vpnv6 unicast
+  additional-paths selection route-policy RP_BGP_VPNv4_PIC_EDGE
+  nexthop resolution prefix-length minimum 32
+  nexthop trigger-delay critical 0
+ !
+ address-family ipv4 rt-filter
+  nexthop resolution prefix-length minimum 32
+  nexthop trigger-delay critical 0
+ !
+ address-family l2vpn evpn
+  nexthop resolution prefix-length minimum 32
+  nexthop trigger-delay critical 0
+ !
+ address-family link-state link-state
+  nexthop resolution prefix-length minimum 32
+  nexthop trigger-delay critical 0
+ !
+ neighbor-group T-S-RRC
+  remote-as 65535
+  password encrypted xxxxxxxx
+  description T-RR and S-RR client
+  update-source Loopback0
+  address-family vpnv4 unicast
+   next-hop-self
+   route-policy PREFER-ACC-ROUTES in
+   route-reflector-client
+  !
+  address-family vpnv6 unicast
+   next-hop-self
+   route-policy PREFER-ACC-ROUTES in
+   route-reflector-client
+  !
+  address-family ipv4 rt-filter
+   next-hop-self
+   route-policy PREFER-ACC-ROUTES in
+   route-reflector-client
+   default-originate
+  !
+  address-family l2vpn evpn
+   route-reflector-client
+  !
+ !
+ neighbor-group mpbgp-lu-rr
+  remote-as 65535
+  password encrypted xxxxxxxx
+  update-source Loopback0
+  address-family ipv4 labeled-unicast
+   next-hop-self
+  !
+  address-family vpnv4 unicast
+   next-hop-self
+  !
+  address-family vpnv6 unicast
+   next-hop-self
+  !
+  address-family l2vpn evpn
+  !
+  address-family link-state link-state
+   next-hop-self
+   route-policy DENY_ALL in
+  !
+ !
+ neighbor-group mpbgp-lu-ptn
+  remote-as 65535
+  update-source Loopback1
+  address-family vpnv4 unicast
+   next-hop-self
+   route-policy PREFER-ACC-ROUTES in
+   route-reflector-client
+  !
+  address-family vpnv6 unicast
+   next-hop-self
+   route-policy PREFER-ACC-ROUTES in
+   route-reflector-client
+  !
+ !
+ neighbor-group mpbgp-lu-ipran
+  remote-as 65535
+  password encrypted xxxxxxxx
+  update-source Loopback1
+  address-family vpnv4 unicast
+   next-hop-self
+   route-policy PREFER-ACC-ROUTES in
+   route-reflector-client
+  !
+  address-family vpnv6 unicast
+   next-hop-self
+   route-policy PREFER-ACC-ROUTES in
+   route-reflector-client
+  !
+ !
+ neighbor-group mpbgp-regional-rr
+  remote-as 65535
+  password encrypted xxxxxxxx
+  description Regional-RR-peering
+  update-source Loopback0
+  address-family ipv4 unicast
+   next-hop-self
+   route-policy DENY_ALL in
+  !
+  address-family vpnv4 unicast
+   next-hop-self
+  !
+  address-family vpnv6 unicast
+   next-hop-self
+  !
+  address-family l2vpn evpn
+  !
+  address-family link-state link-state
+   next-hop-self
+   route-policy DENY_ALL in
+  !
+ !
+ neighbor 10.244.11.1
+  use neighbor-group T-S-RRC
+  description 20486-KG_KONGSI6-ACC1
+ !
+ neighbor 10.244.11.5
+  use neighbor-group T-S-RRC
+  description 20362-TMN_SEMARAK2-ACC1
+ !
+ neighbor 10.244.11.38
+  use neighbor-group T-S-RRC
+  description 20522-KGBANGAUBANGAU-ACC1
+ !
+ neighbor 10.244.11.39
+  use neighbor-group T-S-RRC
+  description 20523-KELUMPANG-ACC1 
+ !
+ neighbor 10.244.11.40
+  use neighbor-group T-S-RRC
+  description 20524-KG_TAS-ACC1
+ !
+ neighbor 10.244.11.45
+  use neighbor-group T-S-RRC
+  description 20529-LADANG_SABDI-ACC1
+ !
+ neighbor 10.244.54.34
+  use neighbor-group T-S-RRC
+  description 20265-SHAN_SHUI-ACC1
+ !
+ neighbor 10.244.54.56
+  use neighbor-group T-S-RRC
+  description 20287-TITINGAN-ACC1
+ !
+ neighbor 10.244.54.57
+  use neighbor-group T-S-RRC
+  description 20288-TG_BATU_LAUT-ACC1
+ !
+ neighbor 10.244.54.58
+  use neighbor-group T-S-RRC
+  description 20289-TG_BATU_KERAMAT-ACC1
+ !
+ neighbor 10.244.54.60
+  use neighbor-group T-S-RRC
+  description 20291-TAI_TAI-ACC1
+ !
+ neighbor 10.244.54.62
+  use neighbor-group T-S-RRC
+  description 20293-FELDA_UMAS-ACC1
+ !
+ neighbor 10.244.54.63
+  use neighbor-group T-S-RRC
+  description 20294-SABINDO-ACC1
+ !
+ neighbor 10.244.54.64
+  use neighbor-group T-S-RRC
+  description 20295-FUJIMART-ACC1
+ !
+ neighbor 10.244.54.65
+  use neighbor-group T-S-RRC
+  description 20296-BKT_KAMIRI-ACC1
+ !
+ neighbor 10.244.54.66
+  use neighbor-group T-S-RRC
+  description 20297-BOMBALAI-ACC1
+ !
+ neighbor 10.244.54.76
+  use neighbor-group T-S-RRC
+  description 20307-SK_TITINGAN-ACC1
+ !
+ neighbor 10.244.54.78
+  use neighbor-group T-S-RRC
+  description 20309-TM_SIN_ONN-ACC1
+ !
+ neighbor 10.244.54.97
+  use neighbor-group T-S-RRC
+  description 20328-TMNBUKITTAWAU-ACC1
+ !
+ neighbor 10.159.255.76
+  use neighbor-group mpbgp-regional-rr
+  description RR-KRTPR01-CRSX
+ !
+ neighbor 10.159.255.77
+  use neighbor-group mpbgp-regional-rr
+  description RR-INAPR01-CRSX
+ !
+ neighbor 10.240.249.82
+  use neighbor-group mpbgp-lu-ptn
+  description 7590-SMK_TAWAU-PTN1
+ !
+ neighbor 10.240.251.36
+  use neighbor-group mpbgp-lu-ptn
+  description 7036-IMAM-PTN1
+ !
+ neighbor 10.240.251.37
+  use neighbor-group mpbgp-lu-ptn
+  description 7037-TBTW-PTN1
+ !
+ neighbor 10.240.251.38
+  use neighbor-group mpbgp-lu-ptn
+  description 7038-KLBK-PTN1
+ !
+ neighbor 10.240.251.59
+  use neighbor-group mpbgp-lu-ptn
+  description 7059-KABO-PTN1
+ !
+ neighbor 10.240.251.73
+  use neighbor-group mpbgp-lu-ptn
+  description 7073-ANDY-PTN1
+ !
+ neighbor 10.244.252.26
+  use neighbor-group T-S-RRC
+  description 20003-KGSGBUAYA-ACC1
+ !
+ neighbor 10.244.252.36
+  use neighbor-group T-S-RRC
+  description 20013-LADANGPEGAGAU-ACC1
+ !
+ neighbor 10.244.252.54
+  use neighbor-group T-S-RRC
+  description 20031-SGKAWA_S00425_TWU-ACC1
+ !
+ neighbor 10.244.252.55
+  use neighbor-group T-S-RRC
+  description 20032-JLNMAKTAB_S00246_TWU-ACC1
+ !
+ neighbor 10.244.252.60
+  use neighbor-group T-S-RRC
+  description 20037-MELATI-ACC1
+ !
+ neighbor 10.244.252.61
+  use neighbor-group T-S-RRC
+  description 20038-BKTFORBES-ACC1
+ !
+ neighbor 10.244.252.64
+  use neighbor-group T-S-RRC
+  description 20041-SEMPORNA-ACC1
+ !
+ neighbor 10.244.252.65
+  use neighbor-group T-S-RRC
+  description 20042-SIMPANGKUNAK-ACC1
+ !
+ neighbor 10.244.252.66
+  use neighbor-group T-S-RRC
+  description 20043-MOSTYN-ACC1
+ !
+ neighbor 10.244.252.67
+  use neighbor-group T-S-RRC
+  description 20044-SAPANG-ACC1
+ !
+ neighbor 10.244.252.71
+  use neighbor-group T-S-RRC
+  description 20048-WISMADAT-ACC1
+ !
+ neighbor 10.244.252.81
+  use neighbor-group T-S-RRC
+  description 20058-TIBOWRESEARCH-ACC1
+ !
+ neighbor 10.244.54.166
+  use neighbor-group T-S-RRC
+  description 20397-KUHARA-ACC1
+ !
+ neighbor 10.244.54.167
+  use neighbor-group T-S-RRC
+  description 20398-PASIR_PUTIH-ACC1
+ !
+ neighbor 10.244.54.168
+  use neighbor-group T-S-RRC
+  description 20399-TAWAU_BO-ACC1
+ !
+ neighbor 10.244.54.170
+  use neighbor-group T-S-RRC
+  description 20401-TAWAU_AIRPORT-ACC1
+ !
+ neighbor 10.244.54.171
+  use neighbor-group T-S-RRC
+  description 20402-KAU_SING-ACC1
+ !
+ neighbor 10.244.54.172
+  use neighbor-group T-S-RRC
+  description 20403-DUMPAS-ACC1
+ !
+ neighbor 10.244.54.173
+  use neighbor-group T-S-RRC
+  description 20404-HKC_BUILDING-ACC1
+ !
+ neighbor 10.244.54.174
+  use neighbor-group T-S-RRC
+  description 20405-TM_TAWAU_CARRIER-ACC1
+ !
+ neighbor 10.244.54.175
+  use neighbor-group T-S-RRC
+  description 20406-TAMAN_RIA-ACC1
+ !
+ neighbor 10.244.54.176
+  use neighbor-group T-S-RRC
+  description 20407-KUHARA_JAYA_SL-ACC1
+ !
+ neighbor 10.244.54.186
+  use neighbor-group T-S-RRC
+  description 20417-COWIE_BAY-ACC1
+ !
+ neighbor 10.244.54.200
+  use neighbor-group T-S-RRC
+  description 20431-TM_APAS-ACC1
+ !
+ neighbor 10.244.54.215
+  use neighbor-group T-S-RRC
+  description 20446-EASTERN_PLAZAID-ACC1
+ !
+ neighbor 10.244.54.217
+  use neighbor-group T-S-RRC
+  description 20448-MASJID_RAYA-ACC1
+ !
+ neighbor 10.244.54.232
+  use neighbor-group T-S-RRC
+  description 20463-PSS_JLN_KUHARA-ACC1
+ !
+ neighbor 10.244.54.253
+  use neighbor-group T-S-RRC
+  description 20484-SMK_TAWAU-ACC1
+ !
+ neighbor 10.240.248.237
+  use neighbor-group mpbgp-lu-ptn
+  description 7073-ANDY-PTN2
+ !
+ neighbor 10.244.252.145
+  use neighbor-group T-S-RRC
+  description 20122-BT_PAYUNG-ACC1
+ !
+ neighbor 10.244.252.163
+  use neighbor-group T-S-RRC
+  description 20140-MOUNT_ANDRASSY-ACC1
+ !
+ neighbor 10.244.252.164
+  use neighbor-group T-S-RRC
+  description 20141-KALABAKAN-ACC1
+ !
+ neighbor 10.244.252.165
+  use neighbor-group T-S-RRC
+  description 20142-TG_KAPOR-ACC1
+ !
+ neighbor 10.244.252.206
+  use neighbor-group T-S-RRC
+  description 20183-LADANG_IMAM-ACC1
+ !
+ neighbor 10.244.252.210
+  use neighbor-group T-S-RRC
+  description 20187-KABONGAN-ACC1
+ !
+ neighbor 10.244.252.218
+  use neighbor-group T-S-RRC
+  description 20195-BRANTIAN-ACC1
+ !
+ neighbor 10.244.252.220
+  use neighbor-group T-S-RRC
+  description 20197-KALABAKAN_TGH-ACC1
+ !
+ neighbor 10.244.252.223
+  use neighbor-group T-S-RRC
+  description 20200-BT_15_APAS-ACC1
+ !
+ neighbor 10.244.252.237
+  use neighbor-group T-S-RRC
+  description 20214-KM80_KLBN_NBWN-ACC1
+ !
+ neighbor 10.244.252.238
+  use neighbor-group T-S-RRC
+  description 20215-KM60_KLBN_NBWN-ACC1
+ !
+ neighbor 10.244.252.239
+  use neighbor-group T-S-RRC
+  description 20216-KM45_KLBN_NBWN-ACC1
+ !
+ neighbor 10.244.252.240
+  use neighbor-group T-S-RRC
+  description 20217-KM50_KLBN_NBWN-ACC1
+ !
+ vrf CN
+  rd auto
+  address-family ipv4 unicast
+   maximum-paths ibgp 2
+   redistribute connected
+   redistribute static
+  !
+ !
+ vrf Gb
+  rd auto
+  address-family ipv4 unicast
+   maximum-paths ibgp 2
+   redistribute connected
+   redistribute static
+  !
+ !
+ vrf Gn
+  rd auto
+  address-family ipv4 unicast
+   maximum-paths ibgp 2
+   redistribute connected
+   redistribute static
+  !
+ !
+ vrf IT
+  rd auto
+  address-family ipv4 unicast
+   maximum-paths ibgp 2
+  !
+ !
+ vrf SD
+  rd auto
+  address-family ipv4 unicast
+   maximum-paths ibgp 2
+   redistribute connected
+   redistribute static
+  !
+  neighbor 10.124.132.10
+   remote-as 65139
+   address-family ipv4 unicast
+    route-policy pass-all in
+    route-policy pass-all out
+    site-of-origin 65139:300
+   !
+  !
+ !
+ vrf LTE
+  rd auto
+  address-family ipv4 unicast
+   maximum-paths ibgp 2
+   as-path-loopcheck out disable
+   network 0.0.0.0/0
+   redistribute connected
+   redistribute static
+  !
+  neighbor 10.157.19.225
+   remote-as 65532
+   description ebgp link 1 Facing PTN-EnodeB LTE_UP
+   address-family ipv4 unicast
+    route-policy pass-all in
+    route-policy pass-all out
+    site-of-origin 65532:60520
+   !
+  !
+ !
+ vrf PTP
+  rd auto
+  address-family ipv4 unicast
+   maximum-paths ibgp 2
+   as-path-loopcheck out disable
+   redistribute connected
+   redistribute static
+  !
+  neighbor 10.152.75.98
+   remote-as 65532
+   description ebgp to PTN Core R01 TAW_PTP
+   address-family ipv4 unicast
+    route-policy pass-all in
+    route-policy pass-all out
+    site-of-origin 65139:1901
+   !
+  !
+ !
+ vrf E_OM
+  rd auto
+  address-family ipv4 unicast
+   maximum-paths ibgp 2
+   as-path-loopcheck out disable
+   redistribute connected
+   redistribute static
+  !
+  neighbor 10.157.19.237
+   remote-as 65532
+   description ebgp link 1 Facing PTN-EnodeB E_RAN_OM
+   address-family ipv4 unicast
+    route-policy pass-all in
+    route-policy pass-all out
+    site-of-origin 65532:4600
+   !
+  !
+ !
+ vrf CD_OM
+  rd auto
+  address-family ipv4 unicast
+   maximum-paths ibgp 2
+   network 0.0.0.0/0
+   redistribute connected
+   redistribute static
+  !
+ !
+ vrf CD_X2
+  rd auto
+  address-family ipv4 unicast
+   maximum-paths ibgp 2
+   network 0.0.0.0/0
+   redistribute connected
+   redistribute static
+  !
+ !
+ vrf IP_OM
+  rd auto
+  address-family ipv4 unicast
+   maximum-paths ibgp 2
+   redistribute connected
+   redistribute static
+  !
+ !
+ vrf CD_PTP
+  rd auto
+  address-family ipv4 unicast
+   maximum-paths ibgp 2
+   network 0.0.0.0/0
+   redistribute connected
+   redistribute static
+  !
+ !
+ vrf CD_S1C
+  rd auto
+  address-family ipv4 unicast
+   maximum-paths ibgp 2
+   network 0.0.0.0/0
+   redistribute connected
+   redistribute static
+  !
+ !
+ vrf CD_S1U
+  rd auto
+  address-family ipv4 unicast
+   maximum-paths ibgp 2
+   network 0.0.0.0/0
+   redistribute connected
+   redistribute static
+  !
+ !
+ vrf E_2G3G
+  rd auto
+  address-family ipv4 unicast
+   maximum-paths ibgp 2
+   as-path-loopcheck out disable
+   network 0.0.0.0/0
+   redistribute connected
+   redistribute static
+  !
+  neighbor 10.152.75.146
+   remote-as 65532
+   description ebgp to PTN Core R01 TAW_E_MOAT
+   address-family ipv4 unicast
+    route-policy pass-all in
+    route-policy pass-all out
+    site-of-origin 65139:890
+   !
+  !
+ !
+ vrf E_A_CP
+  rd auto
+  address-family ipv4 unicast
+   maximum-paths ibgp 2
+   redistribute connected
+   redistribute static
+  !
+ !
+ vrf E_A_UP
+  rd auto
+  address-family ipv4 unicast
+   maximum-paths ibgp 2
+   redistribute connected
+   redistribute static
+  !
+ !
+ vrf LTE_CP
+  rd auto
+  address-family ipv4 unicast
+   maximum-paths ibgp 2
+   as-path-loopcheck out disable
+   redistribute connected
+   redistribute static
+  !
+  neighbor 10.157.19.221
+   remote-as 65532
+   description ebgp link 1 Facing PTN-EnodeB LTE_CP
+   address-family ipv4 unicast
+    route-policy pass-all in
+    route-policy pass-all out
+    site-of-origin 65532:60500
+   !
+  !
+ !
+ vrf MSS_OM
+  rd auto
+  address-family ipv4 unicast
+   maximum-paths ibgp 2
+   redistribute connected
+   redistribute static
+  !
+ !
+ vrf PTN_OM
+  rd auto
+  address-family ipv4 unicast
+   maximum-paths ibgp 2
+   network 0.0.0.0/0
+   redistribute connected
+  !
+ !
+ vrf TX_NMS
+  rd auto
+  address-family ipv4 unicast
+   maximum-paths ibgp 2
+   as-path-loopcheck out disable
+   network 0.0.0.0/0
+   redistribute connected
+   redistribute static
+  !
+  neighbor 10.152.75.158
+   remote-as 65532
+   description ebgp to PTN Core R01 TAW_TXNMS_HUAWEI_SM
+   address-family ipv4 unicast
+    route-policy pass-all in
+    route-policy pass-all out
+    site-of-origin 65139:3585
+   !
+  !
+ !
+ vrf CD_ABIS
+  rd auto
+  address-family ipv4 unicast
+   maximum-paths ibgp 2
+   network 0.0.0.0/0
+   redistribute connected
+   redistribute static
+  !
+ !
+ vrf CME_NMS
+  rd auto
+  address-family ipv4 unicast
+   maximum-paths ibgp 2
+   network 0.0.0.0/0
+   redistribute connected
+  !
+ !
+ vrf CP_wifi
+  rd auto
+  address-family ipv4 unicast
+   maximum-paths ibgp 2
+   as-path-loopcheck out disable
+   redistribute connected
+  !
+  neighbor 10.241.15.38
+   remote-as 65532
+   description ebgp to PTN Core R02
+   address-family ipv4 unicast
+    route-policy pass-all in
+    route-policy pass-all out
+    site-of-origin 65532:60400
+   !
+  !
+ !
+ vrf EAP_VRF
+  rd auto
+  address-family ipv4 unicast
+   maximum-paths ibgp 2
+   as-path-loopcheck out disable
+   redistribute connected
+   redistribute static
+  !
+  neighbor 10.241.251.81
+   remote-as 65532
+   description ebgp link to PTN R02 EAP_VRF
+   address-family ipv4 unicast
+    route-policy pass-all in
+    route-policy pass-all out
+    site-of-origin 65532:61120
+   !
+  !
+ !
+ vrf E_Iu_CP
+  rd auto
+  address-family ipv4 unicast
+   maximum-paths ibgp 2
+   redistribute connected
+   redistribute static
+  !
+ !
+ vrf E_Iu_UP
+  rd auto
+  address-family ipv4 unicast
+   maximum-paths ibgp 2
+   redistribute connected
+   redistribute static
+  !
+ !
+ vrf SIGTRAN
+  rd auto
+  address-family ipv4 unicast
+   maximum-paths ibgp 2
+   redistribute connected
+   redistribute static
+  !
+ !
+ vrf UNIP_OM
+  rd auto
+  address-family ipv4 unicast
+   maximum-paths ibgp 2
+   redistribute connected
+  !
+ !
+ vrf UP_wifi
+  rd auto
+  address-family ipv4 unicast
+   maximum-paths ibgp 2
+   as-path-loopcheck out disable
+   redistribute connected
+   redistribute static
+  !
+  neighbor 10.241.15.46
+   remote-as 65532
+   description ebgp to PTN Core R02
+   address-family ipv4 unicast
+    route-policy pass-all in
+    route-policy pass-all out
+    site-of-origin 65532:60420
+   !
+  !
+ !
+ vrf ENT_PI1M
+  rd auto
+  address-family ipv4 unicast
+   maximum-paths ibgp 2
+   as-path-loopcheck out disable
+   network 0.0.0.0/0
+   redistribute connected
+   redistribute static
+  !
+  neighbor 10.152.75.90
+   remote-as 65532
+   description ebgp to PTN Core R01 KCH_ENT_PI1M
+   address-family ipv4 unicast
+    route-policy pass-all in
+    route-policy pass-all out
+    site-of-origin 65512:995
+   !
+  !
+ !
+ vrf P_EAP_VRF
+  rd auto
+  address-family ipv4 unicast
+   maximum-paths ibgp 2
+   as-path-loopcheck out disable
+   redistribute connected
+   redistribute static
+  !
+  neighbor 10.241.251.85
+   remote-as 65532
+   description ebgp link to PTN R02 P_EAP_VRF
+   address-family ipv4 unicast
+    route-policy pass-all in
+    route-policy pass-all out
+    site-of-origin 65532:61140
+   !
+  !
+ !
+ vrf OLNO_M_VRF
+  rd auto
+  address-family ipv4 unicast
+   maximum-paths ibgp 2
+   as-path-loopcheck out disable
+   redistribute connected
+   redistribute static
+  !
+  neighbor 10.241.248.105
+   remote-as 65532
+   description ebgp link to PTN R02 OLNO_M_VRF
+   address-family ipv4 unicast
+    route-policy pass-all in
+    route-policy pass-all out
+    site-of-origin 65532:61320
+   !
+  !
+ !
+ vrf Premier_VRF
+  rd auto
+  address-family ipv4 unicast
+   maximum-paths ibgp 2
+   as-path-loopcheck out disable
+   redistribute connected
+   redistribute static
+  !
+  neighbor 10.241.251.89
+   remote-as 65532
+   description ebgp link to PTN R02 Premier_VRF
+   address-family ipv4 unicast
+    route-policy pass-all in
+    route-policy pass-all out
+    site-of-origin 65532:61160
+   !
+  !
+ !
+ vrf CelcomWiFi_VRF
+  rd auto
+  address-family ipv4 unicast
+   maximum-paths ibgp 2
+   as-path-loopcheck out disable
+   redistribute connected
+   redistribute static
+  !
+  neighbor 10.241.251.93
+   remote-as 65532
+   description ebgp link to PTN R02 CelcomWiFi_VRF
+   address-family ipv4 unicast
+    route-policy pass-all in
+    route-policy pass-all out
+    site-of-origin 65532:61180
+   !
+  !
+ !
+ vrf OLNO_M_EAP_VRF
+  rd auto
+  address-family ipv4 unicast
+   maximum-paths ibgp 2
+   as-path-loopcheck out disable
+   redistribute connected
+   redistribute static
+  !
+  neighbor 10.241.248.109
+   remote-as 65532
+   description ebgp link to PTN R02 OLNO_M_EAP_VRF
+   address-family ipv4 unicast
+    route-policy pass-all in
+    route-policy pass-all out
+    site-of-origin 65532:61340
+   !
+  !
+ !
+ vrf GENERIC_SSID_VRF
+  rd auto
+  address-family ipv4 unicast
+   maximum-paths ibgp 2
+   as-path-loopcheck out disable
+   redistribute connected
+   redistribute static
+  !
+  neighbor 10.241.248.113
+   remote-as 65532
+   description ebgp link to PTN R02 GENERIC_SSID_VRF
+   address-family ipv4 unicast
+    route-policy pass-all in
+    route-policy pass-all out
+    site-of-origin 65532:61360
+   !
+  !
+ !
+!
+l2vpn
+ load-balancing flow src-dst-ip
+ pw-class TEST
+  encapsulation mpls
+  !
+ !
+ pw-class VC_TYPE4
+  encapsulation mpls
+   transport-mode vlan
+  !
+ !
+ xconnect group TxNMS
+  p2p XC_502
+   interface Bundle-Ether4.502
+   neighbor ipv4 10.159.255.17 pw-id 502
+    pw-class VC_TYPE4
+   !
+   description ***X-Connect_to_WPJPE01_for_TxNMS***
+  !
+ !
+ xconnect group TESTING
+  p2p TEST
+   interface GigabitEthernet0/6/0/47.200
+   neighbor ipv4 10.244.54.169 pw-id 100
+    pw-class TEST
+   !
+  !
+ !
+ xconnect group EOMPLS_xconnect
+  p2p XC_2005
+   interface GigabitEthernet0/3/0/6.2005
+   neighbor ipv4 10.159.255.84 pw-id 2005
+    pw-class VC_TYPE4
+   !
+  !
+ !
+ bridge group BSB16_VLAN16
+  bridge-domain BSB16_VLAN16
+   interface GigabitEthernet0/3/0/4.16
+    storm-control broadcast pps 20480
+   !
+   interface GigabitEthernet0/3/0/5.16
+   !
+   routed interface BVI16
+   !
+  !
+ !
+ bridge group bd_E_BSB16_GB-gr
+  bridge-domain bd_E_BSB16_GB-dm
+   interface Bundle-Ether100.101
+   !
+   interface GigabitEthernet0/3/0/37.101
+    storm-control broadcast pps 20480
+   !
+   routed interface BVI101
+   !
+  !
+ !
+ bridge group bd_E_BSB16_OM-gr
+  bridge-domain bd_E_BSB16_OM-dm
+   interface Bundle-Ether100.255
+    storm-control broadcast pps 20480
+   !
+   interface GigabitEthernet0/3/0/40
+    storm-control broadcast pps 20480
+   !
+   routed interface BVI255
+   !
+  !
+ !
+ bridge group bd_E_TWRN13_OM-gr
+  bridge-domain bd_E_TWRN13_OM-dm
+   interface Bundle-Ether100.251
+   !
+   interface GigabitEthernet0/3/0/39
+    storm-control broadcast pps 20480
+   !
+   routed interface BVI251
+   !
+  !
+ !
+ bridge group bd_E_BSB16_A_UP-gr
+  bridge-domain bd_E_BSB16_A_UP-dm
+   interface Bundle-Ether100.123
+   !
+   interface GigabitEthernet0/3/0/37.123
+    storm-control broadcast pps 20480
+   !
+   routed interface BVI123
+   !
+  !
+ !
+!
+router hsrp
+ interface BVI16
+  hsrp delay minimum 2 reload 120
+  address-family ipv4
+   hsrp 16
+    timers msec 500 msec 1500
+    preempt delay 2
+    priority 105
+    address 10.156.6.38
+   !
+  !
+ !
+ interface BVI101
+  hsrp delay minimum 2 reload 120
+  address-family ipv4
+   hsrp 106 version 2
+    timers msec 500 msec 1500
+    preempt delay 2
+    priority 100
+    address 10.156.6.6
+   !
+  !
+ !
+ interface BVI123
+  hsrp delay minimum 2 reload 120
+  address-family ipv4
+   hsrp 109 version 2
+    timers msec 500 msec 1500
+    preempt delay 2
+    priority 100
+    address 10.156.6.30
+   !
+  !
+ !
+ interface BVI251
+  hsrp delay minimum 2 reload 120
+  address-family ipv4
+   hsrp 105 version 2
+    timers msec 500 msec 1500
+    preempt delay 2
+    priority 100
+    address 10.156.27.14
+   !
+  !
+ !
+ interface BVI255
+  hsrp delay minimum 2 reload 120
+  address-family ipv4
+   hsrp 107 version 2
+    timers msec 500 msec 1500
+    preempt delay 2
+    priority 100
+    address 10.156.1.30
+   !
+  !
+ !
+ interface Bundle-Ether4.103
+  address-family ipv4
+   hsrp 103
+    timers 5 15
+    mac-address b8be.bf53.fe43
+    preempt
+    address 10.122.131.1
+   !
+   hsrp version 2
+   !
+  !
+ !
+ interface Bundle-Ether4.104
+  address-family ipv4
+   hsrp 104
+    timers 5 15
+    preempt
+    address 10.123.132.1
+   !
+   hsrp version 2
+   !
+  !
+ !
+ interface Bundle-Ether4.112
+  address-family ipv4
+   hsrp 112
+    timers 5 15
+    preempt
+    address 10.124.117.129
+   !
+   hsrp version 2
+   !
+  !
+ !
+ interface Bundle-Ether4.350
+  address-family ipv4
+   hsrp version 2
+   !
+   hsrp 350
+    timers 5 15
+    preempt
+    address 10.124.132.17
+   !
+  !
+ !
+ interface TenGigE0/6/0/3.21
+  hsrp delay minimum 2 reload 120
+  address-family ipv4
+   hsrp 21
+    timers msec 500 msec 1500
+    preempt delay 2
+    priority 100
+    address 10.156.23.62
+   !
+  !
+ !
+ interface Bundle-Ether4.1200
+  address-family ipv4
+   hsrp version 2
+   !
+   hsrp 1200
+    timers 5 15
+    preempt
+    priority 100
+    address 10.151.86.209
+   !
+  !
+ !
+ interface Bundle-Ether4.1661
+  address-family ipv4
+   hsrp version 2
+   !
+   hsrp 1661
+    timers 5 15
+    preempt
+    address 10.156.1.65
+   !
+  !
+ !
+ interface TenGigE0/6/0/24.55
+  hsrp delay minimum 2 reload 120
+  address-family ipv4
+   hsrp 101 version 2
+    timers msec 500 msec 1500
+    preempt delay 2
+    priority 105
+    address 10.156.27.125
+   !
+   hsrp 102 version 2
+    timers msec 500 msec 1500
+    preempt delay 2
+    priority 105
+    address 10.156.27.126
+   !
+  !
+ !
+ interface TenGigE0/6/0/24.201
+  hsrp delay minimum 2 reload 120
+  address-family ipv4
+   hsrp 103 version 2
+    timers msec 500 msec 1500
+    preempt delay 2
+    priority 100
+    address 10.156.27.61
+   !
+   hsrp 104 version 2
+    timers msec 500 msec 1500
+    preempt delay 2
+    priority 105
+    address 10.156.27.62
+   !
+  !
+ !
+ interface GigabitEthernet0/0/1/1.1404
+  address-family ipv4
+   hsrp 101
+    timers 5 15
+    preempt
+    priority 120
+    address 10.228.195.65
+   !
+  !
+ !
+ interface GigabitEthernet0/0/1/1.1405
+  address-family ipv4
+   hsrp 102
+    timers 5 15
+    preempt
+    priority 120
+    address 10.228.195.1
+   !
+  !
+ !
+!
+mpls oam
+!
+rsvp
+ interface Bundle-Ether30
+ !
+ interface Bundle-Ether104
+ !
+!
+mpls traffic-eng
+ interface Bundle-Ether30
+ !
+ interface Bundle-Ether100
+ !
+ interface Bundle-Ether104
+ !
+!
+mpls ldp
+ log
+  neighbor
+  nsr
+  graceful-restart
+ !
+ nsr
+ graceful-restart
+ router-id 10.159.255.90
+ neighbor
+  password encrypted xxxxxxxx
+  10.240.248.86:0 password disable
+  10.240.248.87:0 password disable
+  10.240.248.88:0 password disable
+  10.240.248.89:0 password disable
+  10.240.248.90:0 password disable
+  10.240.248.212:0 password disable
+  10.240.248.213:0 password disable
+  10.240.248.214:0 password disable
+  10.240.248.215:0 password disable
+  10.240.248.216:0 password disable
+  10.240.248.217:0 password disable
+  10.240.248.219:0 password disable
+  10.240.248.221:0 password disable
+  10.240.248.223:0 password disable
+  10.240.248.224:0 password disable
+  10.240.248.226:0 password disable
+  10.240.248.227:0 password disable
+  10.240.248.229:0 password disable
+  10.240.248.231:0 password disable
+  10.240.248.232:0 password disable
+  10.240.248.233:0 password disable
+  10.240.248.234:0 password disable
+  10.240.248.235:0 password disable
+  10.240.248.237:0 password disable
+  10.240.249.3:0 password disable
+  10.240.249.54:0 password disable
+  10.240.249.55:0 password disable
+  10.240.249.58:0 password disable
+  10.240.249.59:0 password disable
+  10.240.249.71:0 password disable
+  10.240.249.72:0 password disable
+  10.240.249.83:0 password disable
+  10.240.249.84:0 password disable
+  10.240.251.31:0 password disable
+  10.240.251.33:0 password disable
+  10.240.251.36:0 password disable
+  10.240.251.38:0 password disable
+  10.240.251.40:0 password disable
+  10.240.251.60:0 password disable
+  10.240.251.63:0 password disable
+  10.240.251.68:0 password disable
+  10.240.251.141:0 password disable
+  10.240.251.143:0 password disable
+  10.240.251.144:0 password disable
+  10.240.251.145:0 password disable
+  10.240.251.146:0 password disable
+ !
+ session protection
+ address-family ipv4
+  label
+   local
+    allocate for LOOPBACK
+   !
+  !
+ !
+ interface Bundle-Ether100.2
+ !
+!
+segment-routing
+ global-block 16000 31999
+ traffic-eng
+  candidate-paths
+   all
+    source-address ipv4 10.159.255.90
+   !
+  !
+  logging
+   policy status
+   pcep peer-status
+  !
+  pcc
+   source-address ipv4 10.159.255.90
+   pce address ipv4 10.124.16.1
+    precedence 10
+    password encrypted xxxxxxxx
+   !
+   pce address ipv4 10.124.17.1
+    precedence 5
+    password encrypted xxxxxxxx
+   !
+   report-all
+   redundancy pcc-centric
+  !
+ !
+!
+xml agent tty
+!
+xml agent
+!
+snmp-server traps sensor
+snmp-server traps fru-ctrl
+netconf agent tty
+ throttle memory 600
+!
+snmp-server traps ospf errors bad-packet
+snmp-server traps ospf errors authentication-failure
+snmp-server traps ospf errors config-error
+snmp-server traps ospf errors virt-bad-packet
+snmp-server traps ospf errors virt-authentication-failure
+snmp-server traps ospf errors virt-config-error
+snmp-server traps ospf state-change if-state-change
+snmp-server traps ospf state-change neighbor-state-change
+snmp-server traps ospf state-change virtif-state-change
+snmp-server traps ospf state-change virtneighbor-state-change
+mpls ip-ttl-propagate disable forwarded
+ssh client dscp 16
+ssh server dscp 16
+ssh server rate-limit 600
+ssh server algorithms cipher aes128-ctr aes192-ctr aes256-ctr aes128-gcm@openssh.com aes256-gcm@openssh.com
+ssh server session-limit 10
+ssh server v2
+ssh server vrf default ipv4 access-list VTY-ACL
+performance-measurement
+ interface Bundle-Ether30
+  delay-measurement
+   advertise-delay 1750
+  !
+ !
+ interface Bundle-Ether104
+  delay-measurement
+   advertise-delay 3750
+  !
+ !
+ interface Bundle-Ether100.1
+  delay-measurement
+   advertise-delay 10
+  !
+ !
+ interface Bundle-Ether100.2
+  delay-measurement
+   advertise-delay 10
+  !
+ !
+ interface Bundle-Ether100.40
+  delay-measurement
+   advertise-delay 16777215
+  !
+ !
+ interface Bundle-Ether100.41
+  delay-measurement
+   advertise-delay 16777215
+  !
+ !
+ interface Bundle-Ether100.42
+  delay-measurement
+   advertise-delay 16777215
+  !
+ !
+ interface Bundle-Ether100.43
+  delay-measurement
+   advertise-delay 16777215
+  !
+ !
+ interface Bundle-Ether601.1077
+  delay-measurement
+   advertise-delay 2000
+  !
+ !
+ interface Bundle-Ether601.2228
+  delay-measurement
+   advertise-delay 2000
+  !
+ !
+ interface Bundle-Ether602.1041
+  delay-measurement
+   advertise-delay 2000
+  !
+ !
+ interface Bundle-Ether602.1043
+  delay-measurement
+   advertise-delay 2000
+  !
+ !
+ interface Bundle-Ether602.1047
+  delay-measurement
+   advertise-delay 2000
+  !
+ !
+ interface Bundle-Ether602.1051
+  delay-measurement
+   advertise-delay 2000
+  !
+ !
+ interface Bundle-Ether602.1129
+  delay-measurement
+   advertise-delay 2000
+  !
+ !
+ interface Bundle-Ether602.2213
+  delay-measurement
+   advertise-delay 2000
+  !
+ !
+ interface Bundle-Ether602.2217
+  delay-measurement
+   advertise-delay 2000
+  !
+ !
+ interface Bundle-Ether602.2231
+  delay-measurement
+   advertise-delay 2000
+  !
+ !
+ interface Bundle-Ether602.2237
+  delay-measurement
+   advertise-delay 2000
+  !
+ !
+ interface Bundle-Ether602.2238
+  delay-measurement
+   advertise-delay 2000
+  !
+ !
+ interface Bundle-Ether602.2241
+  delay-measurement
+   advertise-delay 2000
+  !
+ !
+ interface Bundle-Ether602.2251
+  delay-measurement
+   advertise-delay 2000
+  !
+ !
+ interface Bundle-Ether602.2253
+  delay-measurement
+   advertise-delay 2000
+  !
+ !
+ interface Bundle-Ether602.2257
+  delay-measurement
+   advertise-delay 2000
+  !
+ !
+ interface Bundle-Ether602.2268
+  delay-measurement
+   advertise-delay 2000
+  !
+ !
+ interface Bundle-Ether602.2271
+  delay-measurement
+   advertise-delay 2000
+  !
+ !
+ interface Bundle-Ether603.1004
+  delay-measurement
+   advertise-delay 2000
+  !
+ !
+ interface Bundle-Ether603.1006
+  delay-measurement
+   advertise-delay 2000
+  !
+ !
+ interface Bundle-Ether603.1021
+  delay-measurement
+   advertise-delay 2000
+  !
+ !
+ interface Bundle-Ether603.1031
+  delay-measurement
+   advertise-delay 2000
+  !
+ !
+ interface Bundle-Ether603.1078
+  delay-measurement
+   advertise-delay 2000
+  !
+ !
+ interface Bundle-Ether603.1081
+  delay-measurement
+   advertise-delay 2000
+  !
+ !
+ interface Bundle-Ether603.1083
+  delay-measurement
+   advertise-delay 2000
+  !
+ !
+ interface Bundle-Ether603.2007
+  delay-measurement
+   advertise-delay 2000
+  !
+ !
+ interface Bundle-Ether603.2218
+  delay-measurement
+   advertise-delay 2000
+  !
+ !
+ interface Bundle-Ether603.2223
+  delay-measurement
+   advertise-delay 2000
+  !
+ !
+ interface Bundle-Ether603.2227
+  delay-measurement
+   advertise-delay 2000
+  !
+ !
+ interface Bundle-Ether604.1001
+  delay-measurement
+   advertise-delay 2000
+  !
+ !
+ interface Bundle-Ether604.1003
+  delay-measurement
+   advertise-delay 2000
+  !
+ !
+ interface Bundle-Ether604.1013
+  delay-measurement
+   advertise-delay 2000
+  !
+ !
+ interface Bundle-Ether604.1023
+  delay-measurement
+   advertise-delay 2000
+  !
+ !
+ interface Bundle-Ether604.1101
+  delay-measurement
+   advertise-delay 2000
+  !
+ !
+ interface Bundle-Ether604.1103
+  delay-measurement
+   advertise-delay 2000
+  !
+ !
+ interface Bundle-Ether604.1139
+  delay-measurement
+   advertise-delay 2000
+  !
+ !
+ interface Bundle-Ether604.1163
+  delay-measurement
+   advertise-delay 2000
+  !
+ !
+ interface Bundle-Ether604.2048
+  delay-measurement
+   advertise-delay 2000
+  !
+ !
+ interface Bundle-Ether604.2273
+  delay-measurement
+   advertise-delay 2000
+  !
+ !
+ interface Bundle-Ether605.2281
+  delay-measurement
+   advertise-delay 2000
+  !
+ !
+ interface Bundle-Ether605.2283
+  delay-measurement
+   advertise-delay 2000
+  !
+ !
+ interface Bundle-Ether605.2287
+  delay-measurement
+   advertise-delay 2000
+  !
+ !
+ interface Bundle-Ether605.2288
+  delay-measurement
+   advertise-delay 2000
+  !
+ !
+ interface Bundle-Ether701.1000
+  delay-measurement
+   advertise-delay 2000
+  !
+ !
+ interface Bundle-Ether701.1001
+  delay-measurement
+   advertise-delay 2000
+  !
+ !
+ interface Bundle-Ether701.1002
+  delay-measurement
+   advertise-delay 2000
+  !
+ !
+!
+ipsla
+ responder
+  twamp
+   timeout 600
+  !
+ !
+ server twamp
+  timer inactivity 600
+ !
+!
+end
+

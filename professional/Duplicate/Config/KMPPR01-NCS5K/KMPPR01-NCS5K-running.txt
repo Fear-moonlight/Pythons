@@ -1,0 +1,1586 @@
+Fri Sep  6 07:31:08.057 MYT
+Building configuration...
+!! IOS XR Configuration 7.3.2
+!! Last configuration change at Tue Jul 16 16:01:13 2024 by V12086X
+!
+hostname KMPPR01-NCS5K
+aaa password-policy CELCOM
+ numeric 1
+ lifetime months 3
+ lower-case 1
+ min-length 8
+ upper-case 1
+ special-char 1
+ lockout-time minutes 30
+ min-char-change 5
+ authen-max-attempts 6
+!
+clock timezone MYT Asia/Kuala_Lumpur
+banner exec ^C
+*********************************************************************
+*                                                                   *
+*  This is a system belonging to Celcom Axiata Bhd. All Celcom      *
+*  systems are provided for the processing of Celcom's information  *
+*  and Celcom customer personal data. All content on this system is *
+*  confidential in nature and is protected as required by the       *
+*  Personal Data Protection Act 2010, other Malaysian Laws and      *
+*  regulations as well as Celcom's confidentiality provisions and   *
+*  terms of use. The activities to this system may be monitored,    *
+*  recorded, or captured in order to comply with Celcom's internal  *
+*  policies and the relevant Malaysian Laws and Regulations. Any    *
+*  unauthorised use of the system or the information therein shall  *
+*  be subject to disciplinary action and may lead to criminal       *
+*  prosecution. Unauthorized or improper use of this system may     *
+*  result in administrative action, disciplinary action and/or      *
+*  civil charges/criminal penalties, with jail terms of up to 3     *
+*  years and fines of up to RM 500,000 By continuing to use this    *
+*  system you indicate your awareness of and consent to these terms *
+*  and conditions of use.                                           *
+*                                                                   *
+*********************************************************************
+^C
+banner motd #
+***************************************************************************
+*                                                                         *
+*      This system belongs to Celcom Axiata Berhad.                       *
+*      All content on the system is protected by Celcoms policies         *
+*      and the applicable laws.                                           *
+*      By continuing to use this system indicates your consent to         *
+*      the terms and conditions.                                          *
+*                                                                         *
+***************************************************************************
+#
+banner login X
+*********************************************************************
+*                                                                   *
+*  This is a system belonging to Celcom Axiata Bhd. All Celcom      *
+*  systems are provided for the processing of Celcom's information  *
+*  and Celcom customer personal data. All content on this system is *
+*  confidential in nature and is protected as required by the       *
+*  Personal Data Protection Act 2010, other Malaysian Laws and      *
+*  regulations as well as Celcom's confidentiality provisions and   *
+*  terms of use. The activities to this system may be monitored,    *
+*  recorded, or captured in order to comply with Celcom's internal  *
+*  policies and the relevant Malaysian Laws and Regulations. Any    *
+*  unauthorised use of the system or the information therein shall  *
+*  be subject to disciplinary action and may lead to criminal       *
+*  prosecution. Unauthorized or improper use of this system may     *
+*  result in administrative action, disciplinary action and/or      *
+*  civil charges/criminal penalties, with jail terms of up to 3     *
+*  years and fines of up to RM 500,000 By continuing to use this    *
+*  system you indicate your awareness of and consent to these terms *
+*  and conditions of use.                                           *
+*                                                                   *
+*********************************************************************
+X
+logging ipv4 dscp cs2
+logging trap informational
+logging events level informational
+logging archive
+ device harddisk
+ severity notifications
+ archive-size 100
+!
+logging console disable
+logging buffered 10000000
+logging buffered debugging
+logging buffered discriminator
+ nomatch1 10.124.7.|10.124.19.
+!
+logging 10.1.65.147 vrf default severity info port default
+logging 10.124.7.66 vrf default severity info port default
+logging 10.124.7.71 vrf default severity info port default
+logging 10.124.7.71 vrf default discriminator
+ nomatch1 10.124.7.|10.124.19.
+!
+logging 10.1.110.216 vrf default severity info port default
+logging 10.124.19.66 vrf default severity info port default
+logging 10.124.19.71 vrf default severity info port default
+logging 10.124.19.71 vrf default discriminator
+ nomatch1 10.124.7.|10.124.19.
+!
+logging 10.159.56.88 vrf default severity info port default
+logging 10.159.57.88 vrf default severity info port default
+logging 10.122.45.106 vrf default severity info port default
+logging 10.122.45.114 vrf default severity info port default
+logging 10.122.45.122 vrf default severity info port default
+logging suppress rule DROP_Smart
+ alarm LICENSE SMART_LIC COMM_FAILED
+!
+logging suppress apply rule DROP_Smart
+ all-of-router
+!
+logging source-interface Loopback0
+logging suppress duplicates
+service timestamps log datetime localtime msec show-timezone
+!log/debug timestamp format
+service timestamps debug datetime localtime msec show-timezone
+event manager directory user policy harddisk:/scripts
+logging events link-status software-interfaces
+domain name celcom.com.my
+domain lookup disable
+tacacs source-interface Loopback0 vrf default
+tacacs-server ipv4 dscp cs2
+username xxxxxxxx
+ group root-lr
+ group cisco-support
+ secret 5 xxxxxxxx
+!
+username xxxxxxxx
+ group root-lr
+ group netadmin
+ secret 10 xxxxxxxx
+!
+username xxxxxxxx
+ group root-lr
+ group netadmin
+ secret 10 xxxxxxxx
+!
+username xxxxxxxx
+ group root-lr
+ group netadmin
+ secret 10 xxxxxxxx
+!
+aaa accounting exec default start-stop group tacacs+
+aaa accounting exec ISE_TACACS start-stop group Cisco_ISE_Servers
+aaa accounting commands default start-stop group tacacs+
+aaa accounting commands ISE_TACACS start-stop group Cisco_ISE_Servers
+aaa group server tacacs+ Cisco_ISE_Servers
+ server-private 10.124.1.35 port 49
+  key 7 xxxxxxxx
+ !
+ server-private 10.124.2.35 port 49
+  key 7 xxxxxxxx
+ !
+!
+aaa authorization exec ISE_TACACS group Cisco_ISE_Servers local
+aaa authorization commands ISE_TACACS group Cisco_ISE_Servers none
+aaa authorization commands eem-method none
+aaa authorization eventmanager default local
+aaa authentication login ISE_TACACS group Cisco_ISE_Servers local
+aaa accounting update newinfo
+cdp
+nsr process-failures switchover
+ethernet sla
+ profile SLA1_LOSS type cfm-synthetic-loss-measurement
+  probe
+   send burst every 60 seconds packet count 60 interval 1 seconds
+   priority 1
+  !
+  schedule
+   every 1 minutes for 1 minutes
+  !
+  statistics
+   measure one-way-loss-sd
+    buckets size 1 probes
+    buckets archive 5
+   !
+   measure one-way-loss-ds
+    buckets size 1 probes
+    buckets archive 5
+   !
+  !
+ !
+ profile SLA2_ROUNDTRIP type cfm-delay-measurement
+  probe
+   send burst every 60 seconds packet count 60 interval 1 seconds
+   priority 1
+  !
+  schedule
+   every 1 minutes for 1 minutes
+  !
+  statistics
+   measure round-trip-delay
+    buckets size 1 probes
+    buckets archive 2
+   !
+   measure round-trip-jitter
+    buckets size 1 probes
+    buckets archive 2
+   !
+  !
+ !
+!
+tcp selective-ack
+tcp path-mtu-discovery
+! line timeout
+line template vty
+ accounting exec ISE_TACACS
+ accounting commands ISE_TACACS
+ authorization exec ISE_TACACS
+ authorization commands ISE_TACACS
+ login authentication ISE_TACACS
+ exec-timeout 10 0
+ access-class ingress VTY-ACL
+ transport input ssh
+ transport output none
+!
+line console
+ accounting exec ISE_TACACS
+ accounting commands ISE_TACACS
+ login authentication ISE_TACACS
+ exec-timeout 10 0
+ transport output none
+!
+line default
+ exec-timeout 10 0
+ session-limit 10
+ session-timeout 100
+!
+line template eem-template
+ authorization commands eem-method
+!
+vty-pool eem 100 105 line-template eem-template
+vty-pool default 0 9 line-template vty
+snmp-server interface Loopback0
+!
+snmp-server ifmib ifalias long
+snmp-server ifindex persist
+snmp-server ifmib stats cache
+snmp-server trap link ietf
+snmp-server host 10.1.100.194 traps version 3 auth xxxxxxxx 
+snmp-server host 10.1.100.195 traps version 3 auth xxxxxxxx 
+snmp-server host 10.1.100.196 traps version 3 auth xxxxxxxx 
+snmp-server host 10.1.100.197 traps version 3 auth xxxxxxxx 
+snmp-server host 10.1.100.200 traps version 3 auth xxxxxxxx 
+snmp-server host 10.124.7.66 traps version 3 auth xxxxxxxx 
+snmp-server host 10.124.7.71 traps version 3 priv xxxxxxxx 
+snmp-server host 10.124.19.66 traps version 3 auth xxxxxxxx 
+snmp-server host 10.124.19.71 traps version 3 priv xxxxxxxx 
+snmp-server host 10.159.56.88 traps version 3 auth xxxxxxxx 
+snmp-server ipv4 dscp cs2
+snmp-server user xxxxxxxx V3Group v3 auth md5 encrypted xxxxxxxx priv des56 encrypted xxxxxxxx  IPv4 ACL-SNMP SystemOwner
+snmp-server user xxxxxxxx V3Group v3 auth md5 encrypted xxxxxxxx priv aes 128 encrypted xxxxxxxx  IPv4 ACL-SNMP SystemOwner
+snmp-server user xxxxxxxx V3Group v3 auth md5 encrypted xxxxxxxx priv aes 128 encrypted xxxxxxxx  IPv4 ACL-SNMP SystemOwner
+snmp-server user xxxxxxxx V3Group v3 auth sha encrypted xxxxxxxx priv aes 128 encrypted xxxxxxxx  IPv4 ACL-SNMP SystemOwner
+snmp-server view V3Read iso included
+snmp-server view V3Write iso included
+snmp-server view celcom-v3read dod included
+snmp-server view celcom-v3read system included
+snmp-server group V3Group v3 priv notify v1default read V3Read write V3Write
+snmp-server group celcom-ip-mbh v3 auth
+snmp-server group celcom-snmpv3-grp v3 auth read celcom-v3read
+snmp-server queue-length 1000
+snmp-server traps bfd
+snmp-server traps snmp
+snmp-server traps snmp linkup
+snmp-server traps snmp linkdown
+snmp-server traps snmp coldstart
+snmp-server traps snmp warmstart
+snmp-server traps snmp authentication
+snmp-server traps flash removal
+snmp-server traps flash insertion
+snmp-server traps config
+snmp-server traps entity
+snmp-server traps syslog
+snmp-server traps entity-state operstatus
+snmp-server traps entity-state switchover
+snmp-server contact "1800119090"
+snmp-server location "J00087"
+snmp-server packetsize 9000
+snmp-server trap-source Loopback0
+fpd auto-upgrade enable
+ipv4 conflict-policy static
+ipv6 conflict-policy static
+ftp client source-interface Loopback0
+ntp
+ ipv4 dscp cs2
+ server 10.159.255.189
+ server 10.159.255.190
+ access-group ipv4 peer NTP_SERVER
+ source Loopback0
+ update-calendar
+!
+bfd
+ multipath include location 0/0/CPU0
+ multipath include location 0/1/CPU0
+ multipath include location 0/2/CPU0
+ multipath include location 0/3/CPU0
+ multipath include location 0/4/CPU0
+ multipath include location 0/5/CPU0
+ multipath include location 0/6/CPU0
+ multipath include location 0/7/CPU0
+!
+ipv4 unnumbered mpls traffic-eng Loopback0
+ethernet cfm
+ domain UNIP level 5 id null
+  service KPGPR01_KMPPR01 xconnect group IPSLA p2p KPGPR01_KMPPR01 id icc-based PR XXX-65001
+   continuity-check interval 1s
+  !
+  service KMPPR01_KMPUER01 xconnect group IPSLA p2p KMPPR01_KMPUER01 id icc-based PR XXX-40011
+   continuity-check interval 1s
+  !
+  service KMPPR01_MERUER01 xconnect group IPSLA p2p KMPPR01_MERUER01 id icc-based PR XXX-40012
+   continuity-check interval 1s
+  !
+  service KMPPR01_SKDUER01 xconnect group IPSLA p2p KMPPR01_SKDUER01 id icc-based PR XXX-40010
+   continuity-check interval 1s
+  !
+ !
+ domain IPRAN level 5 id null
+  service KMPPR01_SKDPR01 xconnect group IPSLA p2p KMPPR01_SKDPR01 id icc-based PR XXX-65030
+   continuity-check interval 1s
+  !
+ !
+!
+watchdog threshold disk minor 90 severe 92 critical 95
+call-home
+ service active
+ contact smart-licensing
+ source-interface Loopback0
+ profile CiscoTAC-1
+  active
+  destination address http https://10.124.19.67:443/Transportgateway/services/DeviceRequestHandler
+  reporting smart-call-home-data disable
+  reporting smart-licensing-data
+  destination transport-method http
+ !
+!
+control-plane
+ management-plane
+  inband
+   interface all
+    allow SSH
+    allow SNMP
+   !
+  !
+ !
+!
+netconf-yang agent
+ ssh
+!
+ipv4 access-list VTY-ACL
+ 10 remark VTY ACCESS CONTROL
+ 20 permit ipv4 host 10.124.19.66 any
+ 30 permit ipv4 host 10.124.7.66 any
+ 40 permit ipv4 host 10.1.100.196 any
+ 50 permit ipv4 host 10.1.100.195 any
+ 60 permit ipv4 host 10.1.100.194 any
+ 70 permit ipv4 host 10.159.56.77 any
+ 80 permit ipv4 host 10.159.56.88 any
+ 90 permit ipv4 host 10.5.134.51 any
+ 100 permit ipv4 host 10.124.7.69 any
+ 110 permit ipv4 host 10.124.19.69 any
+ 120 permit ipv4 host 10.5.134.51 any
+ 121 permit ipv4 host 10.5.134.128 any
+ 122 permit ipv4 host 10.5.134.180 any
+ 123 permit ipv4 host 10.5.132.49 any
+ 124 permit ipv4 host 10.5.132.50 any
+ 130 permit ipv4 host 10.124.19.73 any
+ 140 permit ipv4 host 10.223.245.190 any
+ 150 permit ipv4 host 10.1.59.93 any
+ 160 permit ipv4 host 10.1.59.94 any
+ 170 permit ipv4 host 10.124.19.84 any
+ 180 permit ipv4 host 10.124.7.84 any
+ 190 permit ipv4 10.124.19.144/28 any
+ 200 permit ipv4 10.124.7.144/28 any
+ 210 permit ipv4 host 10.159.57.88 any
+ 220 permit ipv4 host 10.1.61.67 any
+ 230 permit ipv4 host 10.1.61.68 any
+ 240 permit ipv4 host 10.1.61.77 any
+ 250 permit ipv4 host 10.1.61.74 any
+ 260 permit ipv4 host 10.1.61.75 any
+ 270 permit ipv4 host 10.1.61.79 any
+ 990 permit ipv4 host 10.124.7.71 any
+ 991 permit ipv4 host 10.124.19.71 any
+ 1000 deny ipv4 any any log-input
+!
+ipv4 access-list ACL-SNMP
+ 10 permit ipv4 host 10.1.100.194 any
+ 20 permit ipv4 host 10.1.100.195 any
+ 30 permit ipv4 host 10.1.100.196 any
+ 40 permit ipv4 host 10.1.100.197 any
+ 50 permit ipv4 host 10.1.100.198 any
+ 60 permit ipv4 host 10.1.100.199 any
+ 70 permit ipv4 host 10.1.100.200 any
+ 80 permit ipv4 host 10.1.100.224 any
+ 90 permit ipv4 host 10.124.19.66 any
+ 91 permit ipv4 any host 10.124.19.66
+ 100 permit ipv4 host 10.124.19.73 any
+ 110 permit ipv4 host 10.124.7.66 any
+ 111 permit ipv4 any host 10.124.7.66
+ 120 permit ipv4 host 10.159.56.77 any
+ 130 permit ipv4 host 10.159.56.88 any
+ 140 permit ipv4 host 10.223.245.179 any
+ 170 permit ipv4 host 10.124.19.84 any
+ 180 permit ipv4 host 10.124.7.84 any
+ 190 permit ipv4 10.124.19.144/28 any
+ 200 permit ipv4 10.124.7.144/28 any
+ 210 permit ipv4 host 10.159.57.88 any
+ 220 permit ipv4 host 10.1.100.216 any
+ 990 permit ipv4 host 10.124.7.71 any
+ 991 permit ipv4 host 10.124.19.71 any
+ 1000 deny ipv4 any any log-input
+!
+ipv4 access-list BFD_ECHO
+ 10 permit udp any any eq 3785
+!
+ipv4 access-list NTP_SERVER
+ 10 permit ipv4 host 10.159.255.189 any
+ 20 permit ipv4 host 10.159.255.190 any
+!
+ipv4 prefix-list LOOPBACK
+ 10 permit 10.159.255.0/24 ge 32
+ 20 permit 10.159.254.0/24 ge 32
+!
+class-map match-any NB
+ match mpls experimental topmost 2 
+ match dscp ef 
+ match access-group ipv4 BFD_ECHO 
+ end-class-map
+! 
+class-map match-any NC
+ match mpls experimental topmost 6 7 
+ match dscp cs6 cs7 
+ end-class-map
+! 
+class-map match-any BE1
+ match mpls experimental topmost 1 
+ match dscp cs1 
+ end-class-map
+! 
+class-map match-any SIGTRAN
+ match mpls experimental topmost 4 
+ match dscp af11 
+ end-class-map
+! 
+class-map match-any exp1_in
+ match mpls experimental topmost 1 
+ match dscp af11 af12 af13 
+ end-class-map
+! 
+class-map match-any exp2_in
+ match mpls experimental topmost 2 
+ match dscp af21 af22 af23 
+ end-class-map
+! 
+class-map match-any exp3_in
+ match mpls experimental topmost 3 
+ match dscp af31 af32 af33 
+ end-class-map
+! 
+class-map match-any exp4_in
+ match mpls experimental topmost 4 
+ match dscp af41 af42 af43 
+ end-class-map
+! 
+class-map match-any exp5_in
+ match mpls experimental topmost 5 
+ match dscp ef 
+ end-class-map
+! 
+class-map match-any exp0_out
+ match traffic-class 0 
+ end-class-map
+! 
+class-map match-any exp1_out
+ match traffic-class 1 
+ end-class-map
+! 
+class-map match-any exp2_out
+ match traffic-class 2 
+ end-class-map
+! 
+class-map match-any exp3_out
+ match traffic-class 3 
+ end-class-map
+! 
+class-map match-any exp4_out
+ match traffic-class 4 
+ end-class-map
+! 
+class-map match-any exp5_out
+ match traffic-class 5 
+ end-class-map
+! 
+class-map match-any exp67_in
+ match mpls experimental topmost 6 7 
+ match dscp cs6 cs7 
+ end-class-map
+! 
+class-map match-any exp67_out
+ match traffic-class 6 
+ end-class-map
+! 
+policy-map CORE_EGRESS
+ class exp67_out
+  priority level 1 
+  shape average percent 10 
+  queue-limit 5000 us 
+ ! 
+ class exp5_out
+  priority level 2 
+  shape average percent 40 
+  queue-limit 5000 us 
+ ! 
+ class exp4_out
+  bandwidth remaining percent 30 
+  queue-limit 200 ms 
+ ! 
+ class exp3_out
+  bandwidth remaining percent 30 
+  queue-limit 200 ms 
+ ! 
+ class exp2_out
+  bandwidth remaining percent 30 
+  queue-limit 200 ms 
+ ! 
+ class exp1_out
+  bandwidth remaining percent 5 
+  queue-limit 200 ms 
+ ! 
+ class class-default
+  bandwidth remaining percent 5 
+  queue-limit 200 ms 
+ ! 
+ end-policy-map
+! 
+policy-map CORE_INGRESS
+ class exp67_in
+  set traffic-class 6
+ ! 
+ class exp5_in
+  set traffic-class 5
+ ! 
+ class exp4_in
+  set traffic-class 4
+ ! 
+ class exp3_in
+  set traffic-class 3
+ ! 
+ class exp2_in
+  set traffic-class 2
+ ! 
+ class exp1_in
+  set traffic-class 1
+ ! 
+ class class-default
+  set traffic-class 0
+ ! 
+ end-policy-map
+! 
+policy-map Parent-Shaper_75
+ class class-default
+  service-policy CORE_EGRESS
+  shape average percent 75 
+ ! 
+ end-policy-map
+! 
+policy-map Parent-Shaper_100
+ class class-default
+  service-policy CORE_EGRESS
+  shape average percent 100 
+ ! 
+ end-policy-map
+! 
+interface Bundle-Ether100
+ description ***To SKDPR01-NCS5K BE100 (200Gbps) 10.159.248.102***
+ bfd mode ietf
+ bfd address-family ipv4 multiplier 3
+ bfd address-family ipv4 destination 10.159.248.102
+ bfd address-family ipv4 fast-detect
+ bfd address-family ipv4 minimum-interval 50
+ mtu 9216
+ service-policy input CORE_INGRESS
+ service-policy output CORE_EGRESS
+ ipv4 address 10.159.248.101 255.255.255.252
+ load-interval 30
+ dampening 1 750 2000 2
+!
+interface Bundle-Ether101
+ description ***To MERUER01-ASR9K BE101 (200Gbps) 10.159.250.125***
+ bfd mode ietf
+ bfd address-family ipv4 multiplier 3
+ bfd address-family ipv4 destination 10.159.250.125
+ bfd address-family ipv4 fast-detect
+ bfd address-family ipv4 minimum-interval 200
+ mtu 9216
+ service-policy input CORE_INGRESS
+ service-policy output CORE_EGRESS
+ ipv4 address 10.159.250.126 255.255.255.252
+ load-interval 30
+ dampening 1 750 2000 2
+!
+interface Bundle-Ether102
+ description ***To SKDUER01-ASR9K BE102 (100Gbps) 10.159.250.161***
+ bfd mode ietf
+ bfd address-family ipv4 multiplier 3
+ bfd address-family ipv4 destination 10.159.250.161
+ bfd address-family ipv4 fast-detect
+ bfd address-family ipv4 minimum-interval 50
+ mtu 9216
+ service-policy input CORE_INGRESS
+ service-policy output CORE_EGRESS
+ ipv4 address 10.159.250.162 255.255.255.252
+ load-interval 30
+ dampening 1 750 2000 2
+!
+interface Bundle-Ether103
+ description ***To KMPUER01-ASR9K BE103 (100Gbps) 10.159.250.117***
+ bfd mode ietf
+ bfd address-family ipv4 multiplier 3
+ bfd address-family ipv4 destination 10.159.250.117
+ bfd address-family ipv4 fast-detect
+ bfd address-family ipv4 minimum-interval 200
+ mtu 9216
+ service-policy input CORE_INGRESS
+ service-policy output CORE_EGRESS
+ ipv4 address 10.159.250.118 255.255.255.252
+ load-interval 30
+ dampening 1 750 2000 2
+!
+interface Bundle-Ether113
+ description ***To KPGPR01-NCS5K BE113 (300Gbps) 10.159.248.13 (3rd Degree)***
+ bfd mode ietf
+ bfd address-family ipv4 multiplier 3
+ bfd address-family ipv4 destination 10.159.248.13
+ bfd address-family ipv4 fast-detect
+ bfd address-family ipv4 minimum-interval 50
+ mtu 9216
+ service-policy input CORE_INGRESS
+ service-policy output CORE_EGRESS
+ ipv4 address 10.159.248.14 255.255.255.252
+ load-interval 30
+ dampening 1 750 2000 2
+!
+! Apply on KMPPR01-NCS5K
+interface Bundle-Ether170
+ description ***To SKDUER01-ASR9K BE170 (Protection link - 20Gbps) 10.159.253.5*** 
+ bfd mode ietf
+ bfd address-family ipv4 multiplier 3
+ bfd address-family ipv4 destination 10.159.253.5
+ bfd address-family ipv4 fast-detect
+ bfd address-family ipv4 minimum-interval 200
+ mtu 9216
+ service-policy input CORE_INGRESS
+ service-policy output CORE_EGRESS
+ ipv4 address 10.159.253.6 255.255.255.252
+ load-interval 30
+ dampening 1 750 2000 2
+!
+! Apply on KMPPR01-NCS5K
+interface Bundle-Ether171
+ description ***To KPGPR01-NCS5K BE171 (300Gbps) 10.159.246.42***
+ bfd mode ietf
+ bfd address-family ipv4 multiplier 3
+ bfd address-family ipv4 destination 10.159.246.42
+ bfd address-family ipv4 fast-detect
+ bfd address-family ipv4 minimum-interval 50
+ mtu 9216
+ service-policy input CORE_INGRESS
+ service-policy output CORE_EGRESS
+ ipv4 address 10.159.246.41 255.255.255.252
+ load-interval 30
+ dampening 1 750 2000 2
+!
+interface Bundle-Ether172
+ description ***To KPGPR01-NCS5K BE172 exDigi_DWDM (200Gbps) 10.159.250.98***
+ bfd mode ietf
+ bfd address-family ipv4 multiplier 3
+ bfd address-family ipv4 destination 10.159.250.98
+ bfd address-family ipv4 fast-detect
+ bfd address-family ipv4 minimum-interval 50
+ mtu 9216
+ service-policy input CORE_INGRESS
+ service-policy output CORE_EGRESS
+ ipv4 address 10.159.250.97 255.255.255.252
+ load-interval 30
+ dampening 1 750 2000 2
+!
+interface Bundle-Ether202
+ description ***To KMPRR01-CRSX BE202 (10Gbps) 10.159.251.158*** 
+ bfd mode ietf
+ bfd address-family ipv4 multiplier 3
+ bfd address-family ipv4 destination 10.159.251.158
+ bfd address-family ipv4 fast-detect
+ bfd address-family ipv4 minimum-interval 50
+ mtu 9216
+ service-policy input CORE_INGRESS
+ service-policy output CORE_EGRESS
+ ipv4 address 10.159.251.157 255.255.255.252
+ bundle minimum-active links 1
+ load-interval 30
+ dampening 1 750 2000 2
+!
+interface Loopback0
+ description ***Loopback used for Reachability***  
+ ipv4 address 10.159.255.208 255.255.255.255
+ load-interval 30
+!
+interface Loopback123456
+!
+interface MgmtEth0/RP0/CPU0/0
+ shutdown
+ load-interval 30
+!
+interface MgmtEth0/RP1/CPU0/0
+ shutdown
+ load-interval 30
+!
+interface TenGigE0/1/0/0/0
+ description ***To KMPRR01-CRSX Te0/0/0/9 BE202 (10Gbps)***
+ bundle id 202 mode active
+ cdp
+ carrier-delay up 5000 down 0
+ load-interval 30
+ dampening 1 750 2000 2
+!
+interface TenGigE0/1/0/0/1
+ description ***To KPGPR01-NCS5K Te0/X/0/2/X BE170-C (10Gbps)(CA2019#257) (3rd link-50Gbps)***
+ cdp
+ carrier-delay up 5000 down 0
+ shutdown
+ load-interval 30
+ dampening 1 750 2000 2
+!
+interface TenGigE0/1/0/0/2
+ description ***To SKDUER01-ASR9K Te0/1/0/1 BE170 (10Gbps)(CA2013#3151)***
+ bundle id 170 mode active
+ cdp
+ carrier-delay up 5000 down 0
+ load-interval 30
+ dampening 1 750 2000 2
+!
+interface TenGigE0/1/0/0/3
+ description ***To KPGPR01-NCS5K Te0/X/0/2/X BE170-D (10Gbps)(CA2019#258) (3rd link-50Gbps)***
+ cdp
+ carrier-delay up 5000 down 0
+ shutdown
+ load-interval 30
+ dampening 1 750 2000 2
+!
+interface TenGigE0/1/0/2/0
+ description Reserved for new RR
+ shutdown
+ load-interval 30
+!
+interface TenGigE0/1/0/2/1
+ shutdown
+ load-interval 30
+!
+interface TenGigE0/1/0/2/2
+ shutdown
+ load-interval 30
+!
+interface TenGigE0/1/0/2/3
+ description IPSLA 
+ load-interval 30
+!
+interface TenGigE0/1/0/2/3.20 l2transport
+ description IPSLA_TO_KPGPR01 
+ encapsulation dot1q 20
+ rewrite ingress tag pop 1 symmetric
+ ethernet cfm
+  mep domain UNIP service KPGPR01_KMPPR01 mep-id 20
+  !
+ !
+!
+interface TenGigE0/1/0/2/3.21 l2transport
+ description IPSLA_TO_SKDPR01 
+ encapsulation dot1q 21
+ rewrite ingress tag pop 1 symmetric
+ ethernet cfm
+  mep domain IPRAN service KMPPR01_SKDPR01 mep-id 10
+   sla operation profile SLA1_LOSS target mep-id 21
+   sla operation profile SLA2_ROUNDTRIP target mep-id 21
+  !
+ !
+!
+interface TenGigE0/1/0/2/3.1410 l2transport
+ description IPSLA_TO_SKDUER01 
+ encapsulation dot1q 1410
+ rewrite ingress tag pop 1 symmetric
+ ethernet cfm
+  mep domain UNIP service KMPPR01_SKDUER01 mep-id 10
+   sla operation profile SLA1_LOSS target mep-id 1410
+   sla operation profile SLA2_ROUNDTRIP target mep-id 1410
+  !
+ !
+!
+interface TenGigE0/1/0/2/3.1411 l2transport
+ description IPSLA_TO_KMPUER01 
+ encapsulation dot1q 1411
+ rewrite ingress tag pop 1 symmetric
+ ethernet cfm
+  mep domain UNIP service KMPPR01_KMPUER01 mep-id 10
+   sla operation profile SLA1_LOSS target mep-id 1411
+   sla operation profile SLA2_ROUNDTRIP target mep-id 1411
+  !
+ !
+!
+interface TenGigE0/1/0/2/3.1412 l2transport
+ description IPSLA_TO_MERUER01 
+ encapsulation dot1q 1412
+ rewrite ingress tag pop 1 symmetric
+ ethernet cfm
+  mep domain UNIP service KMPPR01_MERUER01 mep-id 10
+   sla operation profile SLA1_LOSS target mep-id 1412
+   sla operation profile SLA2_ROUNDTRIP target mep-id 1412
+  !
+ !
+!
+interface TenGigE0/4/0/0/0
+ description ***To KPGPR01-NCS5K Te0/1/0/2/0 BE170-A (10Gbps)(CA2019#255) (3rd link-50Gbps)***
+ cdp
+ carrier-delay up 5000 down 0
+ shutdown
+ load-interval 30
+ dampening 1 750 2000 2
+!
+interface TenGigE0/4/0/0/1
+ description ***To KPGPR01-NCS5K Te0/X/0/2/X BE170-E (10Gbps)(CA2019#259) (3rd link-50Gbps)***
+ cdp
+ carrier-delay up 5000 down 0
+ shutdown
+ load-interval 30
+ dampening 1 750 2000 2
+!
+interface TenGigE0/4/0/0/2
+ description ***To SKDUER01-ASR9K Te0/0/0/0 BE170 (10Gbps)(CA2018#44)***
+ bundle id 170 mode active
+ cdp
+ carrier-delay up 5000 down 0
+ load-interval 30
+ dampening 1 750 2000 2
+!
+interface TenGigE0/4/0/0/3
+ description ***To KPGPR01-NCS5K Te0/1/0/2/1 BE170-B (10Gbps)(CA2019#256) (3rd link-50Gbps)***
+ cdp
+ carrier-delay up 5000 down 0
+ shutdown
+ load-interval 30
+ dampening 1 750 2000 2
+!
+controller Optics0/1/0/0
+ breakout 4x10
+!
+controller Optics0/1/0/2
+ breakout 4x10
+!
+controller Optics0/4/0/0
+ breakout 4x10
+!
+interface FortyGigE0/1/0/1
+ shutdown
+ load-interval 30
+!
+interface FortyGigE0/1/0/3
+ shutdown
+ load-interval 30
+!
+interface FortyGigE0/1/0/4
+ shutdown
+ load-interval 30
+!
+interface FortyGigE0/1/0/5
+ shutdown
+ load-interval 30
+!
+interface HundredGigE0/1/0/6
+ description ***To KPGPR01-NCS5K Hu0/5/0/8 BE113 (100Gbps) (3rd Degree)***
+ bundle id 113 mode active
+ cdp
+ carrier-delay up 5000 down 0
+ load-interval 30
+ dampening 1 750 2000 2
+!
+interface HundredGigE0/1/0/7
+ description ***To SKDPR01-NCS5K Hu0/1/0/7 BE100 (100Gbps)(CA2018#43)***
+ bundle id 100 mode active
+ cdp
+ carrier-delay up 5000 down 0
+ load-interval 30
+ dampening 1 750 2000 2
+!
+interface HundredGigE0/1/0/8
+ description ***To SKDUER01-ASR9K Hu0/4/0/0 BE102 (100Gbps)***
+ bundle id 102 mode active
+ cdp
+ carrier-delay up 5000 down 0
+ load-interval 30
+ dampening 1 750 2000 2
+!
+interface HundredGigE0/1/0/9
+ description ***To  KPGPR01-NCS5K Hu0/5/0/29 BE172(100Gbps) via xD Celcom Kempas MOCN NE(9-8796)-Electrical-shelf1(1D)-1-G1M520SM/TX1 RX1***
+ bundle id 172 mode active
+ cdp
+ carrier-delay up 5000 down 0
+ load-interval 30
+ dampening 1 750 2000 2
+!
+interface HundredGigE0/1/0/10
+ description ***To MERUER01-ASR9K Hu0/0/0/1 BE101 (100Gbps)***
+ bundle id 101 mode active
+ cdp
+ carrier-delay up 5000 down 0
+ load-interval 30
+ dampening 1 750 2000 2
+!
+interface HundredGigE0/1/0/11
+ shutdown
+ load-interval 30
+!
+interface FortyGigE0/1/0/12
+ shutdown
+ load-interval 30
+!
+interface FortyGigE0/1/0/13
+ shutdown
+ load-interval 30
+!
+interface FortyGigE0/1/0/14
+ shutdown
+ load-interval 30
+!
+interface FortyGigE0/1/0/15
+ shutdown
+ load-interval 30
+!
+interface FortyGigE0/1/0/16
+ shutdown
+ load-interval 30
+!
+interface FortyGigE0/1/0/17
+ shutdown
+ load-interval 30
+!
+interface HundredGigE0/1/0/18
+ description ***To KPGPR01-NCS5K Hu0/0/0/8 BE171 (100Gbps)***
+ bundle id 171 mode active
+ cdp
+ carrier-delay up 5000 down 0
+ load-interval 30
+ dampening 1 750 2000 2
+!
+interface HundredGigE0/1/0/19
+ shutdown
+ load-interval 30
+!
+interface HundredGigE0/1/0/20
+ shutdown
+ load-interval 30
+!
+interface HundredGigE0/1/0/21
+ shutdown
+ load-interval 30
+!
+interface HundredGigE0/1/0/22
+ description ***To KPGPR01-NCS5K Hu0/0/0/18 BE113 (100Gbps)(CA 2018#42) (3rd Degree)***
+ bundle id 113 mode active
+ cdp
+ carrier-delay up 5000 down 0
+ load-interval 30
+ dampening 1 750 2000 2
+!
+interface HundredGigE0/1/0/23
+ shutdown
+ load-interval 30
+!
+interface FortyGigE0/1/0/24
+ shutdown
+ load-interval 30
+!
+interface FortyGigE0/1/0/25
+ shutdown
+ load-interval 30
+!
+interface FortyGigE0/1/0/26
+ shutdown
+ load-interval 30
+!
+interface FortyGigE0/1/0/27
+ shutdown
+ load-interval 30
+!
+interface FortyGigE0/1/0/28
+ shutdown
+ load-interval 30
+!
+interface FortyGigE0/1/0/29
+ shutdown
+ load-interval 30
+!
+interface HundredGigE0/1/0/30
+ shutdown
+ load-interval 30
+!
+interface HundredGigE0/1/0/31
+ shutdown
+ load-interval 30
+!
+interface HundredGigE0/1/0/32
+ shutdown
+ load-interval 30
+!
+interface HundredGigE0/1/0/33
+ shutdown
+ load-interval 30
+!
+interface HundredGigE0/1/0/34
+ shutdown
+ load-interval 30
+!
+interface HundredGigE0/1/0/35
+ shutdown
+ load-interval 30
+!
+interface FortyGigE0/4/0/1
+ shutdown
+ load-interval 30
+!
+interface FortyGigE0/4/0/2
+ shutdown
+ load-interval 30
+!
+interface FortyGigE0/4/0/3
+ shutdown
+ load-interval 30
+!
+interface FortyGigE0/4/0/4
+ shutdown
+ load-interval 30
+!
+interface FortyGigE0/4/0/5
+ shutdown
+ load-interval 30
+!
+interface HundredGigE0/4/0/6
+ description ***To KMPUER01-ASR9K Hu0/5/0/0 BE103 (100Gbps)***
+ bundle id 103 mode active
+ cdp
+ carrier-delay up 5000 down 0
+ load-interval 30
+ dampening 1 750 2000 2
+!
+interface HundredGigE0/4/0/7
+ description ***To SKDPR01-NCS5K Hu0/4/0/7 BE100 (100Gbps)*** 
+ bundle id 100 mode active
+ cdp
+ carrier-delay up 5000 down 0
+ load-interval 30
+ dampening 1 750 2000 2
+!
+interface HundredGigE0/4/0/8
+ shutdown
+ load-interval 30
+!
+interface HundredGigE0/4/0/9
+ description ***To  KPGPR01-NCS5K Hu0/2/0/21 BE172(100Gbps) via xD Celcom Kempas MOCN NE(9-8796)-Electrical-shelf1(1D)-2-G1M520SM/TX1 RX1***
+ bundle id 172 mode active
+ cdp
+ carrier-delay up 5000 down 0
+ load-interval 30
+ dampening 1 750 2000 2
+!
+interface HundredGigE0/4/0/10
+ description ***To MERUER01-ASR9K Hu0/6/0/0 BE101 (100Gbps)***
+ bundle id 101 mode active
+ cdp
+ carrier-delay up 5000 down 0
+ load-interval 30
+ dampening 1 750 2000 2
+!
+interface HundredGigE0/4/0/11
+ shutdown
+ load-interval 30
+!
+interface FortyGigE0/4/0/12
+ shutdown
+ load-interval 30
+!
+interface FortyGigE0/4/0/13
+ shutdown
+ load-interval 30
+!
+interface FortyGigE0/4/0/14
+ shutdown
+ load-interval 30
+!
+interface FortyGigE0/4/0/15
+ shutdown
+ load-interval 30
+!
+interface FortyGigE0/4/0/16
+ shutdown
+ load-interval 30
+!
+interface FortyGigE0/4/0/17
+ shutdown
+ load-interval 30
+!
+interface HundredGigE0/4/0/18
+ description ***To KPGPR01-NCS5K Hu0/0/0/23 BE171 (100Gbps)***
+ bundle id 171 mode active
+ cdp
+ carrier-delay up 5000 down 0
+ load-interval 30
+ dampening 1 750 2000 2
+!
+interface HundredGigE0/4/0/19
+ shutdown
+ load-interval 30
+!
+interface HundredGigE0/4/0/20
+ shutdown
+ load-interval 30
+!
+interface HundredGigE0/4/0/21
+ shutdown
+ load-interval 30
+!
+interface HundredGigE0/4/0/22
+ description ***To KPGPR01-NCS5K Hu0/5/0/17 BE113 (100Gbps)(CA2019#226) (3rd Degree)***
+ bundle id 113 mode active
+ cdp
+ carrier-delay up 5000 down 0
+ load-interval 30
+ dampening 1 750 2000 2
+!
+interface HundredGigE0/4/0/23
+ shutdown
+ load-interval 30
+!
+interface FortyGigE0/4/0/24
+ shutdown
+ load-interval 30
+!
+interface FortyGigE0/4/0/25
+ shutdown
+ load-interval 30
+!
+interface FortyGigE0/4/0/26
+ shutdown
+ load-interval 30
+!
+interface FortyGigE0/4/0/27
+ shutdown
+ load-interval 30
+!
+interface FortyGigE0/4/0/28
+ shutdown
+ load-interval 30
+!
+interface FortyGigE0/4/0/29
+ shutdown
+ load-interval 30
+!
+interface HundredGigE0/4/0/30
+ shutdown
+ load-interval 30
+!
+interface HundredGigE0/4/0/31
+ shutdown
+ load-interval 30
+!
+interface HundredGigE0/4/0/32
+ shutdown
+ load-interval 30
+!
+interface HundredGigE0/4/0/33
+ description ***To KPGPR01-NCS5K Hu0/2/0/17 BE171 (100Gbps)***  
+ bundle id 171 mode active
+ cdp
+ carrier-delay up 5000 down 0
+ load-interval 30
+ dampening 1 750 2000 2
+!
+interface HundredGigE0/4/0/34
+ shutdown
+ load-interval 30
+!
+interface HundredGigE0/4/0/35
+ shutdown
+ load-interval 30
+!
+interface PTP0/RP0/CPU0/0
+ shutdown
+ load-interval 30
+!
+interface PTP0/RP1/CPU0/0
+ shutdown
+ load-interval 30
+!
+interface preconfigure FortyGigE0/0/0/0
+ shutdown
+!
+interface preconfigure FortyGigE0/0/0/1
+ shutdown
+!
+interface preconfigure FortyGigE0/0/0/2
+ shutdown
+!
+interface preconfigure FortyGigE0/0/0/3
+ shutdown
+!
+interface preconfigure FortyGigE0/0/0/4
+ shutdown
+!
+interface preconfigure FortyGigE0/0/0/5
+ shutdown
+!
+interface preconfigure HundredGigE0/0/0/6
+ shutdown
+!
+interface preconfigure HundredGigE0/0/0/7
+ shutdown
+!
+interface preconfigure HundredGigE0/0/0/8
+ shutdown
+!
+interface preconfigure HundredGigE0/0/0/9
+ shutdown
+!
+interface preconfigure HundredGigE0/0/0/10
+ shutdown
+!
+interface preconfigure HundredGigE0/0/0/11
+ shutdown
+!
+interface preconfigure FortyGigE0/0/0/12
+ shutdown
+!
+interface preconfigure FortyGigE0/0/0/13
+ shutdown
+!
+interface preconfigure FortyGigE0/0/0/14
+ shutdown
+!
+interface preconfigure FortyGigE0/0/0/15
+ shutdown
+!
+interface preconfigure FortyGigE0/0/0/16
+ shutdown
+!
+interface preconfigure FortyGigE0/0/0/17
+ shutdown
+!
+interface preconfigure HundredGigE0/0/0/18
+ shutdown
+!
+interface preconfigure HundredGigE0/0/0/19
+ shutdown
+!
+interface preconfigure HundredGigE0/0/0/20
+ shutdown
+!
+interface preconfigure HundredGigE0/0/0/21
+ shutdown
+!
+interface preconfigure HundredGigE0/0/0/22
+ shutdown
+!
+interface preconfigure HundredGigE0/0/0/23
+ shutdown
+!
+interface preconfigure FortyGigE0/0/0/24
+ shutdown
+!
+interface preconfigure FortyGigE0/0/0/25
+ shutdown
+!
+interface preconfigure FortyGigE0/0/0/26
+ shutdown
+!
+interface preconfigure FortyGigE0/0/0/27
+ shutdown
+!
+interface preconfigure FortyGigE0/0/0/28
+ shutdown
+!
+interface preconfigure FortyGigE0/0/0/29
+ shutdown
+!
+interface preconfigure HundredGigE0/0/0/30
+ shutdown
+!
+interface preconfigure HundredGigE0/0/0/31
+ shutdown
+!
+interface preconfigure HundredGigE0/0/0/32
+ shutdown
+!
+interface preconfigure HundredGigE0/0/0/33
+ shutdown
+!
+interface preconfigure HundredGigE0/0/0/34
+ shutdown
+!
+interface preconfigure HundredGigE0/0/0/35
+ shutdown
+!
+interface preconfigure FortyGigE0/1/0/0
+ shutdown
+!
+interface preconfigure FortyGigE0/1/0/2
+ shutdown
+!
+interface preconfigure FortyGigE0/4/0/0
+ shutdown
+!
+!
+prefix-set ospf-high-prefixes
+  10.159.255.0/24 ge 32,
+  10.159.254.0/24 ge 32,
+  10.124.16.0/24 ge 32,
+  10.124.17.0/24 ge 32
+end-set
+!
+route-policy ospf-spf-priority
+  if (destination in ospf-high-prefixes) then
+    set spf-priority high
+  endif
+end-policy
+!
+router ospf 100
+ nsr
+ log adjacency changes detail
+ router-id 10.159.255.208
+ segment-routing mpls
+ bfd minimum-interval 50
+ bfd multiplier 3
+ authentication message-digest
+ message-digest-key 1 md5 encrypted xxxxxxxx
+ segment-routing forwarding mpls
+ mpls ldp sync
+ fast-reroute per-prefix
+ fast-reroute per-prefix ti-lfa enable
+ nsf cisco
+ segment-routing sr-prefer
+ auto-cost reference-bandwidth 1000000
+ max-metric router-lsa on-startup 300 include-stub summary-lsa
+ spf prefix-priority route-policy ospf-spf-priority
+ area 0
+  authentication message-digest
+  message-digest-key 1 md5 encrypted xxxxxxxx
+  mpls ldp auto-config
+  mpls traffic-eng
+  interface Bundle-Ether100
+   bfd fast-detect
+   cost 5
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether101
+   bfd fast-detect
+   cost 10
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether102
+   bfd fast-detect
+   cost 10
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether103
+   bfd fast-detect
+   cost 10
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether113
+   bfd fast-detect
+   cost 10
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether170
+   bfd fast-detect
+   cost 199
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether171
+   bfd fast-detect
+   cost 500
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether172
+   bfd fast-detect
+   cost 10
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Bundle-Ether202
+   bfd fast-detect
+   cost 32000
+   authentication message-digest
+   message-digest-key 1 md5 encrypted xxxxxxxx
+   network point-to-point
+  !
+  interface Loopback0
+   network point-to-point
+   passive enable
+   prefix-sid absolute 21990
+   prefix-sid strict-spf absolute 21980
+   prefix-sid algorithm 129 absolute 21970
+  !
+ !
+ mpls traffic-eng router-id Loopback0
+ flex-algo 129
+  priority 120
+  metric-type delay
+  advertise-definition
+ !
+!
+snmp-server traps bgp
+l2vpn
+ xconnect group IPSLA
+  p2p KMPPR01_SKDPR01
+   interface TenGigE0/1/0/2/3.21
+   neighbor ipv4 10.159.255.207 pw-id 21
+   !
+  !
+  p2p KPGPR01_KMPPR01
+   interface TenGigE0/1/0/2/3.20
+   neighbor ipv4 10.159.255.204 pw-id 20
+   !
+  !
+  p2p KMPPR01_KMPUER01
+   interface TenGigE0/1/0/2/3.1411
+   neighbor ipv4 10.159.255.26 pw-id 1411
+   !
+  !
+  p2p KMPPR01_MERUER01
+   interface TenGigE0/1/0/2/3.1412
+   neighbor ipv4 10.159.255.28 pw-id 1412
+   !
+  !
+  p2p KMPPR01_SKDUER01
+   interface TenGigE0/1/0/2/3.1410
+   neighbor ipv4 10.159.255.189 pw-id 1410
+   !
+  !
+ !
+!
+mpls oam
+!
+mpls traffic-eng
+!
+mpls ldp
+ log
+  neighbor
+  nsr
+  graceful-restart
+ !
+ nsr
+ graceful-restart
+ router-id 10.159.255.208
+ neighbor
+  password encrypted xxxxxxxx
+ !
+ session protection
+ address-family ipv4
+  label
+   local
+    allocate for LOOPBACK
+   !
+  !
+ !
+ interface Bundle-Ether100
+ !
+ interface Bundle-Ether101
+ !
+ interface Bundle-Ether102
+ !
+ interface Bundle-Ether103
+ !
+ interface Bundle-Ether113
+ !
+ interface Bundle-Ether170
+ !
+ interface Bundle-Ether171
+ !
+ interface Bundle-Ether172
+ !
+ interface Bundle-Ether202
+ !
+!
+segment-routing
+ global-block 16000 31999
+!
+xml agent tty
+!
+snmp-server traps sensor
+snmp-server traps fru-ctrl
+netconf agent tty
+ throttle memory 600
+!
+snmp-server traps ospf errors bad-packet
+snmp-server traps ospf errors authentication-failure
+snmp-server traps ospf errors config-error
+snmp-server traps ospf errors virt-bad-packet
+snmp-server traps ospf errors virt-authentication-failure
+snmp-server traps ospf errors virt-config-error
+snmp-server traps ospf state-change if-state-change
+snmp-server traps ospf state-change neighbor-state-change
+snmp-server traps ospf state-change virtif-state-change
+snmp-server traps ospf state-change virtneighbor-state-change
+mpls ip-ttl-propagate disable forwarded
+hw-module profile qos hqos-enable
+ssh client dscp 16
+ssh server dscp 16
+ssh server logging
+ssh server rate-limit 600
+ssh server session-limit 10
+ssh server v2
+ssh server vrf default ipv4 access-list VTY-ACL
+snmp-server traps fabric plane
+performance-measurement
+ interface Bundle-Ether100
+  delay-measurement
+   advertise-delay 250
+  !
+ !
+ interface Bundle-Ether101
+  delay-measurement
+   advertise-delay 2750
+  !
+ !
+ interface Bundle-Ether102
+  delay-measurement
+   advertise-delay 250
+  !
+ !
+ interface Bundle-Ether103
+  delay-measurement
+   advertise-delay 10
+  !
+ !
+ interface Bundle-Ether113
+  delay-measurement
+   advertise-delay 2750
+  !
+ !
+ interface Bundle-Ether170
+  delay-measurement
+   advertise-delay 250
+  !
+ !
+ interface Bundle-Ether171
+  delay-measurement
+   advertise-delay 4000
+  !
+ !
+ interface Bundle-Ether172
+  delay-measurement
+   advertise-delay 8000
+  !
+ !
+ interface Bundle-Ether202
+  delay-measurement
+   advertise-delay 16777215
+  !
+ !
+!
+end
+

@@ -1,0 +1,17 @@
+﻿hostname,ip,username,password,protocol,os,enable_paswword,platform
+P,10.12.27.200,cisco,cisco,ssh,iosxr,cisco,asr9k
+UER1,10.12.27.201,cisco,cisco,ssh,iosxr,cisco,asr9k
+UER2,10.12.27.202,cisco,cisco,ssh,iosxr,cisco,asr9k
+AGG1,10.12.27.203,cisco,cisco,ssh,iosxr,cisco,asr9k
+AGG2,10.12.27.204,cisco,cisco,ssh,iosxr,cisco,asr9k
+AGG3,10.12.27.205,cisco,cisco,ssh,iosxr,cisco,asr9k
+AGG4,10.12.27.206,cisco,cisco,ssh,iosxr,cisco,asr9k
+ACC11,10.12.27.207,cisco,cisco,ssh,iosxr,cisco,asr9k
+ACC12,10.12.27.208,cisco,cisco,ssh,iosxr,cisco,asr9k
+ACC13,10.12.27.209,cisco,cisco,ssh,iosxr,cisco,asr9k
+ACC21,10.12.27.210,cisco,cisco,ssh,iosxr,cisco,asr9k
+ACC22,10.12.27.211,cisco,cisco,ssh,iosxr,cisco,asr9k
+ACC23,10.12.27.212,cisco,cisco,ssh,iosxr,cisco,asr9k
+PCE1,10.12.27.220,cisco,cisco,ssh,iosxr,cisco,asr9k
+PCE2,10.12.27.221,cisco,cisco,ssh,iosxr,cisco,asr9k
+SR,10.12.27.222,cisco,cisco,ssh,iosxr,cisco,asr9k

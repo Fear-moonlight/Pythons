@@ -1,0 +1,227 @@
+{
+  "SIGTRAN": {
+    "address_family": {
+      "ipv4 unicast": {
+        "route_policy": {
+          "export": "SIGTRAN-Export-RT"
+        },
+        "route_target": {
+          "65535:11250": {
+            "route_target": "65535:11250",
+            "rt_type": "both"
+          },
+          "65535:12700": {
+            "route_target": "65535:12700",
+            "rt_type": "import"
+          },
+          "65535:26301": {
+            "route_target": "65535:26301",
+            "rt_type": "import"
+          },
+          "65535:60001": {
+            "route_target": "65535:60001",
+            "rt_type": "import"
+          },
+          "65535:60022": {
+            "route_target": "65535:60022",
+            "rt_type": "import"
+          },
+          "65535:60062": {
+            "route_target": "65535:60062",
+            "rt_type": "import"
+          },
+          "65535:60063": {
+            "route_target": "65535:60063",
+            "rt_type": "export"
+          },
+          "65535:60064": {
+            "route_target": "65535:60064",
+            "rt_type": "import"
+          },
+          "65535:60102": {
+            "route_target": "65535:60102",
+            "rt_type": "import"
+          },
+          "65535:60202": {
+            "route_target": "65535:60202",
+            "rt_type": "import"
+          },
+          "65535:60261": {
+            "route_target": "65535:60261",
+            "rt_type": "import"
+          },
+          "65535:60281": {
+            "route_target": "65535:60281",
+            "rt_type": "import"
+          },
+          "65535:60404": {
+            "route_target": "65535:60404",
+            "rt_type": "import"
+          },
+          "65535:60622": {
+            "route_target": "65535:60622",
+            "rt_type": "import"
+          },
+          "65535:60626": {
+            "route_target": "65535:60626",
+            "rt_type": "import"
+          },
+          "65535:60662": {
+            "route_target": "65535:60662",
+            "rt_type": "import"
+          },
+          "65535:60781": {
+            "route_target": "65535:60781",
+            "rt_type": "import"
+          },
+          "65535:60862": {
+            "route_target": "65535:60862",
+            "rt_type": "import"
+          },
+          "65535:60902": {
+            "route_target": "65535:60902",
+            "rt_type": "import"
+          },
+          "65535:60942": {
+            "route_target": "65535:60942",
+            "rt_type": "import"
+          },
+          "65535:60943": {
+            "route_target": "65535:60943",
+            "rt_type": "export"
+          },
+          "65535:60944": {
+            "route_target": "65535:60944",
+            "rt_type": "import"
+          },
+          "65535:60945": {
+            "route_target": "65535:60945",
+            "rt_type": "export"
+          },
+          "65535:60946": {
+            "route_target": "65535:60946",
+            "rt_type": "import"
+          },
+          "65535:61061": {
+            "route_target": "65535:61061",
+            "rt_type": "import"
+          },
+          "65535:61063": {
+            "route_target": "65535:61063",
+            "rt_type": "import"
+          },
+          "65535:61462": {
+            "route_target": "65535:61462",
+            "rt_type": "import"
+          },
+          "65535:61501": {
+            "route_target": "65535:61501",
+            "rt_type": "export"
+          },
+          "65535:61502": {
+            "route_target": "65535:61502",
+            "rt_type": "import"
+          },
+          "65535:61601": {
+            "route_target": "65535:61601",
+            "rt_type": "import"
+          },
+          "65535:61681": {
+            "route_target": "65535:61681",
+            "rt_type": "import"
+          },
+          "65535:61741": {
+            "route_target": "65535:61741",
+            "rt_type": "import"
+          },
+          "65535:61941": {
+            "route_target": "65535:61941",
+            "rt_type": "import"
+          },
+          "65535:62080": {
+            "route_target": "65535:62080",
+            "rt_type": "import"
+          },
+          "65535:62082": {
+            "route_target": "65535:62082",
+            "rt_type": "import"
+          },
+          "65535:62381": {
+            "route_target": "65535:62381",
+            "rt_type": "import"
+          },
+          "65535:62501": {
+            "route_target": "65535:62501",
+            "rt_type": "import"
+          },
+          "65535:62641": {
+            "route_target": "65535:62641",
+            "rt_type": "import"
+          },
+          "65535:62881": {
+            "route_target": "65535:62881",
+            "rt_type": "import"
+          },
+          "65535:62942": {
+            "route_target": "65535:62942",
+            "rt_type": "import"
+          },
+          "65535:63421": {
+            "route_target": "65535:63421",
+            "rt_type": "import"
+          },
+          "65535:63522": {
+            "route_target": "65535:63522",
+            "rt_type": "import"
+          },
+          "65535:63723": {
+            "route_target": "65535:63723",
+            "rt_type": "import"
+          },
+          "65535:64662": {
+            "route_target": "65535:64662",
+            "rt_type": "import"
+          },
+          "65535:64663": {
+            "route_target": "65535:64663",
+            "rt_type": "export"
+          },
+          "65535:64842": {
+            "route_target": "65535:64842",
+            "rt_type": "import"
+          },
+          "65535:65881": {
+            "route_target": "65535:65881",
+            "rt_type": "import"
+          },
+          "65535:66361": {
+            "route_target": "65535:66361",
+            "rt_type": "import"
+          },
+          "65535:66502": {
+            "route_target": "65535:66502",
+            "rt_type": "import"
+          }
+        }
+      },
+      "ipv6 unicast": {}
+    },
+    "description": "HUAWEI SGSN-SIGTRAN B",
+    "interfaces": [
+      "Bundle-Ether3.1400",
+      "Bundle-Ether4.1205",
+      "Bundle-Ether7.1461",
+      "Bundle-Ether10.1402",
+      "Bundle-Ether10.1406",
+      "Bundle-Ether10.1410",
+      "Bundle-Ether10.1420",
+      "Bundle-Ether10.1421",
+      "Bundle-Ether10.1424",
+      "Bundle-Ether10.1440",
+      "Bundle-Ether10.1502"
+    ],
+    "route_distinguisher": "10.159.255.5:44",
+    "vrf_mode": "regular"
+  },
+  "_exclude": []
+}

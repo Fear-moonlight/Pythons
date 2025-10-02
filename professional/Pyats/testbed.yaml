@@ -1,0 +1,1203 @@
+testbed:
+  credentials:
+    default:
+      username: V06519X
+      password: Op^5t.?B%3
+devices:
+  jumphost:
+    os: linux
+    platform: linux
+    type: linux
+    connections:
+      cli:
+        ip: 10.159.56.88
+        port: 10080
+        protocol: ssh
+        credentials:
+          default:
+            username: cisco_project
+            private_key_file: cspc.ppk
+  KPGUER01-ASR9K:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.159.255.5
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout : 2
+          prompt_recovery : true
+  KPGUER02-ASR9K:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.159.255.6
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout : 2
+          prompt_recovery : true
+  KRTUER01-ASR9K:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.159.255.98
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout : 2
+          prompt_recovery : true
+  KRTUER02-ASR9K:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.159.255.100
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout : 2
+          prompt_recovery : true
+  BNTUER01-ASR9K:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.159.255.164
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout : 2
+          prompt_recovery : true
+  BNTUER02-ASR9K:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.159.255.165
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout : 2
+          prompt_recovery : true
+  WPJUER01-ASR9K:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.159.255.17
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout : 2
+          prompt_recovery : true
+  SBUUER01-ASR9K:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.159.255.170
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout : 2
+          prompt_recovery : true
+  SBUUER02-ASR9K:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.159.255.171
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout : 2
+          prompt_recovery : true
+  SDKUER01-ASR9K:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.159.255.176
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout : 2
+          prompt_recovery : true
+  SDKUER02-ASR9K:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.159.255.177
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+          arguments:
+            connection_timeout : 2
+            prompt_recovery : true
+  WPJUER02-ASR9K:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.159.255.18
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  KCHUER01-ASR9K:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.159.255.185
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  KCHUER02-ASR9K:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.159.255.186
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  SKDUER01-ASR9K:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.159.255.189
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  SMBUER01-ASR9K:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.159.255.19
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  SKDUER02-ASR9K:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.159.255.190
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  KBAUER01-ASR9K:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.159.255.191
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  KBAUER02-ASR9K:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.159.255.192
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  SNWUER01-ASR9K:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.159.255.193
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  SNWUER02-ASR9K:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.159.255.194
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  SMBUER02-ASR9K:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.159.255.20
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  ATBUER01-ASR9K:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.159.255.24
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  ATBUER02-ASR9K:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.159.255.25
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  KMPUER01-ASR9K:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.159.255.26
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  KMPUER02-ASR9K:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.159.255.27
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  MERUER01-ASR9K:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.159.255.28
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  MERUER02-ASR9K:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.159.255.29
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  IPHUER01-ASR9K:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.159.255.32
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  IPHUER02-ASR9K:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.159.255.33
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  SJYUER01-ASR9K:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.159.255.34
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  SJYUER02-ASR9K:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.159.255.35
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  ASRUER01-ASR9K:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.159.255.36
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  ASRUER02-ASR9K:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.159.255.37
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  MRIUER01-ASR9K:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.159.255.69
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  MRIUER02-ASR9K:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.159.255.70
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  INAUER01-ASR9K:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.159.255.83
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  INAUER02-ASR9K:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.159.255.84
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  TAWUER01-ASR9K:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.159.255.89
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  TAWUER02-ASR9K:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.159.255.90
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  70243-WPJ-AGGA02:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.240.105.254
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  60005-ALORSETAR-AGGA01:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.244.247.30
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  60006-ALORSETAR-AGGA02:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.244.247.31
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  56001-KBX-AGGA02:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.240.126.7
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  63010-SEBERANGJAYA-AGGA02:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.244.247.33
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  70242-KPG-AGGA02:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.240.105.253
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  70030-KPG-AGGA01:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.240.105.94
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  70047-WPJ-AGGA01:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.240.105.95
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  75019-SNWG-AGGA01:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.240.106.1
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  75020-SNWG-AGGA02:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.240.106.2
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  66013-IPOH-AGGA01:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.244.247.28
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  66014-IPOH-AGGA02:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.244.247.29
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  63009-SEBERANGJAYA-AGGA01:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.244.247.32
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  43146-SKUDAI-AGGA01:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.244.245.154
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  43147-SKUDAI-AGGA02:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.244.245.154
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  40012-MER-AGGA01:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.244.245.178
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  40013-MER-AGGA02:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.244.245.178
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  43165-KMP-AGGA01:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.244.245.180
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  43166-KMP-AGGA02:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.244.245.181
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  50003-ATBR-AGGA01:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.240.126.4
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  50004-ATBR-AGGA02:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.240.126.5
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  56000-KBX-AGGA01:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.240.126.6
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  50005-SMBU-AGGA01:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.240.126.8
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  50006-SMBU-AGGA02:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.240.126.9
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  KRTSR01-ASR9K:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.159.255.179
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  KRTSR02-ASR9K:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.159.255.180
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  KCHSR01-ASR9K:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.159.255.183
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  KCHSR02-ASR9K:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.159.255.184
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  WPJSR01-ASR9K:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.159.255.199
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  WPJSR02-ASR9K:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.159.255.200
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  SHTSR01-ASR9K:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.159.255.49
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  SHTSR02-ASR9K:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.159.255.50
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  KPGSR01-ASR9K:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.159.255.7
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true
+  KPGSR02-ASR9K:
+    os: iosxr
+    type: router
+    connections:
+      cli:
+        ip: 10.159.255.8
+        proxy: jumphost
+        port: 22
+        protocol: ssh
+        settings:
+          init_exec_commands: []
+          init_config_commands: []
+          log_stdout: False
+        arguments:
+          connection_timeout: 2
+          prompt_recovery: true

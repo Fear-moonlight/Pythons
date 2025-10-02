@@ -1,0 +1,571 @@
+The sheet '70047-WPJ-AGGA01' is empty.
+
+VRF: A_CP_Digi, Overall Most Common Route-Target: 65535:11250
+Device 'KRTUER01-ASR9K' does not have VRF 'A_CP_Digi'.
+Device 'KPGUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'A_CP_Digi': 65535:11250
+Device '60005-ALORSETAR-AGGA01' does not have VRF 'A_CP_Digi'.
+Device '70030-KPG-AGGA01' does not have VRF 'A_CP_Digi'.
+Device '70047-WPJ-AGGA01' does not have VRF 'A_CP_Digi'.
+Device '66013-IPOH-AGGA01' does not have VRF 'A_CP_Digi'.
+Device '63009-SEBERANGJAYA-AGGA01' does not have VRF 'A_CP_Digi'.
+Device '43146-SKUDAI-AGGA01' does not have VRF 'A_CP_Digi'.
+Device '40012-MER-AGGA01' does not have VRF 'A_CP_Digi'.
+Device '43165-KMP-AGGA01' does not have VRF 'A_CP_Digi'.
+Device '56000-KBX-AGGA01' does not have VRF 'A_CP_Digi'.
+Device '50005-SMBU-AGGA01' does not have VRF 'A_CP_Digi'.
+Device 'BNTUER01-ASR9K' does not have VRF 'A_CP_Digi'.
+Device 'WPJUER01-ASR9K' does not have VRF 'A_CP_Digi'.
+Device 'SBUUER01-ASR9K' does not have VRF 'A_CP_Digi'.
+Device 'SDKUER01-ASR9K' does not have VRF 'A_CP_Digi'.
+Device 'KCHUER01-ASR9K' does not have VRF 'A_CP_Digi'.
+Device 'SKDUER01-ASR9K' does not have VRF 'A_CP_Digi'.
+Device 'SMBUER01-ASR9K' does not have VRF 'A_CP_Digi'.
+Device 'KBAUER01-ASR9K' does not have VRF 'A_CP_Digi'.
+Device 'SNWUER01-ASR9K' does not have VRF 'A_CP_Digi'.
+Device 'KMPUER01-ASR9K' does not have VRF 'A_CP_Digi'.
+Device 'IPHUER01-ASR9K' does not have VRF 'A_CP_Digi'.
+Device 'SJYUER01-ASR9K' does not have VRF 'A_CP_Digi'.
+Device 'ASRUER01-ASR9K' does not have VRF 'A_CP_Digi'.
+Device 'MRIUER01-ASR9K' does not have VRF 'A_CP_Digi'.
+Device 'INAUER01-ASR9K' does not have VRF 'A_CP_Digi'.
+Device 'TAWUER01-ASR9K' does not have VRF 'A_CP_Digi'.
+
+VRF: A_Digi, Overall Most Common Route-Target: 65535:11050
+Device 'KRTUER01-ASR9K' does not have VRF 'A_Digi'.
+Device 'KPGUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'A_Digi': 65535:11050
+Device '60005-ALORSETAR-AGGA01' does not have VRF 'A_Digi'.
+Device '70030-KPG-AGGA01' does not have VRF 'A_Digi'.
+Device '70047-WPJ-AGGA01' does not have VRF 'A_Digi'.
+Device '66013-IPOH-AGGA01' does not have VRF 'A_Digi'.
+Device '63009-SEBERANGJAYA-AGGA01' does not have VRF 'A_Digi'.
+Device '43146-SKUDAI-AGGA01' does not have VRF 'A_Digi'.
+Device '40012-MER-AGGA01' does not have VRF 'A_Digi'.
+Device '43165-KMP-AGGA01' does not have VRF 'A_Digi'.
+Device '56000-KBX-AGGA01' does not have VRF 'A_Digi'.
+Device '50005-SMBU-AGGA01' does not have VRF 'A_Digi'.
+Device 'BNTUER01-ASR9K' does not have VRF 'A_Digi'.
+Device 'WPJUER01-ASR9K' does not have VRF 'A_Digi'.
+Device 'SBUUER01-ASR9K' does not have VRF 'A_Digi'.
+Device 'SDKUER01-ASR9K' does not have VRF 'A_Digi'.
+Device 'KCHUER01-ASR9K' does not have VRF 'A_Digi'.
+Device 'SKDUER01-ASR9K' does not have VRF 'A_Digi'.
+Device 'SMBUER01-ASR9K' does not have VRF 'A_Digi'.
+Device 'KBAUER01-ASR9K' does not have VRF 'A_Digi'.
+Device 'SNWUER01-ASR9K' does not have VRF 'A_Digi'.
+Device 'KMPUER01-ASR9K' does not have VRF 'A_Digi'.
+Device 'IPHUER01-ASR9K' does not have VRF 'A_Digi'.
+Device 'SJYUER01-ASR9K' does not have VRF 'A_Digi'.
+Device 'ASRUER01-ASR9K' does not have VRF 'A_Digi'.
+Device 'MRIUER01-ASR9K' does not have VRF 'A_Digi'.
+Device 'INAUER01-ASR9K' does not have VRF 'A_Digi'.
+Device 'TAWUER01-ASR9K' does not have VRF 'A_Digi'.
+
+VRF: CN, Overall Most Common Route-Target: 65535:11050
+Device 'KRTUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'CN': 65535:11050
+Device 'KPGUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'CN': 65535:11050
+Device '60005-ALORSETAR-AGGA01' does not have VRF 'CN'.
+Device '70030-KPG-AGGA01' does not have VRF 'CN'.
+Device '70047-WPJ-AGGA01' does not have VRF 'CN'.
+Device '66013-IPOH-AGGA01' does not have VRF 'CN'.
+Device '63009-SEBERANGJAYA-AGGA01' does not have VRF 'CN'.
+Device '43146-SKUDAI-AGGA01' does not have VRF 'CN'.
+Device '40012-MER-AGGA01' does not have VRF 'CN'.
+Device '43165-KMP-AGGA01' does not have VRF 'CN'.
+Device '56000-KBX-AGGA01' does not have VRF 'CN'.
+Device '50005-SMBU-AGGA01' does not have VRF 'CN'.
+Device 'BNTUER01-ASR9K' does not have VRF 'CN'.
+Device 'WPJUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'CN': 65535:11050
+Device 'SBUUER01-ASR9K' does not have VRF 'CN'.
+Device 'SDKUER01-ASR9K' does not have VRF 'CN'.
+Device 'KCHUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'CN': 65535:11050
+Device 'SKDUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'CN': 65535:11050
+Device 'SMBUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'CN': 65535:11050
+Device 'KBAUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'CN': 65535:11050
+Device 'SNWUER01-ASR9K' does not have VRF 'CN'.
+Device 'KMPUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'CN': 65535:11050
+Device 'IPHUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'CN': 65535:11050
+Device 'SJYUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'CN': 65535:11050
+Device 'ASRUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'CN': 65535:11050
+Device 'MRIUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'CN': 65535:11050
+Device 'INAUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'CN': 65535:11050
+Device 'TAWUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'CN': 65535:11050
+
+VRF: Digi_IuCS_UP, Overall Most Common Route-Target: 65535:11050
+Device 'KRTUER01-ASR9K' does not have VRF 'Digi_IuCS_UP'.
+Device 'KPGUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'Digi_IuCS_UP': 65535:11050
+Device '60005-ALORSETAR-AGGA01' does not have VRF 'Digi_IuCS_UP'.
+Device '70030-KPG-AGGA01' does not have VRF 'Digi_IuCS_UP'.
+Device '70047-WPJ-AGGA01' does not have VRF 'Digi_IuCS_UP'.
+Device '66013-IPOH-AGGA01' does not have VRF 'Digi_IuCS_UP'.
+Device '63009-SEBERANGJAYA-AGGA01' does not have VRF 'Digi_IuCS_UP'.
+Device '43146-SKUDAI-AGGA01' does not have VRF 'Digi_IuCS_UP'.
+Device '40012-MER-AGGA01' does not have VRF 'Digi_IuCS_UP'.
+Device '43165-KMP-AGGA01' does not have VRF 'Digi_IuCS_UP'.
+Device '56000-KBX-AGGA01' does not have VRF 'Digi_IuCS_UP'.
+Device '50005-SMBU-AGGA01' does not have VRF 'Digi_IuCS_UP'.
+Device 'BNTUER01-ASR9K' does not have VRF 'Digi_IuCS_UP'.
+Device 'WPJUER01-ASR9K' does not have VRF 'Digi_IuCS_UP'.
+Device 'SBUUER01-ASR9K' does not have VRF 'Digi_IuCS_UP'.
+Device 'SDKUER01-ASR9K' does not have VRF 'Digi_IuCS_UP'.
+Device 'KCHUER01-ASR9K' does not have VRF 'Digi_IuCS_UP'.
+Device 'SKDUER01-ASR9K' does not have VRF 'Digi_IuCS_UP'.
+Device 'SMBUER01-ASR9K' does not have VRF 'Digi_IuCS_UP'.
+Device 'KBAUER01-ASR9K' does not have VRF 'Digi_IuCS_UP'.
+Device 'SNWUER01-ASR9K' does not have VRF 'Digi_IuCS_UP'.
+Device 'KMPUER01-ASR9K' does not have VRF 'Digi_IuCS_UP'.
+Device 'IPHUER01-ASR9K' does not have VRF 'Digi_IuCS_UP'.
+Device 'SJYUER01-ASR9K' does not have VRF 'Digi_IuCS_UP'.
+Device 'ASRUER01-ASR9K' does not have VRF 'Digi_IuCS_UP'.
+Device 'MRIUER01-ASR9K' does not have VRF 'Digi_IuCS_UP'.
+Device 'INAUER01-ASR9K' does not have VRF 'Digi_IuCS_UP'.
+Device 'TAWUER01-ASR9K' does not have VRF 'Digi_IuCS_UP'.
+
+VRF: E_A_CP, Overall Most Common Route-Target: 65535:60940
+Device 'KRTUER01-ASR9K' does not have VRF 'E_A_CP'.
+Device 'KPGUER01-ASR9K' does not have VRF 'E_A_CP'.
+Device '60005-ALORSETAR-AGGA01' does not have VRF 'E_A_CP'.
+Device '70030-KPG-AGGA01' has a different Route-Target for VRF 'E_A_CP': 65092:66362 (expected 65535:60940)
+Device '70047-WPJ-AGGA01' does not have VRF 'E_A_CP'.
+Device '66013-IPOH-AGGA01' does not have VRF 'E_A_CP'.
+Device '63009-SEBERANGJAYA-AGGA01' does not have VRF 'E_A_CP'.
+Device '43146-SKUDAI-AGGA01' does not have VRF 'E_A_CP'.
+Device '40012-MER-AGGA01' does not have VRF 'E_A_CP'.
+Device '43165-KMP-AGGA01' does not have VRF 'E_A_CP'.
+Device '56000-KBX-AGGA01' matches the overall Most Common Route-Target for VRF 'E_A_CP': 65535:60940
+Device '50005-SMBU-AGGA01' has a different Route-Target for VRF 'E_A_CP': 65094:66362 (expected 65535:60940)
+Device 'BNTUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'E_A_CP': 65535:60940
+Device 'WPJUER01-ASR9K' does not have VRF 'E_A_CP'.
+Device 'SBUUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'E_A_CP': 65535:60940
+Device 'SDKUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'E_A_CP': 65535:60940
+Device 'KCHUER01-ASR9K' does not have VRF 'E_A_CP'.
+Device 'SKDUER01-ASR9K' does not have VRF 'E_A_CP'.
+Device 'SMBUER01-ASR9K' has a different Route-Target for VRF 'E_A_CP': 65535:60902 (expected 65535:60940)
+Device 'KBAUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'E_A_CP': 65535:60940
+Device 'SNWUER01-ASR9K' does not have VRF 'E_A_CP'.
+Device 'KMPUER01-ASR9K' does not have VRF 'E_A_CP'.
+Device 'IPHUER01-ASR9K' does not have VRF 'E_A_CP'.
+Device 'SJYUER01-ASR9K' does not have VRF 'E_A_CP'.
+Device 'ASRUER01-ASR9K' does not have VRF 'E_A_CP'.
+Device 'MRIUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'E_A_CP': 65535:60940
+Device 'INAUER01-ASR9K' has a different Route-Target for VRF 'E_A_CP': 65092:66362 (expected 65535:60940)
+Device 'TAWUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'E_A_CP': 65535:60940
+
+VRF: E_A_UP, Overall Most Common Route-Target: 65535:60960
+Device 'KRTUER01-ASR9K' does not have VRF 'E_A_UP'.
+Device 'KPGUER01-ASR9K' does not have VRF 'E_A_UP'.
+Device '60005-ALORSETAR-AGGA01' does not have VRF 'E_A_UP'.
+Device '70030-KPG-AGGA01' has a different Route-Target for VRF 'E_A_UP': 65092:66382 (expected 65535:60960)
+Device '70047-WPJ-AGGA01' does not have VRF 'E_A_UP'.
+Device '66013-IPOH-AGGA01' does not have VRF 'E_A_UP'.
+Device '63009-SEBERANGJAYA-AGGA01' does not have VRF 'E_A_UP'.
+Device '43146-SKUDAI-AGGA01' does not have VRF 'E_A_UP'.
+Device '40012-MER-AGGA01' does not have VRF 'E_A_UP'.
+Device '43165-KMP-AGGA01' does not have VRF 'E_A_UP'.
+Device '56000-KBX-AGGA01' matches the overall Most Common Route-Target for VRF 'E_A_UP': 65535:60960
+Device '50005-SMBU-AGGA01' has a different Route-Target for VRF 'E_A_UP': 65094:66382 (expected 65535:60960)
+Device 'BNTUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'E_A_UP': 65535:60960
+Device 'WPJUER01-ASR9K' does not have VRF 'E_A_UP'.
+Device 'SBUUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'E_A_UP': 65535:60960
+Device 'SDKUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'E_A_UP': 65535:60960
+Device 'KCHUER01-ASR9K' has a different Route-Target for VRF 'E_A_UP': 65092:66382 (expected 65535:60960)
+Device 'SKDUER01-ASR9K' does not have VRF 'E_A_UP'.
+Device 'SMBUER01-ASR9K' has a different Route-Target for VRF 'E_A_UP': 65535:60924 (expected 65535:60960)
+Device 'KBAUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'E_A_UP': 65535:60960
+Device 'SNWUER01-ASR9K' does not have VRF 'E_A_UP'.
+Device 'KMPUER01-ASR9K' does not have VRF 'E_A_UP'.
+Device 'IPHUER01-ASR9K' does not have VRF 'E_A_UP'.
+Device 'SJYUER01-ASR9K' does not have VRF 'E_A_UP'.
+Device 'ASRUER01-ASR9K' does not have VRF 'E_A_UP'.
+Device 'MRIUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'E_A_UP': 65535:60960
+Device 'INAUER01-ASR9K' has a different Route-Target for VRF 'E_A_UP': 65092:66382 (expected 65535:60960)
+Device 'TAWUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'E_A_UP': 65535:60960
+
+VRF: E_Iu_CP, Overall Most Common Route-Target: 65535:60280
+Device 'KRTUER01-ASR9K' does not have VRF 'E_Iu_CP'.
+Device 'KPGUER01-ASR9K' does not have VRF 'E_Iu_CP'.
+Device '60005-ALORSETAR-AGGA01' does not have VRF 'E_Iu_CP'.
+Device '70030-KPG-AGGA01' matches the overall Most Common Route-Target for VRF 'E_Iu_CP': 65535:60280
+Device '70047-WPJ-AGGA01' does not have VRF 'E_Iu_CP'.
+Device '66013-IPOH-AGGA01' does not have VRF 'E_Iu_CP'.
+Device '63009-SEBERANGJAYA-AGGA01' does not have VRF 'E_Iu_CP'.
+Device '43146-SKUDAI-AGGA01' does not have VRF 'E_Iu_CP'.
+Device '40012-MER-AGGA01' does not have VRF 'E_Iu_CP'.
+Device '43165-KMP-AGGA01' does not have VRF 'E_Iu_CP'.
+Device '56000-KBX-AGGA01' does not have VRF 'E_Iu_CP'.
+Device '50005-SMBU-AGGA01' matches the overall Most Common Route-Target for VRF 'E_Iu_CP': 65535:60280
+Device 'BNTUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'E_Iu_CP': 65535:60280
+Device 'WPJUER01-ASR9K' does not have VRF 'E_Iu_CP'.
+Device 'SBUUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'E_Iu_CP': 65535:60280
+Device 'SDKUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'E_Iu_CP': 65535:60280
+Device 'KCHUER01-ASR9K' does not have VRF 'E_Iu_CP'.
+Device 'SKDUER01-ASR9K' does not have VRF 'E_Iu_CP'.
+Device 'SMBUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'E_Iu_CP': 65535:60280
+Device 'KBAUER01-ASR9K' does not have VRF 'E_Iu_CP'.
+Device 'SNWUER01-ASR9K' does not have VRF 'E_Iu_CP'.
+Device 'KMPUER01-ASR9K' does not have VRF 'E_Iu_CP'.
+Device 'IPHUER01-ASR9K' does not have VRF 'E_Iu_CP'.
+Device 'SJYUER01-ASR9K' does not have VRF 'E_Iu_CP'.
+Device 'ASRUER01-ASR9K' does not have VRF 'E_Iu_CP'.
+Device 'MRIUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'E_Iu_CP': 65535:60280
+Device 'INAUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'E_Iu_CP': 65535:60280
+Device 'TAWUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'E_Iu_CP': 65535:60280
+
+VRF: H_A_CP, Overall Most Common Route-Target: 65535:60900
+Device 'KRTUER01-ASR9K' does not have VRF 'H_A_CP'.
+Device 'KPGUER01-ASR9K' does not have VRF 'H_A_CP'.
+Device '60005-ALORSETAR-AGGA01' matches the overall Most Common Route-Target for VRF 'H_A_CP': 65535:60900
+Device '70030-KPG-AGGA01' has a different Route-Target for VRF 'H_A_CP': 65092:66362 (expected 65535:60900)
+Device '70047-WPJ-AGGA01' does not have VRF 'H_A_CP'.
+Device '66013-IPOH-AGGA01' has a different Route-Target for VRF 'H_A_CP': 65095:66362 (expected 65535:60900)
+Device '63009-SEBERANGJAYA-AGGA01' has a different Route-Target for VRF 'H_A_CP': 65095:66362 (expected 65535:60900)
+Device '43146-SKUDAI-AGGA01' has a different Route-Target for VRF 'H_A_CP': 65093:66362 (expected 65535:60900)
+Device '40012-MER-AGGA01' has a different Route-Target for VRF 'H_A_CP': 65093:66362 (expected 65535:60900)
+Device '43165-KMP-AGGA01' matches the overall Most Common Route-Target for VRF 'H_A_CP': 65535:60900
+Device '56000-KBX-AGGA01' does not have VRF 'H_A_CP'.
+Device '50005-SMBU-AGGA01' does not have VRF 'H_A_CP'.
+Device 'BNTUER01-ASR9K' does not have VRF 'H_A_CP'.
+Device 'WPJUER01-ASR9K' does not have VRF 'H_A_CP'.
+Device 'SBUUER01-ASR9K' does not have VRF 'H_A_CP'.
+Device 'SDKUER01-ASR9K' does not have VRF 'H_A_CP'.
+Device 'KCHUER01-ASR9K' does not have VRF 'H_A_CP'.
+Device 'SKDUER01-ASR9K' does not have VRF 'H_A_CP'.
+Device 'SMBUER01-ASR9K' does not have VRF 'H_A_CP'.
+Device 'KBAUER01-ASR9K' does not have VRF 'H_A_CP'.
+Device 'SNWUER01-ASR9K' has a different Route-Target for VRF 'H_A_CP': 65535:11250 (expected 65535:60900)
+Device 'KMPUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'H_A_CP': 65535:60900
+Device 'IPHUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'H_A_CP': 65535:60900
+Device 'SJYUER01-ASR9K' does not have VRF 'H_A_CP'.
+Device 'ASRUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'H_A_CP': 65535:60900
+Device 'MRIUER01-ASR9K' does not have VRF 'H_A_CP'.
+Device 'INAUER01-ASR9K' does not have VRF 'H_A_CP'.
+Device 'TAWUER01-ASR9K' does not have VRF 'H_A_CP'.
+
+VRF: H_A_UP, Overall Most Common Route-Target: 65535:60920
+Device 'KRTUER01-ASR9K' does not have VRF 'H_A_UP'.
+Device 'KPGUER01-ASR9K' does not have VRF 'H_A_UP'.
+Device '60005-ALORSETAR-AGGA01' matches the overall Most Common Route-Target for VRF 'H_A_UP': 65535:60920
+Device '70030-KPG-AGGA01' has a different Route-Target for VRF 'H_A_UP': 65092:66382 (expected 65535:60920)
+Device '70047-WPJ-AGGA01' does not have VRF 'H_A_UP'.
+Device '66013-IPOH-AGGA01' has a different Route-Target for VRF 'H_A_UP': 65095:66382 (expected 65535:60920)
+Device '63009-SEBERANGJAYA-AGGA01' has a different Route-Target for VRF 'H_A_UP': 65095:66382 (expected 65535:60920)
+Device '43146-SKUDAI-AGGA01' has a different Route-Target for VRF 'H_A_UP': 65093:66382 (expected 65535:60920)
+Device '40012-MER-AGGA01' has a different Route-Target for VRF 'H_A_UP': 65093:66382 (expected 65535:60920)
+Device '43165-KMP-AGGA01' matches the overall Most Common Route-Target for VRF 'H_A_UP': 65535:60920
+Device '56000-KBX-AGGA01' does not have VRF 'H_A_UP'.
+Device '50005-SMBU-AGGA01' does not have VRF 'H_A_UP'.
+Device 'BNTUER01-ASR9K' does not have VRF 'H_A_UP'.
+Device 'WPJUER01-ASR9K' does not have VRF 'H_A_UP'.
+Device 'SBUUER01-ASR9K' does not have VRF 'H_A_UP'.
+Device 'SDKUER01-ASR9K' does not have VRF 'H_A_UP'.
+Device 'KCHUER01-ASR9K' does not have VRF 'H_A_UP'.
+Device 'SKDUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'H_A_UP': 65535:60920
+Device 'SMBUER01-ASR9K' does not have VRF 'H_A_UP'.
+Device 'KBAUER01-ASR9K' does not have VRF 'H_A_UP'.
+Device 'SNWUER01-ASR9K' has a different Route-Target for VRF 'H_A_UP': 65535:11250 (expected 65535:60920)
+Device 'KMPUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'H_A_UP': 65535:60920
+Device 'IPHUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'H_A_UP': 65535:60920
+Device 'SJYUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'H_A_UP': 65535:60920
+Device 'ASRUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'H_A_UP': 65535:60920
+Device 'MRIUER01-ASR9K' does not have VRF 'H_A_UP'.
+Device 'INAUER01-ASR9K' does not have VRF 'H_A_UP'.
+Device 'TAWUER01-ASR9K' does not have VRF 'H_A_UP'.
+
+VRF: H_IuCS_CP, Overall Most Common Route-Target: 65535:60060
+Device 'KRTUER01-ASR9K' does not have VRF 'H_IuCS_CP'.
+Device 'KPGUER01-ASR9K' does not have VRF 'H_IuCS_CP'.
+Device '60005-ALORSETAR-AGGA01' matches the overall Most Common Route-Target for VRF 'H_IuCS_CP': 65535:60060
+Device '70030-KPG-AGGA01' matches the overall Most Common Route-Target for VRF 'H_IuCS_CP': 65535:60060
+Device '70047-WPJ-AGGA01' does not have VRF 'H_IuCS_CP'.
+Device '66013-IPOH-AGGA01' matches the overall Most Common Route-Target for VRF 'H_IuCS_CP': 65535:60060
+Device '63009-SEBERANGJAYA-AGGA01' matches the overall Most Common Route-Target for VRF 'H_IuCS_CP': 65535:60060
+Device '43146-SKUDAI-AGGA01' matches the overall Most Common Route-Target for VRF 'H_IuCS_CP': 65535:60060
+Device '40012-MER-AGGA01' matches the overall Most Common Route-Target for VRF 'H_IuCS_CP': 65535:60060
+Device '43165-KMP-AGGA01' matches the overall Most Common Route-Target for VRF 'H_IuCS_CP': 65535:60060
+Device '56000-KBX-AGGA01' does not have VRF 'H_IuCS_CP'.
+Device '50005-SMBU-AGGA01' does not have VRF 'H_IuCS_CP'.
+Device 'BNTUER01-ASR9K' does not have VRF 'H_IuCS_CP'.
+Device 'WPJUER01-ASR9K' does not have VRF 'H_IuCS_CP'.
+Device 'SBUUER01-ASR9K' does not have VRF 'H_IuCS_CP'.
+Device 'SDKUER01-ASR9K' does not have VRF 'H_IuCS_CP'.
+Device 'KCHUER01-ASR9K' does not have VRF 'H_IuCS_CP'.
+Device 'SKDUER01-ASR9K' does not have VRF 'H_IuCS_CP'.
+Device 'SMBUER01-ASR9K' does not have VRF 'H_IuCS_CP'.
+Device 'KBAUER01-ASR9K' does not have VRF 'H_IuCS_CP'.
+Device 'SNWUER01-ASR9K' does not have VRF 'H_IuCS_CP'.
+Device 'KMPUER01-ASR9K' does not have VRF 'H_IuCS_CP'.
+Device 'IPHUER01-ASR9K' does not have VRF 'H_IuCS_CP'.
+Device 'SJYUER01-ASR9K' does not have VRF 'H_IuCS_CP'.
+Device 'ASRUER01-ASR9K' does not have VRF 'H_IuCS_CP'.
+Device 'MRIUER01-ASR9K' does not have VRF 'H_IuCS_CP'.
+Device 'INAUER01-ASR9K' does not have VRF 'H_IuCS_CP'.
+Device 'TAWUER01-ASR9K' does not have VRF 'H_IuCS_CP'.
+
+VRF: H_IuCS_UP, Overall Most Common Route-Target: 65535:60080
+Device 'KRTUER01-ASR9K' does not have VRF 'H_IuCS_UP'.
+Device 'KPGUER01-ASR9K' does not have VRF 'H_IuCS_UP'.
+Device '60005-ALORSETAR-AGGA01' matches the overall Most Common Route-Target for VRF 'H_IuCS_UP': 65535:60080
+Device '70030-KPG-AGGA01' matches the overall Most Common Route-Target for VRF 'H_IuCS_UP': 65535:60080
+Device '70047-WPJ-AGGA01' does not have VRF 'H_IuCS_UP'.
+Device '66013-IPOH-AGGA01' matches the overall Most Common Route-Target for VRF 'H_IuCS_UP': 65535:60080
+Device '63009-SEBERANGJAYA-AGGA01' matches the overall Most Common Route-Target for VRF 'H_IuCS_UP': 65535:60080
+Device '43146-SKUDAI-AGGA01' matches the overall Most Common Route-Target for VRF 'H_IuCS_UP': 65535:60080
+Device '40012-MER-AGGA01' matches the overall Most Common Route-Target for VRF 'H_IuCS_UP': 65535:60080
+Device '43165-KMP-AGGA01' matches the overall Most Common Route-Target for VRF 'H_IuCS_UP': 65535:60080
+Device '56000-KBX-AGGA01' does not have VRF 'H_IuCS_UP'.
+Device '50005-SMBU-AGGA01' does not have VRF 'H_IuCS_UP'.
+Device 'BNTUER01-ASR9K' does not have VRF 'H_IuCS_UP'.
+Device 'WPJUER01-ASR9K' does not have VRF 'H_IuCS_UP'.
+Device 'SBUUER01-ASR9K' does not have VRF 'H_IuCS_UP'.
+Device 'SDKUER01-ASR9K' does not have VRF 'H_IuCS_UP'.
+Device 'KCHUER01-ASR9K' does not have VRF 'H_IuCS_UP'.
+Device 'SKDUER01-ASR9K' does not have VRF 'H_IuCS_UP'.
+Device 'SMBUER01-ASR9K' does not have VRF 'H_IuCS_UP'.
+Device 'KBAUER01-ASR9K' does not have VRF 'H_IuCS_UP'.
+Device 'SNWUER01-ASR9K' does not have VRF 'H_IuCS_UP'.
+Device 'KMPUER01-ASR9K' does not have VRF 'H_IuCS_UP'.
+Device 'IPHUER01-ASR9K' does not have VRF 'H_IuCS_UP'.
+Device 'SJYUER01-ASR9K' does not have VRF 'H_IuCS_UP'.
+Device 'ASRUER01-ASR9K' does not have VRF 'H_IuCS_UP'.
+Device 'MRIUER01-ASR9K' does not have VRF 'H_IuCS_UP'.
+Device 'INAUER01-ASR9K' does not have VRF 'H_IuCS_UP'.
+Device 'TAWUER01-ASR9K' does not have VRF 'H_IuCS_UP'.
+
+VRF: IuCS_CP, Overall Most Common Route-Target: 65535:60060
+Device 'KRTUER01-ASR9K' does not have VRF 'IuCS_CP'.
+Device 'KPGUER01-ASR9K' does not have VRF 'IuCS_CP'.
+Device '60005-ALORSETAR-AGGA01' does not have VRF 'IuCS_CP'.
+Device '70030-KPG-AGGA01' does not have VRF 'IuCS_CP'.
+Device '70047-WPJ-AGGA01' does not have VRF 'IuCS_CP'.
+Device '66013-IPOH-AGGA01' does not have VRF 'IuCS_CP'.
+Device '63009-SEBERANGJAYA-AGGA01' does not have VRF 'IuCS_CP'.
+Device '43146-SKUDAI-AGGA01' does not have VRF 'IuCS_CP'.
+Device '40012-MER-AGGA01' does not have VRF 'IuCS_CP'.
+Device '43165-KMP-AGGA01' does not have VRF 'IuCS_CP'.
+Device '56000-KBX-AGGA01' does not have VRF 'IuCS_CP'.
+Device '50005-SMBU-AGGA01' does not have VRF 'IuCS_CP'.
+Device 'BNTUER01-ASR9K' does not have VRF 'IuCS_CP'.
+Device 'WPJUER01-ASR9K' does not have VRF 'IuCS_CP'.
+Device 'SBUUER01-ASR9K' does not have VRF 'IuCS_CP'.
+Device 'SDKUER01-ASR9K' does not have VRF 'IuCS_CP'.
+Device 'KCHUER01-ASR9K' does not have VRF 'IuCS_CP'.
+Device 'SKDUER01-ASR9K' does not have VRF 'IuCS_CP'.
+Device 'SMBUER01-ASR9K' does not have VRF 'IuCS_CP'.
+Device 'KBAUER01-ASR9K' does not have VRF 'IuCS_CP'.
+Device 'SNWUER01-ASR9K' has a different Route-Target for VRF 'IuCS_CP': 65535:11250 (expected 65535:60060)
+Device 'KMPUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'IuCS_CP': 65535:60060
+Device 'IPHUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'IuCS_CP': 65535:60060
+Device 'SJYUER01-ASR9K' does not have VRF 'IuCS_CP'.
+Device 'ASRUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'IuCS_CP': 65535:60060
+Device 'MRIUER01-ASR9K' does not have VRF 'IuCS_CP'.
+Device 'INAUER01-ASR9K' does not have VRF 'IuCS_CP'.
+Device 'TAWUER01-ASR9K' does not have VRF 'IuCS_CP'.
+
+VRF: IuCS_UP, Overall Most Common Route-Target: 65535:60080
+Device 'KRTUER01-ASR9K' does not have VRF 'IuCS_UP'.
+Device 'KPGUER01-ASR9K' does not have VRF 'IuCS_UP'.
+Device '60005-ALORSETAR-AGGA01' does not have VRF 'IuCS_UP'.
+Device '70030-KPG-AGGA01' does not have VRF 'IuCS_UP'.
+Device '70047-WPJ-AGGA01' does not have VRF 'IuCS_UP'.
+Device '66013-IPOH-AGGA01' does not have VRF 'IuCS_UP'.
+Device '63009-SEBERANGJAYA-AGGA01' does not have VRF 'IuCS_UP'.
+Device '43146-SKUDAI-AGGA01' does not have VRF 'IuCS_UP'.
+Device '40012-MER-AGGA01' does not have VRF 'IuCS_UP'.
+Device '43165-KMP-AGGA01' does not have VRF 'IuCS_UP'.
+Device '56000-KBX-AGGA01' does not have VRF 'IuCS_UP'.
+Device '50005-SMBU-AGGA01' does not have VRF 'IuCS_UP'.
+Device 'BNTUER01-ASR9K' does not have VRF 'IuCS_UP'.
+Device 'WPJUER01-ASR9K' does not have VRF 'IuCS_UP'.
+Device 'SBUUER01-ASR9K' does not have VRF 'IuCS_UP'.
+Device 'SDKUER01-ASR9K' does not have VRF 'IuCS_UP'.
+Device 'KCHUER01-ASR9K' does not have VRF 'IuCS_UP'.
+Device 'SKDUER01-ASR9K' does not have VRF 'IuCS_UP'.
+Device 'SMBUER01-ASR9K' does not have VRF 'IuCS_UP'.
+Device 'KBAUER01-ASR9K' does not have VRF 'IuCS_UP'.
+Device 'SNWUER01-ASR9K' has a different Route-Target for VRF 'IuCS_UP': 65535:11250 (expected 65535:60080)
+Device 'KMPUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'IuCS_UP': 65535:60080
+Device 'IPHUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'IuCS_UP': 65535:60080
+Device 'SJYUER01-ASR9K' does not have VRF 'IuCS_UP'.
+Device 'ASRUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'IuCS_UP': 65535:60080
+Device 'MRIUER01-ASR9K' does not have VRF 'IuCS_UP'.
+Device 'INAUER01-ASR9K' does not have VRF 'IuCS_UP'.
+Device 'TAWUER01-ASR9K' does not have VRF 'IuCS_UP'.
+
+VRF: P1_Sigtran, Overall Most Common Route-Target: 65535:11250
+Device 'KRTUER01-ASR9K' does not have VRF 'P1_Sigtran'.
+Device 'KPGUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'P1_Sigtran': 65535:11250
+Device '60005-ALORSETAR-AGGA01' does not have VRF 'P1_Sigtran'.
+Device '70030-KPG-AGGA01' does not have VRF 'P1_Sigtran'.
+Device '70047-WPJ-AGGA01' does not have VRF 'P1_Sigtran'.
+Device '66013-IPOH-AGGA01' does not have VRF 'P1_Sigtran'.
+Device '63009-SEBERANGJAYA-AGGA01' does not have VRF 'P1_Sigtran'.
+Device '43146-SKUDAI-AGGA01' does not have VRF 'P1_Sigtran'.
+Device '40012-MER-AGGA01' does not have VRF 'P1_Sigtran'.
+Device '43165-KMP-AGGA01' does not have VRF 'P1_Sigtran'.
+Device '56000-KBX-AGGA01' does not have VRF 'P1_Sigtran'.
+Device '50005-SMBU-AGGA01' does not have VRF 'P1_Sigtran'.
+Device 'BNTUER01-ASR9K' does not have VRF 'P1_Sigtran'.
+Device 'WPJUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'P1_Sigtran': 65535:11250
+Device 'SBUUER01-ASR9K' does not have VRF 'P1_Sigtran'.
+Device 'SDKUER01-ASR9K' does not have VRF 'P1_Sigtran'.
+Device 'KCHUER01-ASR9K' does not have VRF 'P1_Sigtran'.
+Device 'SKDUER01-ASR9K' does not have VRF 'P1_Sigtran'.
+Device 'SMBUER01-ASR9K' does not have VRF 'P1_Sigtran'.
+Device 'KBAUER01-ASR9K' does not have VRF 'P1_Sigtran'.
+Device 'SNWUER01-ASR9K' does not have VRF 'P1_Sigtran'.
+Device 'KMPUER01-ASR9K' does not have VRF 'P1_Sigtran'.
+Device 'IPHUER01-ASR9K' does not have VRF 'P1_Sigtran'.
+Device 'SJYUER01-ASR9K' does not have VRF 'P1_Sigtran'.
+Device 'ASRUER01-ASR9K' does not have VRF 'P1_Sigtran'.
+Device 'MRIUER01-ASR9K' does not have VRF 'P1_Sigtran'.
+Device 'INAUER01-ASR9K' does not have VRF 'P1_Sigtran'.
+Device 'TAWUER01-ASR9K' does not have VRF 'P1_Sigtran'.
+
+VRF: SIGTRAN, Overall Most Common Route-Target: 65535:11250
+Device 'KRTUER01-ASR9K' does not have VRF 'SIGTRAN'.
+Device 'KPGUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'SIGTRAN': 65535:11250
+Device '60005-ALORSETAR-AGGA01' does not have VRF 'SIGTRAN'.
+Device '70030-KPG-AGGA01' does not have VRF 'SIGTRAN'.
+Device '70047-WPJ-AGGA01' does not have VRF 'SIGTRAN'.
+Device '66013-IPOH-AGGA01' does not have VRF 'SIGTRAN'.
+Device '63009-SEBERANGJAYA-AGGA01' does not have VRF 'SIGTRAN'.
+Device '43146-SKUDAI-AGGA01' does not have VRF 'SIGTRAN'.
+Device '40012-MER-AGGA01' does not have VRF 'SIGTRAN'.
+Device '43165-KMP-AGGA01' does not have VRF 'SIGTRAN'.
+Device '56000-KBX-AGGA01' does not have VRF 'SIGTRAN'.
+Device '50005-SMBU-AGGA01' does not have VRF 'SIGTRAN'.
+Device 'BNTUER01-ASR9K' does not have VRF 'SIGTRAN'.
+Device 'WPJUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'SIGTRAN': 65535:11250
+Device 'SBUUER01-ASR9K' does not have VRF 'SIGTRAN'.
+Device 'SDKUER01-ASR9K' does not have VRF 'SIGTRAN'.
+Device 'KCHUER01-ASR9K' does not have VRF 'SIGTRAN'.
+Device 'SKDUER01-ASR9K' does not have VRF 'SIGTRAN'.
+Device 'SMBUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'SIGTRAN': 65535:11250
+Device 'KBAUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'SIGTRAN': 65535:11250
+Device 'SNWUER01-ASR9K' does not have VRF 'SIGTRAN'.
+Device 'KMPUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'SIGTRAN': 65535:11250
+Device 'IPHUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'SIGTRAN': 65535:11250
+Device 'SJYUER01-ASR9K' does not have VRF 'SIGTRAN'.
+Device 'ASRUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'SIGTRAN': 65535:11250
+Device 'MRIUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'SIGTRAN': 65535:11250
+Device 'INAUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'SIGTRAN': 65535:11250
+Device 'TAWUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'SIGTRAN': 65535:11250
+
+VRF: maxis_A, Overall Most Common Route-Target: 65535:11050
+Device 'KRTUER01-ASR9K' does not have VRF 'maxis_A'.
+Device 'KPGUER01-ASR9K' has a different Route-Target for VRF 'maxis_A': 65535:63380 (expected 65535:11050)
+Device '60005-ALORSETAR-AGGA01' does not have VRF 'maxis_A'.
+Device '70030-KPG-AGGA01' does not have VRF 'maxis_A'.
+Device '70047-WPJ-AGGA01' does not have VRF 'maxis_A'.
+Device '66013-IPOH-AGGA01' does not have VRF 'maxis_A'.
+Device '63009-SEBERANGJAYA-AGGA01' does not have VRF 'maxis_A'.
+Device '43146-SKUDAI-AGGA01' does not have VRF 'maxis_A'.
+Device '40012-MER-AGGA01' does not have VRF 'maxis_A'.
+Device '43165-KMP-AGGA01' does not have VRF 'maxis_A'.
+Device '56000-KBX-AGGA01' does not have VRF 'maxis_A'.
+Device '50005-SMBU-AGGA01' does not have VRF 'maxis_A'.
+Device 'BNTUER01-ASR9K' does not have VRF 'maxis_A'.
+Device 'WPJUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'maxis_A': 65535:11050
+Device 'SBUUER01-ASR9K' does not have VRF 'maxis_A'.
+Device 'SDKUER01-ASR9K' does not have VRF 'maxis_A'.
+Device 'KCHUER01-ASR9K' does not have VRF 'maxis_A'.
+Device 'SKDUER01-ASR9K' does not have VRF 'maxis_A'.
+Device 'SMBUER01-ASR9K' does not have VRF 'maxis_A'.
+Device 'KBAUER01-ASR9K' does not have VRF 'maxis_A'.
+Device 'SNWUER01-ASR9K' does not have VRF 'maxis_A'.
+Device 'KMPUER01-ASR9K' does not have VRF 'maxis_A'.
+Device 'IPHUER01-ASR9K' does not have VRF 'maxis_A'.
+Device 'SJYUER01-ASR9K' does not have VRF 'maxis_A'.
+Device 'ASRUER01-ASR9K' does not have VRF 'maxis_A'.
+Device 'MRIUER01-ASR9K' does not have VRF 'maxis_A'.
+Device 'INAUER01-ASR9K' does not have VRF 'maxis_A'.
+Device 'TAWUER01-ASR9K' does not have VRF 'maxis_A'.
+
+VRF: maxis_A_CP, Overall Most Common Route-Target: 65535:11050
+Device 'KRTUER01-ASR9K' does not have VRF 'maxis_A_CP'.
+Device 'KPGUER01-ASR9K' does not have VRF 'maxis_A_CP'.
+Device '60005-ALORSETAR-AGGA01' does not have VRF 'maxis_A_CP'.
+Device '70030-KPG-AGGA01' does not have VRF 'maxis_A_CP'.
+Device '70047-WPJ-AGGA01' does not have VRF 'maxis_A_CP'.
+Device '66013-IPOH-AGGA01' does not have VRF 'maxis_A_CP'.
+Device '63009-SEBERANGJAYA-AGGA01' does not have VRF 'maxis_A_CP'.
+Device '43146-SKUDAI-AGGA01' does not have VRF 'maxis_A_CP'.
+Device '40012-MER-AGGA01' does not have VRF 'maxis_A_CP'.
+Device '43165-KMP-AGGA01' does not have VRF 'maxis_A_CP'.
+Device '56000-KBX-AGGA01' does not have VRF 'maxis_A_CP'.
+Device '50005-SMBU-AGGA01' does not have VRF 'maxis_A_CP'.
+Device 'BNTUER01-ASR9K' does not have VRF 'maxis_A_CP'.
+Device 'WPJUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'maxis_A_CP': 65535:11050
+Device 'SBUUER01-ASR9K' does not have VRF 'maxis_A_CP'.
+Device 'SDKUER01-ASR9K' does not have VRF 'maxis_A_CP'.
+Device 'KCHUER01-ASR9K' does not have VRF 'maxis_A_CP'.
+Device 'SKDUER01-ASR9K' does not have VRF 'maxis_A_CP'.
+Device 'SMBUER01-ASR9K' does not have VRF 'maxis_A_CP'.
+Device 'KBAUER01-ASR9K' does not have VRF 'maxis_A_CP'.
+Device 'SNWUER01-ASR9K' does not have VRF 'maxis_A_CP'.
+Device 'KMPUER01-ASR9K' does not have VRF 'maxis_A_CP'.
+Device 'IPHUER01-ASR9K' does not have VRF 'maxis_A_CP'.
+Device 'SJYUER01-ASR9K' does not have VRF 'maxis_A_CP'.
+Device 'ASRUER01-ASR9K' does not have VRF 'maxis_A_CP'.
+Device 'MRIUER01-ASR9K' does not have VRF 'maxis_A_CP'.
+Device 'INAUER01-ASR9K' does not have VRF 'maxis_A_CP'.
+Device 'TAWUER01-ASR9K' does not have VRF 'maxis_A_CP'.
+
+VRF: maxis_IuCS, Overall Most Common Route-Target: 65535:11050
+Device 'KRTUER01-ASR9K' does not have VRF 'maxis_IuCS'.
+Device 'KPGUER01-ASR9K' does not have VRF 'maxis_IuCS'.
+Device '60005-ALORSETAR-AGGA01' does not have VRF 'maxis_IuCS'.
+Device '70030-KPG-AGGA01' does not have VRF 'maxis_IuCS'.
+Device '70047-WPJ-AGGA01' does not have VRF 'maxis_IuCS'.
+Device '66013-IPOH-AGGA01' does not have VRF 'maxis_IuCS'.
+Device '63009-SEBERANGJAYA-AGGA01' does not have VRF 'maxis_IuCS'.
+Device '43146-SKUDAI-AGGA01' does not have VRF 'maxis_IuCS'.
+Device '40012-MER-AGGA01' does not have VRF 'maxis_IuCS'.
+Device '43165-KMP-AGGA01' does not have VRF 'maxis_IuCS'.
+Device '56000-KBX-AGGA01' does not have VRF 'maxis_IuCS'.
+Device '50005-SMBU-AGGA01' does not have VRF 'maxis_IuCS'.
+Device 'BNTUER01-ASR9K' does not have VRF 'maxis_IuCS'.
+Device 'WPJUER01-ASR9K' matches the overall Most Common Route-Target for VRF 'maxis_IuCS': 65535:11050
+Device 'SBUUER01-ASR9K' does not have VRF 'maxis_IuCS'.
+Device 'SDKUER01-ASR9K' does not have VRF 'maxis_IuCS'.
+Device 'KCHUER01-ASR9K' does not have VRF 'maxis_IuCS'.
+Device 'SKDUER01-ASR9K' does not have VRF 'maxis_IuCS'.
+Device 'SMBUER01-ASR9K' does not have VRF 'maxis_IuCS'.
+Device 'KBAUER01-ASR9K' does not have VRF 'maxis_IuCS'.
+Device 'SNWUER01-ASR9K' does not have VRF 'maxis_IuCS'.
+Device 'KMPUER01-ASR9K' does not have VRF 'maxis_IuCS'.
+Device 'IPHUER01-ASR9K' does not have VRF 'maxis_IuCS'.
+Device 'SJYUER01-ASR9K' does not have VRF 'maxis_IuCS'.
+Device 'ASRUER01-ASR9K' does not have VRF 'maxis_IuCS'.
+Device 'MRIUER01-ASR9K' does not have VRF 'maxis_IuCS'.
+Device 'INAUER01-ASR9K' does not have VRF 'maxis_IuCS'.
+Device 'TAWUER01-ASR9K' does not have VRF 'maxis_IuCS'.
+
+VRF: maxis_MC_AUP, Overall Most Common Route-Target: 65535:65860
+Device 'KRTUER01-ASR9K' does not have VRF 'maxis_MC_AUP'.
+Device 'KPGUER01-ASR9K' has a different Route-Target for VRF 'maxis_MC_AUP': 65535:60922 (expected 65535:65860)
+Device '60005-ALORSETAR-AGGA01' does not have VRF 'maxis_MC_AUP'.
+Device '70030-KPG-AGGA01' does not have VRF 'maxis_MC_AUP'.
+Device '70047-WPJ-AGGA01' does not have VRF 'maxis_MC_AUP'.
+Device '66013-IPOH-AGGA01' has a different Route-Target for VRF 'maxis_MC_AUP': 65123:65861 (expected 65535:65860)
+Device '63009-SEBERANGJAYA-AGGA01' has a different Route-Target for VRF 'maxis_MC_AUP': 65123:65861 (expected 65535:65860)
+Device '43146-SKUDAI-AGGA01' does not have VRF 'maxis_MC_AUP'.
+Device '40012-MER-AGGA01' has a different Route-Target for VRF 'maxis_MC_AUP': 65103:65861 (expected 65535:65860)
+Device '43165-KMP-AGGA01' does not have VRF 'maxis_MC_AUP'.
+Device '56000-KBX-AGGA01' does not have VRF 'maxis_MC_AUP'.
+Device '50005-SMBU-AGGA01' does not have VRF 'maxis_MC_AUP'.
+Device 'BNTUER01-ASR9K' does not have VRF 'maxis_MC_AUP'.
+Device 'WPJUER01-ASR9K' has a different Route-Target for VRF 'maxis_MC_AUP': 65535:60922 (expected 65535:65860)
+Device 'SBUUER01-ASR9K' does not have VRF 'maxis_MC_AUP'.
+Device 'SDKUER01-ASR9K' does not have VRF 'maxis_MC_AUP'.
+Device 'KCHUER01-ASR9K' has a different Route-Target for VRF 'maxis_MC_AUP': 65135:65862 (expected 65535:65860)
+Device 'SKDUER01-ASR9K' has a different Route-Target for VRF 'maxis_MC_AUP': 65103:65862 (expected 65535:65860)
+Device 'SMBUER01-ASR9K' has a different Route-Target for VRF 'maxis_MC_AUP': 65151:65862 (expected 65535:65860)
+Device 'KBAUER01-ASR9K' does not have VRF 'maxis_MC_AUP'.
+Device 'SNWUER01-ASR9K' does not have VRF 'maxis_MC_AUP'.
+Device 'KMPUER01-ASR9K' does not have VRF 'maxis_MC_AUP'.
+Device 'IPHUER01-ASR9K' has a different Route-Target for VRF 'maxis_MC_AUP': 65123:65862 (expected 65535:65860)
+Device 'SJYUER01-ASR9K' does not have VRF 'maxis_MC_AUP'.
+Device 'ASRUER01-ASR9K' does not have VRF 'maxis_MC_AUP'.
+Device 'MRIUER01-ASR9K' does not have VRF 'maxis_MC_AUP'.
+Device 'INAUER01-ASR9K' has a different Route-Target for VRF 'maxis_MC_AUP': 65143:65862 (expected 65535:65860)
+Device 'TAWUER01-ASR9K' does not have VRF 'maxis_MC_AUP'.

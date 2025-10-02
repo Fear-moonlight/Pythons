@@ -1,0 +1,5 @@
++++ KPGUER01-ASR9K with via 'cli': executing command 'show ipv6 interface breif' +++
+show ipv6 interface breif
+                                                    ^
+% Invalid input detected at '^' marker.
+RP/0/RSP0/CPU0:KPGUER01-ASR9K#

@@ -1,0 +1,153 @@
+{
+  "_exclude": [],
+  "vrf": {
+    "A_CP_Digi": {
+      "address_family": {
+        "IPv4 Unicast": {
+          "routes": {
+            "172.18.57.128/28": {
+              "active": true,
+              "distance": 200,
+              "installed": {
+                "date": "May 31 05:31:17.636",
+                "for": "6d13h"
+              },
+              "ip": "172.18.57.128",
+              "known_via": "bgp 65535",
+              "mask": "28",
+              "metric": 0,
+              "next_hop": {
+                "next_hop_list": {
+                  "2": {
+                    "address_family": "IPv4 Unicast",
+                    "from": "10.159.255.51",
+                    "index": 2,
+                    "metric": 0,
+                    "next_hop": "10.159.255.17",
+                    "nexthop_in_vrf": "default",
+                    "table": "default",
+                    "table_id": "0xe0000000"
+                  }
+                }
+              },
+              "route": "172.18.57.128/28",
+              "tag": "138008",
+              "type": "internal"
+            }
+          }
+        }
+      }
+    },
+    "P1_Sigtran": {
+      "address_family": {
+        "IPv4 Unicast": {
+          "routes": {
+            "172.18.57.128/28": {
+              "active": true,
+              "distance": 200,
+              "installed": {
+                "date": "May 31 05:31:17.638",
+                "for": "6d13h"
+              },
+              "ip": "172.18.57.128",
+              "known_via": "bgp 65535",
+              "mask": "28",
+              "metric": 0,
+              "next_hop": {
+                "next_hop_list": {
+                  "3": {
+                    "address_family": "IPv4 Unicast",
+                    "from": "10.159.255.51",
+                    "index": 3,
+                    "metric": 0,
+                    "next_hop": "10.159.255.17",
+                    "nexthop_in_vrf": "default",
+                    "table": "default",
+                    "table_id": "0xe0000000"
+                  }
+                }
+              },
+              "route": "172.18.57.128/28",
+              "tag": "138008",
+              "type": "internal"
+            }
+          }
+        }
+      }
+    },
+    "SIGTRAN": {
+      "address_family": {
+        "ipv4": {
+          "routes": {
+            "172.18.57.128/28": {
+              "active": true,
+              "distance": 200,
+              "installed": {
+                "date": "Jun  4 04:10:53.904",
+                "for": "2d14h"
+              },
+              "ip": "172.18.57.128",
+              "known_via": "bgp 65535",
+              "mask": "28",
+              "metric": 0,
+              "next_hop": {
+                "next_hop_list": {
+                  "0": {
+                    "address_family": "IPv4 Unicast",
+                    "index": 0,
+                    "nexthop_in_vrf": "maxis_MC_ACP",
+                    "table": "default",
+                    "table_id": "0xe000007a"
+                  },
+                  "1": {
+                    "address_family": "IPv4 Unicast",
+                    "from": "10.159.255.51",
+                    "index": 1,
+                    "metric": 0,
+                    "next_hop": "10.159.255.17",
+                    "nexthop_in_vrf": "default",
+                    "table": "default",
+                    "table_id": "0xe0000000"
+                  }
+                }
+              },
+              "route": "172.18.57.128/28"
+            }
+          }
+        }
+      }
+    },
+    "maxis_MC_ACP": {
+      "address_family": {
+        "IPv4 Unicast": {
+          "routes": {
+            "172.18.57.128/28": {
+              "active": true,
+              "distance": 20,
+              "installed": {
+                "date": "Jun  4 04:10:53.536",
+                "for": "2d14h"
+              },
+              "ip": "172.18.57.128",
+              "known_via": "bgp 65535",
+              "mask": "28",
+              "metric": 0,
+              "next_hop": {
+                "next_hop_list": {
+                  "4": {
+                    "from": "10.151.81.221",
+                    "index": 4,
+                    "next_hop": "10.151.81.221"
+                  }
+                }
+              },
+              "route": "172.18.57.128/28",
+              "tag": "65110",
+              "type": "external"
+            }
+          }
+        }
+      }
+    }
+  }
+}

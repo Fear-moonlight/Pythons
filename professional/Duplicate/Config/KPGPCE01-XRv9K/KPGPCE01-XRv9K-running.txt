@@ -1,0 +1,572 @@
+Fri Sep  6 07:19:28.728 MYT
+Building configuration...
+!! IOS XR Configuration 7.9.1
+!! Last configuration change at Fri May 26 01:04:58 2023 by cisco
+!
+hostname KPGPCE01-XRv9K
+clock timezone MYT Asia/Kuala_Lumpur
+banner exec X
+*********************************************************************
+*                                                                   *
+*  This is a system belonging to Celcom Axiata Bhd. All Celcom      *
+*  systems are provided for the processing of Celcom's information  *
+*  and Celcom customer personal data. All content on this system is *
+*  confidential in nature and is protected as required by the       *
+*  Personal Data Protection Act 2010, other Malaysian Laws and      *
+*  regulations as well as Celcom's confidentiality provisions and   *
+*  terms of use. The activities to this system may be monitored,    *
+*  recorded, or captured in order to comply with Celcom's internal  *
+*  policies and the relevant Malaysian Laws and Regulations. Any    *
+*  unauthorised use of the system or the information therein shall  *
+*  be subject to disciplinary action and may lead to criminal       *
+*  prosecution. Unauthorized or improper use of this system may     *
+*  result in administrative action, disciplinary action and/or      *
+*  civil charges/criminal penalties, with jail terms of up to 3     *
+*  years and fines of up to RM 500,000 By continuing to use this    *
+*  system you indicate your awareness of and consent to these terms *
+*  and conditions of use.                                           *
+*                                                                   *
+*********************************************************************
+X
+banner login X
+*********************************************************************
+*                                                                   *
+*  This is a system belonging to Celcom Axiata Bhd. All Celcom      *
+*  systems are provided for the processing of Celcom's information  *
+*  and Celcom customer personal data. All content on this system is *
+*  confidential in nature and is protected as required by the       *
+*  Personal Data Protection Act 2010, other Malaysian Laws and      *
+*  regulations as well as Celcom's confidentiality provisions and   *
+*  terms of use. The activities to this system may be monitored,    *
+*  recorded, or captured in order to comply with Celcom's internal  *
+*  policies and the relevant Malaysian Laws and Regulations. Any    *
+*  unauthorised use of the system or the information therein shall  *
+*  be subject to disciplinary action and may lead to criminal       *
+*  prosecution. Unauthorized or improper use of this system may     *
+*  result in administrative action, disciplinary action and/or      *
+*  civil charges/criminal penalties, with jail terms of up to 3     *
+*  years and fines of up to RM 500,000 By continuing to use this    *
+*  system you indicate your awareness of and consent to these terms *
+*  and conditions of use.                                           *
+*                                                                   *
+*********************************************************************
+X
+!  Logging Buffer
+! Remove  Logging Buffer
+logging ipv4 dscp cs2
+logging trap informational
+!  logging events
+! Remove  logging events
+logging events level informational
+logging console disable
+logging buffered 5000000
+logging buffered debugging
+logging buffered discriminator
+ nomatch1 10.124.7.|10.124.19.
+!
+logging 10.1.65.147 vrf management severity info port default
+logging 10.124.7.66 vrf management severity info port default
+logging 10.124.7.71 vrf management severity info port default
+logging 10.124.7.71 vrf management discriminator
+ nomatch1 10.124.7.|10.124.19.
+!
+logging 10.1.110.216 vrf management severity info port default
+logging 10.124.19.66 vrf management severity info port default
+logging 10.124.19.71 vrf management severity info port default
+logging 10.124.19.71 vrf management discriminator
+ nomatch1 10.124.7.|10.124.19.
+!
+logging 10.159.56.88 vrf management severity info port default
+logging 10.159.57.88 vrf management severity info port default
+logging 10.122.45.106 vrf management severity info port default
+logging 10.122.45.114 vrf management severity info port default
+logging 10.122.45.122 vrf management severity info port default
+logging source-interface MgmtEth0/RP0/CPU0/0 vrf management
+logging suppress duplicates
+service timestamps log datetime localtime msec show-timezone
+service timestamps debug datetime localtime msec show-timezone
+logging events link-status software-interfaces
+domain name celcom.com.my
+domain lookup disable
+tacacs source-interface MgmtEth0/RP0/CPU0/0 vrf management
+tacacs-server host 10.124.1.35 port 49
+ key 7 xxxxxxxx
+!
+tacacs-server host 10.124.2.35 port 49
+ key 7 xxxxxxxx
+!
+tacacs-server ipv4 dscp cs2
+tacacs-server key 7 xxxxxxxx 
+username xxxxxxxx
+ group root-lr
+ group cisco-support
+ secret 10 xxxxxxxx
+!
+username xxxxxxxx
+ group root-lr
+ group cisco-support
+ secret 5 xxxxxxxx
+!
+aaa accounting exec default start-stop group tacacs+
+aaa accounting commands default start-stop group tacacs+
+aaa group server tacacs+ TACACS
+ vrf management
+ server-private 10.124.1.35 port 49
+  key 7 xxxxxxxx
+ !
+ server-private 10.124.2.35 port 49
+  key 7 xxxxxxxx
+ !
+!
+aaa authorization exec CONSOLE none
+aaa authorization exec default group TACACS local
+aaa authorization commands CONSOLE none
+aaa authorization commands default group TACACS none
+aaa authentication login CONSOLE group TACACS local
+aaa authentication login default group TACACS local
+pce
+ address ipv4 10.124.16.1
+ api
+  user cisco
+   password encrypted xxxxxxxx
+  !
+  vrf management
+  sibling ipv4 10.124.19.77
+  ipv4
+   address 10.124.7.77
+  !
+ !
+ logging
+  pcep pcerr-received
+  no-path
+  fallback
+ !
+ peer-filter ipv4 access-list PCC_LOOPBACKS
+ segment-routing
+  traffic-eng
+  !
+  strict-sid-only
+ !
+ password encrypted xxxxxxxx
+!
+vrf management
+ address-family ipv4 unicast
+ !
+!
+tcp selective-ack
+tcp path-mtu-discovery
+tcp timestamp
+line template vty
+ login authentication default
+ exec-timeout 10 0
+ access-class ingress VTY-ACL
+ transport input ssh
+ transport output none
+!
+line console
+ authorization exec CONSOLE
+ authorization commands CONSOLE
+ login authentication CONSOLE
+ exec-timeout 10 0
+!
+http client secure-verify-peer disable
+snmp-server host 10.124.7.71 traps version 3 priv xxxxxxxx 
+snmp-server host 10.124.19.71 traps version 3 priv xxxxxxxx 
+snmp-server ipv4 dscp cs2
+snmp-server user xxxxxxxx V3Group v3 auth md5 encrypted xxxxxxxx priv des56 encrypted xxxxxxxx  IPv4 ACL-SNMP SystemOwner
+snmp-server user xxxxxxxx V3Group v3 auth md5 encrypted xxxxxxxx priv aes 128 encrypted xxxxxxxx  IPv4 ACL-SNMP SystemOwner
+snmp-server user xxxxxxxx V3Group v3 auth md5 encrypted xxxxxxxx priv aes 128 encrypted xxxxxxxx  IPv4 ACL-SNMP SystemOwner
+snmp-server user xxxxxxxx V3Group v3 auth sha encrypted xxxxxxxx priv aes 128 encrypted xxxxxxxx  IPv4 ACL-SNMP SystemOwner
+snmp-server view V3Read iso included
+snmp-server view V3Write iso included
+snmp-server group V3Group v3 priv notify v1default read V3Read write V3Write
+snmp-server queue-length 1000
+snmp-server traps rf
+snmp-server traps bfd
+snmp-server traps ntp
+snmp-server traps copy-complete
+snmp-server traps snmp linkup
+snmp-server traps snmp linkdown
+snmp-server traps snmp coldstart
+snmp-server traps snmp warmstart
+snmp-server traps snmp authentication
+snmp-server traps flash removal
+snmp-server traps flash insertion
+snmp-server traps power
+snmp-server traps config
+snmp-server traps entity
+snmp-server traps selective-vrf-download role-change
+snmp-server traps syslog
+snmp-server traps system
+snmp-server traps diameter peerup
+snmp-server traps diameter peerdown
+snmp-server traps diameter protocolerror
+snmp-server traps diameter permanentfail
+snmp-server traps diameter transientfail
+snmp-server traps bridgemib
+snmp-server traps addrpool low
+snmp-server traps addrpool high
+snmp-server traps cisco-entity-ext
+snmp-server traps entity-state operstatus
+snmp-server traps entity-state switchover
+snmp-server traps entity-redundancy all
+snmp-server traps entity-redundancy status
+snmp-server traps entity-redundancy switchover
+snmp-server contact "1800119090"
+snmp-server location "W00261"
+snmp-server packetsize 9000
+snmp-server trap-source MgmtEth0/RP0/CPU0/0
+ntp
+ ipv4 dscp cs2
+ server 10.159.255.5
+ server 10.159.255.6 prefer
+ access-group ipv4 peer NTP_SERVER
+ source Loopback0
+ update-calendar
+!
+bfd
+ echo disable
+!
+key chain ospf-key
+ key 10
+  accept-lifetime 00:00:00 january 01 2019 infinite
+  key-string password xxxxxxxx
+  send-lifetime 00:00:00 january 01 2019 infinite
+  cryptographic-algorithm HMAC-SHA-256
+ !
+!
+call-home
+ vrf management
+ service active
+ contact smart-licensing
+ source-interface MgmtEth0/RP0/CPU0/0
+ profile CiscoTAC-1
+  active
+  destination address http https://10.124.19.67:443/Transportgateway/services/DeviceRequestHandler
+  reporting smart-call-home-data disable
+  reporting smart-licensing-data
+  destination transport-method email disable
+  destination transport-method http
+ !
+!
+netconf-yang agent
+ ssh
+!
+ipv4 access-list 101
+ 1 deny icmp any any timestamp-request
+ 2 deny icmp any any timestamp-reply
+ 10 permit ipv4 any any
+!
+ipv4 access-list VTY-ACL
+ 10 remark VTY ACCESS CONTROL
+ 20 permit ipv4 host 10.124.19.66 any
+ 30 permit ipv4 host 10.124.7.66 any
+ 40 permit ipv4 host 10.1.100.196 any
+ 50 permit ipv4 host 10.1.100.195 any
+ 60 permit ipv4 host 10.1.100.194 any
+ 70 permit ipv4 host 10.159.56.77 any
+ 80 permit ipv4 host 10.159.56.88 any
+ 90 permit ipv4 host 10.5.134.51 any
+ 100 permit ipv4 host 10.124.7.69 any
+ 110 permit ipv4 host 10.124.19.69 any
+ 120 permit ipv4 host 10.5.134.51 any
+ 130 permit ipv4 host 10.124.19.73 any
+ 140 permit ipv4 host 10.223.245.190 any
+ 150 permit ipv4 host 10.1.59.93 any
+ 160 permit ipv4 host 10.1.59.94 any
+ 170 permit ipv4 host 10.124.19.84 any
+ 180 permit ipv4 host 10.124.7.84 any
+ 190 permit ipv4 10.124.19.144/28 any
+ 200 permit ipv4 10.124.7.144/28 any
+ 210 permit ipv4 host 10.159.57.88 any
+ 220 permit ipv4 10.124.19.64/27 any
+ 990 permit ipv4 host 10.124.7.71 any
+ 991 permit ipv4 host 10.124.19.71 any
+ 1000 deny ipv4 any any log-input
+!
+ipv4 access-list ACL-SNMP
+ 10 permit ipv4 host 10.1.100.194 any
+ 20 permit ipv4 host 10.1.100.195 any
+ 30 permit ipv4 host 10.1.100.196 any
+ 40 permit ipv4 host 10.1.100.197 any
+ 50 permit ipv4 host 10.1.100.198 any
+ 60 permit ipv4 host 10.1.100.199 any
+ 70 permit ipv4 host 10.1.100.200 any
+ 80 permit ipv4 host 10.1.100.224 any
+ 90 permit ipv4 host 10.124.19.66 any
+ 91 permit ipv4 any host 10.124.19.66
+ 100 permit ipv4 host 10.124.19.73 any
+ 110 permit ipv4 host 10.124.7.66 any
+ 111 permit ipv4 any host 10.124.7.66
+ 120 permit ipv4 host 10.159.56.77 any
+ 130 permit ipv4 host 10.159.56.88 any
+ 140 permit ipv4 host 10.223.245.179 any
+ 170 permit ipv4 host 10.124.19.84 any
+ 180 permit ipv4 host 10.124.7.84 any
+ 190 permit ipv4 10.124.19.144/28 any
+ 200 permit ipv4 10.124.7.144/28 any
+ 210 permit ipv4 host 10.159.57.88 any
+ 220 permit ipv4 host 10.1.100.216 any
+ 990 permit ipv4 host 10.124.7.71 any
+ 991 permit ipv4 host 10.124.19.71 any
+ 1000 deny ipv4 any any log-input
+!
+ipv4 access-list LOOPBACK
+ 10 permit ipv4 10.159.255.0 0.0.0.255 any
+ 20 permit ipv4 10.159.254.0 0.0.0.255 any
+ 30 permit ipv4 10.240.100.0 0.0.0.255 any
+ 40 permit ipv4 10.240.101.0 0.0.0.255 any
+ 50 permit ipv4 10.240.102.0 0.0.0.255 any
+ 60 permit ipv4 10.240.103.0 0.0.0.255 any
+ 70 permit ipv4 10.240.104.0 0.0.0.255 any
+ 80 permit ipv4 10.240.105.0 0.0.0.255 any
+ 90 permit ipv4 10.240.111.0 0.0.0.255 any
+!
+ipv4 access-list NTP_SERVER
+ 10 permit ipv4 host 10.159.255.5 any
+ 20 permit ipv4 host 10.159.255.6 any
+!
+ipv4 access-list PCC_LOOPBACKS
+ 10 permit ipv4 10.159.255.0/24 any
+ 20 permit ipv4 10.159.254.0/24 any
+ 30 permit ipv4 10.124.17.0/28 any
+ !Southern
+ 40 permit ipv4 10.240.34.0/24 any
+ 50 permit ipv4 10.159.255.0/24 any
+ 60 permit ipv4 10.244.244.0/24 any
+ 70 permit ipv4 10.244.56.0/24 any
+ 80 permit ipv4 10.244.61.0/24 any
+ 90 permit ipv4 10.244.52.0/24 any
+ !Northern
+ 100 permit ipv4 10.240.35.0/24 any
+ 110 permit ipv4 10.159.255.0/24 any
+ 120 permit ipv4 10.244.246.0/24 any
+ 130 permit ipv4 10.244.22.0/24 any
+ 140 permit ipv4 10.244.25.0/24 any
+ 150 permit ipv4 10.244.29.0/24 any
+ !AGGA
+ 160 permit ipv4 10.244.244.0/24 any
+ 170 permit ipv4 10.240.124.0/24 any
+ 180 permit ipv4 10.244.246.0/24 any
+ 190 permit ipv4 10.240.100.0/24 any
+ 200 permit ipv4 10.240.101.0/24 any
+!
+ipv4 access-list INGRESS_FILTER
+ 10 remark VTY ACCESS CONTROL
+ 20 permit ipv4 host 10.124.19.66 any
+ 30 permit ipv4 host 10.124.7.66 any
+ 40 permit ipv4 host 10.1.100.196 any
+ 50 permit ipv4 host 10.1.100.195 any
+ 60 permit ipv4 host 10.1.100.194 any
+ 70 permit ipv4 host 10.159.56.77 any
+ 80 permit ipv4 host 10.159.56.88 any
+ 90 permit ipv4 host 10.5.134.51 any
+ 100 permit ipv4 host 10.124.7.69 any
+ 110 permit ipv4 host 10.124.19.69 any
+ 120 permit ipv4 host 10.5.134.51 any
+ 130 permit ipv4 host 10.124.19.73 any
+ 140 permit ipv4 host 10.223.245.190 any
+ 150 permit ipv4 host 10.1.59.93 any
+ 160 permit ipv4 host 10.1.59.94 any
+ 170 permit ipv4 host 10.124.19.84 any
+ 180 permit ipv4 host 10.124.7.84 any
+ 190 permit ipv4 10.124.19.144/28 any
+ 200 permit ipv4 10.124.7.144/28 any
+ 210 permit ipv4 host 10.159.57.88 any
+ 990 permit ipv4 host 10.124.7.71 any
+ 991 permit ipv4 host 10.124.19.71 any
+ 1000 deny ipv4 any any log-input
+!
+ipv4 access-list FILTER_PERIMETER
+ 10 permit ipv4 10.159.255.0/24 any
+ 20 permit ipv4 10.159.254.0/24 any
+ 30 permit ipv4 10.124.17.0/28 any
+ !Southern
+ 40 permit ipv4 10.240.34.0/24 any
+ 50 permit ipv4 10.159.255.0/24 any
+ 60 permit ipv4 10.244.244.0/24 any
+ 70 permit ipv4 10.244.56.0/24 any
+ 80 permit ipv4 10.244.61.0/24 any
+ 90 permit ipv4 10.244.52.0/24 any
+ !Northern
+ 100 permit ipv4 10.240.35.0/24 any
+ 110 permit ipv4 10.159.255.0/24 any
+ 120 permit ipv4 10.244.246.0/24 any
+ 130 permit ipv4 10.244.22.0/24 any
+ 140 permit ipv4 10.244.25.0/24 any
+ 150 permit ipv4 10.244.29.0/24 any
+ !AGGA
+ 160 permit ipv4 10.244.244.0/24 any
+ 170 permit ipv4 10.240.124.0/24 any
+ 180 permit ipv4 10.244.246.0/24 any
+ 190 permit ipv4 10.240.100.0/24 any
+ 200 permit ipv4 10.240.101.0/24 any
+!
+interface Loopback0
+ description ***Router-ID***
+ ipv4 address 10.124.16.1 255.255.255.255
+!
+!KPGPCE01-XRv9K 7.9.1
+interface MgmtEth0/RP0/CPU0/0
+ vrf management
+ ipv4 address 10.124.7.77 255.255.255.224
+!
+interface GigabitEthernet0/0/0/0
+ description ** To KPGUER01 **
+ ipv4 address 10.124.16.3 255.255.255.254
+ carrier-delay up 5000 down 0
+ load-interval 30
+ dampening 1 750 2000 2
+!
+interface GigabitEthernet0/0/0/1
+ description ** To KPGUER02 **
+ ipv4 address 10.124.16.5 255.255.255.254
+ carrier-delay up 5000 down 0
+ load-interval 30
+ dampening 1 750 2000 2
+!
+prefix-set IPRAN-LOOPBACKS
+  10.240.100.0/24 ge 32,
+  10.240.101.0/24 ge 32,
+  10.240.102.0/24 ge 32,
+  10.240.103.0/24 ge 32,
+  10.240.104.0/24 ge 32,
+  10.240.105.0/24 ge 32,
+  10.159.255.0/24 ge 32,
+  10.159.254.0/24 ge 32,
+  10.240.124.50/32 ge 32
+end-set
+!
+prefix-set ospf-high-prefixes-core
+  10.159.255.0/24,
+  10.159.254.0/24
+end-set
+!
+route-policy DENY_ALL
+  drop
+end-policy
+!
+route-policy DENY_SD_EXT
+  if tag is 65112 then
+    drop
+  else
+    pass
+  endif
+end-policy
+!
+route-policy RP_BGP_IPv4_PIC_EDGE
+  set path-selection backup 1 install multipath-protect
+end-policy
+!
+route-policy ospf-spf-priority-core
+  if (destination in ospf-high-prefixes-core) then
+    set spf-priority high
+  endif
+end-policy
+!
+router static
+ vrf management
+  address-family ipv4 unicast
+   0.0.0.0/0 10.124.7.65
+  !
+ !
+!
+router ospf 100
+ nsr
+ log adjacency changes detail
+ router-id 10.124.16.1
+ segment-routing mpls
+ bfd minimum-interval 150
+ bfd fast-detect
+ bfd multiplier 3
+ authentication message-digest keychain ospf-key
+ segment-routing forwarding mpls
+ nsf cisco
+ auto-cost reference-bandwidth 100000
+ spf prefix-priority route-policy ospf-spf-priority-core
+ area 0
+  authentication message-digest
+  interface Loopback0
+   passive enable
+   prefix-sid absolute 31963
+   prefix-sid strict-spf absolute 31962
+  !
+  interface GigabitEthernet0/0/0/0
+   cost 32000
+   authentication message-digest keychain ospf-key
+   network point-to-point
+  !
+  interface GigabitEthernet0/0/0/1
+   cost 32000
+   authentication message-digest keychain ospf-key
+   network point-to-point
+  !
+ !
+!
+router bgp 65535
+ bgp router-id 10.124.16.1
+ bgp log neighbor changes detail
+ address-family ipv4 unicast
+  additional-paths receive
+  additional-paths send
+  maximum-paths ibgp 2
+  additional-paths selection route-policy RP_BGP_IPv4_PIC_EDGE
+  nexthop resolution prefix-length minimum 32
+  nexthop trigger-delay critical 0
+ !
+ address-family link-state link-state
+  nexthop resolution prefix-length minimum 32
+  nexthop trigger-delay critical 0
+ !
+ neighbor-group RR
+  remote-as 65535
+  password encrypted xxxxxxxx
+  description Regional-RR-peering
+  update-source Loopback0
+  address-family ipv4 unicast
+  !
+  address-family link-state link-state
+   maximum-prefix 1000000 70 discard-extra-paths
+   route-policy DENY_ALL out
+  !
+ !
+ neighbor 10.159.255.51
+  use neighbor-group RR
+  description KPGRR01-CRSX
+ !
+ neighbor 10.159.255.52
+  use neighbor-group RR
+  description WPJRR01-CRSX
+ !
+!
+mpls oam
+!
+segment-routing
+ global-block 16000 31999
+!
+xml agent tty
+!
+netconf agent tty
+!
+performance-measurement
+ interface GigabitEthernet0/0/0/0
+  delay-measurement
+   advertise-delay 16777215
+  !
+ !
+ interface GigabitEthernet0/0/0/1
+  delay-measurement
+   advertise-delay 16777215
+  !
+ !
+!
+ssh client dscp 16
+ssh server dscp 16
+ssh timeout 10
+ssh server rate-limit 600
+ssh server session-limit 10
+ssh server v2
+ssh server vrf default ipv4 access-list VTY-ACL
+ssh server vrf management
+end
+

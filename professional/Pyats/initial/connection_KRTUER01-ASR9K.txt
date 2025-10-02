@@ -1,0 +1,658 @@
+
+2024-06-07 12:33:07,782: %UNICON-INFO: +++ KRTUER01-ASR9K logfile initial/connection_KRTUER01-ASR9K.txt +++
+
+2024-06-07 12:33:07,782: %UNICON-INFO: +++ Unicon plugin iosxr (unicon.plugins.iosxr) +++
+
+2024-06-07 12:33:07,783: %UNICON-INFO: connection via proxy jumphost
+
+2024-06-07 12:33:07,788: %UNICON-INFO: +++ connection to spawn: ssh -l cisco_project 10.159.56.88 -p 10080, id: 4614411216 +++
+
+2024-06-07 12:33:07,788: %UNICON-INFO: connection to jumphost
+
+
+############################################################
+Please use below url to access CSP collector.
+IPv4 URL : https://192.168.1.100:8001
+
+############################################################
+############################## WARNING!!! #################################
+################## READ THIS BEFORE ATTEMPTING TO LOGON ###################
+#                                                                         #
+#    This System is for the use of authorized users only.  Individuals    #
+#    using this computer without authority, or in excess of their         #
+#    authority, are subject to having all of their activities on this     #
+#    system monitored and recorded by system personnel.  In the course    #
+#    of monitoring individuals improperly using this system, or in the    #
+#    course of system maintenance, the activities of authorized users     #
+#    may also be monitored.  Anyone using this system expressly           #
+#    consents to such monitoring and is advised that if such              #
+#    monitoring reveals possible criminal activity, system personnel      #
+#    may provide the evidence of such monitoring to law enforcement       #
+#    officials.  You cannot copy, disclose, display or otherwise          #
+#    communicate the contents of this server except to other Cisco        #
+#    employees who have been authorized to access this server.            #
+#                                                                         # 
+######################### Confidential Information ########################
+Last login: Fri Jun  7 12:10:25 2024 from 10.202.38.106
+[cisco_project@celcom-celm-cspc ~]$ 
+
+2024-06-07 12:33:08,341: %UNICON-INFO: +++ initializing handle +++
+
+2024-06-07 12:33:08,462: %UNICON-INFO: connection to KRTUER01-ASR9K
+ssh -l V06519X 10.159.255.98 -p 22
+
+
+*********************************************************************
+*                                                                   *
+*  This is a system belonging to Celcom Axiata Bhd. All Celcom      *
+*  systems are provided for the processing of Celcom's information  *
+*  and Celcom customer personal data. All content on this system is *
+*  confidential in nature and is protected as required by the       *
+*  Personal Data Protection Act 2010, other Malaysian Laws and      *
+*  regulations as well as Celcom's confidentiality provisions and   *
+*  terms of use. The activities to this system may be monitored,    *
+*  recorded, or captured in order to comply with Celcom's internal  *
+*  policies and the relevant Malaysian Laws and Regulations. Any    *
+*  unauthorised use of the system or the information therein shall  *
+*  be subject to disciplinary action and may lead to criminal       *
+*  prosecution. Unauthorized or improper use of this system may     *
+*  result in administrative action, disciplinary action and/or      *
+*  civil charges/criminal penalties, with jail terms of up to 3     *
+*  years and fines of up to RM 500,000 By continuing to use this    *
+*  system you indicate your awareness of and consent to these terms *
+*  and conditions of use.                                           *
+*                                                                   *
+*********************************************************************
+
+
+Password:
+
+
+2024-06-07 12:33:10,483: %UNICON-WARNING: Timeout of 2 seconds has been reached.
+Prompt Recovery has commenced. Total timeout occurs in 50 seconds.
+
+2024-06-07 12:33:10,628: %UNICON-INFO: Sending prompt recovery command: b'\r'
+
+
+
+*********************************************************************
+*                                                                   *
+*  This is a system belonging to Celcom Axiata Bhd. All Celcom      *
+*  systems are provided for the processing of Celcom's information  *
+*  and Celcom customer personal data. All content on this system is *
+*  confidential in nature and is protected as required by the       *
+*  Personal Data Protection Act 2010, other Malaysian Laws and      *
+*  regulations as well as Celcom's confidentiality provisions and   *
+*  terms of use. The activities to this system may be monitored,    *
+*  recorded, or captured in order to comply with Celcom's internal  *
+*  policies and the relevant Malaysian Laws and Regulations. Any    *
+*  unauthorised use of the system or the information therein shall  *
+*  be subject to disciplinary action and may lead to criminal       *
+*  prosecution. Unauthorized or improper use of this system may     *
+*  result in administrative action, disciplinary action and/or      *
+*  civil charges/criminal penalties, with jail terms of up to 3     *
+*  years and fines of up to RM 500,000 By continuing to use this    *
+*  system you indicate your awareness of and consent to these terms *
+*  and conditions of use.                                           *
+*                                                                   *
+*********************************************************************
+
+
+
+RP/0/RSP0/CPU0:KRTUER01-ASR9K#
+
+2024-06-07 12:33:11,768: %UNICON-INFO: +++ initializing handle +++
+
+2024-06-07 12:33:11,966: %UNICON-INFO: +++ KRTUER01-ASR9K with via 'cli': executing command 'terminal length 0' +++
+terminal length 0
+Fri Jun  7 12:33:12.240 MYT
+RP/0/RSP0/CPU0:KRTUER01-ASR9K#
+
+2024-06-07 12:33:12,909: %UNICON-INFO: +++ KRTUER01-ASR9K with via 'cli': executing command 'terminal width 0' +++
+terminal width 0
+Fri Jun  7 12:33:13.113 MYT
+RP/0/RSP0/CPU0:KRTUER01-ASR9K#
+
+2024-06-07 12:33:14,326: %UNICON-INFO: +++ KRTUER01-ASR9K with via 'cli': executing command 'show route vrf all ipv4 172.18.57.128/28' +++
+show route vrf all ipv4 172.18.57.128/28
+Fri Jun  7 12:33:14.549 MYT
+
+VRF: **nVSatellite
+
+
+% Network not in table
+
+
+VRF: CN
+
+
+% Network not in table
+
+
+VRF: Gb
+
+
+% Network not in table
+
+
+VRF: Gn
+
+
+% Network not in table
+
+
+VRF: SD
+
+
+% Network not in table
+
+
+VRF: LTE
+
+
+% Network not in table
+
+
+VRF: PTP
+
+
+% Network not in table
+
+
+VRF: E_OM
+
+
+% Network not in table
+
+
+VRF: Z_2G
+
+
+% Network not in table
+
+
+VRF: Z_3G
+
+
+% Network not in table
+
+
+VRF: CD_OM
+
+
+% Network not in table
+
+
+VRF: CD_X2
+
+
+% Network not in table
+
+
+VRF: probe
+
+
+% Network not in table
+
+
+VRF: A_Digi
+
+
+% Network not in table
+
+
+VRF: CD_PTP
+
+
+% Network not in table
+
+
+VRF: CD_S1C
+
+
+% Network not in table
+
+
+VRF: CD_S1U
+
+
+% Network not in table
+
+
+VRF: E_2G3G
+
+
+% Network not in table
+
+
+VRF: MSS_OM
+
+
+% Network not in table
+
+
+VRF: PTN_OM
+
+
+% Network not in table
+
+
+VRF: TX_NMS
+
+
+% Network not in table
+
+
+VRF: Z_A_CP
+
+
+% Network not in table
+
+
+VRF: Z_A_UP
+
+
+% Network not in table
+
+
+VRF: CD_ABIS
+
+
+% Network not in table
+
+
+VRF: CME_NMS
+
+
+% Network not in table
+
+
+VRF: E_Iu_CP
+
+
+Routing entry for 172.18.57.128/28
+  Known via "bgp 65535", distance 200, metric 0
+  Tag 138008, type internal
+  Installed May 31 05:18:19.011 for 1w0d
+  Routing Descriptor Blocks
+    10.159.255.17, from 10.159.255.76
+      Nexthop in Vrf: "default", Table: "default", IPv4 Unicast, Table Id: 0xe0000000
+      Route metric is 0
+  No advertising protos. 
+
+VRF: E_Iu_UP
+
+
+% Network not in table
+
+
+VRF: GB_Digi
+
+
+% Network not in table
+
+
+VRF: H_IuoIP
+
+
+% Network not in table
+
+
+VRF: SIGTRAN
+
+
+Routing entry for 172.18.57.128/28
+  Known via "bgp 65535", distance 200, metric 0
+  Tag 138008
+  Number of pic paths 1 , type internal
+  Installed Jun  4 04:10:53.863 for 3d08h
+  Routing Descriptor Blocks
+    10.159.255.5, from 10.159.255.76, BGP backup path
+      Nexthop in Vrf: "default", Table: "default", IPv4 Unicast, Table Id: 0xe0000000
+      Route metric is 0
+    10.159.255.17, from 10.159.255.76
+      Nexthop in Vrf: "default", Table: "default", IPv4 Unicast, Table Id: 0xe0000000
+      Route metric is 0
+  No advertising protos. 
+
+VRF: UNIP_OM
+
+
+% Network not in table
+
+
+VRF: Z_IuR_CP
+
+
+% Network not in table
+
+
+VRF: Z_IuR_UP
+
+
+% Network not in table
+
+
+VRF: probe_om
+
+
+% Network not in table
+
+
+VRF: A_CP_Digi
+
+
+% Network not in table
+
+
+VRF: Z_IuCS_CP
+
+
+% Network not in table
+
+
+VRF: Z_IuCS_UP
+
+
+% Network not in table
+
+
+VRF: Digi_MC_S1
+
+
+% Network not in table
+
+
+VRF: maxis_MC_Gb
+
+
+% Network not in table
+
+
+VRF: maxis_MC_ACP
+
+
+% Network not in table
+
+
+VRF: maxis_MC_AUP
+
+
+% Network not in table
+
+
+VRF: maxis_S1U_MOCN
+
+
+% Network not in table
+
+
+VRF: **eint
+
+
+% Network not in table
+
+
+VRF: **iid
+
+
+% Network not in table
+
+RP/0/RSP0/CPU0:KRTUER01-ASR9K#
+
+2024-06-07 14:18:58,233: %UNICON-INFO: +++ KRTUER01-ASR9K logfile initial/connection_KRTUER01-ASR9K.txt +++
+
+2024-06-07 14:18:58,234: %UNICON-INFO: +++ Unicon plugin iosxr (unicon.plugins.iosxr) +++
+
+2024-06-07 14:18:58,235: %UNICON-INFO: connection via proxy jumphost
+
+2024-06-07 14:18:58,240: %UNICON-INFO: +++ connection to spawn: ssh -l cisco_project 10.159.56.88 -p 10080, id: 5171154704 +++
+
+2024-06-07 14:18:58,241: %UNICON-INFO: connection to jumphost
+
+
+############################################################
+Please use below url to access CSP collector.
+IPv4 URL : https://192.168.1.100:8001
+
+############################################################
+############################## WARNING!!! #################################
+################## READ THIS BEFORE ATTEMPTING TO LOGON ###################
+#                                                                         #
+#    This System is for the use of authorized users only.  Individuals    #
+#    using this computer without authority, or in excess of their         #
+#    authority, are subject to having all of their activities on this     #
+#    system monitored and recorded by system personnel.  In the course    #
+#    of monitoring individuals improperly using this system, or in the    #
+#    course of system maintenance, the activities of authorized users     #
+#    may also be monitored.  Anyone using this system expressly           #
+#    consents to such monitoring and is advised that if such              #
+#    monitoring reveals possible criminal activity, system personnel      #
+#    may provide the evidence of such monitoring to law enforcement       #
+#    officials.  You cannot copy, disclose, display or otherwise          #
+#    communicate the contents of this server except to other Cisco        #
+#    employees who have been authorized to access this server.            #
+#                                                                         # 
+######################### Confidential Information ########################
+Last login: Fri Jun  7 13:52:02 2024 from 10.202.38.53
+[cisco_project@celcom-celm-cspc ~]$ 
+
+2024-06-07 14:18:58,823: %UNICON-INFO: +++ initializing handle +++
+
+2024-06-07 14:18:58,965: %UNICON-INFO: connection to KRTUER01-ASR9K
+ssh -l V06519X 10.159.255.98 -p 22
+
+
+*********************************************************************
+*                                                                   *
+*  This is a system belonging to Celcom Axiata Bhd. All Celcom      *
+*  systems are provided for the processing of Celcom's information  *
+*  and Celcom customer personal data. All content on this system is *
+*  confidential in nature and is protected as required by the       *
+*  Personal Data Protection Act 2010, other Malaysian Laws and      *
+*  regulations as well as Celcom's confidentiality provisions and   *
+*  terms of use. The activities to this system may be monitored,    *
+*  recorded, or captured in order to comply with Celcom's internal  *
+*  policies and the relevant Malaysian Laws and Regulations. Any    *
+*  unauthorised use of the system or the information therein shall  *
+*  be subject to disciplinary action and may lead to criminal       *
+*  prosecution. Unauthorized or improper use of this system may     *
+*  result in administrative action, disciplinary action and/or      *
+*  civil charges/criminal penalties, with jail terms of up to 3     *
+*  years and fines of up to RM 500,000 By continuing to use this    *
+*  system you indicate your awareness of and consent to these terms *
+*  and conditions of use.                                           *
+*                                                                   *
+*********************************************************************
+
+
+Password:
+
+
+2024-06-07 14:19:00,982: %UNICON-WARNING: Timeout of 2 seconds has been reached.
+Prompt Recovery has commenced. Total timeout occurs in 50 seconds.
+
+2024-06-07 14:19:01,082: %UNICON-INFO: Sending prompt recovery command: b'\r'
+
+
+
+*********************************************************************
+*                                                                   *
+*  This is a system belonging to Celcom Axiata Bhd. All Celcom      *
+*  systems are provided for the processing of Celcom's information  *
+*  and Celcom customer personal data. All content on this system is *
+*  confidential in nature and is protected as required by the       *
+*  Personal Data Protection Act 2010, other Malaysian Laws and      *
+*  regulations as well as Celcom's confidentiality provisions and   *
+*  terms of use. The activities to this system may be monitored,    *
+*  recorded, or captured in order to comply with Celcom's internal  *
+*  policies and the relevant Malaysian Laws and Regulations. Any    *
+*  unauthorised use of the system or the information therein shall  *
+*  be subject to disciplinary action and may lead to criminal       *
+*  prosecution. Unauthorized or improper use of this system may     *
+*  result in administrative action, disciplinary action and/or      *
+*  civil charges/criminal penalties, with jail terms of up to 3     *
+*  years and fines of up to RM 500,000 By continuing to use this    *
+*  system you indicate your awareness of and consent to these terms *
+*  and conditions of use.                                           *
+*                                                                   *
+*********************************************************************
+
+
+
+RP/0/RSP0/CPU0:KRTUER01-ASR9K#
+
+2024-06-07 14:19:02,278: %UNICON-INFO: +++ initializing handle +++
+
+2024-06-07 14:19:02,570: %UNICON-INFO: +++ KRTUER01-ASR9K with via 'cli': executing command 'terminal length 0' +++
+terminal length 0
+Fri Jun  7 14:19:02.821 MYT
+RP/0/RSP0/CPU0:KRTUER01-ASR9K#
+
+2024-06-07 14:19:03,455: %UNICON-INFO: +++ KRTUER01-ASR9K with via 'cli': executing command 'terminal width 0' +++
+terminal width 0
+Fri Jun  7 14:19:03.687 MYT
+RP/0/RSP0/CPU0:KRTUER01-ASR9K#
+
+2024-06-07 14:19:18,070: %UNICON-INFO: +++ KRTUER01-ASR9K logfile initial/connection_KRTUER01-ASR9K.txt +++
+
+2024-06-07 14:19:18,070: %UNICON-INFO: +++ Unicon plugin iosxr (unicon.plugins.iosxr) +++
+
+2024-06-07 14:19:18,071: %UNICON-INFO: connection via proxy jumphost
+
+2024-06-07 14:19:18,074: %UNICON-INFO: +++ connection to spawn: ssh -l cisco_project 10.159.56.88 -p 10080, id: 5136542688 +++
+
+2024-06-07 14:19:18,075: %UNICON-INFO: connection to jumphost
+
+
+############################################################
+Please use below url to access CSP collector.
+IPv4 URL : https://192.168.1.100:8001
+
+############################################################
+############################## WARNING!!! #################################
+################## READ THIS BEFORE ATTEMPTING TO LOGON ###################
+#                                                                         #
+#    This System is for the use of authorized users only.  Individuals    #
+#    using this computer without authority, or in excess of their         #
+#    authority, are subject to having all of their activities on this     #
+#    system monitored and recorded by system personnel.  In the course    #
+#    of monitoring individuals improperly using this system, or in the    #
+#    course of system maintenance, the activities of authorized users     #
+#    may also be monitored.  Anyone using this system expressly           #
+#    consents to such monitoring and is advised that if such              #
+#    monitoring reveals possible criminal activity, system personnel      #
+#    may provide the evidence of such monitoring to law enforcement       #
+#    officials.  You cannot copy, disclose, display or otherwise          #
+#    communicate the contents of this server except to other Cisco        #
+#    employees who have been authorized to access this server.            #
+#                                                                         # 
+######################### Confidential Information ########################
+Last login: Fri Jun  7 14:01:15 2024 from 10.202.38.106
+[cisco_project@celcom-celm-cspc ~]$ 
+
+2024-06-07 14:19:18,639: %UNICON-INFO: +++ initializing handle +++
+
+2024-06-07 14:19:18,793: %UNICON-INFO: connection to KRTUER01-ASR9K
+ssh -l V06519X 10.159.255.98 -p 22
+
+
+*********************************************************************
+*                                                                   *
+*  This is a system belonging to Celcom Axiata Bhd. All Celcom      *
+*  systems are provided for the processing of Celcom's information  *
+*  and Celcom customer personal data. All content on this system is *
+*  confidential in nature and is protected as required by the       *
+*  Personal Data Protection Act 2010, other Malaysian Laws and      *
+*  regulations as well as Celcom's confidentiality provisions and   *
+*  terms of use. The activities to this system may be monitored,    *
+*  recorded, or captured in order to comply with Celcom's internal  *
+*  policies and the relevant Malaysian Laws and Regulations. Any    *
+*  unauthorised use of the system or the information therein shall  *
+*  be subject to disciplinary action and may lead to criminal       *
+*  prosecution. Unauthorized or improper use of this system may     *
+*  result in administrative action, disciplinary action and/or      *
+*  civil charges/criminal penalties, with jail terms of up to 3     *
+*  years and fines of up to RM 500,000 By continuing to use this    *
+*  system you indicate your awareness of and consent to these terms *
+*  and conditions of use.                                           *
+*                                                                   *
+*********************************************************************
+
+
+Password:
+
+
+2024-06-07 14:19:20,814: %UNICON-WARNING: Timeout of 2 seconds has been reached.
+Prompt Recovery has commenced. Total timeout occurs in 50 seconds.
+
+2024-06-07 14:19:20,967: %UNICON-INFO: Sending prompt recovery command: b'\r'
+
+
+*********************************************************************
+*                                                                   *
+*  This is a system belonging to Celcom Axiata Bhd. All Celcom      *
+*  systems are provided for the processing of Celcom's information  *
+*  and Celcom customer personal data. All content on this system is *
+*  confidential in nature and is protected as required by the       *
+*  Personal Data Protection Act 2010, other Malaysian Laws and      *
+*  regulations as well as Celcom's confidentiality provisions and   *
+*  terms of use. The activities to this system may be monitored,    *
+*  recorded, or captured in order to comply with Celcom's internal  *
+*  policies and the relevant Malaysian Laws and Regulations. Any    *
+*  unauthorised use of the system or the information therein shall  *
+*  be subject to disciplinary action and may lead to criminal       *
+*  prosecution. Unauthorized or improper use of this system may     *
+*  result in administrative action, disciplinary action and/or      *
+*  civil charges/criminal penalties, with jail terms of up to 3     *
+*  years and fines of up to RM 500,000 By continuing to use this    *
+*  system you indicate your awareness of and consent to these terms *
+*  and conditions of use.                                           *
+*                                                                   *
+*********************************************************************
+
+
+
+RP/0/RSP0/CPU0:KRTUER01-ASR9K#
+
+2024-06-07 14:19:21,898: %UNICON-INFO: +++ initializing handle +++
+
+2024-06-07 14:19:22,101: %UNICON-INFO: +++ KRTUER01-ASR9K with via 'cli': executing command 'terminal length 0' +++
+terminal length 0
+Fri Jun  7 14:19:22.336 MYT
+RP/0/RSP0/CPU0:KRTUER01-ASR9K#
+
+2024-06-07 14:19:23,043: %UNICON-INFO: +++ KRTUER01-ASR9K with via 'cli': executing command 'terminal width 0' +++
+terminal width 0
+Fri Jun  7 14:19:23.280 MYT
+RP/0/RSP0/CPU0:KRTUER01-ASR9K#
+
+2024-06-07 14:19:24,520: %UNICON-INFO: +++ KRTUER01-ASR9K with via 'cli': executing command 'show vrf E_Iu_CP detail' +++
+show vrf E_Iu_CP detail
+Fri Jun  7 14:19:24.738 MYT
+
+VRF E_Iu_CP; RD 10.159.255.98:24; VPN ID not set
+VRF mode: Regular
+Description not set
+Interfaces:
+  TenGigE0/4/0/24.301
+Address family IPV4 Unicast
+  Import VPN route-target communities:
+    RT:65535:60280
+    RT:65535:60282
+    RT:65535:60284
+    RT:65535:60286
+    RT:65535:63161
+  Export VPN route-target communities:
+    RT:65535:60280
+    RT:65535:60281
+    RT:65535:60283
+    RT:65535:60285
+  No import route policy
+  No export route policy
+Address family IPV6 Unicast
+  No import VPN route-target communities
+  No export VPN route-target communities
+  No import route policy
+  No export route policy
+RP/0/RSP0/CPU0:KRTUER01-ASR9K#

@@ -1,0 +1,286 @@
++++ KRTUER01-ASR9K with via 'cli': executing command 'show route vrf all ipv4 172.18.57.128/28' +++
+show route vrf all ipv4 172.18.57.128/28
+Fri Jun  7 12:33:14.549 MYT
+
+VRF: **nVSatellite
+
+
+% Network not in table
+
+
+VRF: CN
+
+
+% Network not in table
+
+
+VRF: Gb
+
+
+% Network not in table
+
+
+VRF: Gn
+
+
+% Network not in table
+
+
+VRF: SD
+
+
+% Network not in table
+
+
+VRF: LTE
+
+
+% Network not in table
+
+
+VRF: PTP
+
+
+% Network not in table
+
+
+VRF: E_OM
+
+
+% Network not in table
+
+
+VRF: Z_2G
+
+
+% Network not in table
+
+
+VRF: Z_3G
+
+
+% Network not in table
+
+
+VRF: CD_OM
+
+
+% Network not in table
+
+
+VRF: CD_X2
+
+
+% Network not in table
+
+
+VRF: probe
+
+
+% Network not in table
+
+
+VRF: A_Digi
+
+
+% Network not in table
+
+
+VRF: CD_PTP
+
+
+% Network not in table
+
+
+VRF: CD_S1C
+
+
+% Network not in table
+
+
+VRF: CD_S1U
+
+
+% Network not in table
+
+
+VRF: E_2G3G
+
+
+% Network not in table
+
+
+VRF: MSS_OM
+
+
+% Network not in table
+
+
+VRF: PTN_OM
+
+
+% Network not in table
+
+
+VRF: TX_NMS
+
+
+% Network not in table
+
+
+VRF: Z_A_CP
+
+
+% Network not in table
+
+
+VRF: Z_A_UP
+
+
+% Network not in table
+
+
+VRF: CD_ABIS
+
+
+% Network not in table
+
+
+VRF: CME_NMS
+
+
+% Network not in table
+
+
+VRF: E_Iu_CP
+
+
+Routing entry for 172.18.57.128/28
+  Known via "bgp 65535", distance 200, metric 0
+  Tag 138008, type internal
+  Installed May 31 05:18:19.011 for 1w0d
+  Routing Descriptor Blocks
+    10.159.255.17, from 10.159.255.76
+      Nexthop in Vrf: "default", Table: "default", IPv4 Unicast, Table Id: 0xe0000000
+      Route metric is 0
+  No advertising protos. 
+
+VRF: E_Iu_UP
+
+
+% Network not in table
+
+
+VRF: GB_Digi
+
+
+% Network not in table
+
+
+VRF: H_IuoIP
+
+
+% Network not in table
+
+
+VRF: SIGTRAN
+
+
+Routing entry for 172.18.57.128/28
+  Known via "bgp 65535", distance 200, metric 0
+  Tag 138008
+  Number of pic paths 1 , type internal
+  Installed Jun  4 04:10:53.863 for 3d08h
+  Routing Descriptor Blocks
+    10.159.255.5, from 10.159.255.76, BGP backup path
+      Nexthop in Vrf: "default", Table: "default", IPv4 Unicast, Table Id: 0xe0000000
+      Route metric is 0
+    10.159.255.17, from 10.159.255.76
+      Nexthop in Vrf: "default", Table: "default", IPv4 Unicast, Table Id: 0xe0000000
+      Route metric is 0
+  No advertising protos. 
+
+VRF: UNIP_OM
+
+
+% Network not in table
+
+
+VRF: Z_IuR_CP
+
+
+% Network not in table
+
+
+VRF: Z_IuR_UP
+
+
+% Network not in table
+
+
+VRF: probe_om
+
+
+% Network not in table
+
+
+VRF: A_CP_Digi
+
+
+% Network not in table
+
+
+VRF: Z_IuCS_CP
+
+
+% Network not in table
+
+
+VRF: Z_IuCS_UP
+
+
+% Network not in table
+
+
+VRF: Digi_MC_S1
+
+
+% Network not in table
+
+
+VRF: maxis_MC_Gb
+
+
+% Network not in table
+
+
+VRF: maxis_MC_ACP
+
+
+% Network not in table
+
+
+VRF: maxis_MC_AUP
+
+
+% Network not in table
+
+
+VRF: maxis_S1U_MOCN
+
+
+% Network not in table
+
+
+VRF: **eint
+
+
+% Network not in table
+
+
+VRF: **iid
+
+
+% Network not in table
+
+RP/0/RSP0/CPU0:KRTUER01-ASR9K#

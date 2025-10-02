@@ -1,0 +1,6 @@
+apic:
+  tenants:
+    - name: AESM001
+      vrfs:
+        - name: VRF1
+        - name: VRF2

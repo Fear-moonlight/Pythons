@@ -1,0 +1,84 @@
+{
+  "_exclude": [],
+  "vrf": {
+    "E_Iu_CP": {
+      "address_family": {
+        "ipv4": {
+          "routes": {
+            "172.18.57.128/28": {
+              "active": true,
+              "distance": 200,
+              "installed": {
+                "date": "May 31 05:18:19.011",
+                "for": "1w0d"
+              },
+              "ip": "172.18.57.128",
+              "known_via": "bgp 65535",
+              "mask": "28",
+              "metric": 0,
+              "next_hop": {
+                "next_hop_list": {
+                  "1": {
+                    "address_family": "IPv4 Unicast",
+                    "from": "10.159.255.76",
+                    "index": 1,
+                    "metric": 0,
+                    "next_hop": "10.159.255.17",
+                    "nexthop_in_vrf": "default",
+                    "table": "default",
+                    "table_id": "0xe0000000"
+                  }
+                }
+              },
+              "route": "172.18.57.128/28",
+              "tag": "138008",
+              "type": "internal"
+            }
+          }
+        }
+      }
+    },
+    "SIGTRAN": {
+      "address_family": {
+        "IPv4 Unicast": {
+          "routes": {
+            "172.18.57.128/28": {
+              "active": true,
+              "distance": 200,
+              "installed": {
+                "date": "Jun  4 04:10:53.863",
+                "for": "3d08h"
+              },
+              "ip": "172.18.57.128",
+              "known_via": "bgp 65535",
+              "mask": "28",
+              "metric": 0,
+              "next_hop": {
+                "next_hop_list": {
+                  "1": {
+                    "address_family": "IPv4 Unicast",
+                    "index": 1,
+                    "nexthop_in_vrf": "default",
+                    "table": "default",
+                    "table_id": "0xe0000000"
+                  },
+                  "2": {
+                    "address_family": "IPv4 Unicast",
+                    "from": "10.159.255.76",
+                    "index": 2,
+                    "metric": 0,
+                    "next_hop": "10.159.255.17",
+                    "nexthop_in_vrf": "default",
+                    "table": "default",
+                    "table_id": "0xe0000000"
+                  }
+                }
+              },
+              "route": "172.18.57.128/28"
+            }
+          }
+        }
+      }
+    }
+  }
+}

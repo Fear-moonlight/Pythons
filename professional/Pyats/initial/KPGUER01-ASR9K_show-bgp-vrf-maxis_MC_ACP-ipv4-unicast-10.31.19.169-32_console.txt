@@ -1,0 +1,33 @@
++++ KPGUER01-ASR9K with via 'cli': executing command 'show bgp vrf maxis_MC_ACP ipv4 unicast 10.31.19.169/32' +++
+show bgp vrf maxis_MC_ACP ipv4 unicast 10.31.19.169/32
+Thu Jun  6 10:41:53.914 MYT
+BGP routing table entry for 10.31.19.169/32, Route Distinguisher: 10.159.255.5:106
+Versions:
+  Process           bRIB/RIB  SendTblVer
+  Speaker         1024072566  1024072566
+Last Modified: Jun  1 04:08:19.516 for 5d06h
+Paths: (2 available, best #1)
+  Advertised to CE peers (in unique update groups):
+    10.151.81.221   
+  Path #1: Received by speaker 0
+  Advertised to CE peers (in unique update groups):
+    10.151.81.221   
+  Local
+    10.159.255.189 (metric 31) from 10.159.255.51 (10.244.244.154)
+      Received Label 373679 
+      Origin incomplete, metric 0, localpref 100, valid, internal, best, group-best, import-candidate, imported
+      Received Path ID 0, Local Path ID 1, version 1024072307
+      Extended community: RT:65104:63722 RT:65535:60900 RT:65535:60902 RT:65535:60904 RT:65535:66361 
+      Originator: 10.244.244.154, Cluster list: 10.159.255.51, 10.159.255.43, 10.159.255.189
+      Source AFI: VPNv4 Unicast, Source VRF: default, Source Route Distinguisher: 10.244.244.154:5
+  Path #2: Received by speaker 0
+  Not advertised to any peer
+  Local
+    10.159.255.189 (metric 31) from 10.159.255.51 (10.244.244.155)
+      Received Label 196078 
+      Origin incomplete, metric 0, localpref 100, valid, internal, imported
+      Received Path ID 0, Local Path ID 0, version 0
+      Extended community: RT:65104:63722 RT:65535:60900 RT:65535:60902 RT:65535:60904 RT:65535:66361 
+      Originator: 10.244.244.155, Cluster list: 10.159.255.51, 10.159.255.43, 10.159.255.189
+      Source AFI: VPNv4 Unicast, Source VRF: default, Source Route Distinguisher: 10.244.244.155:5
+RP/0/RSP0/CPU0:KPGUER01-ASR9K#

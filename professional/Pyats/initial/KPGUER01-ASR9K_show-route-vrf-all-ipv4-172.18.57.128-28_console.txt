@@ -1,0 +1,1091 @@
++++ KPGUER01-ASR9K with via 'cli': executing command 'show route vrf all ipv4 172.18.57.128/28' +++
+show route vrf all ipv4 172.18.57.128/28
+Thu Jun  6 18:47:54.174 MYT
+
+VRF: **nVSatellite
+
+
+% Network not in table
+
+
+VRF: CN
+
+
+% Network not in table
+
+
+VRF: Gb
+
+
+% Network not in table
+
+
+VRF: Gn
+
+
+% Network not in table
+
+
+VRF: IT
+
+
+% Network not in table
+
+
+VRF: SD
+
+
+% Network not in table
+
+
+VRF: LTE
+
+
+% Network not in table
+
+
+VRF: NGM
+
+
+% Network not in table
+
+
+VRF: NOC
+
+
+% Network not in table
+
+
+VRF: PTP
+
+
+% Network not in table
+
+
+VRF: A_OM
+
+
+% Network not in table
+
+
+VRF: E_OM
+
+
+% Network not in table
+
+
+VRF: H_OM
+
+
+% Network not in table
+
+
+VRF: N_OM
+
+
+% Network not in table
+
+
+VRF: CD_OM
+
+
+% Network not in table
+
+
+VRF: CD_X2
+
+
+% Network not in table
+
+
+VRF: IP_OM
+
+
+% Network not in table
+
+
+VRF: probe
+
+
+% Network not in table
+
+
+VRF: A_Digi
+
+
+% Network not in table
+
+
+VRF: CD_PTP
+
+
+% Network not in table
+
+
+VRF: CD_S1C
+
+
+% Network not in table
+
+
+VRF: CD_S1U
+
+
+% Network not in table
+
+
+VRF: E_2G3G
+
+
+% Network not in table
+
+
+VRF: HSI_TM
+
+
+% Network not in table
+
+
+VRF: H_2G3G
+
+
+% Network not in table
+
+
+VRF: ISC_UP
+
+
+% Network not in table
+
+
+VRF: LTE_CP
+
+
+% Network not in table
+
+
+VRF: LTE_Gr
+
+
+% Network not in table
+
+
+VRF: MPS_OM
+
+
+% Network not in table
+
+
+VRF: MSS_OM
+
+
+% Network not in table
+
+
+VRF: OM_FMC
+
+
+% Network not in table
+
+
+VRF: P1_Sip
+
+
+% Network not in table
+
+
+VRF: SAT_OM
+
+
+% Network not in table
+
+
+VRF: TM_SPS
+
+
+% Network not in table
+
+
+VRF: TX_NMS
+
+
+% Network not in table
+
+
+VRF: VPN_OM
+
+
+% Network not in table
+
+
+VRF: CD_ABIS
+
+
+% Network not in table
+
+
+VRF: CME_NMS
+
+
+% Network not in table
+
+
+VRF: CP_wifi
+
+
+% Network not in table
+
+
+VRF: EAP_VRF
+
+
+% Network not in table
+
+
+VRF: GB_Digi
+
+
+% Network not in table
+
+
+VRF: HSI_TMY
+
+
+% Network not in table
+
+
+VRF: H_IuoIP
+
+
+% Network not in table
+
+
+VRF: LTE_S6a
+
+
+% Network not in table
+
+
+VRF: MPS_EXT
+
+
+% Network not in table
+
+
+VRF: SIGTRAN
+
+
+Routing entry for 172.18.57.128/28
+  Known via "bgp 65535", distance 200, metric 0
+  Tag 138008
+  Number of pic paths 1 , type internal and external
+  Installed Jun  4 04:10:53.904 for 2d14h
+  Routing Descriptor Blocks
+    10.151.81.221, from 10.151.81.221, BGP external, BGP backup path
+      Nexthop in Vrf: "maxis_MC_ACP", Table: "default", IPv4 Unicast, Table Id: 0xe000007a
+      Route metric is 0, recursion-via-/32
+    10.159.255.17, from 10.159.255.51
+      Nexthop in Vrf: "default", Table: "default", IPv4 Unicast, Table Id: 0xe0000000
+      Route metric is 0
+  No advertising protos. 
+
+VRF: SVCS_FW
+
+
+% Network not in table
+
+
+VRF: UNIP_OM
+
+
+% Network not in table
+
+
+VRF: UP_wifi
+
+
+% Network not in table
+
+
+VRF: YTL_SPS
+
+
+% Network not in table
+
+
+VRF: maxis_A
+
+
+% Network not in table
+
+
+VRF: ENT_VOBB
+
+
+% Network not in table
+
+
+VRF: P1_Media
+
+
+% Network not in table
+
+
+VRF: P_BC_VRF
+
+
+% Network not in table
+
+
+VRF: VOBB_TMY
+
+
+% Network not in table
+
+
+VRF: WTTx_LTM
+
+
+% Network not in table
+
+
+VRF: XOX_MVNO
+
+
+% Network not in table
+
+
+VRF: maxis_Gb
+
+
+% Network not in table
+
+
+VRF: probe_om
+
+
+% Network not in table
+
+
+VRF: A_CP_Digi
+
+
+Routing entry for 172.18.57.128/28
+  Known via "bgp 65535", distance 200, metric 0
+  Tag 138008, type internal
+  Installed May 31 05:31:17.636 for 6d13h
+  Routing Descriptor Blocks
+    10.159.255.17, from 10.159.255.51
+      Nexthop in Vrf: "default", Table: "default", IPv4 Unicast, Table Id: 0xe0000000
+      Route metric is 0
+  No advertising protos. 
+
+VRF: EUREKA_OM
+
+
+% Network not in table
+
+
+VRF: Huawei_Ga
+
+
+% Network not in table
+
+
+VRF: P_EAP_VRF
+
+
+% Network not in table
+
+
+VRF: BC_EAP_VRF
+
+
+% Network not in table
+
+
+VRF: Digi_MC_Gb
+
+
+% Network not in table
+
+
+VRF: Digi_MC_S1
+
+
+% Network not in table
+
+
+VRF: ENT_AUMKAR
+
+
+% Network not in table
+
+
+VRF: ENT_CPE_OM
+
+
+% Network not in table
+
+
+VRF: EUREKA_SIP
+
+
+% Network not in table
+
+
+VRF: HSI_FMC_CP
+
+
+% Network not in table
+
+
+VRF: HSI_TSERBA
+
+
+% Network not in table
+
+
+VRF: OLNO_M_VRF
+
+
+% Network not in table
+
+
+VRF: P1_IuPS_CP
+
+
+% Network not in table
+
+
+VRF: P1_IuPS_UP
+
+
+% Network not in table
+
+
+VRF: P1_Sigtran
+
+
+Routing entry for 172.18.57.128/28
+  Known via "bgp 65535", distance 200, metric 0
+  Tag 138008, type internal
+  Installed May 31 05:31:17.638 for 6d13h
+  Routing Descriptor Blocks
+    10.159.255.17, from 10.159.255.51
+      Nexthop in Vrf: "default", Table: "default", IPv4 Unicast, Table Id: 0xe0000000
+      Route metric is 0
+  No advertising protos. 
+
+VRF: PUBLIC_DSW
+
+
+% Network not in table
+
+
+VRF: Redtone_Gb
+
+
+% Network not in table
+
+
+VRF: TM_SBC_SIP
+
+
+% Network not in table
+
+
+VRF: maxis_A_CP
+
+
+% Network not in table
+
+
+VRF: maxis_IuCS
+
+
+% Network not in table
+
+
+VRF: maxis_IuPS
+
+
+% Network not in table
+
+
+VRF: Digi_MC_ACP
+
+
+% Network not in table
+
+
+VRF: Digi_MC_AUP
+
+
+% Network not in table
+
+
+VRF: EIR_SIGTRAN
+
+
+% Network not in table
+
+
+VRF: ENT_EDOTCOJ
+
+
+% Network not in table
+
+
+VRF: ENT_LLM_LLB
+
+
+% Network not in table
+
+
+VRF: ENT_LLM_MEX
+
+
+% Network not in table
+
+
+VRF: HSI_FMC_FCT
+
+
+% Network not in table
+
+
+VRF: HSI_Jalenas
+
+
+% Network not in table
+
+
+VRF: MPS_SIGTRAN
+
+
+% Network not in table
+
+
+VRF: Premier_VRF
+
+
+% Network not in table
+
+
+VRF: SBC_SIP_EXT
+
+
+% Network not in table
+
+
+VRF: YTL_SBC_SIP
+
+
+% Network not in table
+
+
+VRF: maxis_MC_Gb
+
+
+% Network not in table
+
+
+VRF: Digi_IuCS_CP
+
+
+% Network not in table
+
+
+VRF: Digi_IuCS_UP
+
+
+% Network not in table
+
+
+VRF: Digi_IuPS_CP
+
+
+% Network not in table
+
+
+VRF: Digi_IuPS_UP
+
+
+% Network not in table
+
+
+VRF: ENT_TNB_MFFA
+
+
+% Network not in table
+
+
+VRF: IuH_Intranet
+
+
+% Network not in table
+
+
+VRF: POI_P1_Media
+
+
+% Network not in table
+
+
+VRF: RED_ONE_MVNO
+
+
+% Network not in table
+
+
+VRF: Redtone_A_CP
+
+
+% Network not in table
+
+
+VRF: Redtone_A_UP
+
+
+% Network not in table
+
+
+VRF: TM_SBC_Media
+
+
+% Network not in table
+
+
+VRF: Webe_SBC_SIP
+
+
+% Network not in table
+
+
+VRF: maxis_MC_ACP
+
+
+Routing entry for 172.18.57.128/28
+  Known via "bgp 65535", distance 20, metric 0
+  Tag 65110, type external
+  Installed Jun  4 04:10:53.536 for 2d14h
+  Routing Descriptor Blocks
+    10.151.81.221, from 10.151.81.221, BGP external
+      Route metric is 0, recursion-via-/32
+  No advertising protos. 
+
+VRF: maxis_MC_AUP
+
+
+% Network not in table
+
+
+VRF: BGF_MEDIA_EXT
+
+
+% Network not in table
+
+
+VRF: Femto_IuCS_CP
+
+
+% Network not in table
+
+
+VRF: Femto_IuCS_UP
+
+
+% Network not in table
+
+
+VRF: HSI_FIBERHOME
+
+
+% Network not in table
+
+
+VRF: Redtone_MC_S1
+
+
+% Network not in table
+
+
+VRF: Webe_LTE_MOCN
+
+
+% Network not in table
+
+
+VRF: YTL_SBC_Media
+
+
+% Network not in table
+
+
+VRF: maxis_IuCS_CP
+
+
+% Network not in table
+
+
+VRF: maxis_IuPS_CP
+
+
+% Network not in table
+
+
+VRF: tunetalk_bidd
+
+
+% Network not in table
+
+
+VRF: CelcomWiFi_VRF
+
+
+% Network not in table
+
+
+VRF: Digi_BGF_Media
+
+
+% Network not in table
+
+
+VRF: Digi_OLNOS_SIP
+
+
+% Network not in table
+
+
+VRF: Digi_OLNOS_SPS
+
+
+% Network not in table
+
+
+VRF: ENT_GLB_FORWAY
+
+
+% Network not in table
+
+
+VRF: ENT_Government
+
+
+% Network not in table
+
+
+VRF: ENT_SIME_DARBY
+
+
+% Network not in table
+
+
+VRF: EUREKA_SIGTRAN
+
+
+% Network not in table
+
+
+VRF: OLNO_M_EAP_VRF
+
+
+% Network not in table
+
+
+VRF: Webe_SBC_Media
+
+
+% Network not in table
+
+
+VRF: maxis_OAM_MOCN
+
+
+% Network not in table
+
+
+VRF: maxis_S1C_MOCN
+
+
+% Network not in table
+
+
+VRF: maxis_S1U_MOCN
+
+
+% Network not in table
+
+
+VRF: ALTEL_BGF_MEDIA
+
+
+% Network not in table
+
+
+VRF: Maxis_OLNOS_SPS
+
+
+% Network not in table
+
+
+VRF: Redtone_IuCS_CP
+
+
+% Network not in table
+
+
+VRF: Redtone_IuCS_UP
+
+
+% Network not in table
+
+
+VRF: Redtone_IuPS_CP
+
+
+% Network not in table
+
+
+VRF: Redtone_IuPS_UP
+
+
+% Network not in table
+
+
+VRF: Umobile_GnGp_DR
+
+
+% Network not in table
+
+
+VRF: ENT_Internet_HUB
+
+
+% Network not in table
+
+
+VRF: GENERIC_SSID_VRF
+
+
+% Network not in table
+
+
+VRF: POI_tunetalk_bidd
+
+
+% Network not in table
+
+
+VRF: Redtone_OLNOS_SIP
+
+
+% Network not in table
+
+
+VRF: TIME_SBC_SIP_Media
+
+
+% Network not in table
+
+
+VRF: ENT_WIFI_5GShowcase
+
+
+% Network not in table
+
+
+VRF: Redtone_OLNOS_Media
+
+
+% Network not in table
+
+
+VRF: ENT_MTRADE_AUDIOCODE
+
+
+% Network not in table
+
+
+VRF: umobile_interconnect
+
+
+% Network not in table
+
+
+VRF: POI_umobile_interconnect
+
+
+% Network not in table
+
+
+VRF: CD_SFW_om
+
+
+% Network not in table
+
+
+VRF: CD_SFW_prod
+
+
+% Network not in table
+
+
+VRF: CD_SFW_sigtran
+
+
+% Network not in table
+
+
+VRF: CD_SFW_diameter
+
+
+% Network not in table
+
+
+VRF: CD_GI_MMS
+
+
+% Network not in table
+
+
+VRF: CD_A_CP
+
+
+% Network not in table
+
+
+VRF: CD_A_UP
+
+
+% Network not in table
+
+
+VRF: CD_GB
+
+
+% Network not in table
+
+
+VRF: dcfw_prod
+
+
+% Network not in table
+
+
+VRF: CD_OSS
+
+
+% Network not in table
+
+
+VRF: vmware
+
+
+% Network not in table
+
+
+VRF: CD_GTP
+
+
+% Network not in table
+
+
+VRF: CD_GI_IMS
+
+
+% Network not in table
+
+
+VRF: CD_SIG
+
+
+% Network not in table
+
+
+VRF: CD_TR069
+
+
+% Network not in table
+
+
+VRF: vcore
+
+
+% Network not in table
+
+
+VRF: CD_BOSS
+
+
+% Network not in table
+
+
+VRF: CD_PCF_SMS
+
+
+% Network not in table
+
+
+VRF: UMobile_OAM_MOCN
+
+
+% Network not in table
+
+
+VRF: UMobile_S1U_MOCN
+
+
+% Network not in table
+
+
+VRF: UMobile_S1C_MOCN
+
+
+% Network not in table
+
+
+VRF: Umobile_Gb_MOCN
+
+
+% Network not in table
+
+
+VRF: UMobile_IuPS_UP
+
+
+% Network not in table
+
+
+VRF: UMobile_IuPS_CP
+
+
+% Network not in table
+
+
+VRF: UMobile_IuCS_UP
+
+
+% Network not in table
+
+
+VRF: UMobile_IuCS_CP
+
+
+% Network not in table
+
+
+VRF: **eint
+
+
+% Network not in table
+
+
+VRF: **iid
+
+
+% Network not in table
+
+RP/0/RSP0/CPU0:KPGUER01-ASR9K#

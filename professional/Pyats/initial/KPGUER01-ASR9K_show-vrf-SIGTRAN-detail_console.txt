@@ -1,0 +1,80 @@
++++ KPGUER01-ASR9K with via 'cli': executing command 'show vrf SIGTRAN detail' +++
+show vrf SIGTRAN detail
+Fri Jun  7 10:23:13.448 MYT
+
+VRF SIGTRAN; RD 10.159.255.5:44; VPN ID not set
+VRF mode: Regular
+Description HUAWEI SGSN-SIGTRAN B
+Interfaces:
+  Bundle-Ether3.1400
+  Bundle-Ether4.1205
+  Bundle-Ether7.1461
+  Bundle-Ether10.1402
+  Bundle-Ether10.1406
+  Bundle-Ether10.1410
+  Bundle-Ether10.1420
+  Bundle-Ether10.1421
+  Bundle-Ether10.1424
+  Bundle-Ether10.1440
+  Bundle-Ether10.1502
+Address family IPV4 Unicast
+  Import VPN route-target communities:
+    RT:65535:11250
+    RT:65535:12700
+    RT:65535:26301
+    RT:65535:60001
+    RT:65535:60022
+    RT:65535:60062
+    RT:65535:60064
+    RT:65535:60102
+    RT:65535:60202
+    RT:65535:60261
+    RT:65535:60281
+    RT:65535:60404
+    RT:65535:60622
+    RT:65535:60626
+    RT:65535:60662
+    RT:65535:60781
+    RT:65535:60862
+    RT:65535:60902
+    RT:65535:60942
+    RT:65535:60944
+    RT:65535:60946
+    RT:65535:61061
+    RT:65535:61063
+    RT:65535:61462
+    RT:65535:61502
+    RT:65535:61601
+    RT:65535:61681
+    RT:65535:61741
+    RT:65535:61941
+    RT:65535:62080
+    RT:65535:62082
+    RT:65535:62381
+    RT:65535:62501
+    RT:65535:62641
+    RT:65535:62881
+    RT:65535:62942
+    RT:65535:63421
+    RT:65535:63522
+    RT:65535:63723
+    RT:65535:64662
+    RT:65535:64842
+    RT:65535:65881
+    RT:65535:66361
+    RT:65535:66502
+  Export VPN route-target communities:
+    RT:65535:11250
+    RT:65535:60063
+    RT:65535:60943
+    RT:65535:60945
+    RT:65535:61501
+    RT:65535:64663
+  No import route policy
+  Export route policy: SIGTRAN-Export-RT
+Address family IPV6 Unicast
+  No import VPN route-target communities
+  No export VPN route-target communities
+  No import route policy
+  No export route policy
+RP/0/RSP0/CPU0:KPGUER01-ASR9K#

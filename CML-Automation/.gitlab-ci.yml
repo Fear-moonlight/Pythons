@@ -1,0 +1,40 @@
+stages:
+  - build:test
+  - deploy:test
+  - test:connectivity
+  - cleanup
+ 
+create_test_network:
+  image: python:3.8
+  stage: build:test
+  script:
+    - pip install -r requirements.txt
+    - python test-network.py down
+    - python test-network.py up
+deploy_loopback_service:
+  image: registry.gitlab.com/nso-developer/ci-runner-image
+  stage: deploy:test
+  script:
+    - export NSO=cml-nso
+    - docker rm -f ${NSO} || true
+    - docker run -td --name ${NSO} 10.1.1.30:5005/student/nso-containers/nso:latest
+    - docker exec -t ${NSO} bash -lc 'ncs --wait-started 600'
+    - FILE=test-devices.xml make loadconf
+    - CMD="devices device router1 ssh fetch-host-keys" make runcmdC
+    - CMD="devices device router1 sync-from" make runcmdC
+    - CMD="devices device router2 ssh fetch-host-keys" make runcmdC
+    - CMD="devices device router2 sync-from" make runcmdC
+    - FILE=loopback-service-config.xml make loadconf
+test_configuration:
+  image: python:3.8
+  stage: test:connectivity
+  script:
+    - pip install pyats[full]==24.2
+    - python test.py
+remove_test_network:
+  image: python:3.8
+  stage: cleanup
+  script:
+    - pip install -r requirements.txt
+    - python test-network.py down
+  when: always

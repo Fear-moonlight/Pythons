@@ -12,7 +12,7 @@
     # - name: run show version on remote devices
     #   cisco.iosxr.iosxr_command:
     #     commands: show version
-        # register: command_output
+        #  
     # - name: Print output to file
     #   ansible.builtin.copy:
     #     content: "{{command_output.stdout}}"
@@ -66,4 +66,4 @@
     value1: 10
     value2: 15
   debug:
-    msg: "The smaller value is {{ value1 if value1 < value2 else value2 }}"
+    msg: "The smaller value is {{ value1 if value1 < value2 else value2 }}"ss

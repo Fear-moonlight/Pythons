@@ -1,0 +1,50 @@
+{
+  "E_Iu_CP": {
+    "address_family": {
+      "ipv4 unicast": {
+        "route_target": {
+          "65535:60280": {
+            "route_target": "65535:60280",
+            "rt_type": "both"
+          },
+          "65535:60281": {
+            "route_target": "65535:60281",
+            "rt_type": "export"
+          },
+          "65535:60282": {
+            "route_target": "65535:60282",
+            "rt_type": "import"
+          },
+          "65535:60283": {
+            "route_target": "65535:60283",
+            "rt_type": "export"
+          },
+          "65535:60284": {
+            "route_target": "65535:60284",
+            "rt_type": "import"
+          },
+          "65535:60285": {
+            "route_target": "65535:60285",
+            "rt_type": "export"
+          },
+          "65535:60286": {
+            "route_target": "65535:60286",
+            "rt_type": "import"
+          },
+          "65535:63161": {
+            "route_target": "65535:63161",
+            "rt_type": "import"
+          }
+        }
+      },
+      "ipv6 unicast": {}
+    },
+    "description": "not set",
+    "interfaces": [
+      "TenGigE0/4/0/24.301"
+    ],
+    "route_distinguisher": "10.159.255.98:24",
+    "vrf_mode": "regular"
+  },
+  "_exclude": []
+}

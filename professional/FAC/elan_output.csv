@@ -1,0 +1,23 @@
+Before Migration,,,,,,
+Current CEN,Sub-int,Input BW Util (G),Output BW Util (G),Number of Users,Sub-int,Number of Users
+DGPHUCU001,Eth-Trunk47.1159,0,0,,Bundle-Ether5001.1159,
+DGPHUCU001,Eth-Trunk47.1659,0,0,,Bundle-Ether5001.1659,
+DGPHUCU001,Eth-Trunk47.1660,0.000010488,0.000189016,4,Bundle-Ether5001.1660,4
+DGPHUCU001,Eth-Trunk47.1661,0.000012936,0.000007008,2,Bundle-Ether5001.1661,2
+DGPHUCU001,Eth-Trunk47.1681,0.009461016,0.008899688,37,Bundle-Ether5001.1681,37
+Before Migration,,,,,,
+Current CEN,Sub-int,Input BW Util (G),Output BW Util (G),Number of Users,Sub-int,Number of Users
+Before Migration,,,,,,
+Current CEN,Sub-int,Input BW Util (G),Output BW Util (G),Number of Users,Sub-int,Number of Users
+DGPHUCU001,Eth-Trunk110.101,0.000028072,0.000037648,3,Bundle-Ether1002.101,5
+Before Migration,,,,,,
+Current CEN,Sub-int,Input BW Util (G),Output BW Util (G),Number of Users,Sub-int,Number of Users
+Before Migration,,,,,,
+Current CEN,Sub-int,Input BW Util (G),Output BW Util (G),Number of Users,Sub-int,Number of Users
+Before Migration,,,,,,
+Current CEN,Sub-int,Input BW Util (G),Output BW Util (G),Number of Users,Sub-int,Number of Users
+DGPHUCU001,Eth-Trunk45.1159,0,0,,Bundle-Ether5000.1159,
+DGPHUCU001,Eth-Trunk45.1659,0,0,,Bundle-Ether5000.1659,
+DGPHUCU001,Eth-Trunk45.1660,0,0,,Bundle-Ether5000.1660,
+DGPHUCU001,Eth-Trunk45.1661,0,0,,Bundle-Ether5000.1661,
+DGPHUCU001,Eth-Trunk45.1681,0,0,,Bundle-Ether5000.1681,
