@@ -1,0 +1,32 @@
+---
+acl:
+    - afi: ipv4
+      acls:
+        - name: 110
+          aces:
+            - grant: deny
+              sequence: 20
+              protocol: tcp
+              source:
+                address: any
+              destination:
+                address: any
+                port_protocol:
+                  eq: www
+                 
+            - grant: permit
+              sequence: 40
+              protocol: ip
+              source:
+                address: any
+              destination:
+                address: any                  
+
+acl_interface:
+    - name: GigabitEthernet1
+      access_groups:
+        - afi: ipv4
+          acls:
+            - name: 110
+              direction: in
+              
