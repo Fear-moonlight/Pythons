@@ -1,0 +1,23 @@
+---
+- name: Configure ACL on Cisco routers
+  hosts: routers
+  gather_facts: no
+
+  tasks:
+    - name: Include ACL vars
+      include_vars: '../acl-config.yaml'
+
+    - name: Remove ACL from interface
+      cisco.ios.ios_acl_interfaces:
+        config: "{{ acl_interface }}"
+        state: deleted
+
+    - name: Create ACL 
+      cisco.ios.ios_acls:
+        config: "{{ acl }}"
+        state: overridden
+
+    - name: Apply ACL to interface
+      cisco.ios.ios_acl_interfaces:
+        config: "{{ acl_interface }}"
+        state: overridden

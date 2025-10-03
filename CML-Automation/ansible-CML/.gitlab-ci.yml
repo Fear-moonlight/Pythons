@@ -1,0 +1,55 @@
+stages:
+  - build
+  - test
+  - deploy
+  - cleanup
+
+create-test-network:
+  image: python:3.8
+  stage: build
+  script:
+    - cd python
+    - pip install -r requirements.txt
+    - python test-network.py down
+    - python test-network.py up
+  only:
+    - test
+
+apply-test-config:
+  image: "10.1.1.30:5005/student/ansible-containers/ansible:latest"
+  stage: test
+  script:
+    - export ANSIBLE_HOST_KEY_CHECKING=False
+    - cd ansible
+    - ansible-playbook -i test-network.yaml deploy-acl-config.yaml
+  only:
+    - test
+
+test_configuration:
+  image: python:3.8
+  stage: test
+  script:
+    - pip install pyats[full]==24.2
+    - python test.py
+  only:
+    - test
+
+deploy-config:
+  image: "10.1.1.30:5005/student/ansible-containers/ansible:latest"
+  stage: deploy
+  script:
+    - export ANSIBLE_HOST_KEY_CHECKING=False
+    - cd ansible
+    - ansible-playbook -i production-network.yaml deploy-acl-config.yaml
+  only:
+    - main
+
+remove_test_network:
+  image: python:3.8
+  stage: cleanup
+  script:
+    - cd python
+    - pip install -r requirements.txt
+    - python test-network.py down
+  only:
+    - main
