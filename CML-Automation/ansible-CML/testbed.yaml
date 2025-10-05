@@ -1,0 +1,27 @@
+testbed:
+  credentials:
+    default:
+      username: admin
+      password: admin
+      enable:
+        password: admin
+
+devices:
+  Router1:
+    connections:
+      cli:
+        ip: 10.1.1.71
+        port: 22
+        protocol: ssh
+    os: iosxe
+    type: iosxe
+
+
+  Router2:
+    connections:
+      cli:
+        ip: 10.1.1.72
+        port: 22
+        protocol: ssh
+    os: iosxe
+    type: iosxe
