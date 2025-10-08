@@ -1,0 +1,79 @@
+include:
+  - template: Terraform.gitlab-ci.yml
+
+variables:
+  TF_ROOT: ${CI_PROJECT_DIR}
+  SAST_DISABLED: "true"
+
+stages:
+  - validate
+  - test
+  - build:CML
+  - build
+  - deploy
+  - test:config
+  - cleanup
+
+start-test-network:
+  image: python:3.9
+  stage: build:CML
+  script:
+    - cd python
+    - pip install -r requirements.txt 
+    - python test-network.py down
+    - python test-network.py up
+  except:
+    - main
+
+build:
+  extends: .terraform:build
+  rules:
+    - if: '$CI_COMMIT_REF_NAME == "main"'
+      variables:
+        TFVARS_FILE: "production.tfvars"
+        TF_STATE_NAME: production 
+    - if: '$CI_COMMIT_REF_NAME != "main"'
+      variables:
+        TFVARS_FILE: "test.tfvars"
+        TF_STATE_NAME: '$CI_COMMIT_REF_NAME'
+  script:
+    - if [ "$CI_COMMIT_REF_NAME" != "main" ]; then
+        git fetch origin main;
+        git checkout origin/main;
+        gitlab-terraform plan -var-file="$TFVARS_FILE";
+        gitlab-terraform plan-json -var-file="$TFVARS_FILE";
+        gitlab-terraform apply;
+        git checkout $CI_COMMIT_REF_NAME;
+      fi
+    - gitlab-terraform plan -var-file="$TFVARS_FILE"
+    - gitlab-terraform plan-json -var-file="$TFVARS_FILE"
+
+deploy:
+  extends: .terraform:deploy
+  rules:
+  - if: '$CI_COMMIT_REF_NAME == "main"'
+    variables:
+      TF_STATE_NAME: production 
+  - if: '$CI_COMMIT_REF_NAME != "main"'
+    variables:
+      TF_STATE_NAME: '$CI_COMMIT_REF_NAME'
+  when: manual 
+  allow_failure: false
+  
+test_connectivty:
+  image: python:3.8
+  stage: test:config
+  script:
+    - pip install pyats[full]==24.2
+    - python test.py
+  except:
+    - main
+
+
+clean:state:
+  stage: cleanup
+  script:
+    - >
+      curl --header "Authorization: Bearer glpat-vyTXPsE9sCSHDvvVJ3m6"  --request DELETE "http://10.1.1.30/api/v4/projects/15/terraform/state/test-loopback"
+  except:
+    - main
