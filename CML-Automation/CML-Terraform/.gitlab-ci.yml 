@@ -74,6 +74,6 @@ clean:state:
   stage: cleanup
   script:
     - >
-      curl --header "Authorization: Bearer glpat-vyTXPsE9sCSHDvvVJ3m6"  --request DELETE "http://10.1.1.30/api/v4/projects/15/terraform/state/test-loopback"
+      curl --header "Authorization: Bearer "  --request DELETE "http://10.1.1.30/api/v4/projects/15/terraform/state/test-loopback"
   except:
     - main
