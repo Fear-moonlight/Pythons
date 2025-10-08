@@ -74,6 +74,5 @@ clean:state:
   stage: cleanup
   script:
     - >
-      curl --header " "  --request DELETE "http://10.1.1.30/api/v4/projects/15/terraform/state/test-loopback"
   except:
     - main
