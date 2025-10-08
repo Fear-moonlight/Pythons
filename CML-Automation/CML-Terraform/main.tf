@@ -6,3 +6,8 @@ terraform {
     }
   }
 }
+provider "iosxe" {
+  username = "admin"
+  password = "admin"
+  url  = "https://10.1.1.73" 
+}
